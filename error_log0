@@ -1,0 +1,458 @@
+[23-Apr-2016 04:06:07 America/Chicago] PHP Fatal error:  Class 'Application' not found in /home/lebanoni/public_html/system/application/controllers/home.php on line 3
+[02-May-2016 14:48:22 America/Chicago] PHP Fatal error:  Call to undefined method Company::GetScanningCompanies() in /home/lebanoni/public_html/system/application/controllers/companies.php on line 671
+[02-May-2016 14:48:52 America/Chicago] PHP Fatal error:  Call to undefined method Company::GetScanningCompanies() in /home/lebanoni/public_html/system/application/controllers/companies.php on line 671
+[06-May-2016 13:49:29 America/Chicago] PHP Fatal error:  Call to undefined method General::GetGPSCompanies() in /home/lebanoni/public_html/system/application/controllers/import.php on line 35
+[08-May-2016 13:27:13 America/Chicago] PHP Fatal error:  Call to undefined method Item::GetItemByCode() in /home/lebanoni/public_html/system/application/controllers/import.php on line 30
+[24-May-2016 11:26:42 America/Chicago] PHP Fatal error:  Call to a member function GetImporterById() on a non-object in /home/lebanoni/public_html/system/application/controllers/map.php on line 19
+[05-Oct-2016 12:20:17 America/Chicago] PHP Fatal error:  Call to a member function referrer() on a non-object in /home/lebanoni/public_html/system/application/controllers/companies.php on line 511
+[13-Oct-2016 15:16:08 America/Chicago] PHP Fatal error:  Call to undefined function from_close() in /home/lebanoni/public_html/system/application/views/dashboard.php on line 210
+[23-Nov-2016 19:12:07 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 95 bytes) in /home/lebanoni/public_html/system/system/database/drivers/mysql/mysql_result.php on line 167
+[23-Nov-2016 19:12:13 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/system/system/database/drivers/mysql/mysql_result.php on line 167
+[23-Nov-2016 19:13:24 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/system/system/database/drivers/mysql/mysql_result.php on line 167
+[23-Nov-2016 19:15:11 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 89 bytes) in /home/lebanoni/public_html/system/system/database/drivers/mysql/mysql_result.php on line 167
+[20-Jan-2017 22:29:31 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:30:08 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:30:41 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:32:01 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:32:04 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:34:53 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:35:38 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:36:03 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open http://c003p.lebanon-industry.com/wizara19-01-2017.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('http://c003p.le...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('http://c003p.le...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(2378): PHPExcel_IOFactory::load('http://c003p.le...')
+#3 [internal function]: Companies->import()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[20-Jan-2017 22:36:06 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open http://c003p.lebanon-industry.com/wizara19-01-2017.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('http://c003p.le...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('http://c003p.le...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(2378): PHPExcel_IOFactory::load('http://c003p.le...')
+#3 [internal function]: Companies->import()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[20-Jan-2017 22:40:36 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open http://c003p.lebanon-industry.com/wezaraa.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('http://c003p.le...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('http://c003p.le...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(2378): PHPExcel_IOFactory::load('http://c003p.le...')
+#3 [internal function]: Companies->import()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[20-Jan-2017 22:40:56 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:41:21 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:41:47 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:43:39 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:46:31 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[20-Jan-2017 22:49:37 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[23-Jan-2017 19:37:27 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 93 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[23-Jan-2017 19:38:06 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 87 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[08-Feb-2017 18:57:53 UTC] PHP Fatal error:  Call to a member function GetAllImporters() on null in /home/lebanoni/public_html/admin/application/views/address/area.php on line 177
+[10-Feb-2017 07:26:46 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 110
+[10-Feb-2017 07:26:54 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1287
+[10-Feb-2017 07:27:30 UTC] PHP Fatal error:  Call to undefined method Administrator::GetGovernorateByName() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2687
+[10-Feb-2017 07:28:49 UTC] PHP Fatal error:  Call to undefined method Administrator::GetGovernorateByName() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2687
+[10-Feb-2017 07:29:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 110
+[10-Feb-2017 07:29:35 UTC] PHP Fatal error:  Call to undefined method Administrator::GetGovernorateByName() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2688
+[10-Feb-2017 07:30:02 UTC] PHP Parse error:  syntax error, unexpected ''year'),' (T_ENCAPSED_AND_WHITESPACE) in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2603
+[10-Feb-2017 07:34:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1614
+[13-Feb-2017 07:59:31 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 07:59:50 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 07:59:59 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 08:00:05 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 08:00:37 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 08:24:24 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 08:25:11 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 90 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[13-Feb-2017 11:01:38 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 88 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[15-Feb-2017 10:50:45 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 79 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[15-Feb-2017 10:54:36 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[15-Feb-2017 10:54:56 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 79 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[15-Feb-2017 10:57:04 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 79 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[20-Feb-2017 08:10:53 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 85 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[23-Feb-2017 09:27:16 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 83 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[26-Feb-2017 21:30:16 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1216
+[26-Feb-2017 21:30:20 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1216
+[27-Feb-2017 08:00:47 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 08:00:58 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 88 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 08:07:12 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 08:07:23 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 08:07:36 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 08:35:19 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 91 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 10:36:12 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 83 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 10:37:01 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 83 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 10:37:09 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 11:09:46 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 81 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 12:28:32 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[27-Feb-2017 12:28:39 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[28-Feb-2017 12:56:57 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 85 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[28-Feb-2017 12:57:22 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[28-Feb-2017 12:57:34 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 78 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[28-Feb-2017 14:18:21 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 83 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[28-Feb-2017 14:33:30 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 91 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[28-Feb-2017 17:33:27 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 85 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:33:31 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 85 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:34:54 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:34:59 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 85 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:36:19 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:36:24 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:38:31 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 90 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:38:36 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 90 bytes) in /home/lebanoni/public_html/admin/application/views/reports/ministry.php on line 52
+[28-Feb-2017 17:39:14 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 280330240 bytes) in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 59
+[01-Mar-2017 08:49:35 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:52:17 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:52:28 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:52:30 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:52:33 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:52:36 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 87 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:52:37 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 90 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:12 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 93 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:15 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 86 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:17 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 78 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:28 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 86 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:30 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 86 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:33 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 84 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 08:53:34 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 84 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 09:24:06 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 88 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 11:52:17 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 91 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 11:56:02 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 84 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:11:08 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 88 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:12:10 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:14:52 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 81 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:14:59 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 86 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:17:32 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:18:28 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 24985878 bytes) in /home/lebanoni/public_html/admin/system/database/DB_driver.php on line 685
+[01-Mar-2017 12:19:02 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 24985878 bytes) in /home/lebanoni/public_html/admin/system/database/DB_driver.php on line 685
+[01-Mar-2017 12:21:56 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 88 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:22:55 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 86 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:25:13 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:25:25 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:25:37 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:25:56 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:26:07 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 78 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:26:15 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:33:41 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:35:37 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 91 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:35:43 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 24996313 bytes) in /home/lebanoni/public_html/admin/system/database/DB_driver.php on line 685
+[01-Mar-2017 12:42:38 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 79 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:42:59 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:57:12 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:57:25 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 12:57:33 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 83 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:02:40 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 89 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:03:05 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 92 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:04:22 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:04:30 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:05:56 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 2048 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:06:10 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:06:25 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:06:37 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 87 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:23:50 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 82 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[01-Mar-2017 13:25:32 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[03-Mar-2017 23:27:00 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[03-Mar-2017 23:27:17 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[03-Mar-2017 23:27:20 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[03-Mar-2017 23:28:27 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[03-Mar-2017 23:29:48 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:07:54 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:09:08 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:09:14 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:09:40 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:10:13 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:11:33 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:13:57 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:13:59 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 06:14:00 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:31:54 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:31:56 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:43:32 UTC] PHP Fatal error:  Call to a member function GetGeoCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:44:15 UTC] PHP Fatal error:  Call to a member function GetAreaCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:44:18 UTC] PHP Fatal error:  Call to a member function GetAreaCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:44:27 UTC] PHP Fatal error:  Call to a member function GetAreaCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:44:29 UTC] PHP Fatal error:  Call to a member function GetAreaCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:45:28 UTC] PHP Fatal error:  Call to a member function GetAreaCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[04-Mar-2017 11:48:30 UTC] PHP Fatal error:  Call to a member function GetAreaCompanies() on string in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 2753
+[06-Mar-2017 10:47:54 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1299
+[06-Mar-2017 22:08:25 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:08:28 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:08:31 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:09:44 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:12:57 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:13:00 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:13:03 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[06-Mar-2017 22:14:11 UTC] PHP Fatal error:  Cannot redeclare class Companies in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 3204
+[07-Mar-2017 13:37:51 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 433
+[07-Mar-2017 13:37:55 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 433
+[07-Mar-2017 13:38:02 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 433
+[07-Mar-2017 23:23:53 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[07-Mar-2017 23:23:57 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[07-Mar-2017 23:24:01 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[07-Mar-2017 23:24:05 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[07-Mar-2017 23:24:11 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 07:39:56 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 07:40:02 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 07:40:10 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 07:40:51 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 07:45:16 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 08:14:24 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 09:13:44 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 09:22:00 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 11:50:34 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 11:51:27 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 11:51:39 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 11:55:17 UTC] PHP Fatal error:  Call to undefined function data() in /home/lebanoni/public_html/admin/application/views/company/company_form.php on line 439
+[08-Mar-2017 12:12:52 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting ';' or '{' in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 151
+[10-Mar-2017 10:32:00 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/models/company.php on line 886
+[10-Mar-2017 10:50:30 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1180
+[28-Mar-2017 16:07:10 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 392
+[28-Mar-2017 16:07:43 UTC] PHP Fatal error:  Call to undefined function str_get_html() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 1356
+[28-Mar-2017 16:11:30 UTC] PHP Parse error:  syntax error, unexpected '$govID = 0;' in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 712
+[18-May-2017 16:53:46 UTC] PHP Fatal error:  Call to a member function GetActivitiesByIds() on null in /home/lebanoni/public_html/admin/application/controllers/importers.php on line 546
+[19-Jun-2017 15:16:31 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 876
+[19-Jun-2017 15:16:37 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 876
+[19-Jun-2017 15:16:59 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 876
+[19-Jun-2017 15:17:22 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 876
+[19-Jun-2017 15:18:23 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 876
+[19-Jun-2017 15:18:26 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 876
+[19-Jun-2017 15:19:22 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 877
+[19-Jun-2017 15:19:27 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 466
+[19-Jun-2017 15:20:30 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 466
+[19-Jun-2017 15:20:33 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 466
+[19-Jun-2017 15:21:15 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 467
+[19-Jun-2017 15:21:59 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 468
+[19-Jun-2017 15:22:21 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 469
+[19-Jun-2017 15:22:24 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 469
+[19-Jun-2017 15:23:09 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 470
+[19-Jun-2017 15:23:42 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 470
+[19-Jun-2017 15:24:20 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMen() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 471
+[29-Jun-2017 18:23:15 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 22
+[29-Jun-2017 18:23:20 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 22
+[29-Jun-2017 18:24:53 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 22
+[04-Jul-2017 05:16:07 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 05:17:42 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 05:18:02 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 08:02:48 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 08:03:19 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 08:04:15 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 08:05:13 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 08:07:32 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 464
+[04-Jul-2017 08:10:54 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:11:00 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:12:18 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:14:29 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:15:44 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:16:04 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:16:09 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:16:27 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:16:37 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:16:45 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[04-Jul-2017 08:17:41 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:17:46 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:17:51 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:17:55 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:19:31 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:19:36 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:19:41 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:19:49 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:19:53 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:22:15 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:24:32 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 465
+[04-Jul-2017 08:29:18 UTC] PHP Fatal error:  Call to a member function GetCompanyMarketById() on null in /home/lebanoni/public_html/admin/application/views/company/view.php on line 466
+[26-Jul-2017 07:03:05 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:03:09 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:03:16 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:03:25 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:03:38 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:04:02 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:06:21 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[26-Jul-2017 07:07:23 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/news.php on line 2
+[09-Aug-2017 16:16:30 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:16:34 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:16:50 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:17:12 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:17:16 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:17:18 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:18:05 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[09-Aug-2017 16:18:22 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/views/news.php on line 33
+[15-Aug-2017 21:13:40 UTC] PHP Fatal error:  Call to a member function GetTasks() on null in /home/lebanoni/public_html/admin/application/controllers/dashboard.php on line 83
+[14-Nov-2017 22:19:42 UTC] PHP Parse error:  syntax error, unexpected '') {' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 2576
+[14-Nov-2017 22:19:47 UTC] PHP Parse error:  syntax error, unexpected '') {' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 2576
+[17-Nov-2017 06:57:46 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 1119
+[03-Dec-2017 20:42:24 UTC] PHP Fatal error:  Cannot redeclare Reports::ExportGeoCompanyAr() in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1245
+[03-Dec-2017 20:42:33 UTC] PHP Fatal error:  Cannot redeclare Reports::ExportGeoCompanyAr() in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1245
+[07-Dec-2017 17:51:30 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[07-Dec-2017 17:51:32 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[07-Dec-2017 17:51:34 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[07-Dec-2017 17:51:39 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[07-Dec-2017 17:51:47 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[07-Dec-2017 17:52:24 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[07-Dec-2017 17:52:27 UTC] PHP Parse error:  syntax error, unexpected 'font' (T_STRING), expecting ',' or ';' in /home/lebanoni/public_html/admin/application/controllers/reports.php on line 1438
+[08-Jan-2018 18:38:48 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSponsors() in /home/lebanoni/public_html/admin/application/views/sponsor_form.php on line 18
+[05-Feb-2018 17:32:39 UTC] PHP Fatal error:  Cannot redeclare Tasks::print_list_acc() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 1431
+[25-Feb-2018 12:30:15 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/logs.php on line 102
+[25-Feb-2018 12:30:22 UTC] PHP Fatal error:  Using $this when not in object context in /home/lebanoni/public_html/admin/application/controllers/logs.php on line 102
+[16-Apr-2018 15:50:31 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 228
+[16-Apr-2018 15:50:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 228
+[16-Apr-2018 15:50:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 228
+[16-Apr-2018 15:51:07 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 228
+[16-Apr-2018 15:56:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 232
+[16-Apr-2018 15:57:14 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 232
+[16-Apr-2018 15:57:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 232
+[16-Apr-2018 15:58:19 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 231
+[16-Apr-2018 15:58:23 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 231
+[16-Apr-2018 15:59:48 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/lebanoni/public_html/admin/application/views/reports/geosectors_ar.php on line 231
+[28-May-2018 15:53:29 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:53:44 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:54:09 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:56:23 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:56:45 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:57:16 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open https://c003p.lebanon-industry.com/industrialcompanies2017-2018.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('https://c003p.l...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('https://c003p.l...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(3214): PHPExcel_IOFactory::load('https://c003p.l...')
+#3 [internal function]: Companies->dc()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[28-May-2018 15:57:23 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open https://c003p.lebanon-industry.com/industrialcompanies2017-2018.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('https://c003p.l...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('https://c003p.l...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(3214): PHPExcel_IOFactory::load('https://c003p.l...')
+#3 [internal function]: Companies->dc()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[28-May-2018 15:58:14 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:58:16 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 15:58:38 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:01:43 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:01:46 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:01:47 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:02:02 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:02:39 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:02:42 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:02:43 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:02:44 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:02:46 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:05:15 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:05:42 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:06:44 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:07:01 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:07:54 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:08:47 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open https://c003p.lebanon-industry.com/industrialcompanies2017-2018.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('https://c003p.l...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('https://c003p.l...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(3216): PHPExcel_IOFactory::load('https://c003p.l...')
+#3 [internal function]: Companies->dc()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[28-May-2018 16:08:50 UTC] PHP Fatal error:  Uncaught exception 'PHPExcel_Reader_Exception' with message 'Could not open https://c003p.lebanon-industry.com/industrialcompanies2017-2018.xlsx for reading! File does not exist.' in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php:82
+Stack trace:
+#0 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(268): PHPExcel_Reader_Excel2007->canRead('https://c003p.l...')
+#1 /home/lebanoni/public_html/admin/application/libraries/PHPExcel/IOFactory.php(191): PHPExcel_IOFactory::createReaderForFile('https://c003p.l...')
+#2 /home/lebanoni/public_html/admin/application/controllers/companies.php(3216): PHPExcel_IOFactory::load('https://c003p.l...')
+#3 [internal function]: Companies->dc()
+#4 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(359): call_user_func_array(Array, Array)
+#5 /home/lebanoni/public_html/admin/index.php(201): require_once('/home/lebanoni/...')
+#6 {main}
+  thrown in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 82
+[28-May-2018 16:09:09 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:11:13 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:11:29 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:13:01 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:13:03 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:21:55 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[28-May-2018 16:54:10 UTC] PHP Parse error:  syntax error, unexpected ''s clothes",' (T_CONSTANT_ENCAPSED_STRING) in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 23888
+[28-May-2018 16:54:13 UTC] PHP Parse error:  syntax error, unexpected ''s clothes",' (T_CONSTANT_ENCAPSED_STRING) in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 23888
+[28-May-2018 16:55:38 UTC] PHP Parse error:  syntax error, unexpected ''s clothes",' (T_CONSTANT_ENCAPSED_STRING) in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 23888
+[11-Jun-2018 15:42:37 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[11-Jun-2018 15:46:41 UTC] PHP Fatal error:  Class 'ZipArchive' not found in /home/lebanoni/public_html/admin/application/libraries/PHPExcel/Reader/Excel2007.php on line 94
+[06-Aug-2018 16:41:21 UTC] PHP Fatal error:  Call to undefined method stdClass::ucfirst() in /home/lebanoni/public_html/admin/application/views/tasks/print_list.php on line 31
+[13-Aug-2018 16:39:36 UTC] PHP Fatal error:  Cannot redeclare Task::GetCompanies() in /home/lebanoni/public_html/admin/application/models/task.php on line 2722
+[13-Aug-2018 16:39:39 UTC] PHP Fatal error:  Cannot redeclare Task::GetCompanies() in /home/lebanoni/public_html/admin/application/models/task.php on line 2722
+[13-Aug-2018 16:40:34 UTC] PHP Fatal error:  Cannot redeclare Task::GetCompanies() in /home/lebanoni/public_html/admin/application/models/task.php on line 2722
+[13-Aug-2018 16:40:58 UTC] PHP Fatal error:  Cannot redeclare Task::GetCompanies() in /home/lebanoni/public_html/admin/application/models/task.php on line 2722
+[04-Sep-2018 17:02:29 UTC] PHP Fatal error:  Call to a member function result() on null in /home/lebanoni/public_html/admin/application/models/report.php on line 38
+[12-Sep-2018 18:56:30 UTC] PHP Fatal error:  Call to undefined method Company::GetCompaniesArea() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 1981
+[12-Sep-2018 18:56:39 UTC] PHP Fatal error:  Call to undefined method Company::GetCompaniesArea() in /home/lebanoni/public_html/admin/application/controllers/tasks.php on line 1981
+[19-Sep-2018 17:27:16 UTC] PHP Fatal error:  Call to undefined method Administrator::GetSalesMan() in /home/lebanoni/public_html/admin/application/views/delivery/index.php on line 164
+[27-Sep-2018 17:28:11 UTC] PHP Fatal error:  Call to undefined method Companies::GetSalesMan() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 24638
+[27-Sep-2018 17:28:25 UTC] PHP Fatal error:  Call to undefined method Companies::GetSalesMan() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 24638
+[27-Sep-2018 17:28:37 UTC] PHP Fatal error:  Call to undefined method Companies::GetSalesMan() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 24638
+[27-Sep-2018 17:29:23 UTC] PHP Fatal error:  Call to undefined method Companies::GetSalesMan() in /home/lebanoni/public_html/admin/application/controllers/companies.php on line 24638
+[30-Sep-2018 16:22:47 UTC] PHP Parse error:  syntax error, unexpected '$config' (T_VARIABLE) in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 222
+[30-Sep-2018 18:04:38 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/lebanoni/public_html/admin/application/views/delivery/_items_grid.php on line 160
+[30-Sep-2018 18:05:14 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/lebanoni/public_html/admin/application/views/delivery/_items_grid.php on line 160
+[06-Nov-2018 16:01:17 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 29
+[06-Nov-2018 16:01:22 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 29
+[06-Nov-2018 16:01:35 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 29
+[06-Nov-2018 16:01:46 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 29
+[06-Nov-2018 16:02:02 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 29
+[06-Nov-2018 16:02:04 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 29
+[06-Nov-2018 16:04:59 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 4
+[06-Nov-2018 16:05:01 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 4
+[06-Nov-2018 16:05:04 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 4
+[06-Nov-2018 16:05:09 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 4
+[06-Nov-2018 16:05:15 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 4
+[06-Nov-2018 16:09:52 UTC] PHP Fatal error:  Call to undefined method Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 560
+[06-Nov-2018 16:10:09 UTC] PHP Fatal error:  Call to undefined method Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 560
+[06-Nov-2018 16:11:08 UTC] PHP Fatal error:  Call to undefined method Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 560
+[06-Nov-2018 16:11:38 UTC] PHP Fatal error:  Call to undefined method Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 560
+[06-Nov-2018 16:12:04 UTC] PHP Fatal error:  Call to undefined method Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 560
+[06-Nov-2018 16:12:07 UTC] PHP Fatal error:  Call to undefined method Deliverym::GetDeliveryReports() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 560
+[06-Nov-2018 17:33:37 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetSalesmen() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 398
+[06-Nov-2018 17:33:42 UTC] PHP Fatal error:  Cannot redeclare Deliverym::GetSalesmen() in /home/lebanoni/public_html/admin/application/models/deliverym.php on line 398
+[06-Nov-2018 17:43:01 UTC] PHP Fatal error:  Call to undefined method Deliverym::GGetDeliveryCompanies() in /home/lebanoni/public_html/admin/application/controllers/delivery.php on line 622
+[16-Nov-2018 14:54:47 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:54:50 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:54:53 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:54:55 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:55:28 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1024 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:55:33 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 88 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:56:12 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:56:21 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:56:24 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 80 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[16-Nov-2018 14:57:50 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 84 bytes) in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_result.php on line 167
+[19-Nov-2018 16:11:35 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ')' in /home/lebanoni/public_html/admin/application/controllers/insurances.php on line 1512
+[19-Nov-2018 16:11:41 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ')' in /home/lebanoni/public_html/admin/application/controllers/insurances.php on line 1512
+[19-Nov-2018 16:11:44 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ')' in /home/lebanoni/public_html/admin/application/controllers/insurances.php on line 1512
+[17-Jul-2019 08:31:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/lebanoni/public_html/admin/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/lebanoni/public_html/admin/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/lebanoni/public_html/admin/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/lebanoni/public_html/admin/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/lebanoni/public_html/admin/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/lebanoni/public_html/admin/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/lebanoni/public_html/admin/application/core/MY_Controller.php(6): CI_Controller->__construct()
+#7 /home/lebanoni/public_html/admin/application/controllers/dashboard.php(7): Application->__construct()
+#8 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(308): Dashboard->__construct()
+#9 /home/ in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_driver.php on line 91
+[17-Jul-2019 08:31:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_pconnect() in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_driver.php:91
+Stack trace:
+#0 /home/lebanoni/public_html/admin/system/database/DB_driver.php(115): CI_DB_mysql_driver->db_pconnect()
+#1 /home/lebanoni/public_html/admin/system/database/DB.php(148): CI_DB_driver->initialize()
+#2 /home/lebanoni/public_html/admin/system/core/Loader.php(346): DB(Array, NULL)
+#3 /home/lebanoni/public_html/admin/system/core/Loader.php(1171): CI_Loader->database()
+#4 /home/lebanoni/public_html/admin/system/core/Loader.php(152): CI_Loader->_ci_autoloader()
+#5 /home/lebanoni/public_html/admin/system/core/Controller.php(51): CI_Loader->initialize()
+#6 /home/lebanoni/public_html/admin/application/core/MY_Controller.php(6): CI_Controller->__construct()
+#7 /home/lebanoni/public_html/admin/application/controllers/dashboard.php(7): Application->__construct()
+#8 /home/lebanoni/public_html/admin/system/core/CodeIgniter.php(308): Dashboard->__construct()
+#9 /home/ in /home/lebanoni/public_html/admin/system/database/drivers/mysql/mysql_driver.php on line 91
+[23-Feb-2020 17:21:14 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 420
+[23-Feb-2020 17:21:20 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/lebanoni/public_html/admin/application/views/company/companies.php on line 420

@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'gess';
+    src: url('fonts/gess/GESSTwoMedium.otf');
+    /*src: url('gess/hacen_tunisia.eot?#iefix') format('embedded-opentype'),
+         url('gess/hacen_tunisia.woff') format('woff'),
+         url('gess/hacen_tunisia.ttf') format('truetype'),
+         url('gess/hacen_tunisia.svg#hacen_tunisiaregular') format('svg');*/
+    font-style: normal;
+	font-weight:lighter !important;
+
+}
+
+
+body{
+	margin:0px;
+	padding:0px;
+	font-family:14px;
+}
+.container{
+	width:930px;
+	margin:auto;
+}
+.header{
+	height:200px;
+	width:100%;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+.col-left{
+	padding-top:28px;
+	width:310px;
+	float:left;
+	text-align:center;
+}
+.english-h3{
+	font-size:24px !important;
+	font-family:"Abadi MT Condensed Extra Bold";
+	color:#06C;
+	margin:0px;
+}
+.english-h4{
+	font-size:24px !important;
+	margin:35px 0px 0px 0px;
+}
+.english-h5{
+	font-size:20px !important;
+	margin:0px;
+}
+.logo{
+	width:310px;
+	float:left;
+	text-align:center;
+}
+.logo h4{
+	margin:0px;
+	font-family:'gess';
+	margin-top:10px;
+}
+.logo img{
+	width:100px;
+}
+.col-right{
+	padding-top:20px;
+	width:310px;
+	float:left;
+	text-align:center;
+}
+.arabic-h3{
+	font-size:24px !important;
+	margin:0px;
+	font-family:'gess';
+	color:#06C;
+}
+.arabic-h4{
+	font-size:19px !important;
+	margin:0px;
+	font-family:'gess';
+	margin-top:42px;
+}
+.arabic-h5{
+	font-size:18px !important;
+	margin:0px;
+	font-family:'gess';
+}
+.english{
+	text-align:left;
+	font-size:18px !important;
+	float:left;
+}
+.arabic{
+	text-align:right;
+	font-size:18px !important;
+	float:right;
+	direction:rtl;
+}
+
+.point{
+	border-bottom:dotted #999999 1px;
+	padding-left:5px;
+	padding-right:5px;
+	width:200px;
+	vertical-align:bottom;
+}
+.empty{
+	width:50px;
+}
+.label{
+	vertical-align:bottom;
+	font-weight:bold;
+	margin:5px;
+
+}
+.data-box{
+	margin:5px;
+}
+.col-label{
+	width:440px;
+}
+.clear{
+	clear:both;
+}
+.trhead{
+	border-top:1px solid #039;
+}
+.thead{
+	background:url(../img/theadbg.png) left top repeat #6CF;
+	font-weight:bold;
+	font-size:18px;
+	padding:5px;
+}
+.theadg{
+	background:#CCC;
+	font-weight:bold;
+	font-size:16px;
+}
+.type-list{
+	list-style:none;
+	float:right;
+	margin:5px;
+	padding:0px;
+}
+.type-list li{
+	display:inline-block;
+	margin-left:10px;
+	margin-top:10px;
+}
+.list-en{
+	text-align:center !important;
+	font-size:15px !important;
+	direction:ltr !important;
+}
+.th-logo{
+	height:60px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px #888;
+	box-shadow: 0 0 5px #888;
+	display:inline-block;
+	margin:10px;
+}
+.table1{
+	border-collapse:collapse;
+	width:100%;
+}
+.table1 td,tr{
+	border-collapse:collapse;
+	border:1px solid #000;
+	padding:5px;
+	font-size:17px !important;
+}
+.row{
+	height:30px;
+}
+.sponsor{
+	border:dotted 1px #6CF;
+}
+.box{
+	border:1px dashed #6CF;
+	width:96%;
+	text-align:right;
+	padding:18px;
+}
+.break{
+page-break-before: always;
+	
+	}
+input[type="checkbox"] {
+	color:#000 !important;
+	font-weight:bold;
+}	
+.icon{
+	height:15px;
+	margin-left:5px;
+	margin-right:5px;
+}
+.tablelist{
+	border:1px solid #000;
+	border-collapse:collapse;
+	margin-top:50px !important;
+}
+.tablelist tr,td,th{
+		border:1px solid #000;
+	border-collapse:collapse;
+
+	}
+.table-view{
+	border:1px solid #000;
+	border-collapse:collapse;
+	}
+.table-view tr,td,th{
+	border:1px solid #000;
+	border-collapse:collapse;
+	}	
+.itable{
+	border:none !important;
+}
+.itable td,th{
+}
+.itable tr{
+	border:1px solid #000;
+	border-collapse:collapse;
+}
+@media print {
+tr.thead {
+               background:#6CF;
+	font-weight:bold;
+	font-size:20px;
+	padding:5px;
+                -webkit-print-color-adjust: exact; 
+}}
+@media print {
+.thead td {
+   background:#6CF;
+	font-weight:bold;
+	font-size:20px;
+	padding:5px;
+}}
+.all-thead{
+	margin-top:-40px;
+	
+}
+
+.d-num{
+	
+	text-align:center;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:5px;
+	border:dotted #6CF;
+	width:200px !important;
+	margin:15px auto 5px auto;
+	
+}
+
+.list1{
+	list-style:none;
+	float:right;
+}
+.list1 li{
+	display:inline-block;
+	padding-left:20px;
+	padding-right:10px;
+}
