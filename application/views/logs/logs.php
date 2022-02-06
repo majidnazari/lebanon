@@ -108,9 +108,9 @@
                                 foreach($query as $row) {
                                     $restore = '';
                                     $ctitle = $row->item_title;
-                                    $array_data = json_decode($row->details);
-                                     
-                                    if(count($array_data) > 0) {
+                                    $array_data = json_decode($row->details); 
+                                                                    
+                                    if(count((array)$array_data) > 0) {
                                         if($row->type == 'company' or $row->type == 'bank' or $row->type == 'insurance' or $row->type == 'importer' or $row->type == 'transportation') {
                                             if($row->action == 'delete' or $row->action == 'add') {
                                                 $data = anchor('logs/'.$row->type.'-details/'.$row->id, 'View Data', array('target' => '_blank'));

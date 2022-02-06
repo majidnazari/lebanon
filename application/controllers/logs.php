@@ -13,8 +13,7 @@ class Logs extends Application
 	
 	
 	public function __construct()
-	{
-
+	{		
 		parent::__construct();
 		$this->ag_auth->restrict('logs'); // restrict this controller to admins only
 		$this->load->model(array('Administrator','Log','Address','Company','Bank','Insurance','Importer','Transport','Parameter','Item'));
@@ -107,7 +106,7 @@ class Logs extends Application
 				break;
 				case 'bank':
 				$data=$array;
-				break;
+				break;				
 				case 'insurance':
 					$data=$array;
 					break;
@@ -1040,6 +1039,7 @@ private function RestoreChapters($id)
 
 public function company_details($id)
 	{
+		var_dump("this is run");
 		$this->data['logs']=$row=$this->Log->GetLogById($id);
 		$query=json_decode($row['details'],TRUE);
 		$_items=array();
