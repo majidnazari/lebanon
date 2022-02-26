@@ -2586,13 +2586,19 @@ tr, td, table, tr{
                 foreach($markets as $item) {
                     if($item->item_type == 'country') {
                         $row1 = $this->Parameter->GetCountryById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                        if(isset($row1['label_ar']) && isset($row1['label_en']))
+                        {
+                            array_push($array_market_ar,$row1['label_ar']);
+                            array_push($array_market_en,$row1['label_en']);
+                        }
                     }
                     elseif($item->item_type == 'region') {
                         $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                        if(isset($row1['label_ar']) && isset($row1['label_en']))
+                        {
+                            array_push($array_market_ar,$row1['label_ar']);
+                            array_push($array_market_en,$row1['label_en']);
+                        }
                     }
 
 
@@ -2834,13 +2840,22 @@ tr, td, table, tr{
                 foreach($markets as $item) {
                     if($item->item_type == 'country') {
                         $row1 = $this->Parameter->GetCountryById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                        if(isset($row1['label_ar']) && isset($row1['label_en']))
+                        {
+                            array_push($array_market_ar,$row1['label_ar']);
+                            array_push($array_market_en,$row1['label_en']);
+                        }
+                        
                     }
                     elseif($item->item_type == 'region') {
                         $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                        if(isset($row1['label_ar']) && isset($row1['label_en']))
+                        {
+                            array_push($array_market_ar,$row1['label_ar']);
+                            array_push($array_market_en,$row1['label_en']);
+                        }
+                        //array_push($array_market_ar,$row1['label_ar']);
+                        //array_push($array_market_en,$row1['label_en']);
                     }
 
 

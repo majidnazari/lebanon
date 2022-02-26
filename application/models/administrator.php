@@ -348,7 +348,7 @@ class Administrator extends CI_Model {
     }
 
     function edit($table, $data, $id) {
-        $this->db->where('id', $id);
+        $this->db->where('id', $id);      
         $this->db->update($table, $data);
         return $id;
     }

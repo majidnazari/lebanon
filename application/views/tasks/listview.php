@@ -25,11 +25,11 @@
             <th>المندوب</th>
             <th>الموزع</th>
             <th>معلن</th>
-            <th>حاجز نسخة</th>
+           <!-- <th>حاجز نسخة</th> -->
              <th>عدد دليل</th>
-             <th>عدد انترنت</th>
-<th style="width: 100px !important">صفحات عربي</th>
-            <th style="width: 100px !important">صفحات إنجليزي</th>
+            <!-- <th>عدد انترنت</th> -->
+           <!-- <th style="width: 100px !important">صفحات عربي</th> -->
+           <!-- <th style="width: 100px !important">صفحات إنجليزي</th> -->
              <th style="width: 100px !important">إسم المستلم</th>
              <th style="width: 75px !important">التاريخ</th>
             <th style="width: 150px !important">ملاحظات</th>
@@ -71,11 +71,11 @@
                     <td><?=$row->sales_man_ar?></td>
                     <td><?=$row->csales_man_ar?></td>
                     <td align="center"><?=$is_adv?></td>
-                    <td align="center"><?=$copy_res?></td>
+                   <!-- <td align="center"><?=$copy_res?></td> -->
                     <td align="center"><?=(($row->CNbr*2)+1)?></td>
-                    <td align="center"><?=(($row->CNbr*2)+4)?></td>
-                    <td><?=$row->guide_pages_ar?></td>
-                    <td><?=$row->guide_pages_en?></td>
+                  <!--  <td align="center"><?=(($row->CNbr*2)+4)?></td> -->
+                  <!--  <td><?=$row->guide_pages_ar?></td> -->
+                  <!--  <td><?=$row->guide_pages_en?></td> -->
                     <td><?=$row->receiver_name?></td>
                     <td><?=$row->delivery_date?></td>
                     <td><?=$row->personal_notes?></td>

@@ -1448,8 +1448,10 @@ public function branches($id) {
         }
     }
     public function details($id)
-    {
-        $query = $this->Company->GetCompanyById($id);
+    {   
+         
+         $query = $this->Company->GetCompanyById($id);
+        
         $this->data['query'] = $query;
 
         $this->data['msg'] = $this->session->userdata('admin_message');
@@ -1538,7 +1540,7 @@ public function branches($id) {
         $this->data['industrial_group'] = $this->Company->GetIndustrialGroupById($query['igr_code']);
         $this->data['economical_assembly'] = $this->Company->GetEconomicalAssemblyById($query['eas_code']);
 
-        $this->data['salesman'] = $this->General->GetSalesManById($query['sales_man_id']);
+        $this->data['salesman'] = $this->General->GetSalesManById($query['sales_man_ids']);
         $this->data['position'] = $this->Item->GetPositionById($query['position_id']);
 
         $this->data['license'] = $this->Company->GetLicenseSourceById($query['license_source_id']);
@@ -2359,7 +2361,7 @@ public function branches($id) {
                     'iro_code' => $this->input->post('iro_code'),
                     'igr_code' => $this->input->post('igr_code'),
                     'leb_ind_group' => $this->input->post('leb_ind_group'),
-                    'sales_man_id' => $this->input->post('sales_man_id'),
+                    'sales_man_id' => $this->input->post('sales_man_ids'),
                     'auth_no' => $this->input->post('auth_no'),
                     'owner_name' => $this->input->post('owner_name'),
                     'eas_code' => $this->input->post('eas_code'),
@@ -2425,8 +2427,8 @@ public function branches($id) {
                 if ($id = $this->General->save($this->company, $data)) {
                     $history = array('action' => 'add', 'logs_id' => 0, 'type' => 'company', 'details' => json_encode($data), 'item_id' => $id, 'item_title' => $data['name_ar'], 'create_time' => $this->datetime, 'user_id' => $this->session->userdata('id'));
                     $this->General->save('logs', $history);
-                    if($add_task==1 and $this->input->post('sales_man_id')!=0)
-                        $this->task_add($id,$this->input->post('sales_man_id'),$task_status);
+                    if($add_task==1 and $this->input->post('sales_man_ids')!=0)
+                        $this->task_add($id,$this->input->post('sales_man_ids'),$task_status);
                     $this->session->set_userdata(array('admin_message' => 'Company Added successfully'));
                     redirect('companies/details/' . $id);
                 } else {
@@ -2479,7 +2481,7 @@ public function branches($id) {
             $this->data['rep_person_en'] = '';
             $this->data['app_fill_date'] = '';
             $this->data['position_id'] = 0;
-            $this->data['sales_man_id'] = 0;
+            $this->data['sales_man_ids'] = 0;
             $this->data['is_exporter'] = '';
             $this->data['show_online'] = 1;
             $this->data['is_adv'] = 0;
@@ -2590,12 +2592,13 @@ public function branches($id) {
         // redirect('companies');
     }
     public function edit($id)
-    {
+    {    
         if ($this->p_edit) {
 
             $this->data['nave'] = TRUE;
 
             $query = $this->Company->GetCompanyById($id);
+           
             $this->data['query'] = $query;
             $this->breadcrumb->clear();
             $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
@@ -2615,7 +2618,7 @@ public function branches($id) {
                 } else {
                     $path = $this->input->post('adv_pic');
                 }
-
+                   
                 $data = array(
                     'ref' => $this->input->post('ref'),
                     'name_ar' => $this->input->post('name_ar'),
@@ -2650,7 +2653,7 @@ public function branches($id) {
                     'iro_code' => $this->input->post('iro_code'),
                     'igr_code' => $this->input->post('igr_code'),
                     'leb_ind_group' => $this->input->post('leb_ind_group'),
-                    'sales_man_id' => $this->input->post('sales_man_id'),
+                    'sales_man_id' => $this->input->post('sales_man_ids'),
                     'auth_no' => $this->input->post('auth_no'),
                     'owner_name' => $this->input->post('owner_name'),
                     'eas_code' => $this->input->post('eas_code'),
@@ -2715,6 +2718,8 @@ public function branches($id) {
                     'update_time' => $this->datetime,
                     'user_id' => $this->session->userdata('id'),
                 );
+               
+
                 $delivery=($this->input->post('delivery_by') != '') ? 1 : 0;
 
                 $query = $this->Company->GetCompanyById($id);
@@ -2727,7 +2732,7 @@ public function branches($id) {
                     {
                        $this->Administrator->update('tbl_tasks',array('sales_man_id'=>$this->input->post('delivery_by'),'delivery_date'=>$this->input->post('delivery_date'),'status'=>'done','comments'=>'Delivered','update_time' => $this->datetime),array('company_id'=>$id,'category'=>'delivery'));  
                     }
-                   // $this->Administrator->update('tbl_tasks',array('governorate_id'=>$this->input->post('governorate_id'),'district_id'=>$this->input->post('district_id'),'area_id'=>$this->input->post('area_id'),'sales_man_id'=>$this->input->post('sales_man_id'),'comments'=>'Updated area and transfer task','update_time' => $this->datetime),array('company_id'=>$id));
+                   // $this->Administrator->update('tbl_tasks',array('governorate_id'=>$this->input->post('governorate_id'),'district_id'=>$this->input->post('district_id'),'area_id'=>$this->input->post('area_id'),'sales_man_ids'=>$this->input->post('sales_man_ids'),'comments'=>'Updated area and transfer task','update_time' => $this->datetime),array('company_id'=>$id));
                     if($this->input->post('task_status')==1 )
                     {
                         $this->update_task_status($id);
@@ -2736,7 +2741,7 @@ public function branches($id) {
 
                     // if($this->input->post('task_status')==1)
                     // {
-                    //    $this->UpdateActivityTask($id,$this->input->post('sales_man_id'),date('Y'));
+                    //    $this->UpdateActivityTask($id,$this->input->post('sales_man_ids'),date('Y'));
                     // }
 
 
@@ -2798,7 +2803,7 @@ public function branches($id) {
             $this->data['rep_person_en'] = $query['rep_person_en'];
             $this->data['app_fill_date'] = $query['app_fill_date'];
             $this->data['position_id'] = $query['position_id'];
-            $this->data['sales_man_id'] = $query['sales_man_id'];
+            $this->data['sales_man_ids'] = $query['sales_man_id'];
             $this->data['is_exporter'] = $query['is_exporter'];
             $this->data['show_online'] = $query['show_online'];
             $this->data['is_adv'] = $query['is_adv'];

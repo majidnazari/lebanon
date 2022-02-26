@@ -32,7 +32,7 @@ class Company extends CI_Model {
     }
     function saveDocument($data)
     {
-        
+           
 			$this->save('documents',$data);
     }
     function edit($table,$data,$where)
@@ -1261,10 +1261,12 @@ function GetFMinistryCompanies($name,$phone,$id) {
         $this->db->select('tbl_company.*');
         $this->db->select('tbl_company_type.label_en as type_en');
         $this->db->select('tbl_company_type.label_ar as type_ar');
+        //$this->db->select('tbl_sales_man.id as sales_man_id2');
         $this->db->from('tbl_company');
         $this->db->join('tbl_company_type', 'tbl_company_type.id = tbl_company.company_type_id', 'left');
+       // $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_company.sales_man_id', 'left');
         $this->db->where('tbl_company.id', $id);
-        $query = $this->db->get();
+        $query = $this->db->get();      
         return $query->row_array();
     }
 

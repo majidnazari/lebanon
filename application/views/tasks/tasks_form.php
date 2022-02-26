@@ -25,7 +25,7 @@
                 $("#area_id").prop("disabled", true);
             }
             else if (this.value == 'area') {
-
+                
                 $("#geo-area").show();
                 $("#company-area").hide();
                 $("#all-area").hide();
@@ -55,7 +55,7 @@
                 $("#all-area").html(result);
             }
         });
-    }
+    }    
     function getdistricts(gov_id) {
         $("#district").html("loading ... ");
         $.ajax({
@@ -69,12 +69,16 @@
         });
     }
     function getarea(district_id) {
+       // sale_man_id=$("#sales_man_id").val();
+               // alert("id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val());
         $("#area").html("loading ... ");
         $.ajax({
             url: "<?php echo base_url();?>tasks/GetArea",
             type: "post",
-            data: "id=" + district_id+"&sales_man="+$("#sales_man").val()+"&data_type="+$("#data_types").val(),
+            data: "id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val(),
+
             success: function (result) {
+               // console.log("the result is:" + result);
                 $("#area").html(result);
             }
         });
@@ -94,7 +98,7 @@
     $(document).ready(function () {
 
         $("#company_id").select2({
-            <?php if(count(@$company_array)>0){ ?>
+            <?php if(isset($company_array) && count($company_array)>0){ ?>
             initSelection: function(element, callback) {
                 callback({id: <?=$company_array['id']?>, text: "<?=$company_array['name_ar']?>" });
             },
@@ -134,7 +138,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
 ?>
 <div class="content">
     <?=$this->load->view("includes/_bread")?>
-    <div class="workplace">
+    <div class="workplace"> 
         <div class="page-header">
             <h1><?=$subtitle?></h1>
         </div>
@@ -155,8 +159,8 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                             $array_sales_men[$salesman->id]=$salesman->fullname;
                         }
                         ?>
-                        <div class="span3">Sales Man</div>
-                        <div class="span7"><?php echo form_dropdown('sales_man_id',$array_sales_men,@$query['sales_man_id'],' class="select2" id="sales_man" style="width:100% !important" onchange="getLastList(this.value)"'); ?></div>
+                        <div class="span3">Sales Man </div>
+                        <div class="span7"><?php echo form_dropdown('sales_man_id',$array_sales_men,@$query['sales_man_id'],' class="select2" id="sales_man_id" style="width:100% !important" onchange="getLastList(this.value)"'); ?></div>
                         <div class="span2 required"><?=form_error('sales_man_id'); ?></div>
                     </div>
                     <div class="row-form clearfix">
@@ -221,7 +225,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                         <div class="span2 required"><?=form_error('district_id'); ?></div>
                     </div>
                     <div class="row-form clearfix">
-                        <div class="span3">Area</div>
+                        <div class="span3">Area </div>                        
                         <div class="span7">
                             <div id="area">
                                 <?php
@@ -232,7 +236,10 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                         $area_array[$area->id] = $area->label_ar . ' ( ' . $area->label_en . ' )';
                                     }
                                 }
-                                echo form_dropdown('area_id', $area_array, @$query['area_id'], ' id="area_id" class="select2"  required="required"'); ?></div>
+                                echo form_dropdown('area_id', $area_array, @$query['area_id'], ' id="area_id" class="select2"  required="required"');
+                               // echo form_dropdown('area_id', $area_array, [52], ' id="area_id" class="select2"  required="required"');
+                           
+                                ?></div>
                         </div>
                         <div class="span2 required"><?=form_error('area_id'); ?></div>
                     </div>

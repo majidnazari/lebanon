@@ -277,7 +277,7 @@ class Tasks extends Application {
                             <tr>
                                <th>Company ID</th>
                                 <th style="text-align:center"  width="10%">Company</th>
-                                <th style="text-align:center"  width="15%">Sales Man</th>
+                                <th style="text-align:center"  width="15%">Sales Man </th>
                                 <th style="text-align:center"  width="5%">List</th>
                                 <th style="text-align:center" width="10%">Mohafaza </th>
                                 <th style="text-align:center" width="10%">Kazaa</th>
@@ -748,7 +748,8 @@ tr, td, table, tr{
         } else {
             $area_id = 0;
         }
-        $areas = $this->Task->GetAreaByDistrictID('online', $dist_id,$this->input->post('sales_man'),$this->input->post('data_type'));
+        $areas = $this->Task->GetAreaByDistrictID('online', $dist_id,$this->input->post('sales_man_id'),$this->input->post('data_type'));
+       
         $total=0;
         if (count($areas) > 0) {
             
@@ -1926,18 +1927,25 @@ public function GetCountCompanies()
     echo count($companies);
 
 }
-    public function create() {
+    public function create() {  
+          
       //  if($this->p_add) {
             $this->breadcrumb->clear();
             $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
             $this->breadcrumb->add_crumb('Tasks', 'tasks');
-            $this->breadcrumb->add_crumb('Add New Task');
-
+            $this->breadcrumb->add_crumb('Add New Task');           
             $this->form_validation->set_rules($this->TasksConfig);
-
-            if($this->form_validation->run()) {
+           
+            if($this->form_validation->run()) { 
                 $i=0;
                 $data_types=$this->input->post('data_types');
+                //$delivery_date= $this->input->post('delivery_date') ? $this->input->post('delivery_date') : "0000-00-00 00:00:00";
+               
+                $area_id=$this->input->post('area_id') > 0  ?$this->input->post('area_id') : 0 ; 
+               
+                $cost=$this->input->post('cost') > 0  ? $this->input->post('cost') : 0 ; 
+
+
                 if($this->input->post('type')=='company'){
                     $companies=$this->input->post('company_ids');
                   
@@ -1952,13 +1960,15 @@ public function GetCountCompanies()
                             'governorate_id' => $company['governorate_id'],
                             'district_id' => $company['district_id'],
                             'area_id' => $company['area_id'],
-                            'sales_man_id' => $this->input->post('sales_man_id'),
+                            'sales_man_id' => $this->input->post('sales_man_ids'),
                             'year' => $this->input->post('year'),
                             'start_date' => $this->input->post('start_date'),
                             'due_date' => $this->input->post('due_date'),
                             'comments' => $this->input->post('comments'),
                             'status' => $this->input->post('status'),
+                           // 'delivery_date'=> $delivery_date,
                             'payment_status' => $this->input->post('payment_status'),
+                            'cost' => $cost,
                             'category' => $this->input->post('category'),
                             'create_time' => $this->datetime,
                             'update_time' => $this->datetime,
@@ -1982,8 +1992,7 @@ public function GetCountCompanies()
 
                     if(count($companies)>0)
                     {
-
-
+                      
                         foreach($companies as $company)
                         {
                             $data_task=array(
@@ -1992,17 +2001,19 @@ public function GetCountCompanies()
                                 'company_id'=>$company->id,
                                 'governorate_id'=>$this->input->post('governorate_id'),
                                 'district_id'=>$this->input->post('district_id'),
-                                'area_id'=>$this->input->post('area_id'),
+                                'area_id'=> $area_id,
                                 'sales_man_id'=>$this->input->post('sales_man_id'),
                                 'year'=>$this->input->post('year'),
                                 'start_date'=>$this->input->post('start_date'),
                                 'due_date'=>$this->input->post('due_date'),
                                 'comments'=>$this->input->post('comments'),
                                 'status'=>$this->input->post('status'),
+                               // 'delivery_date'=> $delivery_date,
                                 'payment_status'=>$this->input->post('payment_status'),
+                                'cost' => $cost,
                                 'category' => $this->input->post('category'),
-                                'is_adv' => $is_adv,
-                                'copy_res' => $copy_res,
+                                'is_adv' => isset($is_adv) ? $is_adv : 0,
+                                'copy_res' => isset($copy_res) ? $copy_res : 0 ,
                                 'create_time'=>$this->datetime,
                                 'update_time' => $this->datetime,
                                 'user_id' => $this->session->userdata('id'),
@@ -2018,11 +2029,10 @@ public function GetCountCompanies()
                 }
                 elseif($this->input->post('type')=='all'){
                      $companies = $this->Task->GetTaskCompanies('', '', '', '', 'all', '', '', '', 0, 0, $data_types,'');
-
+                   
                     if(count($companies)>0)
                     {
-
-
+                        
                         foreach($companies as $company)
                         {
                             $data_task=array(
@@ -2031,17 +2041,19 @@ public function GetCountCompanies()
                                 'company_id'=>$company->id,
                                 'governorate_id'=>$this->input->post('governorate_id'),
                                 'district_id'=>$this->input->post('district_id'),
-                                'area_id'=>$this->input->post('area_id'),
+                                'area_id'=>  $area_id,//$this->input->post('area_id'),
                                 'sales_man_id'=>$this->input->post('sales_man_id'),
                                 'year'=>$this->input->post('year'),
                                 'start_date'=>$this->input->post('start_date'),
                                 'due_date'=>$this->input->post('due_date'),
                                 'comments'=>$this->input->post('comments'),
                                 'status'=>$this->input->post('status'),
+                                //'delivery_date'=> $delivery_date,
                                 'payment_status'=>$this->input->post('payment_status'),
+                                'cost' => $cost,
                                 'category' => $this->input->post('category'),
-                                'is_adv' => $is_adv,
-                                'copy_res' => $copy_res,
+                                'is_adv' => isset($is_adv) ? $is_adv : 0,
+                                'copy_res' => isset($copy_res) ? $copy_res : 0 ,
                                 'create_time'=>$this->datetime,
                                 'update_time' => $this->datetime,
                                 'user_id' => $this->session->userdata('id'),
@@ -2054,7 +2066,7 @@ public function GetCountCompanies()
                         }
                     }   
                 }
-                if ($i>0) {
+                if ($i>0) { 
                     $this->session->set_userdata(array('done_message' => $i.' task(s) Added Successfully'));
 
                 } else {
@@ -2064,7 +2076,7 @@ public function GetCountCompanies()
 
 
             }
-
+            
             $this->data['governorates'] = $this->Address->GetGovernorate('online', 0, 0);
             $this->data['districts'] = array();
             $this->data['areas'] = array();
@@ -2124,7 +2136,7 @@ public function GetCountCompanies()
     }
     public function updatepage()
     {
-        echo 'test';
+       
        $company=$this->Task->GetCompaniesD(0,0);
      
        

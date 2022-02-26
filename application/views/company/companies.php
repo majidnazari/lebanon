@@ -137,7 +137,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                     <div class="isw-zoom"></div>
                     <h1>Search</h1>
                 </div>
-                <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation','method'=>'get'));
+                <?php  echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation','method'=>'get'));
 					  
 					   ?>
 
@@ -374,7 +374,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 
 
                             if(count($task)>0){
-                                        echo $task['list_id'].' / '.$task['sales_man_ar'];
+                                       echo $task['list_id'].' / '.$task['sales_man_ar'];
                                     }
 
                                     ?></td>

@@ -142,7 +142,7 @@ class CI_Form_validation {
 			'rules'				=> $rules,
 			'is_array'			=> $is_array,
 			'keys'				=> $indexes,
-			'postdata'			=> NULL,
+			'postdata'			=> isset($_POST[$field]) ? $_POST[$field] : null,//NULL,
 			'error'				=> ''
 		);
 
@@ -279,10 +279,11 @@ class CI_Form_validation {
 	 * @return	bool
 	 */
 	public function run($group = '')
-	{
-		// Do we even have any data to process?  Mm?
+	{ 
+		//return false;
+		// Do we even have any data to process?  Mm?		
 		if (count($_POST) == 0)
-		{
+		{			
 			return FALSE;
 		}
 
@@ -290,6 +291,7 @@ class CI_Form_validation {
 		// If not, we look to see if they were assigned via a config file
 		if (count($this->_field_data) == 0)
 		{
+		
 			// No validation rules?  We're done...
 			if (count($this->_config_rules) == 0)
 			{
@@ -339,8 +341,7 @@ class CI_Form_validation {
 			}
 
 			$this->_execute($row, explode('|', $row['rules']), $this->_field_data[$field]['postdata']);
-		}
-
+		}		
 		// Did we end up with any errors?
 		$total_errors = count($this->_error_array);
 
@@ -356,8 +357,7 @@ class CI_Form_validation {
 		if ($total_errors == 0)
 		{
 			return TRUE;
-		}
-
+		}		
 		// Validation fails
 		return FALSE;
 	}

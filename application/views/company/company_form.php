@@ -134,7 +134,17 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
 ?>
 <div class="content">
     <?= $this->load->view("includes/_bread") ?>
-    <?php echo form_open_multipart($this->uri->uri_string(), array('id' => 'validation'));
+    <?php 
+    // var_dump($this->uri->uri_string()); 
+    // var_dump("<br>");
+  
+    // var_dump(array('id' => 'validation'));
+
+    // var_dump("<br>");
+
+    // var_dump('c_id', $c_id); 
+    // die();
+    echo form_open_multipart($this->uri->uri_string(), array('id' => 'validation'));
     echo form_hidden('c_id', $c_id);
     // echo form_hidden('adv_pic',$adv_pic);
     ?>
@@ -145,7 +155,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                 <input type="submit" name="save" value="Save" class="btn btn-large" style="float:right !important">
                 &nbsp;
                 <?php
-                if ($nave) {
+                if ($nave) {                   
                     echo anchor('companies/details/' . $id, 'Cancel', array('class' => 'btn btn-large', 'style' => 'float:right !important; margin-right:10px'));
                 } else {
                     echo anchor('companies', 'Cancel', array('class' => 'btn btn-large', 'style' => 'float:right !important; margin-right:10px'));
@@ -161,6 +171,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                 $span = 'span12';
             } ?>
             <div class="<?= $span ?>">
+           
                 <div class="span6">
                     <div class="head clearfix">
                         <div class="isw-documents"></div>
@@ -398,8 +409,9 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                         $sales_array[$item->id] = $item->fullname;
                                     }
                                 }
-                                echo form_dropdown('sales_man_id', $sales_array, $sales_man_id, 'style="direction:rtl"'); ?>
-                                <font color="#FF0000"><?php echo form_error('sales_man_id'); ?></font></div>
+                                echo form_dropdown('sales_man_ids', $sales_array, $sales_man_ids, 'style="direction:rtl"'); ?>                              
+                                <font color="#FF0000"><?php echo form_error('sales_man_ids'); ?></font>
+                            </div>
                             <div class="span4" style="text-align:right">: المندوب</div>
                         </div>
                         <?php /*

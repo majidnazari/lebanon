@@ -22,7 +22,10 @@ class Task extends CI_Model
 		     elseif($data_type=='adv_or_copy')
 		    {
 		         $this->db->select('COUNT(CASE WHEN (tbl_company.sales_man_id= "'.$salesman.'" AND (tbl_company.is_adv=1 OR tbl_company.copy_res=1)) THEN tbl_company.id END) as CompanyNbr',FALSE);
-		    } */
+		    } 
+*/
+            ///////////////////////// above was comented //////////////////////////////////
+
 		    if($data_type=='is_adv')
 		    {
 		      $this->db->select('COUNT(CASE WHEN (tbl_company.is_adv=1) THEN tbl_company.id END) as CompanyNbr',FALSE);
@@ -50,6 +53,8 @@ class Task extends CI_Model
         $this->db->from('tbl_area');
          $this->db->join('tbl_company', 'tbl_company.area_id = tbl_area.id', 'left');
          $this->db->where('tbl_company.is_closed', 0);
+         $this->db->where('tbl_company.sales_man_id', $salesman);
+        
          $this->db->where('tbl_company.error_address', 0);
         if($status!='')
             $this->db->where('tbl_area.status',$status);
@@ -57,12 +62,14 @@ class Task extends CI_Model
             $this->db->where('tbl_area.district_id',$did);
             
         $this->db->group_by('tbl_area.id');
-        $this->db->order_by('CompanyNbr', 'DESC');
+       $que= $this->db->order_by('CompanyNbr', 'DESC');
         if($lang=='en')
             $this->db->order_by('tbl_area.label_en', 'ASC');
         else
             $this->db->order_by('tbl_area.label_ar', 'ASC');
-        $query = $this->db->get();
+           
+        $query = $this->db->get();   
+      
         return $query->result();
     }
         function GetCompaniesArea($gov='',$district='',$area_id='',$salesman)
@@ -80,7 +87,7 @@ class Task extends CI_Model
             $this->db->where('tbl_company.district_id',$district);
             if($area_id!='' and $area_id!=0)
             $this->db->where('tbl_company.area_id',$area_id);
-            $this->db->order_by('tbl_company.name_ar', 'ASC');
+            $this->db->order_by('tbl_company.name_ar', 'ASC');           
         $query = $this->db->get();
         return $query->result();
     }

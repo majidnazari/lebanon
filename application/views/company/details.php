@@ -28,8 +28,7 @@
     <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation'));
           
 		   ?>
-    <div class="workplace">
-			             
+    <div class="workplace">			            
              
                 <div class="page-header">
                     <h1><?=$query['name_en'].'/&nbsp;'.$query['name_ar']?></h1>

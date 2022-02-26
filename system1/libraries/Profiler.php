@@ -526,8 +526,8 @@ class CI_Profiler {
 	 *
 	 * @return	string
 	 */
-	public function run()
-	{
+	public function run() 
+	{	
 		$output = "<div id='codeigniter_profiler' style='clear:both;background-color:#fff;padding:10px;'>";
 		$fields_displayed = 0;
 

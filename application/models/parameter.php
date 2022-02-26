@@ -1,6 +1,5 @@
 <?php
-	class Parameter extends CI_Model{
-		
+	class Parameter extends CI_Model{		
 
 	function GetPositions()
 	{
@@ -39,6 +38,7 @@
 	}
 	function GetCountryById($id)
 	{
+		//die("this is runs get method id is : $id");
 		$this->db->select('tbl_countries.*');
 		$this->db->from('tbl_countries');
 		$this->db->where('tbl_countries.id',$id);

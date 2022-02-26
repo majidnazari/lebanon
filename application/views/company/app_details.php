@@ -19,7 +19,7 @@ textarea{
 </style>
 <div class="content">
    <?=$this->load->view("includes/_bread")?>  
-    <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation'));
+    <?php  echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation'));
           echo form_hidden('_id',$_id);
 		 // echo form_hidden('adv_pic',$adv_pic);
 		   ?>             

@@ -307,6 +307,7 @@ if ( ! function_exists('form_dropdown'))
 {
 	function form_dropdown($name = '', $options = array(), $selected = array(), $extra = '')
 	{
+		//var_dump($_POST);
 		if ( ! is_array($selected))
 		{
 			$selected = array($selected);

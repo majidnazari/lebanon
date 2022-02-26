@@ -84,7 +84,7 @@ class CI_Unit_test {
 	 * @return	string
 	 */
 	function run($test, $expected = TRUE, $test_name = 'undefined', $notes = '')
-	{
+	{ 
 		if ($this->active == FALSE)
 		{
 			return FALSE;
