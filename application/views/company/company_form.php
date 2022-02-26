@@ -135,7 +135,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
 <div class="content">
     <?= $this->load->view("includes/_bread") ?>
     <?php 
-    // var_dump($this->uri->uri_string()); 
+     //var_dump($this->uri->uri_string()); 
     // var_dump("<br>");
   
     // var_dump(array('id' => 'validation'));
@@ -442,6 +442,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                 <?= form_input($array_adv_pic) ?>
                                 <!--<input type="file" name="userfile" />-->
                             </div>
+                            
                             <div class="span5" style="text-align:right">مندوب الإعلان 
                                 <?php
                                 $sales_array = array(0 => 'اختر');
@@ -454,8 +455,23 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                 echo '<br>'.form_dropdown('adv_salesman_id', $sales_array, @$query['adv_salesman_id'], 'style="direction:rtl"'); ?>
                                 
 
-                        </div>
-                        </div>
+                            </div>
+                           
+                            <div class="span7" style="text-align:right">
+                                Start Date </br>                           
+                                    <?php echo form_input(['name'=>'start_date_adv','class'=>'datep','id'=>'startDateAdv','value'=>@$row_s->start_date_adv]); ?>
+                                        <font color="#FF0000"><?php echo form_error('start_date_adv'); ?></font>
+                                End Date </br>
+                                    <?php echo form_input(['name'=>'end_date_adv','class'=>'datep','id'=>'endDateAdv','value'=>@$row_s->end_date_adv]); ?>
+                                        <font color="#FF0000"><?php echo form_error('end_date_adv'); ?></font>
+                                
+                                Status </br> 
+                                            <?php $array_status=array('active'=>'Active','inactive'=>'Inactive');
+                                            echo form_dropdown('client_status_adv',$array_status,@$row_s->status_adv,' id="ClientStatusAdv"');
+                                            ?>                                        
+                            </div>   
+                           
+                        </div>                        
                         <div class="row-form clearfix">
                             <div class="span3"><?php
                                 if ($copy_res == 1) {

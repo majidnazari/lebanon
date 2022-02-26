@@ -2289,7 +2289,7 @@ public function branches($id) {
         }
     public function create()
     {
-
+       
         if ($this->p_add) {
             $this->data['nave'] = FALSE;
             $this->breadcrumb->clear();
@@ -2387,6 +2387,11 @@ public function branches($id) {
                     'exp_dest_en' => $this->input->post('exp_dest_en'),
                     'personal_notes' => $this->input->post('personal_notes'),
                     'adv_pic' => $this->input->post('adv_pic'),
+
+                    'start_date_adv' =>valid_date( $this->input->post('start_date_adv')),
+                    'end_date_adv' => valid_date($this->input->post('end_date_adv')),
+                    'status_adv' => $this->input->post('status_adv'),
+
                     'ind_association' => $this->input->post('ind_association'),
                     'license_source_id' => $this->input->post('license_source_id'),
 
@@ -2486,6 +2491,11 @@ public function branches($id) {
             $this->data['show_online'] = 1;
             $this->data['is_adv'] = 0;
             $this->data['adv_pic'] = '';
+
+            $this->data['start_date_adv'] = '';
+            $this->data['end_date_adv'] = '';
+            $this->data['status_adv'] = 0;
+
             $this->data['copy_res'] = 0;
             $this->data['governorates'] = $this->Address->GetGovernorate('online', 0, 0);
             $this->data['economical_assembly'] = $this->Company->GetEconomicalAssembly('online');
@@ -2592,7 +2602,8 @@ public function branches($id) {
         // redirect('companies');
     }
     public function edit($id)
-    {    
+    { 
+       // var_dump($_REQUEST);  die(); 
         if ($this->p_edit) {
 
             $this->data['nave'] = TRUE;
@@ -2608,7 +2619,7 @@ public function branches($id) {
 
             $this->form_validation->set_rules('name_ar', 'company name in arabic', 'required');
 
-            if ($this->form_validation->run()) {
+            if ($this->form_validation->run()) { 
                 //echo $this->input->post('display_exhibition');
                 //die;
                 $array = $this->Administrator->do_upload('uploads/');
@@ -2679,6 +2690,12 @@ public function branches($id) {
                     'exp_dest_en' => $this->input->post('exp_dest_en'),
                     'personal_notes' => $this->input->post('personal_notes'),
                     'adv_pic' => $this->input->post('adv_pic'),
+
+                    'start_date_adv' =>valid_date( $this->input->post('start_date_adv')),
+                    'end_date_adv' => valid_date($this->input->post('end_date_adv')),
+                    'status_adv' => $this->input->post('status_adv'),
+
+
                     'ind_association' => $this->input->post('ind_association'),
                     'license_source_id' => $this->input->post('license_source_id'),
                     'display_directory' => ($this->input->post('display_directory') != false) ? 1 : 0,
@@ -2723,7 +2740,7 @@ public function branches($id) {
                 $delivery=($this->input->post('delivery_by') != '') ? 1 : 0;
 
                 $query = $this->Company->GetCompanyById($id);
-
+               
                 $newdata = $this->Administrator->affected_fields($query, $data);
                 $history = array('action' => 'edit', 'logs_id' => 0, 'item_id' => $id, 'item_title' => $query['name_ar'], 'type' => 'company', 'details' => json_encode($newdata), 'create_time' => $this->datetime, 'user_id' => $this->session->userdata('id'));
                 $this->General->save('logs', $history);
@@ -2752,6 +2769,7 @@ public function branches($id) {
                     redirect('companies/edit/' . $id);
                 }
             }
+            
             /*             * ********************General Info*********************** */
             $this->data['c_id'] = $id;
             $this->data['id'] = $id;
@@ -2797,7 +2815,7 @@ public function branches($id) {
             $this->data['iro_code'] = $query['iro_code'];
             $this->data['igr_code'] = $query['igr_code'];
             $this->data['eas_code'] = $query['eas_code'];
-
+            
             /*             * ***********************Molhak***************** */
             $this->data['rep_person_ar'] = $query['rep_person_ar'];
             $this->data['rep_person_en'] = $query['rep_person_en'];
@@ -2808,7 +2826,11 @@ public function branches($id) {
             $this->data['show_online'] = $query['show_online'];
             $this->data['is_adv'] = $query['is_adv'];
             $this->data['copy_res'] = $query['copy_res'];
+
             $this->data['adv_pic'] = $query['adv_pic'];
+            $this->data['start_date_adv'] = $query['start_date_adv'];
+            $this->data['end_date_adv'] = $query['end_date_adv'];
+            $this->data['status_adv'] = $query['status_adv'];
 
             $this->data['address2_ar'] = $query['address2_ar'];
             $this->data['address2_en'] = $query['address2_en'];
@@ -2838,6 +2860,8 @@ public function branches($id) {
 
             $this->data['subtitle'] = 'Edit Company';
             $this->data['title'] = $this->data['Ctitle'] . "- Edit New Company";
+
+            
             $this->template->load('_template', 'company/company_form', $this->data);
         } else {
 

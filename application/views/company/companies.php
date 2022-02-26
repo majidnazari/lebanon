@@ -124,7 +124,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 	padding-left:10px !important;
 }
 </style>
-<div class="content">
+<div class="content"> 
 	<?=$this->load->view("includes/_bread")?>
     <div class="workplace">
         <div class="page-header">
