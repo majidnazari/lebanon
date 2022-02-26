@@ -2744,7 +2744,8 @@ public function branches($id) {
                 $newdata = $this->Administrator->affected_fields($query, $data);
                 $history = array('action' => 'edit', 'logs_id' => 0, 'item_id' => $id, 'item_title' => $query['name_ar'], 'type' => 'company', 'details' => json_encode($newdata), 'create_time' => $this->datetime, 'user_id' => $this->session->userdata('id'));
                 $this->General->save('logs', $history);
-                if ($this->Administrator->edit($this->company, $data, $id)) {
+               
+                if ($this->Administrator->edit($this->company, $data, $id)) { 
                     if($delivery==1)
                     {
                        $this->Administrator->update('tbl_tasks',array('sales_man_id'=>$this->input->post('delivery_by'),'delivery_date'=>$this->input->post('delivery_date'),'status'=>'done','comments'=>'Delivered','update_time' => $this->datetime),array('company_id'=>$id,'category'=>'delivery'));  

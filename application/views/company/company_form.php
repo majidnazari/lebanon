@@ -42,6 +42,8 @@ $array_rep_person_ar = array('id' => 'rep_person_ar', 'name' => 'rep_person_ar',
 $array_rep_person_en = array('id' => 'rep_person_en', 'name' => 'rep_person_en', 'value' => $rep_person_en);
 
 $array_app_fill_date = array('id' => 'app_fill_date', 'name' => 'app_fill_date', 'value' => $app_fill_date);
+$start_date_adv = array('id' => 'start_date_adv', 'name' => 'start_date_adv', 'value' => $start_date_adv);
+$end_date_adv = array('id' => 'end_date_adv', 'name' => 'end_date_adv', 'value' => $end_date_adv);
 $array_adv_pic = array('id' => 'adv_pic', 'name' => 'adv_pic', 'value' => $adv_pic);
 
 ?>
@@ -62,6 +64,12 @@ $array_adv_pic = array('id' => 'adv_pic', 'name' => 'adv_pic', 'value' => $adv_p
             dateFormat: "yy-mm-dd"
         });
         $("#end_date").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+        $("#end_date_adv").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+        $("#start_date_adv").datepicker({
             dateFormat: "yy-mm-dd"
         });
         $("#closed_date").datepicker({
@@ -459,10 +467,11 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                            
                             <div class="span7" style="text-align:right">
                                 Start Date </br>                           
-                                    <?php echo form_input(['name'=>'start_date_adv','class'=>'datep','id'=>'startDateAdv','value'=>@$row_s->start_date_adv]); ?>
+                                    <?php echo form_input($start_date_adv); ?>
                                         <font color="#FF0000"><?php echo form_error('start_date_adv'); ?></font>
                                 End Date </br>
-                                    <?php echo form_input(['name'=>'end_date_adv','class'=>'datep','id'=>'endDateAdv','value'=>@$row_s->end_date_adv]); ?>
+                                    <?php echo form_input($end_date_adv); // echo form_input(['name'=>'end_date_adv','class'=>'datep','id'=>'endDateAdv','value'=>@$row_s->end_date_adv]);
+                                     ?>
                                         <font color="#FF0000"><?php echo form_error('end_date_adv'); ?></font>
                                 
                                 Status </br> 

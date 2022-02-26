@@ -350,12 +350,12 @@ class Administrator extends CI_Model {
     function edit($table, $data, $id) {
        
         $this->db->where('id', $id); 
-        var_dump( $this->db->where('id', $id));die();     
+       // var_dump(  $data);die();     
         $this->db->update($table, $data);
         return $id;
     }
     function update($table, $data, $where) {
-        var_dump($data);die();
+        //var_dump($table);die();
         $this->db->where($where);
         $this->db->update($table, $data);
         return $this->db->affected_rows();
