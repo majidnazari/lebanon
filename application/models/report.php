@@ -17,6 +17,7 @@ class Report extends CI_Model {
         $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
          $this->db->select('tbl_company.delivery_by as delivery_by,tbl_company.delivery_date as delivery_date, tbl_company.receiver_name as receiver_name, tbl_company.personal_notes as personal_notes');
          $this->db->select('d.fullname as delivery_by_ar,d.fullname_en as delivery_by_en');
+         $this->db->select('tbl_tasks.*',FALSE);
         $this->db->from('tbl_company');
         $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
         $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');

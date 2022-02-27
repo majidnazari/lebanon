@@ -384,11 +384,10 @@ class Reports extends Application
         exit;
     }
     public function advandcopy()
-    {
+    {       
         
-        
-        $query = $this->Report->GetAdvAndCopyCompanies();
-       
+        $query = $this->Report->GetAdvAndCopyCompanies();        
+       //var_dump( $query[1]); die();
         $filename = "advcopy-".time().".xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
@@ -421,15 +420,22 @@ class Reports extends Application
             <th>هاتف</th>
             <th>المندوب</th>
             <th>معلن</th>
-            <th>حاجز نسخة</th>
-             <th>عدد دليل</th>
+           <!-- <th>حاجز نسخة</th> -->
+           <!--  <th>عدد دليل</th> -->
              <th>عدد انترنت</th>
-<th style="width: 100px !important">صفحات عربي</th>
-            <th style="width: 100px !important">صفحات إنجليزي</th>
+             <th style="width: 75px !important">start_date_adv </th>
+             <th style="width: 75px !important">end_date_adv </th>
+    <!-- <th style="width: 100px !important">صفحات عربي</th> -->
+      <!--      <th style="width: 100px !important">صفحات إنجليزي</th> -->
              <th style="width: 100px !important">إسم المستلم</th>
              <th style="width: 75px !important">التاريخ</th>
              <th style="width: 75px !important">الموزع</th>
             <th style="width: 150px !important">ملاحظات</th>
+
+            <th style="width: 75px !important">start_date </th>
+            <th style="width: 75px !important">end_date </th>
+
+
         </tr>
        
                         </thead>
@@ -469,15 +475,22 @@ class Reports extends Application
                     <td>'.@$phone[0].'</td>
                     <td>'.$row->sales_man_ar.'</td>
                     <td align="center">'.$is_adv.'</td>
-                    <td align="center">'.$copy_res.'</td>
-                    <td align="center">'.(($row->CNbr*2)+1).'</td>
+                  <!--  <td align="center">'.$copy_res.'</td> -->
+                  <!-- <td align="center">'.(($row->CNbr*2)+1).'</td> -->
                     <td align="center">'.(($row->CNbr*2)+4).'</td>
-                    <td>'.$row->guide_pages_ar.'</td>
-                    <td>'.$row->guide_pages_en.'</td>
+                    <td>'.$row->start_date_adv.'</td>
+                    <td>'.$row->end_date_adv.'</td>
+                  <!--   <td>'.$row->guide_pages_ar.'</td> -->
+                  <!--  <td>'.$row->guide_pages_en.'</td> -->
                     <td>'.$row->receiver_name.'</td>
                     <td>'.$row->delivery_date.'</td>
                     <td>'.$row->delivery_by_ar.'</td>
                     <td>'.$row->personal_notes.'</td>
+
+
+                    <td>'.$row->start_date.'</td>
+                    <td>'.$row->due_date.'</td>
+
                 </tr>';
            
 		   $i++;
@@ -495,6 +508,7 @@ class Reports extends Application
         
         
         $companies = $this->Report->GetCompaniesAdvertiser();
+        var_dump($companies); die();
         $banks = $this->Report->GetBanksAdvertiser();
         $insurances = $this->Report->GetInsurancesAdvertiser();
         $importers = $this->Report->GetImportersAdvertiser();
