@@ -27,7 +27,9 @@
             <th>معلن</th>
            <!-- <th>حاجز نسخة</th> -->
            <!--  <th>عدد دليل</th> -->
-             <th>عدد انترنت</th> 
+           <th>عدد انترنت</th>
+           <th style="width: 150px !important">adv start date </th>
+           <th style="width: 150px !important">adv end date </th> 
            <!-- <th style="width: 100px !important">صفحات عربي</th> -->
            <!-- <th style="width: 100px !important">صفحات إنجليزي</th> -->
              <th style="width: 100px !important">إسم المستلم</th>
@@ -76,6 +78,10 @@
                    <td align="center"><?=(($row->CNbr*2)+4)?></td>
                   <!--  <td><?=$row->guide_pages_ar?></td> -->
                   <!--  <td><?=$row->guide_pages_en?></td> -->
+
+                  <th style="width: 150px !important"><?=$row->start_date_adv ?></td>
+                  <th style="width: 150px !important"><?=$row->end_date_adv ?></td>
+
                     <td><?=$row->receiver_name?></td>
                     <td><?=$row->delivery_date?></td>
                     <td><?=$row->personal_notes?></td>
