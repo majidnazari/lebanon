@@ -6,7 +6,7 @@
 <title><?=$title?> </title>
 </head>
 
-<body>
+<body>  <?php  var_dump($query); die(); ?>
 	<div class="container" style="width:1380px !important;">
     	<div class="header" style="width:1380px !important;"><img src="<?=base_url()?>img/company-header.jpg" style="width:920px !important;" />
         </div>
@@ -24,19 +24,23 @@
             <th>هاتف</th>
             <th>المندوب</th>
             <th>الموزع</th>
+            <th>عدد انترنت</th>
             <th>معلن</th>
+            <th style="width: 150px !important">ads start date </th>
+            <th style="width: 150px !important">ads end date </th> 
+
+            <th style="width: 150px !important"> start date </th>
+            <th style="width: 150px !important"> end date </th> 
            <!-- <th>حاجز نسخة</th> -->
-           <!--  <th>عدد دليل</th> -->
-           <th>عدد انترنت</th>
-           <th style="width: 150px !important">adv start date </th>
-           <th style="width: 150px !important">adv end date </th> 
+           <!--  <th>عدد دليل</th> -->          
+          
            <!-- <th style="width: 100px !important">صفحات عربي</th> -->
            <!-- <th style="width: 100px !important">صفحات إنجليزي</th> -->
-             <th style="width: 100px !important">إسم المستلم</th>
+            <!--  <th style="width: 100px !important">إسم المستلم</th> -->
              <th style="width: 75px !important">التاريخ</th>
-            <th style="width: 150px !important">ملاحظات</th>
+             <th style="width: 150px !important">ملاحظات</th>
         </tr>
-        <?php 
+        <?php  var_dump($query); die();
 		$i=1;
 		foreach($query as $row){
 
@@ -72,17 +76,22 @@
                     <td><?=@$phone[0]?></td>
                     <td><?=$row->sales_man_ar?></td>
                     <td><?=$row->csales_man_ar?></td>
+                    <td align="center"><?=(($row->CNbr*2)+4)?></td>
                     <td align="center"><?=$is_adv?></td>
+                    <th style="width: 150px !important"><?=$row->start_date_adv ?></td>
+                    <th style="width: 150px !important"><?=$row->end_date_adv ?></td>
+
+                    <th style="width: 150px !important"><?=$row->start_date ?></td>
+                    <th style="width: 150px !important"><?=$row->due_date ?></td>
                    <!-- <td align="center"><?=$copy_res?></td> -->
                     <!-- <td align="center"><?=(($row->CNbr*2)+1)?></td>   -->
-                   <td align="center"><?=(($row->CNbr*2)+4)?></td>
+                 
                   <!--  <td><?=$row->guide_pages_ar?></td> -->
                   <!--  <td><?=$row->guide_pages_en?></td> -->
 
-                  <th style="width: 150px !important"><?=$row->start_date_adv ?></td>
-                  <th style="width: 150px !important"><?=$row->end_date_adv ?></td>
+                 
 
-                    <td><?=$row->receiver_name?></td>
+                  <!--  <td><?=$row->receiver_name?></td> -->
                     <td><?=$row->delivery_date?></td>
                     <td><?=$row->personal_notes?></td>
         	</tr>

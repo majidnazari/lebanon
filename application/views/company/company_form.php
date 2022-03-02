@@ -475,8 +475,8 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                         <font color="#FF0000"><?php echo form_error('end_date_adv'); ?></font>
                                 
                                 Status </br> 
-                                            <?php $array_status=array('active'=>'Active','inactive'=>'Inactive');
-                                            echo form_dropdown('client_status_adv',$array_status,@$row_s->status_adv,' id="ClientStatusAdv"');
+                                            <?php  $array_status=array('1'=>'Active','0'=>'Inactive');
+                                            echo form_dropdown('status_adv',$array_status,@$status_adv,' id="status_adv"');
                                             ?>                                        
                             </div>   
                            
@@ -971,7 +971,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                         </div>
 
                     </div>
-                </div>
+                </div> 
 
                 <?php $this->load->view('clients',['client_id'=>$c_id,'client_type'=>'company','status_type'=>'show_items','title'=>'Show Items']);?>
             </div>

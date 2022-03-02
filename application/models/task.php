@@ -844,6 +844,7 @@ function GetOldTasks()
         $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
         $this->db->select('tbl_sales_man.fullname as csales_man_ar,tbl_sales_man.fullname_en as csales_man_en');
         $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
+        $this->db->select('clients_status.start_date as show_start_date ,clients_status.end_date as show_end_date');
 
         $this->db->from('tbl_company');
         $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');

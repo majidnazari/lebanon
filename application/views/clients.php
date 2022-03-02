@@ -15,6 +15,7 @@ $row_s=$this->Client->getShowItemsClientStatus($client_id,$client_type);
             var end_date=$("#endDate").val();
             var status=$("#ClientStatus").val();
              var sales_man_id=$("#salesManId").val();
+             
              $.post("<?=base_url()?>ajax/saveItems", {
                  client_id: client_id,
                  client_type:client_type,
@@ -54,7 +55,7 @@ $row_s=$this->Client->getShowItemsClientStatus($client_id,$client_type);
       <div class="row-form clearfix">
         <div class="span3">Sales Man:</div>
     <div class="span6">
-        <?php
+        <?php 
         $salesc_array = array(0 => 'اختر');
         if (count($sales) > 0) {
             foreach ($sales as $item) {

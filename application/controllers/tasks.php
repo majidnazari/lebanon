@@ -533,11 +533,12 @@ class Tasks extends Application {
         $this->data['salesman']=$salesman;
         $this->data['status']=$status;
         $all = $this->Task->GetCompaniesLists('', '', '', '', '', $list_id, $salesman, '', '', '', '', '', $status,'', 0, 0);
+       
         $this->data['query'] =$all['results'];
         $this->data['title'] = $this->data['Ctitle'] . " - Companies - الشركات";
         $this->data['subtitle'] = "Companies - الشركات";
 //$this->load->view('tasks/print_list', $this->data);
-        $this->load->view('tasks/listview', $this->data);
+    $this->load->view('tasks/listview', $this->data);
     }
     public function export_companies() {
         // filename for download
