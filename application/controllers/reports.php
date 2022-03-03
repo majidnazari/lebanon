@@ -19,7 +19,7 @@ class Reports extends Application
     public function companyd()
     {
         $query = $this->Company->GetDuplicateName();
-        var_dump($query);
+        //var_dump($query);
     }
     public function export_schedules_to_excel() {
         $get = $this->uri->uri_to_assoc();
@@ -384,8 +384,7 @@ class Reports extends Application
         exit;
     }
     public function advandcopy()
-    {       
-        
+    {  
         $query = $this->Report->GetAdvAndCopyCompanies();        
        //var_dump( $query[1]); die();
         $filename = "advcopy-".time().".xls";
@@ -486,6 +485,148 @@ class Reports extends Application
                     <td>'.$row->end_date_adv.'</td>
 
                     <td>'.$row->status.'</td>
+                    <td>'.$row->start_date.'</td>
+                    <td>'.$row->due_date.'</td>
+
+
+                  <!--   <td>'.$row->guide_pages_ar.'</td> -->
+                  <!--  <td>'.$row->guide_pages_en.'</td> -->
+                  <!--  <td>'.$row->receiver_name.'</td> -->
+                    <td>'.$row->delivery_date.'</td>
+                    <td>'.$row->delivery_by_ar.'</td>
+                    <td>'.$row->personal_notes.'</td>
+
+
+                   
+
+                </tr>';
+           
+		   $i++;
+		   }  
+           
+        echo '</tbody>';
+
+        echo '</table>';
+
+        //return $filename;
+        exit;
+    }
+
+    public function showitem()
+    {      
+        $query = $this->Report->GetShowItemCompanies();        
+       var_dump( $query[1]); die();
+        $filename = "advcopy-".time().".xls";
+        header("Content-Disposition: attachment; filename=\"$filename\"");
+        header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+        header('Content-type: text/html; charset=UTF-8');
+        echo '<style type="text/css">
+				tr, td, table, tr{
+					border:1px solid #D0D0D0;
+				}
+				.yellow{
+						background:#FF0 !important;
+					}
+					.bold{
+						font-weight:bold !important;
+					}
+				</style>   ';
+
+//$query=$all['results'];
+       //$total_row = $all['num_results'];
+
+        echo '<table cellpadding="0" cellspacing="0" width="100%" class="table">
+                        <thead>
+                            <tr>
+        	<th>رقم</th>
+            <th>Code</th>
+            <th style="width: 150px !important">الشركة</th>
+            <th>المسؤول</th>
+            <th>النشاط</th>
+            <th style="width: 100px !important">المنطقة</th>
+            <th>الشارع</th>
+            <th>هاتف</th>
+            <th>المندوب</th>
+            <th>عدد انترنت</th>
+            <th>معلن</th>
+           <!-- <th>حاجز نسخة</th> -->
+           <!--  <th>عدد دليل</th> -->
+            
+             <th style="width: 100px !important">start_date_ads </th>
+             <th style="width: 100px !important">end_date_ads </th>
+             <th>status</th>
+             <th style="width: 75px !important">start_date </th>
+             <th style="width: 75px !important">end_date </th>
+ 
+    <!-- <th style="width: 100px !important">صفحات عربي</th> -->
+      <!--      <th style="width: 100px !important">صفحات إنجليزي</th> -->
+      <!--      <th style="width: 100px !important">إسم المستلم</th> -->
+             <th style="width: 75px !important">التاريخ</th>
+             <th style="width: 75px !important">الموزع</th>
+            <th style="width: 150px !important">ملاحظات</th>
+
+          
+
+        </tr>
+       
+                        </thead>
+                        <tbody>';
+       	$i=1;
+	
+		foreach($query as $row){
+            
+                $showstatus="";
+                if($row->status=="active")
+                {
+                    $showstatus="yes";
+                }
+                else if($row->status=="inactive")
+                {
+                    $showstatus="no";
+                }
+                else if($row->status=="pending")
+                {
+                    $showstatus="pen";
+                }
+				if($row->is_exporter==1){
+					$exporter='نعم';
+				}
+				else{
+					$exporter='كلا';
+					}
+				if($row->is_adv==1){
+					$is_adv='نعم';
+				}
+				else{
+					$is_adv='كلا';
+					}	
+					if($row->copy_res==1){
+					$copy_res='نعم';
+				}
+				else{
+					$copy_res='كلا';
+					}	
+	$phone=explode('-',$row->phone);
+			
+        	echo '<tr>
+                    <td>'.$i.'</td>
+                    <td>'.$row->id.'</td>
+                    <td>'.$row->company_ar.'</td>
+                    <td>'.$row->owner_name.'</td>
+                    <td>'.$row->activity_ar.'</td>
+                    <td>'.$row->area_ar.'</td>
+                    <td>'.$row->street_ar.'</td>
+                    <td>'.@$phone[0].'</td>
+                    <td>'.$row->sales_man_ar.'</td>
+                    <td align="center">'.(($row->CNbr*2)+4).'</td>
+                    <td align="center">'.$is_adv.'</td>
+                  <!--  <td align="center">'.$copy_res.'</td> -->
+                  <!-- <td align="center">'.(($row->CNbr*2)+1).'</td> -->
+                   
+                    <td>'.$row->start_date_adv.'</td>
+                    <td>'.$row->end_date_adv.'</td>
+
+                    <td>'. $showstatus.'</td>
                     <td>'.$row->start_date.'</td>
                     <td>'.$row->due_date.'</td>
 

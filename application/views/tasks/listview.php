@@ -6,7 +6,7 @@
 <title><?=$title?> </title>
 </head>
 
-<body>  <?php  var_dump($query); die(); ?>
+<body>  <?php // var_dump("dfGDG"); die(); ?>
 	<div class="container" style="width:1380px !important;">
     	<div class="header" style="width:1380px !important;"><img src="<?=base_url()?>img/company-header.jpg" style="width:920px !important;" />
         </div>
@@ -29,8 +29,8 @@
             <th style="width: 150px !important">ads start date </th>
             <th style="width: 150px !important">ads end date </th> 
 
-            <th style="width: 150px !important"> start date </th>
-            <th style="width: 150px !important"> end date </th> 
+            <th style="width: 150px !important"> show Items start date </th>
+            <th style="width: 150px !important"> show Items end date </th> 
            <!-- <th>حاجز نسخة</th> -->
            <!--  <th>عدد دليل</th> -->          
           
@@ -40,7 +40,7 @@
              <th style="width: 75px !important">التاريخ</th>
              <th style="width: 150px !important">ملاحظات</th>
         </tr>
-        <?php  var_dump($query); die();
+        <?php  
 		$i=1;
 		foreach($query as $row){
 
@@ -81,8 +81,8 @@
                     <th style="width: 150px !important"><?=$row->start_date_adv ?></td>
                     <th style="width: 150px !important"><?=$row->end_date_adv ?></td>
 
-                    <th style="width: 150px !important"><?=$row->start_date ?></td>
-                    <th style="width: 150px !important"><?=$row->due_date ?></td>
+                    <th style="width: 150px !important"><?=$row->show_start_date ?></td>
+                    <th style="width: 150px !important"><?=$row->show_end_date ?></td>
                    <!-- <td align="center"><?=$copy_res?></td> -->
                     <!-- <td align="center"><?=(($row->CNbr*2)+1)?></td>   -->
                  

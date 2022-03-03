@@ -838,13 +838,16 @@ function GetOldTasks()
     {
         $this->db->select('SQL_CALC_FOUND_ROWS tbl_company.*', FALSE);
         $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
+
+        $this->db->select('clients_status.start_date as show_start_date , clients_status.end_date as show_end_date');
+
         $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
         $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
         $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
         $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
         $this->db->select('tbl_sales_man.fullname as csales_man_ar,tbl_sales_man.fullname_en as csales_man_en');
         $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
-        $this->db->select('clients_status.start_date as show_start_date ,clients_status.end_date as show_end_date');
+       
 
         $this->db->from('tbl_company');
         $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');
@@ -853,8 +856,13 @@ function GetOldTasks()
         $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
         $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
         $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
-       $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
+        $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
         $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
+
+        $this->db->join('clients_status', 'clients_status.sales_man_id = tbl_company.sales_man_id', 'left');       
+        $this->db->where('clients_status.client_type', "company");
+        $this->db->where('clients_status.status', "active");
+
         if ($governorate_id != '' and $governorate_id != 0) {
             $this->db->where('tbl_tasks.governorate_id', $governorate_id);
         }
@@ -867,7 +875,8 @@ function GetOldTasks()
         if ($ref != '') {
             $this->db->where('tbl_tasks.ref', $ref);
         }
-        if ($company_id != '') {
+        if ($company_id != '') {           
+            $this->db->where('clients_status.client_id', $company_id);
             $this->db->where('tbl_tasks.company_id', $company_id);
         }
         if ($year != '') {
@@ -877,6 +886,7 @@ function GetOldTasks()
             $this->db->where('tbl_tasks.list_id', $list);
         }
         if ($sales_man != '') {
+            $this->db->where('clients_status.sales_man_id', $sales_man);
             $this->db->where('tbl_tasks.sales_man_id', $sales_man);
         }
         if ($from_start_date != '') {

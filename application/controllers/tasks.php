@@ -532,6 +532,7 @@ class Tasks extends Application {
         $this->data['list_id']=$list_id;
         $this->data['salesman']=$salesman;
         $this->data['status']=$status;
+       
         $all = $this->Task->GetCompaniesLists('', '', '', '', '', $list_id, $salesman, '', '', '', '', '', $status,'', 0, 0);
        
         $this->data['query'] =$all['results'];
