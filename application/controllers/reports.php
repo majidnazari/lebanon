@@ -386,7 +386,7 @@ class Reports extends Application
     public function advandcopy()
     {  
         $query = $this->Report->GetAdvAndCopyCompanies();        
-       //var_dump( $query[1]); die();
+       //var_dump( $query); die();
         $filename = "advcopy-".time().".xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
@@ -515,8 +515,8 @@ class Reports extends Application
     public function showitem()
     {      
         $query = $this->Report->GetShowItemCompanies();        
-       var_dump( $query[1]); die();
-        $filename = "advcopy-".time().".xls";
+       //var_dump($query); die();
+        $filename = "showitem_advertisement".time().".xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
         header('Content-type: text/html; charset=UTF-8');
@@ -554,9 +554,9 @@ class Reports extends Application
             
              <th style="width: 100px !important">start_date_ads </th>
              <th style="width: 100px !important">end_date_ads </th>
-             <th>status</th>
-             <th style="width: 75px !important">start_date </th>
-             <th style="width: 75px !important">end_date </th>
+             <th> item status</th>
+             <th style="width: 150px !important"> item start_date </th>
+             <th style="width: 150px !important"> item end_date </th>
  
     <!-- <th style="width: 100px !important">صفحات عربي</th> -->
       <!--      <th style="width: 100px !important">صفحات إنجليزي</th> -->
@@ -576,15 +576,15 @@ class Reports extends Application
 		foreach($query as $row){
             
                 $showstatus="";
-                if($row->status=="active")
+                if($row->show_item_status=="active")
                 {
                     $showstatus="yes";
                 }
-                else if($row->status=="inactive")
+                else if($row->show_item_status=="inactive")
                 {
                     $showstatus="no";
                 }
-                else if($row->status=="pending")
+                else if($row->show_item_status=="pending")
                 {
                     $showstatus="pen";
                 }
@@ -626,9 +626,9 @@ class Reports extends Application
                     <td>'.$row->start_date_adv.'</td>
                     <td>'.$row->end_date_adv.'</td>
 
-                    <td>'. $showstatus.'</td>
-                    <td>'.$row->start_date.'</td>
-                    <td>'.$row->due_date.'</td>
+                    <td align="center" >'. $showstatus.'</td>
+                    <td>'.$row->show_item_start_date.'</td>
+                    <td>'.$row->show_item_end_date.'</td>
 
 
                   <!--   <td>'.$row->guide_pages_ar.'</td> -->
