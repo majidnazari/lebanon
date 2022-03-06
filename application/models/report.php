@@ -15,9 +15,9 @@ class Report extends CI_Model {
         $this->db->select('tbl_company.owner_name,tbl_company.activity_ar,tbl_company.phone,tbl_company.fax,tbl_company.personal_notes,tbl_company.is_exporter,tbl_company.is_adv,tbl_company.copy_res');
         $this->db->select('tbl_sales_man.fullname as employer_ar,tbl_sales_man.fullname_en as employer_en');
         $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
-         $this->db->select('tbl_company.delivery_by as delivery_by,tbl_company.delivery_date as delivery_date, tbl_company.receiver_name as receiver_name, tbl_company.personal_notes as personal_notes');
-         $this->db->select('d.fullname as delivery_by_ar,d.fullname_en as delivery_by_en');
-         $this->db->select('tbl_tasks.*',FALSE);
+        $this->db->select('tbl_company.delivery_by as delivery_by,tbl_company.delivery_date as delivery_date, tbl_company.receiver_name as receiver_name, tbl_company.personal_notes as personal_notes');
+        $this->db->select('d.fullname as delivery_by_ar,d.fullname_en as delivery_by_en');
+        $this->db->select('tbl_tasks.*',FALSE);
 
         $this->db->from('tbl_company');
         $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
@@ -36,111 +36,88 @@ class Report extends CI_Model {
         
       
         $this->db->order_by('tbl_area.label_ar', 'ASC');
-       $this->db->group_by('tbl_tasks.id');
+        $this->db->group_by('tbl_tasks.id');
         $this->db->group_by('tbl_company.id');
-      $query = $this->db->get();
+        $query = $this->db->get();
         return  $query->result();
 
     }
     function GetShowItemCompanies()
-    {
+    { 
+    //     $this->db->select('1tbl_company.*', FALSE);
+    //     $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
+    //     $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
+    //     $this->db->select('clients_status.start_date as show_item_start_date, clients_status.end_date as  show_item_end_date,clients_status.status as  show_item_status');
+    //     $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
+    //     $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
+    //     $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
+    //     $this->db->select('tbl_company.name_ar as company_ar, tbl_company.name_en as company_en');
+    //     $this->db->select('tbl_company.street_ar as street_ar, tbl_company.street_en as street_en');
+    //     $this->db->select('tbl_company.owner_name,tbl_company.activity_ar,tbl_company.phone,tbl_company.fax,tbl_company.personal_notes,tbl_company.is_exporter,tbl_company.is_adv,tbl_company.copy_res');
+    //     $this->db->select('tbl_sales_man.fullname as employer_ar,tbl_sales_man.fullname_en as employer_en');
+    //     $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
+    //      $this->db->select('tbl_company.delivery_by as delivery_by,tbl_company.delivery_date as delivery_date, tbl_company.receiver_name as receiver_name, tbl_company.personal_notes as personal_notes');
+    //      $this->db->select('d.fullname as delivery_by_ar,d.fullname_en as delivery_by_en');
+    //     // $this->db->select('tbl_tasks.*',FALSE);
+
+    //     $this->db->from('tbl_company');
+    //     $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
+    //     $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');
+    //     $this->db->join('tbl_companies_guide_pages', 'tbl_companies_guide_pages.company_id = tbl_company.id', 'left');
+    //     $this->db->join('clients_status', 'clients_status.client_id = tbl_company.id', 'left');
+    //     $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
+    //     $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
+    //     $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
+    //     $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
+    //     $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
+    //     $this->db->join('tbl_sales_man d', 'd.id = tbl_company.delivery_by', 'left');
         
-    //     $a=$this->db->select('tbl_company.*', FALSE);
 
-    //    // $this->db->select('clients_status.start_date as show_start_date , clients_status.end_date as show_end_date , clients_status.status');
-
-    //    $a= $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
-    //    $a= $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
-    //    $a= $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
-    //    $a= $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
-    //    $a= $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
-    //    $a= $this->db->select('tbl_company.name_ar as company_ar, tbl_company.name_en as company_en');
-    //    $a= $this->db->select('tbl_company.street_ar as street_ar, tbl_company.street_en as street_en');
-    //    $a= $this->db->select('tbl_company.owner_name,tbl_company.activity_ar,tbl_company.phone,tbl_company.fax,tbl_company.personal_notes,tbl_company.is_exporter,tbl_company.is_adv,tbl_company.copy_res');
-    //    $a= $this->db->select('tbl_sales_man.fullname as employer_ar,tbl_sales_man.fullname_en as employer_en');
-    //    $a= $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
-    //    $a=  $this->db->select('tbl_company.delivery_by as delivery_by,tbl_company.delivery_date as delivery_date, tbl_company.receiver_name as receiver_name, tbl_company.personal_notes as personal_notes');
-    //    $a=  $this->db->select('d.fullname as delivery_by_ar,d.fullname_en as delivery_by_en');
-    //    $a=  $this->db->select('tbl_tasks.*',FALSE);
-
-    //      //show item section
-
-    //      $a=  $this->db->from('tbl_company');
-    //      $a=  $this->db->from('tbl_company');
-    //      $a= $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
-    //      $a= $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');
-    //    $a= $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
-    //    $a=  $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
-    //    $a=  $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
-    //    $a= $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
-    //    $a= $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
-    //    $a=  $this->db->join('tbl_sales_man d', 'd.id = tbl_company.delivery_by', 'left');
-
-    //     //$this->db->join('clients_status', 'clients_status.sales_man_id = tbl_company.sales_man_id', 'left'); //show item section
-     
-    //     // $this->db->where('clients_status.client_type', "company");
-    //    // $this->db->where('clients_status.status', "active");
-
-    //    // $this->db->where('clients_status.client_id', $company_id);
-    //    // $this->db->where('clients_status.sales_man_id', $sales_man);
-
-    //    $a=   $this->db->where('tbl_company.is_adv', 1);
-    //    $a=     $this->db->or_where('tbl_company.copy_res', 1);
+    //       //  $this->db->where('tbl_company.is_adv', 1);
+    //         $this->db->where('tbl_company.copy_res', 1);
         
       
-    //    $a=  $this->db->order_by('tbl_area.label_ar', 'ASC');
-    //    $a=  $this->db->group_by('tbl_tasks.id');
-    //    $a=  $this->db->group_by('tbl_company.id');
-    //    $a= $query = $this->db->get();      
-    //    // $sql = $this->db->get_compiled_select('tbl_company');
-    //    echo( $a); die();
-    //    // return $query;
+    //    // $this->db->order_by('tbl_area.label_ar', 'ASC');
+    //     $this->db->group_by('tbl_tasks.id');
+    //     $this->db->group_by('tbl_company.id');
+    //     //$this->db->order_by('clients_status.id','DESC');
+    //     $query = $this->db->get();
     //     return  $query->result();
-    //    // var_dump($query->result());die();
-
-
-
-
-    $this->db->select('tbl_company.*', FALSE);
-        $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
-        $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
-        $this->db->select('clients_status.start_date as show_item_start_date, clients_status.end_date as  show_item_end_date,clients_status.status as  show_item_status');
-        $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
-        $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
-        $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
-        $this->db->select('tbl_company.name_ar as company_ar, tbl_company.name_en as company_en');
-        $this->db->select('tbl_company.street_ar as street_ar, tbl_company.street_en as street_en');
-        $this->db->select('tbl_company.owner_name,tbl_company.activity_ar,tbl_company.phone,tbl_company.fax,tbl_company.personal_notes,tbl_company.is_exporter,tbl_company.is_adv,tbl_company.copy_res');
-        $this->db->select('tbl_sales_man.fullname as employer_ar,tbl_sales_man.fullname_en as employer_en');
-        $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
-         $this->db->select('tbl_company.delivery_by as delivery_by,tbl_company.delivery_date as delivery_date, tbl_company.receiver_name as receiver_name, tbl_company.personal_notes as personal_notes');
-         $this->db->select('d.fullname as delivery_by_ar,d.fullname_en as delivery_by_en');
-        // $this->db->select('tbl_tasks.*',FALSE);
-
-        $this->db->from('tbl_company');
-        $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
-        $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');
-        $this->db->join('tbl_companies_guide_pages', 'tbl_companies_guide_pages.company_id = tbl_company.id', 'left');
-        $this->db->join('clients_status', 'clients_status.client_id = tbl_company.id', 'left');
-        $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
-        $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
-        $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
-       $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
-        $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
-        $this->db->join('tbl_sales_man d', 'd.id = tbl_company.delivery_by', 'left');
-        
-
-          //  $this->db->where('tbl_company.is_adv', 1);
-            $this->db->where('tbl_company.copy_res', 1);
-        
-      
-       // $this->db->order_by('tbl_area.label_ar', 'ASC');
-        $this->db->group_by('tbl_tasks.id');
-        $this->db->group_by('tbl_company.id');
-        //$this->db->order_by('clients_status.id','DESC');
        
-        $query = $this->db->get();
-        //echo $query; die();
+    //    
+        $sql="SELECT tbl_company.*, COUNT(tbl_company_heading.id) as CNbr
+        , `tbl_companies_guide_pages`.`guide_pages_ar`, `tbl_companies_guide_pages`.`guide_pages_en`,
+         `client`.`start_date` as show_item_start_date, `client`.`end_date` as show_item_end_date,
+          `client`.`status` as show_item_status, `tbl_governorates`.`label_ar` as governorate_ar,
+           `tbl_governorates`.`label_en` as governorate_en, `tbl_districts`.`label_ar` as district_ar,
+            `tbl_districts`.`label_en` as district_en, `tbl_area`.`label_ar` as area_ar,
+             `tbl_area`.`label_en` as area_en, `tbl_company`.`name_ar` as company_ar,
+              `tbl_company`.`name_en` as company_en, `tbl_company`.`street_ar` as street_ar,
+               `tbl_company`.`street_en` as street_en, `tbl_company`.`owner_name`, `tbl_company`.`activity_ar`,
+                `tbl_company`.`phone`, `tbl_company`.`fax`, `tbl_company`.`personal_notes`, `tbl_company`.`is_exporter`,
+                 `tbl_company`.`is_adv`, `tbl_company`.`copy_res`, `tbl_sales_man`.`fullname` as employer_ar,
+                  `tbl_sales_man`.`fullname_en` as employer_en, `t`.`fullname` as sales_man_ar,
+                   `t`.`fullname_en` as sales_man_en, `tbl_company`.`delivery_by` as delivery_by,
+                    `tbl_company`.`delivery_date` as delivery_date, `tbl_company`.`receiver_name` as receiver_name, 
+                    `tbl_company`.`personal_notes` as personal_notes, `d`.`fullname` as delivery_by_ar,
+                     `d`.`fullname_en` as delivery_by_en 
+        FROM (`tbl_company`,`clients_status`.*) 
+        LEFT JOIN `tbl_tasks` ON `tbl_tasks`.`company_id` = `tbl_company`.`id`
+        LEFT JOIN `tbl_company_heading` ON `tbl_company_heading`.`company_id` = `tbl_company`.`id`
+        LEFT JOIN `tbl_companies_guide_pages` ON `tbl_companies_guide_pages`.`company_id` = `tbl_company`.`id`
+        LEFT JOIN  (SELECT * FROM `clients_status` WHERE `client_id` = `tbl_company`.`id` order by `id` desc limit 1 ) as `client`
+        on `client`.`client_id`=`tbl_company`.`id`
+       
+        LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_tasks`.`governorate_id`
+        LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_tasks`.`district_id` 
+        LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id` 
+        LEFT JOIN `tbl_sales_man` ON `tbl_sales_man`.`id` = `tbl_tasks`.`sales_man_id`
+        LEFT JOIN `tbl_sales_man` t ON `t`.`id` = `tbl_company`.`sales_man_id` 
+        LEFT JOIN `tbl_sales_man` d ON `d`.`id` = `tbl_company`.`delivery_by` 
+        WHERE `tbl_company`.`copy_res` = 1 
+        GROUP BY `tbl_tasks`.`id`, `tbl_company`.`id`";
+        $query = $this->db->query($sql);
+        echo $query; die();
         return  $query->result();
 
     }

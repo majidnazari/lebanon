@@ -554,7 +554,7 @@ class Reports extends Application
             
              <th style="width: 100px !important">start_date_ads </th>
              <th style="width: 100px !important">end_date_ads </th>
-             <th> item status</th>
+             <th> show item </th> <!-- tha status of showing item -->
              <th style="width: 150px !important"> item start_date </th>
              <th style="width: 150px !important"> item end_date </th>
  
@@ -578,15 +578,15 @@ class Reports extends Application
                 $showstatus="";
                 if($row->show_item_status=="active")
                 {
-                    $showstatus="yes";
+                    $showstatus="Yes";
                 }
                 else if($row->show_item_status=="inactive")
                 {
-                    $showstatus="no";
+                    $showstatus="No";
                 }
                 else if($row->show_item_status=="pending")
                 {
-                    $showstatus="pen";
+                    $showstatus="Pending";
                 }
 				if($row->is_exporter==1){
 					$exporter='نعم';
@@ -595,16 +595,20 @@ class Reports extends Application
 					$exporter='كلا';
 					}
 				if($row->is_adv==1){
-					$is_adv='نعم';
+					//$is_adv='نعم';
+					$is_adv='Yes';
 				}
 				else{
-					$is_adv='كلا';
+					//$is_adv='كلا';
+					$is_adv='No';
 					}	
 					if($row->copy_res==1){
-					$copy_res='نعم';
+					//$copy_res='نعم';
+					$copy_res='Yes';
 				}
 				else{
-					$copy_res='كلا';
+					//$copy_res='كلا';
+					$copy_res='No';
 					}	
 	$phone=explode('-',$row->phone);
 			
