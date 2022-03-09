@@ -839,7 +839,7 @@ function GetOldTasks()
         $this->db->select('SQL_CALC_FOUND_ROWS tbl_company.*', FALSE);
         $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
 
-        $this->db->select('clients_status.start_date as show_start_date , clients_status.end_date as show_end_date');
+        $this->db->select('clients_status.start_date as show_start_date , clients_status.end_date as show_end_date,clients_status.status as show_status ');
 
         $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
         $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');

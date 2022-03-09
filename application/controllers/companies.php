@@ -2347,6 +2347,7 @@ public function branches($id) {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'fax' => $this->input->post('fax'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
                     'email' => $this->input->post('email'),
@@ -2469,6 +2470,7 @@ public function branches($id) {
             $this->data['bldg_en'] = '';
             $this->data['fax'] = '';
             $this->data['phone'] = '';
+            $this->data['whatsapp'] = '';
             $this->data['pobox_ar'] = '';
             $this->data['pobox_en'] = '';
             $this->data['email'] = '';
@@ -2652,6 +2654,7 @@ public function branches($id) {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'fax' => $this->input->post('fax'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
                     'email' => $this->input->post('email'),
@@ -2805,6 +2808,7 @@ public function branches($id) {
             $this->data['bldg_en'] = $query['bldg_en'];
             $this->data['fax'] = $query['fax'];
             $this->data['phone'] = $query['phone'];
+            $this->data['whatsapp'] = $query['whatsapp'];
             $this->data['pobox_ar'] = $query['pobox_ar'];
             $this->data['pobox_en'] = $query['pobox_en'];
             $this->data['email'] = $query['email'];
@@ -3175,6 +3179,7 @@ public function branches($id) {
                 'street_ar' => $filesop[7],
                 'street_en' => $filesop[7],
                 'phone' => $filesop[8],
+               // 'whatsapp' => $filesop[8],
                 'fax' => $filesop[9],
                 'email' => $filesop[10],
                 'website' => $filesop[11],

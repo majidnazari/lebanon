@@ -518,10 +518,11 @@ printpage();
             $id = $this->input->get('id');
             $name = $this->input->get('name');
             $phone = $this->input->get('phone');
-            $query = $this->Insurance->SearchInsurances($id, $name, $phone, $status, $govID, $districtID,$areaID, $row, $limit);
+            $whatsapp = $this->input->get('whatsapp');
+            $query = $this->Insurance->SearchInsurances($id, $name, $phone,$whatsapp, $status, $govID, $districtID,$areaID, $row, $limit);
             //var_dump($query);
-            $total_row = count($this->Insurance->SearchInsurances($id, $name, $phone, $status, $govID, $districtID,$areaID, 0, 0));
-            $config['base_url'] = base_url().'insurances?id='.$id.'&name='.$name.'&phone='.$phone.'&gov='.$govID.'&district_id='.$districtID.'area_id='.$areaID.'&status='.$status.'&search=Search';
+            $total_row = count($this->Insurance->SearchInsurances($id, $name, $phone,$whatsapp, $status, $govID, $districtID,$areaID, 0, 0));
+            $config['base_url'] = base_url().'insurances?id='.$id.'&name='.$name.'&phone='.$phone.'&whatsapp='.$whatsapp.'&gov='.$govID.'&district_id='.$districtID.'area_id='.$areaID.'&status='.$status.'&search=Search';
 
             $config['enable_query_strings'] = TRUE;
             $config['page_query_string'] = TRUE;
@@ -550,6 +551,7 @@ printpage();
         $this->data['id'] = @$id;
         $this->data['name'] = @$name;
         $this->data['phone'] = @$phone;
+        $this->data['whatsapp'] = @$whatsapp;
 
 
 
@@ -584,11 +586,12 @@ printpage();
         $id=$this->input->get('id');
         $name=$this->input->get('name');
         $phone=$this->input->get('phone');
+        $whatsapp=$this->input->get('whatsapp');
         $gov=$this->input->get('gov');
         $district_id=$this->input->get('district_id');
         $area_id=$this->input->get('area_id');
         $status=$this->input->get('status');
-        $query = $this->Insurance->SearchInsurances($id, $name, $phone, $status, $gov, $district_id,$area_id, 0, 0);
+        $query = $this->Insurance->SearchInsurances($id, $name, $phone,$whatsapp, $status, $gov, $district_id,$area_id, 0, 0);
         foreach($query as $row) {
             $this->view($row->id);
 
@@ -674,12 +677,13 @@ printpage();
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             //$this->data['govID']=$this->input->get('status');
             //	$this->data['description']=$this->input->get('description');
             //	$config['base_url']=base_url().'parameters/items/subhead?code=03.03&description=&status=online&search=search';
-            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $row, $limit);
-            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, 0, 0));
-            $config['base_url'] = base_url().'companies?id='.$id.'&name='.$name.'&activity='.$activity.'&phone='.$phone.'&search=Search';
+            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, $row, $limit);
+            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, 0, 0));
+            $config['base_url'] = base_url().'companies?id='.$id.'&name='.$name.'&activity='.$activity.'&phone='.$phone.'&whatsapp='.$whatsapp.'&search=Search';
             //	$trows=$this->Item->GetSubHeading('',$row,0);
             //$config['total_rows']=count($this->data['query']);
             $config['enable_query_strings'] = TRUE;
@@ -707,6 +711,7 @@ printpage();
         $this->data['name'] = $name;
         $this->data['activity'] = $activity;
         $this->data['phone'] = $phone;
+        $this->data['whatsapp'] = $whatsapp;
 
 
 
@@ -748,11 +753,12 @@ printpage();
        $id=$this->input->get('id');
         $name=$this->input->get('name');
         $phone=$this->input->get('phone');
+        $whatsapp=$this->input->get('whatsapp');
         $gov=$this->input->get('gov');
         $district_id=$this->input->get('district_id');
         $area_id=$this->input->get('area_id');
         $status=$this->input->get('status');
-        $this->data['query'] = $this->Insurance->SearchInsurances($id, $name, $phone, $status, $gov, $district_id,$area_id, 0, 0);
+        $this->data['query'] = $this->Insurance->SearchInsurances($id, $name, $phone,$whatsapp, $status, $gov, $district_id,$area_id, 0, 0);
         $this->data['title'] = $this->data['Ctitle']." - Companies - الشركات";
         ;
         $this->data['subtitle'] = "Companies - الشركات";
@@ -1073,6 +1079,7 @@ printpage();
                         'bldg_ar' => $this->input->post('bldg_ar'),
                         'bldg_en' => $this->input->post('bldg_en'),
                         'phone' => $this->input->post('phone'),
+                        'whastapp' => $this->input->post('whatsapp'),
                         'fax' => $this->input->post('fax'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
@@ -1109,6 +1116,7 @@ printpage();
             $this->data['bldg_en'] = '';
             $this->data['fax'] = '';
             $this->data['phone'] = '';
+            $this->data['whatsapp'] = '';
             $this->data['pobox_ar'] = '';
             $this->data['pobox_en'] = '';
             $this->data['beside_ar'] = '';
@@ -1158,6 +1166,7 @@ printpage();
                         'bldg_ar' => $this->input->post('bldg_ar'),
                         'bldg_en' => $this->input->post('bldg_en'),
                         'phone' => $this->input->post('phone'),
+                        'whatsapp' => $this->input->post('whatsapp'),
                         'fax' => $this->input->post('fax'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
@@ -1194,6 +1203,7 @@ printpage();
             $this->data['bldg_en'] = $row['bldg_en'];
             $this->data['fax'] = $row['fax'];
             $this->data['phone'] = $row['phone'];
+            $this->data['whatsapp'] = $row['whatsapp'];
             $this->data['pobox_ar'] = $row['pobox_ar'];
             $this->data['pobox_en'] = $row['pobox_en'];
             $this->data['beside_ar'] = $row['beside_ar'];
@@ -1307,6 +1317,7 @@ printpage();
                     'bldg_en' => $this->input->post('bldg_en'),
                     'bldg_ar' => $this->input->post('bldg_ar'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'fax' => $this->input->post('fax'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
@@ -1386,6 +1397,7 @@ printpage();
         $this->data['bldg_en'] = '';
         $this->data['fax'] = '';
         $this->data['phone'] = '';
+        $this->data['whatsapp'] = '';
         $this->data['pobox_ar'] = '';
         $this->data['pobox_en'] = '';
         $this->data['email'] = '';
@@ -1491,6 +1503,7 @@ printpage();
                     'bldg_en' => $this->input->post('bldg_en'),
                     'bldg_ar' => $this->input->post('bldg_ar'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'fax' => $this->input->post('fax'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
@@ -1571,6 +1584,7 @@ printpage();
         $this->data['bldg_en'] = $row['bldg_en'];
         $this->data['fax'] = $row['fax'];
         $this->data['phone'] = $row['phone'];
+        $this->data['whatsapp'] = $row['whatsapp'];
         $this->data['pobox_ar'] = $row['pobox_ar'];
         $this->data['pobox_en'] = $row['pobox_en'];
         $this->data['email'] = $row['email'];

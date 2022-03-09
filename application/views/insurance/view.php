@@ -217,6 +217,13 @@
                 </tr>
                 <tr>
                     <td colspan="5">
+                        <div class="label english">whatsapp : </div>
+                        <div class="label arabic"> واتساپ: </div>
+                        <div class="data-box arabic"><?=$query['whatsapp'];?></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
                         <div class="label english">Fax : </div>
                         <div class="label arabic">  فاكس: </div>
                         <div class="data-box arabic"><?=$query['fax'];?></div>
@@ -429,6 +436,7 @@
                     <td>Mouhafazat</td>
                     <td>Area & District</td>
                     <td>Phone</td>
+                    <td>whatsapp</td>
                     <td>E-mail</td>
                 </tr>
                 <?php
@@ -442,7 +450,7 @@
                         <td><?=$branch->name_en?></td>
                         <td><?=$b_gov['label_en']?></td>
                         <td><?=$b_district['label_en'].' '.$b_area['label_en']?></td>
-                        <td><?=$branch->phone?></td>
+                        <td><?=$branch->whatsapp?></td>
                         <td><?=$branch->email?></td>
                     </tr>
                 <?php }

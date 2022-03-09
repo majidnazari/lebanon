@@ -6,7 +6,7 @@
 <title><?=$title?> </title>
 </head>
 
-<body>  <?php // var_dump("dfGDG"); die(); ?>
+<body>  <?php  /*var_dump($query); die(); */?>
 	<div class="container" style="width:1380px !important;">
     	<div class="header" style="width:1380px !important;"><img src="<?=base_url()?>img/company-header.jpg" style="width:920px !important;" />
         </div>
@@ -28,9 +28,11 @@
             <th>معلن</th>
             <th style="width: 150px !important">ads start date </th>
             <th style="width: 150px !important">ads end date </th> 
-
-            <th style="width: 150px !important"> show Items start date </th>
-            <th style="width: 150px !important"> show Items end date </th> 
+            
+            <th style="width: 150px !important">show item</th> 
+            
+            <th style="width: 150px !important">  item start_date </th>
+            <th style="width: 150px !important"> item end_date </th> 
            <!-- <th>حاجز نسخة</th> -->
            <!--  <th>عدد دليل</th> -->          
           
@@ -43,7 +45,7 @@
         <?php  
 		$i=1;
 		foreach($query as $row){
-
+            $status=$row->show_status=="active" ? "YES" : "NO";
 			if($row->is_exporter==1){
 					$exporter='نعم';
 				}
@@ -51,16 +53,20 @@
 					$exporter='كلا';
 					}
 				if($row->is_adv==1){
-					$is_adv='نعم';
+					//$is_adv='نعم';
+					$is_adv='YES';
 				}
 				else{
-					$is_adv='كلا';
+					//$is_adv='كلا';
+					$is_adv='NO';
 					}	
 					if($row->copy_res==1){
-					$copy_res='نعم';
+					//$copy_res='نعم';
+					$copy_res='YES';
 				}
 				else{
-					$copy_res='كلا';
+					//$copy_res='كلا';
+					$copy_res='NO';
 					}	
 	$phone=explode('-',$row->phone);
 
@@ -80,6 +86,8 @@
                     <td align="center"><?=$is_adv?></td>
                     <th style="width: 150px !important"><?=$row->start_date_adv ?></td>
                     <th style="width: 150px !important"><?=$row->end_date_adv ?></td>
+
+                    <th style="width: 150px !important"><?=$status ?></td>
 
                     <th style="width: 150px !important"><?=$row->show_start_date ?></td>
                     <th style="width: 150px !important"><?=$row->show_end_date ?></td>

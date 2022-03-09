@@ -514,7 +514,12 @@ class Reports extends Application
 
     public function showitem()
     {      
-        $query = $this->Report->GetShowItemCompanies();        
+        $query = $this->Report->GetShowItemCompanies();   
+        // foreach($query as $row)
+        // {
+        //  echo $row->id. "<br>";   
+        // }
+        // die();  
        //var_dump($query); die();
         $filename = "showitem_advertisement".time().".xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
@@ -532,8 +537,8 @@ class Reports extends Application
 					}
 				</style>   ';
 
-//$query=$all['results'];
-       //$total_row = $all['num_results'];
+            //$query=$all['results'];
+        //$total_row = $all['num_results'];
 
         echo '<table cellpadding="0" cellspacing="0" width="100%" class="table">
                         <thead>
@@ -549,8 +554,8 @@ class Reports extends Application
             <th>المندوب</th>
             <th>عدد انترنت</th>
             <th>معلن</th>
-           <!-- <th>حاجز نسخة</th> -->
-           <!--  <th>عدد دليل</th> -->
+            <!-- <th>حاجز نسخة</th> -->
+            <!--  <th>عدد دليل</th> -->
             
              <th style="width: 100px !important">start_date_ads </th>
              <th style="width: 100px !important">end_date_ads </th>
@@ -558,11 +563,11 @@ class Reports extends Application
              <th style="width: 150px !important"> item start_date </th>
              <th style="width: 150px !important"> item end_date </th>
  
-    <!-- <th style="width: 100px !important">صفحات عربي</th> -->
-      <!--      <th style="width: 100px !important">صفحات إنجليزي</th> -->
-      <!--      <th style="width: 100px !important">إسم المستلم</th> -->
-             <th style="width: 75px !important">التاريخ</th>
-             <th style="width: 75px !important">الموزع</th>
+            <!-- <th style="width: 100px !important">صفحات عربي</th> -->
+            <!--      <th style="width: 100px !important">صفحات إنجليزي</th> -->
+            <!--      <th style="width: 100px !important">إسم المستلم</th> -->
+            <th style="width: 75px !important">التاريخ</th>
+            <th style="width: 75px !important">الموزع</th>
             <th style="width: 150px !important">ملاحظات</th>
 
           
@@ -610,9 +615,9 @@ class Reports extends Application
 					//$copy_res='كلا';
 					$copy_res='No';
 					}	
-	$phone=explode('-',$row->phone);
+	            $phone=explode('-',$row->phone);
 			
-        	echo '<tr>
+        	    echo '<tr>
                     <td>'.$i.'</td>
                     <td>'.$row->id.'</td>
                     <td>'.$row->company_ar.'</td>
@@ -647,7 +652,7 @@ class Reports extends Application
 
                 </tr>';
            
-		   $i++;
+		    $i++;
 		   }  
            
         echo '</tbody>';

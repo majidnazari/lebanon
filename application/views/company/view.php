@@ -343,6 +343,13 @@
                 </tr>
                 <tr>
                     <td colspan="5">
+                        <div class="label english">whatsApp : </div>
+                        <div class="label arabic"> واتساپ: </div>
+                        <div class="data-box arabic"><?=$query['whatsapp'];?></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
                         <div class="label english">Fax : </div>
                         <div class="label arabic">  فاكس: </div>
                         <div class="data-box arabic"><?=$query['fax'];?></div>
@@ -391,14 +398,15 @@
                         <div class="label english">Instagram: </div>
                         <div class="data-box english"><?=$query['instagram'];?></div>
                     </td>
-                    <td>
-                        <div class="label english">Twitter: </div>
-                        <div class="data-box english"><?=$query['twitter'];?></div>
-                    </td>
-                    <td>
-                        <div class="label english">Whatsapp: </div>
-                        <div class="data-box english"><?=$query['whatsapp'];?></div>
-                    </td>
+                    <!--    <td>
+                            <div class="label english">Twitter: </div>
+                            <div class="data-box english"><?=$query['twitter'];?></div>
+                        </td>
+                        <td>
+                            <div class="label english">Whatsapp: </div>
+                            <div class="data-box english"><?=$query['whatsapp'];?></div>
+                        </td>
+                    -->
                     </table>
                     </td>
                 </tr>

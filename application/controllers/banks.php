@@ -368,11 +368,12 @@ public function convertlocation() {
             $id = $this->input->get('id');
             $name = $this->input->get('name');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             $fax = $this->input->get('fax');
             $status = $this->input->get('status');
-            $query = $this->Bank->SearchBanks($id, $name, $phone, $fax, $status, $govID, $districtID,$areaID, $row, $limit);
-            $total_row = count($this->Bank->SearchBanks($id, $name, $phone, $fax, $status, $govID, $districtID,$areaID, 0, 0));
-            $config['base_url'] = base_url().'banks?id='.$id.'&name='.$name.'&phone='.$phone.'&fax='.$fax.'&gov='.$govID.'&district_id='.$districtID.'&area_id='.$areaID.'&status='.$status.'&search=Search';
+            $query = $this->Bank->SearchBanks($id, $name, $phone,$whatsapp, $fax, $status, $govID, $districtID,$areaID, $row, $limit);
+            $total_row = count($this->Bank->SearchBanks($id, $name, $phone,$whatsapp, $fax, $status, $govID, $districtID,$areaID, 0, 0));
+            $config['base_url'] = base_url().'banks?id='.$id.'&name='.$name.'&phone='.$phone.'&whatsapp='.$whatsapp.'&fax='.$fax.'&gov='.$govID.'&district_id='.$districtID.'&area_id='.$areaID.'&status='.$status.'&search=Search';
             $config['enable_query_strings'] = TRUE;
             $config['page_query_string'] = TRUE;
         }
@@ -387,6 +388,7 @@ public function convertlocation() {
             $id = '';
             $name = '';
             $phone = '';
+            $whatsapp = '';
             $fax = '';
             $config['base_url'] = base_url().'banks/index';
             //$config['uri_segment'] = 12;
@@ -401,6 +403,7 @@ public function convertlocation() {
         $this->data['id'] = $id;
         $this->data['name'] = $name;
         $this->data['phone'] = $phone;
+        $this->data['whatsapp'] = $whatsapp;
         $this->data['fax'] = $fax;
         $config['total_rows'] = $total_row;
         $config['per_page'] = $limit;
@@ -549,12 +552,13 @@ public function listview() {
        $id=$this->input->get('id');
     $name=$this->input->get('name');
     $phone=$this->input->get('phone');
+    $whatsapp=$this->input->get('whatsapp');
     $fax=$this->input->get('fax');
     $gov=$this->input->get('gov');
     $district_id=$this->input->get('district_id');
     $area_id=$this->input->get('area_id');
     $status=$this->input->get('status');
-    $this->data['query'] = $this->Bank->SearchBanks($id, $name, $phone, $fax, $status, $gov, $district_id,$area_id, 0, 0);
+    $this->data['query'] = $this->Bank->SearchBanks($id, $name, $phone,$whatsapp, $fax, $status, $gov, $district_id,$area_id, 0, 0);
         $this->data['title'] = $this->data['Ctitle']." - Companies - الشركات";
         $this->data['subtitle'] = "Companies - الشركات";
         $this->load->view('banks/listview', $this->data);
@@ -709,12 +713,13 @@ public function printed_search()
     $id=$this->input->get('id');
     $name=$this->input->get('name');
     $phone=$this->input->get('phone');
+    $whatsapp=$this->input->get('whatsapp');
     $fax=$this->input->get('fax');
     $gov=$this->input->get('gov');
     $district_id=$this->input->get('district_id');
     $area_id=$this->input->get('area_id');
     $status=$this->input->get('status');
-    $query = $this->Bank->SearchBanks($id, $name, $phone, $fax, $status, $gov, $district_id,$area_id, 0, 0);
+    $query = $this->Bank->SearchBanks($id, $name, $phone,$whatsapp, $fax, $status, $gov, $district_id,$area_id, 0, 0);
     foreach($query as $row) {
         $this->view($row->id);
 
@@ -769,6 +774,7 @@ public function printed_search()
                         'bldg_en' => $this->input->post('bldg_en'),
                         'fax' => $this->input->post('fax'),
                         'phone' => $this->input->post('phone'),
+                        'whatsapp' => $this->input->post('whatsapp'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
                         'email' => $this->input->post('email'),
@@ -829,6 +835,7 @@ public function printed_search()
             $this->data['bldg_en'] = '';
             $this->data['fax'] = '';
             $this->data['phone'] = '';
+            $this->data['whatsapp'] = '';
             $this->data['pobox_ar'] = '';
             $this->data['pobox_en'] = '';
             $this->data['email'] = '';
@@ -927,6 +934,7 @@ public function printed_search()
                         'bldg_en' => $this->input->post('bldg_en'),
                         'fax' => $this->input->post('fax'),
                         'phone' => $this->input->post('phone'),
+                        'whatsapp' => $this->input->post('whatsapp'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
                         'email' => $this->input->post('email'),
@@ -995,6 +1003,7 @@ public function printed_search()
             $this->data['fax'] = $query['fax'];
             $this->data['show_online'] = $query['online'];
             $this->data['phone'] = $query['phone'];
+            $this->data['whatsapp'] = $query['whatsapp'];
             $this->data['pobox_ar'] = $query['pobox_ar'];
             $this->data['pobox_en'] = $query['pobox_en'];
             $this->data['email'] = $query['email'];
@@ -1080,6 +1089,7 @@ public function printed_search()
             $this->data['bldg_en'] = $row['bldg_en'];
             $this->data['fax'] = $row['fax'];
             $this->data['phone'] = $row['phone'];
+            $this->data['whatsapp'] = $row['whatsapp'];
             $this->data['pobox_ar'] = $row['pobox_ar'];
             $this->data['pobox_en'] = $row['pobox_en'];
             $this->data['beside_ar'] = $row['beside_ar'];
@@ -1142,6 +1152,7 @@ public function printed_search()
                         'bldg_en' => $this->input->post('bldg_en'),
                         'fax' => $this->input->post('fax'),
                         'phone' => $this->input->post('phone'),
+                        'whatsapp' => $this->input->post('whatsapp'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
                         'email' => $this->input->post('email'),
@@ -1179,6 +1190,7 @@ public function printed_search()
             $this->data['bldg_en'] = '';
             $this->data['fax'] = '';
             $this->data['phone'] = '';
+            $this->data['whatsapp'] = '';
             $this->data['pobox_ar'] = '';
             $this->data['pobox_en'] = '';
             $this->data['beside_ar'] = '';
@@ -1240,6 +1252,7 @@ public function printed_search()
                         'bldg_en' => $this->input->post('bldg_en'),
                         'fax' => $this->input->post('fax'),
                         'phone' => $this->input->post('phone'),
+                        'whatsapp' => $this->input->post('whatsapp'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
                         'email' => $this->input->post('email'),
@@ -1279,6 +1292,7 @@ public function printed_search()
             $this->data['bldg_en'] = $row['bldg_en'];
             $this->data['fax'] = $row['fax'];
             $this->data['phone'] = $row['phone'];
+            $this->data['whatsapp'] = $row['whatsapp'];
             $this->data['pobox_ar'] = $row['pobox_ar'];
             $this->data['pobox_en'] = $row['pobox_en'];
             $this->data['beside_ar'] = $row['beside_ar'];

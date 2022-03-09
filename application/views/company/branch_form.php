@@ -14,6 +14,7 @@ $array_bldg_en=array('id'=>'bldg_en','name'=>'bldg_en','value'=>@$row['bldg_en']
 
 $array_fax=array('id'=>'fax','name'=>'fax','value'=>@$row['fax']);
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>@$row['phone']);
+$array_whatsapp=array('id'=>'whatsapp','name'=>'whatsapp','value'=>@$row['whatsapp']);
 
 $array_pobox_ar=array('id'=>'pobox_ar','name'=>'pobox_ar','value'=>@$row['pobox_ar'],'class'=>'label-ar','style'=>'direction:rtl');
 $array_pobox_en=array('id'=>'pobox_en','name'=>'pobox_en','value'=>@$row['pobox_en']);
@@ -182,7 +183,7 @@ select{
                         <div class="span5"><?php echo form_input($array_phone); ?>
                         <font color="#FF0000"><?php echo form_error('phone'); ?></font></div>
                         <div class="span1 label-ar">: هاتف</div>
-                    </div>             
+                    </div>                                
 					<div class="row-form clearfix">   
                     	<div class="span6"></div>                           
                         <div class="span5"><?php echo form_input($array_fax); ?>

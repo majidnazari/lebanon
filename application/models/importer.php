@@ -103,7 +103,7 @@ function GetImporters($status='',$row,$limit)
 		$query = $this->db->get();
 		return $query->row_array();
 	}
-function SearchImporters($id,$name,$phone,$status='',$gov,$district,$area,$row,$limit)
+function SearchImporters($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
 	{
 		$this->db->select('tbl_importers.*');
         $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
@@ -128,6 +128,10 @@ function SearchImporters($id,$name,$phone,$status='',$gov,$district,$area,$row,$
 		if($phone!='')
 		{
 		$this->db->like('tbl_importers.phone',$phone);
+		}
+		if($whatsapp!='')
+		{
+		$this->db->like('tbl_importers.whatsapp',$whatsapp);
 		}
 		if($gov!='' and $gov!='0')
 		$this->db->where('tbl_importers.governorate_id',$gov);
@@ -169,7 +173,7 @@ function GetInsuranceDirectors($id)
 		$query = $this->db->get();
 		return $query->result();
 	}
-        function GetAllImporters($id,$name,$phone,$status='',$gov,$district,$area,$row,$limit)
+        function GetAllImporters($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_importers.*');
             $this->db->from('tbl_importers');
@@ -187,6 +191,10 @@ function GetInsuranceDirectors($id)
             if($phone!='')
             {
                 $this->db->like('tbl_importers.phone',$phone);
+            }
+			if($whatsapp!='')
+            {
+                $this->db->like('tbl_importers.whatsapp',$whatsapp);
             }
             if($gov!='' and $gov!='0')
                 $this->db->where('tbl_importers.governorate_id',$gov);

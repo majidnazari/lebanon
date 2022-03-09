@@ -18,6 +18,7 @@ $array_bldg_en=array('id'=>'bldg_en','name'=>'bldg_en','value'=>$bldg_en);
 
 $array_fax=array('id'=>'fax','name'=>'fax','value'=>$fax);
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>$phone);
+$array_whatsapp=array('id'=>'whatsapp','name'=>'whatsapp','value'=>$whatsapp);
 
 $array_pobox_ar=array('id'=>'pobox_ar','name'=>'pobox_ar','value'=>$pobox_ar,'style'=>'direction:rtl !important;');
 $array_pobox_en=array('id'=>'pobox_en','name'=>'pobox_en','value'=>$pobox_en);
@@ -239,7 +240,12 @@ $jsdis='id="district_id" onchange="getarea(this.value)" class="search-select"  r
                         <div class="span8"><?php echo form_input($array_phone); ?>
                         <font color="#FF0000"><?php echo form_error('phone'); ?></font></div>
                         <div class="span4" style="text-align:right">: هاتف</div>
-                    </div>             
+                    </div> 
+                    <div class="row-form clearfix">                        
+                        <div class="span8"><?php echo form_input($array_whatsapp); ?>
+                        <font color="#FF0000"><?php echo form_error('whatsapp'); ?></font></div>
+                        <div class="span4" style="text-align:right">: WhatsApp</div>
+                    </div>            
 					<div class="row-form clearfix">                              
                         <div class="span8"><?php echo form_input($array_fax); ?>
                         <font color="#FF0000"><?php echo form_error('fax'); ?></font></div>

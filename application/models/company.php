@@ -1056,7 +1056,7 @@ return $query->result();
         return $query->result();
     }
 
-    function AdvancedSearchCompanies($id, $name, $activity, $phone, $row, $limit) {
+    function AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, $row, $limit) {
         $this->db->select('tbl_company.*');
         //$this->db->select('tbl_company_type.label_en as type_en');
         //$this->db->select('tbl_company_type.label_ar as type_ar');
@@ -1078,6 +1078,7 @@ return $query->result();
             $this->db->where($where2);
         }
         $this->db->like('tbl_company.phone', $phone);
+        $this->db->like('tbl_company.whatsapp', $whatsapp);
         $this->db->order_by('tbl_company.id', 'DESC');
         if($limit != 0)
             $this->db->limit($limit, $row);

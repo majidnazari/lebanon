@@ -84,7 +84,22 @@ class Report extends CI_Model {
     //     $query = $this->db->get();
     //     return  $query->result();
        
-    //    
+    //  
+    $getMaxClients="SELECT MAX( `id`) as `maxed_id`  FROM `clients_status`
+    group by `client_id`"; 
+    $max_ids=$this->db->query($getMaxClients); 
+    $max_ids=$max_ids->result(); 
+    $tmparray=[];
+    foreach ($max_ids as $max_id)
+    {
+        $tmparray[]=$max_id->maxed_id;
+        //echo ( $max_id->maxed_id);
+       // echo "<br>";
+    }
+    $arr=implode(',',$tmparray);
+    //echo($arr);
+   // die();
+   // var_dump($max_ids); die();
         $sql="SELECT tbl_company.*, COUNT(tbl_company_heading.id) as CNbr
         , `tbl_companies_guide_pages`.`guide_pages_ar`, `tbl_companies_guide_pages`.`guide_pages_en`,
          `client`.`start_date` as show_item_start_date, `client`.`end_date` as show_item_end_date,
@@ -95,29 +110,32 @@ class Report extends CI_Model {
               `tbl_company`.`name_en` as company_en, `tbl_company`.`street_ar` as street_ar,
                `tbl_company`.`street_en` as street_en, `tbl_company`.`owner_name`, `tbl_company`.`activity_ar`,
                 `tbl_company`.`phone`, `tbl_company`.`fax`, `tbl_company`.`personal_notes`, `tbl_company`.`is_exporter`,
-                 `tbl_company`.`is_adv`, `tbl_company`.`copy_res`, `tbl_sales_man`.`fullname` as employer_ar,
-                  `tbl_sales_man`.`fullname_en` as employer_en, `t`.`fullname` as sales_man_ar,
-                   `t`.`fullname_en` as sales_man_en, `tbl_company`.`delivery_by` as delivery_by,
+                 `tbl_company`.`is_adv`, `tbl_company`.`copy_res`,
+                 -- `tbl_sales_man`.`fullname` as employer_ar, `tbl_sales_man`.`fullname_en` as employer_en,
+                  `t`.`fullname` as sales_man_ar,`t`.`fullname_en` as sales_man_en,
+                    `tbl_company`.`delivery_by` as delivery_by,
                     `tbl_company`.`delivery_date` as delivery_date, `tbl_company`.`receiver_name` as receiver_name, 
-                    `tbl_company`.`personal_notes` as personal_notes, `d`.`fullname` as delivery_by_ar,
-                     `d`.`fullname_en` as delivery_by_en 
-        FROM (`tbl_company`,`clients_status`.*) 
+                    `tbl_company`.`personal_notes` as personal_notes,  
+                    `d`.`fullname` as delivery_by_ar,`d`.`fullname_en` as delivery_by_en 
+        FROM (`tbl_company`) 
         LEFT JOIN `tbl_tasks` ON `tbl_tasks`.`company_id` = `tbl_company`.`id`
         LEFT JOIN `tbl_company_heading` ON `tbl_company_heading`.`company_id` = `tbl_company`.`id`
         LEFT JOIN `tbl_companies_guide_pages` ON `tbl_companies_guide_pages`.`company_id` = `tbl_company`.`id`
-        LEFT JOIN  (SELECT * FROM `clients_status` WHERE `client_id` = `tbl_company`.`id` order by `id` desc limit 1 ) as `client`
-        on `client`.`client_id`=`tbl_company`.`id`
+        LEFT JOIN `clients_status` as `client` ON  `tbl_company`.`id` = `client`.`client_id`
        
         LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_tasks`.`governorate_id`
         LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_tasks`.`district_id` 
         LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id` 
-        LEFT JOIN `tbl_sales_man` ON `tbl_sales_man`.`id` = `tbl_tasks`.`sales_man_id`
+        -- LEFT JOIN `tbl_sales_man` ON `tbl_sales_man`.`id` = `tbl_tasks`.`sales_man_id`
         LEFT JOIN `tbl_sales_man` t ON `t`.`id` = `tbl_company`.`sales_man_id` 
         LEFT JOIN `tbl_sales_man` d ON `d`.`id` = `tbl_company`.`delivery_by` 
-        WHERE `tbl_company`.`copy_res` = 1 
-        GROUP BY `tbl_tasks`.`id`, `tbl_company`.`id`";
+        WHERE `tbl_company`.`copy_res` = 1 and  `client`.`id` in ($arr)
+        
+        -- GROUP BY `tbl_tasks`.`id`, `tbl_company`.`id`
+        GROUP BY  `tbl_company`.`id`
+        ORDER BY   `tbl_company`.`id` asc" ;
         $query = $this->db->query($sql);
-        echo $query; die();
+       // echo $query; die();
         return  $query->result();
 
     }

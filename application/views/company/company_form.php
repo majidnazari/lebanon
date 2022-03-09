@@ -28,6 +28,7 @@ $array_bldg_en = array('id' => 'bldg_en', 'name' => 'bldg_en', 'value' => $bldg_
 
 $array_fax = array('id' => 'fax', 'name' => 'fax', 'value' => $fax);
 $array_phone = array('id' => 'phone', 'name' => 'phone', 'value' => $phone);
+$array_whatsapp =array('id' => 'whatsapp', 'name' => 'whatsapp', 'value' => $whatsapp);
 
 $array_pobox_ar = array('id' => 'pobox_ar', 'name' => 'pobox_ar', 'value' => $pobox_ar, 'style' => 'direction:rtl !important');
 $array_pobox_en = array('id' => 'pobox_en', 'name' => 'pobox_en', 'value' => $pobox_en);
@@ -283,6 +284,11 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                             <div class="span4" style="text-align:right">: هاتف</div>
                         </div>
                         <div class="row-form clearfix">
+                            <div class="span8"><?php echo form_input($array_whatsapp); ?>
+                                <font color="#FF0000"><?php echo form_error('whatsapp'); ?></font></div>
+                            <div class="span4" style="text-align:right">: WhatsApp</div>
+                        </div>
+                        <div class="row-form clearfix">
                             <div class="span8"><?php echo form_input($array_fax); ?>
                                 <font color="#FF0000"><?php echo form_error('fax'); ?></font></div>
                             <div class="span4" style="text-align:right">: فاكس</div>
@@ -354,11 +360,13 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                 <font color="#FF0000"><?php echo form_error('instagram'); ?></font></div>
                             <div class="span4" style="text-align:right">: Instagram</div>
                         </div>
-                        <div class="row-form clearfix">
-                            <div class="span8"><?php echo form_input(array('id' => 'twitter', 'name' => 'twitter', 'value' => @$query['twitter'])); ?>
-                                <font color="#FF0000"><?php echo form_error('twitter'); ?></font></div>
-                            <div class="span4" style="text-align:right">: Twitter</div>
-                        </div>
+                       <!-- 
+                           <div class="row-form clearfix">
+                                <div class="span8"><?php echo form_input(array('id' => 'twitter', 'name' => 'twitter', 'value' => @$query['twitter'])); ?>
+                                    <font color="#FF0000"><?php echo form_error('twitter'); ?></font></div>
+                                <div class="span4" style="text-align:right">: Twitter</div>
+                            </div>
+                        -->
                         <?php /*
 					 <div class="row-form clearfix">
                         <div class="span8">

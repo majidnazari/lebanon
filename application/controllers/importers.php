@@ -325,11 +325,12 @@ class Importers extends Application {
                 $id = $this->input->get('id');
                 $name = $this->input->get('name');
                 $phone = $this->input->get('phone');
+                $whatsapp = $this->input->get('whatsapp');
 
-                $query = $this->Importer->SearchImporters($id, $name, $phone, $status, $govID, $districtID,$areaID, $row, $limit);
+                $query = $this->Importer->SearchImporters($id, $name, $phone,$whatsapp, $status, $govID, $districtID,$areaID, $row, $limit);
                 //var_dump($query);
-                $total_row = count($this->Importer->SearchImporters($id, $name, $phone, $status, $govID, $districtID,$areaID, 0, 0));
-                $config['base_url'] = base_url().'importers?id='.$id.'&name='.$name.'&phone='.$phone.'&gov='.$govID.'&district_id='.$districtID.'&area_id='.$areaID.'&status='.$status.'&search=Search';
+                $total_row = count($this->Importer->SearchImporters($id, $name, $phone,$whatsapp, $status, $govID, $districtID,$areaID, 0, 0));
+                $config['base_url'] = base_url().'importers?id='.$id.'&name='.$name.'&phone='.$phone.'&whatsapp='.$whatsapp.'&gov='.$govID.'&district_id='.$districtID.'&area_id='.$areaID.'&status='.$status.'&search=Search';
 
                 $config['enable_query_strings'] = TRUE;
                 $config['page_query_string'] = TRUE;
@@ -358,6 +359,7 @@ class Importers extends Application {
             $this->data['id'] = @$id;
             $this->data['name'] = @$name;
             $this->data['phone'] = @$phone;
+            $this->data['whatsapp'] = @$whatsapp;
 
 
             $config['total_rows'] = $total_row;
@@ -394,11 +396,12 @@ class Importers extends Application {
         $id=$this->input->get('id');
         $name=$this->input->get('name');
         $phone=$this->input->get('phone');
+        $whatsapp=$this->input->get('whatsapp');
         $gov=$this->input->get('gov');
         $district_id=$this->input->get('district_id');
         $area_id=$this->input->get('area_id');
         $status=$this->input->get('status');
-        $query = $this->Importer->SearchImporters($id, $name, $phone, $status, $gov, $district_id,$area_id, 0, 0);
+        $query = $this->Importer->SearchImporters($id, $name, $phone, $whatsapp, $status, $gov, $district_id,$area_id, 0, 0);
         foreach($query as $row) {
             $this->view($row->id);
 
@@ -408,11 +411,12 @@ class Importers extends Application {
         $id=$this->input->get('id');
         $name=$this->input->get('name');
         $phone=$this->input->get('phone');
+        $whatsapp=$this->input->get('whatsapp');
         $gov=$this->input->get('gov');
         $district_id=$this->input->get('district_id');
         $area_id=$this->input->get('area_id');
         $status=$this->input->get('status');
-        $this->data['query'] = $this->Importer->SearchImporters($id, $name, $phone, $status, $gov, $district_id,$area_id, 0, 0);
+        $this->data['query'] = $this->Importer->SearchImporters($id, $name, $phone,$whatsapp, $status, $gov, $district_id,$area_id, 0, 0);
         $this->data['title'] = $this->data['Ctitle']." - Companies - الشركات";
         ;
         $this->data['subtitle'] = "Companies - الشركات";
@@ -493,12 +497,13 @@ class Importers extends Application {
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             //$this->data['govID']=$this->input->get('status');
             //	$this->data['description']=$this->input->get('description');
             //	$config['base_url']=base_url().'parameters/items/subhead?code=03.03&description=&status=online&search=search';
-            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $row, $limit);
-            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, 0, 0));
-            $config['base_url'] = base_url().'impoters?id='.$id.'&name='.$name.'&activity='.$activity.'&phone='.$phone.'&search=Search';
+            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, $row, $limit);
+            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, 0, 0));
+            $config['base_url'] = base_url().'impoters?id='.$id.'&name='.$name.'&activity='.$activity.'&phone='.$phone.'&whatsapp='.$whatsapp.'&search=Search';
             //	$trows=$this->Item->GetSubHeading('',$row,0);
             //$config['total_rows']=count($this->data['query']);
             $config['enable_query_strings'] = TRUE;
@@ -513,6 +518,7 @@ class Importers extends Application {
             $name = '';
             $activity = '';
             $phone = '';
+            $whatsapp = '';
             $config['base_url'] = base_url().'companies/index';
             //$config['uri_segment'] = 12;
             $query = array();
@@ -526,6 +532,7 @@ class Importers extends Application {
         $this->data['name'] = $name;
         $this->data['activity'] = $activity;
         $this->data['phone'] = $phone;
+        $this->data['whatsapp'] = $whatsapp;
 
 
 
@@ -805,6 +812,7 @@ class Importers extends Application {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'bldg_ar' => $this->input->post('bldg_ar'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'fax' => $this->input->post('fax'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
@@ -872,6 +880,7 @@ class Importers extends Application {
         $this->data['bldg_en'] = '';
         $this->data['fax'] = '';
         $this->data['phone'] = '';
+        $this->data['whatsapp'] = '';
         $this->data['pobox_ar'] = '';
         $this->data['pobox_en'] = '';
         $this->data['email'] = '';
@@ -955,6 +964,8 @@ class Importers extends Application {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'bldg_ar' => $this->input->post('bldg_ar'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'fax' => $this->input->post('fax'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
@@ -1026,6 +1037,8 @@ class Importers extends Application {
         $this->data['bldg_en'] = $row['bldg_en'];
         $this->data['fax'] = $row['fax'];
         $this->data['phone'] = $row['phone'];
+        $this->data['whatsapp'] = $row['whatsapp'];
+        $this->data['whatsapp'] = $row['whatsapp'];
         $this->data['pobox_ar'] = $row['pobox_ar'];
         $this->data['pobox_en'] = $row['pobox_en'];
         $this->data['email'] = $row['email'];
