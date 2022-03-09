@@ -111,7 +111,7 @@ function GetDirectorById($id)
 		return $query->row_array();
 	}
 	
-	function SearchBanks($id,$name,$phone,$fax,$status='',$gov,$district,$area,$row,$limit)
+	function SearchBanks($id,$name,$phone,$whatsapp,$fax,$status='',$gov,$district,$area,$row,$limit)
 	{
 		$this->db->select('tbl_bank.*');
 		$this->db->from('tbl_bank');
@@ -126,6 +126,9 @@ function GetDirectorById($id)
 		}
 		if($phone!=''){
 			$this->db->like('tbl_bank.phone',$phone);
+		}
+		if($whatsapp!=''){
+			$this->db->like('tbl_bank.whatsapp',$whatsapp);
 		}
 		if($fax!=''){
 			$this->db->like('tbl_bank.fax',$fax);
@@ -145,7 +148,7 @@ function GetDirectorById($id)
 		$query = $this->db->get();
 		return $query->result();
 	}
-        function GetAllBanks($id,$name,$phone,$fax,$status='',$gov,$district,$area,$row,$limit)
+        function GetAllBanks($id,$name,$phone,$whatsapp,$fax,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_bank.*');
             $this->db->from('tbl_bank');
@@ -160,6 +163,9 @@ function GetDirectorById($id)
             }
             if($phone!=''){
                 $this->db->like('tbl_bank.phone',$phone);
+            }
+			if($whatsapp!=''){
+                $this->db->like('tbl_bank.whatsapp',$whatsapp);
             }
             if($fax!=''){
                 $this->db->like('tbl_bank.fax',$fax);

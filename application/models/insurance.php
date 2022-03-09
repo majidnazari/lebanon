@@ -101,7 +101,7 @@ function GetOthersInsurance()
 		$query = $this->db->get();
 		return $query->row_array();
 	}
-function SearchInsurances($id,$name,$phone,$status='',$gov,$district,$area,$row,$limit)
+function SearchInsurances($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
 	{
 		$this->db->select('tbl_insurances.*');
 		$this->db->from('tbl_insurances');
@@ -120,6 +120,10 @@ function SearchInsurances($id,$name,$phone,$status='',$gov,$district,$area,$row,
 		{
 		$this->db->like('tbl_insurances.phone',$phone);
 		}
+		if($whatsapp!='')
+		{
+		$this->db->like('tbl_insurances.whatsapp',$whatsapp);
+		}
 		if($gov!='' and $gov!='0')
 		$this->db->where('tbl_insurances.governorate_id',$gov);
 		if($district!='' and $district!='0')
@@ -134,7 +138,7 @@ function SearchInsurances($id,$name,$phone,$status='',$gov,$district,$area,$row,
 		$query = $this->db->get();
 		return $query->result();
 	}
-        function GetAllInsurances($id,$name,$phone,$status='',$gov,$district,$area,$row,$limit)
+        function GetAllInsurances($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_insurances.*');
             $this->db->from('tbl_insurances');
@@ -152,6 +156,10 @@ function SearchInsurances($id,$name,$phone,$status='',$gov,$district,$area,$row,
             if($phone!='')
             {
                 $this->db->like('tbl_insurances.phone',$phone);
+            }
+			if($whatsapp!='')
+            {
+                $this->db->like('tbl_insurances.whatsapp',$whatsapp);
             }
             if($gov!='' and $gov!='0')
                 $this->db->where('tbl_insurances.governorate_id',$gov);

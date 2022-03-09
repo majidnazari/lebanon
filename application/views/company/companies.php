@@ -89,6 +89,7 @@ $array_name=array('id'=>'name','name'=>'name','value'=>@$name);
 $array_id=array('id'=>'id','name'=>'id','value'=>@$id);
 
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>@$phone);
+$array_whatsapp=array('id'=>'whatsapp','name'=>'whatsapp','value'=>@$whatsapp);
 
 $array_activity=array('id'=>'activity','name'=>'activity','value'=>@$activity);
 if(@$districtID=='')
@@ -146,12 +147,13 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                   <div class="block-fluid">                        
 
                     <div class="row-form clearfix">
-                        <div class="span2">ID : <br /><?php echo form_input($array_id); ?></div>
+                        <div class="span1">ID : <br /><?php echo form_input($array_id); ?></div>
                        <?php /* <div class="span1">وزارة ID : <br /><?php echo form_input(array('name'=>'ministry_id','id'=>'ministry_id','value'=>@$ministry_id)); ?></div> */?>
-                        <div class="span3">Company Name (اسم الشركة)
+                        <div class="span2">Company Name (اسم الشركة)
 						<br /><?php echo form_input($array_name); ?></div>
-                        <div class="span4">Activity<br /><?php echo form_input($array_activity); ?></div>
+                        <div class="span2">Activity<br /><?php echo form_input($array_activity); ?></div>
                         <div class="span2">Phone<br /><?php echo form_input($array_phone); ?></div>
+                        <div class="span2">WhatsApp<br /><?php echo form_input($array_whatsapp); ?></div>
                         
                     </div>                            
                                
@@ -266,7 +268,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                                <!-- <li><?=_show_delete_checked('#',$p_delete)?></li>-->
                                 <li><a  href="javascript:void(0)" onclick="printall()"><h3>Print Selected</h3></a></li>
                                 <?php if(@$search){ ?>
-                                 <li><?=anchor('companies/listview?id=' . @$id . '&ministry_id=' . @$ministry_id . '&name=' . @$name . '&activity=' . @$activity . '&phone=' . @$phone . '&gov=' . @$govID . '&district_id=' . @$districtID . '&area_id=' . @$areaID . '&status=' . @$status,'<h3>Print List</h3>')?></li>
+                                 <li><?=anchor('companies/listview?id=' . @$id . '&ministry_id=' . @$ministry_id . '&name=' . @$name . '&activity=' . @$activity . '&phone=' . @$phone .'&whatsapp=' . @$whatsapp . '&gov=' . @$govID . '&district_id=' . @$districtID . '&area_id=' . @$areaID . '&status=' . @$status,'<h3>Print List</h3>')?></li>
                                  <?php } ?>
                               <?php /*  <li>
                                     <a href="#" class="isw-settings"></a>
@@ -289,6 +291,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                                 <th style="text-align:center" width="15%">النشاط</th>
                                 <th style="text-align:center" width="10%">العنوان</th>
                                 <th style="text-align:center"  width="10%">هاتف</th>
+                                <th style="text-align:center"  width="10%">WhatsApp</th>
                                 <th style="text-align:center" width="6%">معلن</th>
                                 <th style="text-align:center" width="6%">حاجز  نسخة</th>
                                 <th style="text-align:center" width="6%">وزارة ID</th>
@@ -327,6 +330,11 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 										*/
 										echo $row->phone;
 										?>	
+                                </td>
+                                <td>
+                                	<?php 									
+										echo $row->whatsapp;
+									?>	
                                 </td>
                                 <td><?php 
 								/*

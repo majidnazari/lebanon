@@ -134,9 +134,10 @@ function delete_checked()
                 <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation','method'=>'get'));?> 
                 <div class="block-fluid"> 
                 <div class="row-form clearfix">
-                        <div class="span3">ID#<br /><?php echo form_input(array('name'=>'id','id'=>'id','value'=>$id));?></div>
-                        <div class="span3">Name (English or arabic)<br /><?php echo form_input(array('name'=>'name','id'=>'name','value'=>$name));?></div>
-                        <div class="span3">Phone<br /><?php echo form_input(array('name'=>'phone','id'=>'phone','value'=>$phone));?></div>
+                        <div class="span2">ID#<br /><?php echo form_input(array('name'=>'id','id'=>'id','value'=>$id));?></div>
+                        <div class="span2">Name (English or arabic)<br /><?php echo form_input(array('name'=>'name','id'=>'name','value'=>$name));?></div>
+                        <div class="span2">Phone<br /><?php echo form_input(array('name'=>'phone','id'=>'phone','value'=>$phone));?></div>
+                        <div class="span2">WhatsApp<br /><?php echo form_input(array('name'=>'whatsapp','id'=>'whatsapp','value'=>$whatsapp));?></div>
                         <div class="span3">Fax<br /><?php echo form_input(array('name'=>'fax','id'=>'fax','value'=>$fax));?></div>
                         
   </div>                       
@@ -222,11 +223,11 @@ function delete_checked()
                       <a href="javascript:void(0)" onclick="printall()"><h3 style="float:right !important">Print Selected</h3></a>
                       <?php 
                      // if($search){
-					  echo anchor('banks/listview?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&fax='.@$fax.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print List</h3>',array('target'=>'_blank'));
+					  echo anchor('banks/listview?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&whatsapp='.@$whatsapp.'&fax='.@$fax.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print List</h3>',array('target'=>'_blank'));
 					 // }
 					 
                      // if($search){
-                         echo anchor('banks/printed_search?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&fax='.@$fax.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print Search Result</h3>',array('target'=>'_blank'));
+                         echo anchor('banks/printed_search?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&whatsapp='.@$whatsapp.'&fax='.@$fax.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print Search Result</h3>',array('target'=>'_blank'));
                      // }
 					  ?>
                                                        
@@ -239,6 +240,7 @@ function delete_checked()
                                 <th style="text-align:center">اسم المصرف</th>
                                 <th style="text-align:center">العنوان</th>
                                 <th style="text-align:center" width="21%">هاتف</th>
+                                <th style="text-align:center" width="21%">WhatsApp</th>
                                 <th style="text-align:center" width="16%">معلن</th>                                
                                 <th style="text-align:center" width="16%">حجز  نسخة</th>                                
                                 <th>Actions</th>                                                                  
@@ -287,6 +289,7 @@ function delete_checked()
 										}
 										?>	
                                 </td>
+                                <td><?=$whatsapp?></td>
                                 <td><?=$ad?></td>
                                 <td><?=$copy_res?></td>
                                 <td>

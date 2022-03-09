@@ -698,6 +698,7 @@ printpage();
             $name = '';
             $activity = '';
             $phone = '';
+            $whatsapp = '';
             $config['base_url'] = base_url().'companies/index';
             //$config['uri_segment'] = 12;
             $query = array();

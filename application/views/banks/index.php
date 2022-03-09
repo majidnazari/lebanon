@@ -145,9 +145,11 @@ function delete_checked()
                         <div class="span1">ID# </div>
                         <div class="span1"><?=form_input(array('name'=>'id','id'=>'ID','value'=>@$id));?></div>
                         <div class="span1">Name </div>
-                        <div class="span3"><?=form_input(array('name'=>'name','id'=>'name','value'=>@$name));?></div>
+                        <div class="span2"><?=form_input(array('name'=>'name','id'=>'name','value'=>@$name));?></div>
                         <div class="span1">Phone</div>
-                        <div class="span3"> <?=form_input(array('name'=>'phone','id'=>'phone','value'=>@$phone));?></div>
+                        <div class="span2"> <?=form_input(array('name'=>'phone','id'=>'phone','value'=>@$phone));?></div>
+                        <div class="span1">WhatsApp</div>
+                        <div class="span2"> <?=form_input(array('name'=>'whatsapp','id'=>'whatsapp','value'=>@$whatsapp));?></div>
                         <div class="span1">Status </div>
                         <div class="span1"><?php $array_status=array('all'=>'All','online'=>'Online','offline'=>'Offline');
                             echo form_dropdown('status',$array_status,$status);
@@ -234,7 +236,7 @@ function delete_checked()
 					  if($search){
 					  echo anchor('insurances/listview?gov='.$govID.'&district_id='.$districtID.'&status='.$status,'<h3 style="float:right !important">Print List</h3>');
 					  }
-                      echo anchor('insurances/printed_search?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print Search Result</h3>',array('target'=>'_blank'));
+                      echo anchor('insurances/printed_search?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&whatsapp='.@$whatsapp.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print Search Result</h3>',array('target'=>'_blank'));
 					  ?>
                                                        
                 </div>  
@@ -267,6 +269,7 @@ function delete_checked()
 									$area=$this->Address->GetAreaById($row->area_id);
 									echo $area['label_ar'].' - '.$row->street_ar?></td>
                                 <td><?php echo $row->phone;?></td>
+                                <td><?php echo $row->whatsapp;?></td>
                                 <td><?php 
 										if($row->is_adv==1){
 										echo 'Yes';

@@ -723,16 +723,17 @@ class Companies extends Application
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             $areaID = $this->input->get('area_id');
             //$query=$this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,$row,$limit);
             //$total_row=count($this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,0,0));
-            $config['base_url'] = base_url() . 'companies?id=' . $id . '&ministry_id=' . $ministry_id . '&name=' . $name . '&activity=' . $activity . '&phone=' . $phone . '&gov=' . $govID . '&district_id=' . $districtID . '&area_id=' . $areaID . '&status=' . $status . '&search=Search';
+            $config['base_url'] = base_url() . 'companies?id=' . $id . '&ministry_id=' . $ministry_id . '&name=' . $name . '&activity=' . $activity . '&phone=' . $phone .'&whatsapp=' . $whatsapp . '&gov=' . $govID . '&district_id=' . $districtID . '&area_id=' . $areaID . '&status=' . $status . '&search=Search';
             $config['enable_query_strings'] = TRUE;
             $config['page_query_string'] = TRUE;
 
 
-            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, $row, $limit, FALSE, FALSE, $ministry_id);
-            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, 0, 0, FALSE, FALSE, $ministry_id));
+            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, $row, $limit, FALSE, FALSE, $ministry_id);
+            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, 0, 0, FALSE, FALSE, $ministry_id));
 
             //$config['base_url']=base_url().'companies?gov='.$govID.'&district_id='.$districtID.'&status='.$status.'&search=Search';
             $config['enable_query_strings'] = TRUE;
@@ -761,6 +762,7 @@ class Companies extends Application
         $this->data['name'] = @$name;
         $this->data['activity'] = @$activity;
         $this->data['phone'] = @$phone;
+        $this->data['whatsapp'] = @$whatsapp;
 
 
         $config['total_rows'] = $total_row;
@@ -819,6 +821,7 @@ public function x($start)
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             $areaID = $this->input->get('area_id');
             //$query=$this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,$row,$limit);
             //$total_row=count($this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,0,0));
@@ -827,8 +830,8 @@ public function x($start)
             $config['page_query_string'] = TRUE;
 
 
-            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, $row, $limit, 1);
-            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, 0, 0, 1));
+            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone, $whatsapp, $status, $govID, $districtID, $areaID, $row, $limit, 1);
+            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone, $whatsapp, $status, $govID, $districtID, $areaID, 0, 0, 1));
 
             //$config['base_url']=base_url().'companies?gov='.$govID.'&district_id='.$districtID.'&status='.$status.'&search=Search';
             $config['enable_query_strings'] = TRUE;
@@ -857,6 +860,7 @@ public function x($start)
         $this->data['name'] = @$name;
         $this->data['activity'] = @$activity;
         $this->data['phone'] = @$phone;
+        $this->data['whatsapp'] = @$whatsapp;
 
 
         $config['total_rows'] = $total_row;
@@ -970,6 +974,7 @@ public function logs($row = 0)
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             $areaID = $this->input->get('area_id');
             //$query=$this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,$row,$limit);
             //$total_row=count($this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,0,0));
@@ -978,8 +983,8 @@ public function logs($row = 0)
             $config['page_query_string'] = TRUE;
 
 
-            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, $row, $limit, FALSE, 1);
-            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, 0, 0, FALSE, 1));
+            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, $row, $limit, FALSE, 1);
+            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, 0, 0, FALSE, 1));
 
             //$config['base_url']=base_url().'companies?gov='.$govID.'&district_id='.$districtID.'&status='.$status.'&search=Search';
             $config['enable_query_strings'] = TRUE;
@@ -1008,6 +1013,7 @@ public function logs($row = 0)
         $this->data['name'] = @$name;
         $this->data['activity'] = @$activity;
         $this->data['phone'] = @$phone;
+        $this->data['whatsapp'] = @$whatsapp;
 
 
         $config['total_rows'] = $total_row;
@@ -1053,6 +1059,7 @@ public function logs($row = 0)
         $name = $this->input->get('name');
         $activity = $this->input->get('activity');
         $phone = $this->input->get('phone');
+        $whatsapp = $this->input->get('whatsapp');
         $areaID = $this->input->get('area_id');
         //$query=$this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,$row,$limit);
         //$total_row=count($this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,0,0));
@@ -1061,8 +1068,8 @@ public function logs($row = 0)
         $config['page_query_string'] = TRUE;
 
 
-        $query = $this->Company->SearchCompaniesArea($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, $row, $limit);
-        $total_row = count($this->Company->SearchCompaniesArea($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, 0, 0));
+        $query = $this->Company->SearchCompaniesArea($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, $row, $limit);
+        $total_row = count($this->Company->SearchCompaniesArea($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, 0, 0));
 
         //$config['base_url']=base_url().'companies?gov='.$govID.'&district_id='.$districtID.'&status='.$status.'&search=Search';
         $config['enable_query_strings'] = TRUE;
@@ -1077,6 +1084,7 @@ public function logs($row = 0)
         $this->data['name'] = @$name;
         $this->data['activity'] = @$activity;
         $this->data['phone'] = @$phone;
+        $this->data['whatsapp'] = @$whatsapp;
 
 
         $config['total_rows'] = $total_row;
@@ -1117,9 +1125,10 @@ public function logs($row = 0)
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
-            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $row, $limit);
-            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, 0, 0));
-            $config['base_url'] = base_url() . 'companies?id=' . $id . '&name=' . $name . '&activity=' . $activity . '&phone=' . $phone . '&search=Search';
+            $whatsapp = $this->input->get('whatsapp');
+            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $whatsapp, $row, $limit);
+            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $whatsapp, 0, 0));
+            $config['base_url'] = base_url() . 'companies?id=' . $id . '&name=' . $name . '&activity=' . $activity . '&phone=' . $phone .'&whatsapp=' . $whatsapp . '&search=Search';
             $config['enable_query_strings'] = TRUE;
             $config['page_query_string'] = TRUE;
         } elseif (isset($_GET['clear'])) {
@@ -1130,6 +1139,7 @@ public function logs($row = 0)
             $name = '';
             $activity = '';
             $phone = '';
+            $whatsapp = '';
             $config['base_url'] = base_url() . 'companies/index';
             //$config['uri_segment'] = 12;
             $query = array();
@@ -1143,6 +1153,7 @@ public function logs($row = 0)
         $this->data['name'] = $name;
         $this->data['activity'] = $activity;
         $this->data['phone'] = $phone;
+        $this->data['whatsapp'] = $whatsapp;
 
 
         $config['total_rows'] = $total_row;
@@ -1181,9 +1192,10 @@ public function logs($row = 0)
         $name = $this->input->get('name');
         $activity = $this->input->get('activity');
         $phone = $this->input->get('phone');
+        $whatsapp = $this->input->get('whatsapp');
         $areaID = $this->input->get('area_id');
 
-        $this->data['query'] = $this->Company->SearchCompanies($id, $name, $activity, $phone, $status, $govID, $districtID, $areaID, 0, 0, FALSE, FALSE, $ministry_id);
+        $this->data['query'] = $this->Company->SearchCompanies($id, $name, $activity, $phone, $whatsapp, $status, $govID, $districtID, $areaID, 0, 0, FALSE, FALSE, $ministry_id);
         $this->data['title'] = $this->data['Ctitle'] . " - Companies - الشركات";;
         $this->data['subtitle'] = "Companies - الشركات";
         $this->load->view('company/listview', $this->data);
@@ -1272,6 +1284,7 @@ public function branches($id) {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'fax' => $this->input->post('fax'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
                     'email' => $this->input->post('email'),
@@ -1348,6 +1361,7 @@ public function branches($id) {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'fax' => $this->input->post('fax'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
                     'email' => $this->input->post('email'),
@@ -1419,6 +1433,7 @@ public function branches($id) {
             $this->data['bldg_en'] = $row['bldg_en'];
             $this->data['fax'] = $row['fax'];
             $this->data['phone'] = $row['phone'];
+            $this->data['whatsapp'] = $row['whatsapp'];
             $this->data['pobox_ar'] = $row['pobox_ar'];
             $this->data['pobox_en'] = $row['pobox_en'];
             $this->data['beside_ar'] = $row['beside_ar'];
@@ -3179,11 +3194,11 @@ public function branches($id) {
                 'street_ar' => $filesop[7],
                 'street_en' => $filesop[7],
                 'phone' => $filesop[8],
-               // 'whatsapp' => $filesop[8],
-                'fax' => $filesop[9],
-                'email' => $filesop[10],
-                'website' => $filesop[11],
-                'personal_notes' => $filesop[12],
+                'whatsapp' => $filesop[9],
+                'fax' => $filesop[10],
+                'email' => $filesop[11],
+                'website' => $filesop[12],
+                'personal_notes' => $filesop[13],
             );
             //$name = $filesop[0];
             //$email = $filesop[1];

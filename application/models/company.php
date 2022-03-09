@@ -860,7 +860,7 @@ return $query->result();
         $query = $this->db->get();
         return $query->result();
     }
-    function SearchCompanies($id, $name, $activity, $phone, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
+    function SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
         $this->db->select('tbl_company.*');
         //$this->db->select('tbl_company_type.label_en as type_en');
         //$this->db->select('tbl_company_type.label_ar as type_ar');
@@ -897,7 +897,9 @@ return $query->result();
         if($phone != '') {
             $this->db->or_like('tbl_company.phone', $phone);
         }
-
+        if($whatsapp != '') {
+            $this->db->or_like('tbl_company.whatsapp', $whatsapp);
+        }
         if($gov != '' and $gov != 0) {
             $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_company.governorate_id', 'left');
 
@@ -982,7 +984,7 @@ return $query->result();
         $query = $this->db->get();
         return $query->result();
     }
-    function SearchCompaniesArea($id, $name, $activity, $phone, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
+    function SearchCompaniesArea($id, $name, $activity, $phone,$whatsapp, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
         $this->db->select('tbl_company.*');
         //$this->db->select('tbl_company_type.label_en as type_en');
         //$this->db->select('tbl_company_type.label_ar as type_ar');
@@ -1017,7 +1019,9 @@ return $query->result();
         if($phone != '') {
             $this->db->or_like('tbl_company.phone', $phone);
         }
-
+        if($whatsapp != '') {
+            $this->db->or_like('tbl_company.whatsapp', $whatsapp);
+        }
         if($gov != '' and $gov != 0) {
             $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_company.governorate_id', 'left');
 
