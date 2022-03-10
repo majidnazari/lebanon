@@ -24,6 +24,7 @@
                                 <th>City</th>
                                 <th>Street</th>
                                 <th>Phone</th>
+                                <th>WhatsApp</th>
                                 <th>Fax</th>
                                 <th>P.O.BOX</th>
                                 <th>Email</th>
@@ -41,6 +42,7 @@
                                 <td><?=$row->area_en?></td>
                                 <td><?=$row->street_en?></td>
                                 <td><?=$row->phone?></td>
+                                <td><?=$row->whatsapp?></td>
                                 <td><?=$row->fax?></td>
                                 <td><?=$row->pobox_en?></td>
                                 <td><?=$row->email?></td>

@@ -214,6 +214,10 @@
         <td class="data-box arabic"><?= $query['phone']; ?></td>
     </tr>
     <tr>
+        <td class="yellow"> واتساپ:</td>
+        <td class="data-box arabic"><?= $query['whatsapp']; ?></td>
+    </tr>
+    <tr>
         <td class="yellow"> فاكس:</td>
         <td class="data-box arabic"><?= $query['fax']; ?></td>
     </tr>

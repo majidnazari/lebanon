@@ -61,6 +61,7 @@
 								<th>Activity</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								
                                 <th>Email</th>
                              </tr>
@@ -95,6 +96,7 @@
 											<td class="'.$css.'">'.$row->activity_en.'</td>
 											<td class="'.$css.'">'.$row->street_en.'</td>
 											<td class="'.$css.'">'.$row->phone.'</td>
+											<td class="'.$css.'">'.$row->whatsapp.'</td>
 											
                                             <td class="'.$css.'">'.$row->email.'</td>
                                         </tr>';
@@ -130,6 +132,7 @@
 											<td class="'.$css.'">'.$row->activity_en.'</td>
 											<td class="'.$css.'">'.$row->street_en.'</td>
 											<td class="'.$css.'">'.$row->phone.'</td>
+											<td class="'.$css.'">'.$row->whatsapp.'</td>
 											
                                             <td class="'.$css.'">'.$row->email.'</td>
                                         </tr>';

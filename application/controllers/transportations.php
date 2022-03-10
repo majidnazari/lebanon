@@ -281,11 +281,12 @@ class Transportations extends Application {
         $id=$this->input->get('id');
         $name=$this->input->get('name');
         $phone=$this->input->get('phone');
+        $whatsapp=$this->input->get('whatsapp');
         $gov=$this->input->get('gov');
         $district_id=$this->input->get('district_id');
         $area_id=$this->input->get('area_id');
         $status=$this->input->get('status');
-        $query = $this->Transport->SearchTransportations($id, $name, $phone, $status, $gov, $district_id,$area_id, 0, 0);
+        $query = $this->Transport->SearchTransportations($id, $name, $phone,$whatsapp, $status, $gov, $district_id,$area_id, 0, 0);
         foreach($query as $row) {
             $this->view($row->id);
 
@@ -304,10 +305,11 @@ class Transportations extends Application {
                 $id = $this->input->get('id');
                 $name = $this->input->get('name');
                 $phone = $this->input->get('phone');
+                $whatsapp = $this->input->get('whatsapp');
 
-                $query = $this->Transport->SearchTransportations($id, $name, $phone, $status, $govID, $districtID,$areaID, $row, $limit);
+                $query = $this->Transport->SearchTransportations($id, $name, $phone,$whatsapp, $status, $govID, $districtID,$areaID, $row, $limit);
                 //var_dump($query);
-                $total_row = count($this->Transport->SearchTransportations($id, $name, $phone, $status, $govID, $districtID,$areaID, 0, 0));
+                $total_row = count($this->Transport->SearchTransportations($id, $name, $phone,$whatsapp, $status, $govID, $districtID,$areaID, 0, 0));
                 $config['base_url'] = base_url().'transportations?gov='.$govID.'&district_id='.$districtID.'&area_id='.$areaID.'&status='.$status.'&search=Search';
 
                 $config['enable_query_strings'] = TRUE;
@@ -337,6 +339,7 @@ class Transportations extends Application {
             $this->data['id'] = @$id;
             $this->data['name'] = @$name;
             $this->data['phone'] = @$phone;
+            $this->data['whatsapp'] = @$whatsapp;
 
             $config['total_rows'] = $total_row;
             $config['per_page'] = $limit;
@@ -372,7 +375,8 @@ class Transportations extends Application {
             $id = $this->input->get('id');
             $name = $this->input->get('name');
             $phone = $this->input->get('phone');
-            $this->data['query'] = $this->Transport->SearchTransportations($id, $name, $phone, $status, $gov, $district_id,$area_id, 0, 0);
+            $whatsapp = $this->input->get('whatsapp');
+            $this->data['query'] = $this->Transport->SearchTransportations($id, $name, $phone,$whatsapp, $status, $gov, $district_id,$area_id, 0, 0);
             $this->data['title'] = $this->data['Ctitle']." - Companies - الشركات";
             $this->data['subtitle'] = "Companies - الشركات";
             $this->load->view('transportation/listview', $this->data);
@@ -446,12 +450,13 @@ class Transportations extends Application {
             $name = $this->input->get('name');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
+            $whatsapp = $this->input->get('whatsapp');
             //$this->data['govID']=$this->input->get('status');
             //	$this->data['description']=$this->input->get('description');
             //	$config['base_url']=base_url().'parameters/items/subhead?code=03.03&description=&status=online&search=search';
-            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $row, $limit);
-            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, 0, 0));
-            $config['base_url'] = base_url().'impoters?id='.$id.'&name='.$name.'&activity='.$activity.'&phone='.$phone.'&search=Search';
+            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, $row, $limit);
+            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, 0, 0));
+            $config['base_url'] = base_url().'impoters?id='.$id.'&name='.$name.'&activity='.$activity.'&phone='.$phone.'&whatsapp='.$whatsapp.'&search=Search';
             //	$trows=$this->Item->GetSubHeading('',$row,0);
             //$config['total_rows']=count($this->data['query']);
             $config['enable_query_strings'] = TRUE;
@@ -479,6 +484,7 @@ class Transportations extends Application {
         $this->data['name'] = $name;
         $this->data['activity'] = $activity;
         $this->data['phone'] = $phone;
+        $this->data['whatsapp'] = $whatsapp;
 
 
 
@@ -641,6 +647,7 @@ class Transportations extends Application {
         $this->form_validation->set_rules('name_en', 'name_en', 'required');
         $this->form_validation->set_rules('name_ar', 'name_ar', 'required');
         $this->form_validation->set_rules('phone', 'phone', 'trim');
+        $this->form_validation->set_rules('whatsapp', 'whatsapp', 'trim');
         $this->form_validation->set_rules('country_id', 'country_id', 'trim');
         $this->form_validation->set_rules('email', 'email', 'trim');
         $this->form_validation->set_rules('website', 'website', 'trim');
@@ -651,6 +658,7 @@ class Transportations extends Application {
                     'name_ar' => $this->form_validation->set_value('name_ar'),
                     'name_en' => $this->form_validation->set_value('name_en'),
                     'phone' => $this->form_validation->set_value('phone'),
+                    'whatsapp' => $this->form_validation->set_value('whatsapp'),
                     'country_id' => $this->form_validation->set_value('country_id'),
                     'email' => $this->form_validation->set_value('email'),
                     'website' => $this->form_validation->set_value('website'),
@@ -725,6 +733,7 @@ class Transportations extends Application {
         $this->form_validation->set_rules('name_en', 'name_en', 'required');
         $this->form_validation->set_rules('name_ar', 'name_ar', 'required');
         $this->form_validation->set_rules('phone', 'phone', 'trim');
+        $this->form_validation->set_rules('whatsapp', 'whatsapp', 'trim');
         $this->form_validation->set_rules('country_id', 'country_id', 'trim');
         $this->form_validation->set_rules('email', 'email', 'trim');
         $this->form_validation->set_rules('website', 'website', 'trim');
@@ -735,6 +744,7 @@ class Transportations extends Application {
                     'name_ar' => $this->form_validation->set_value('name_ar'),
                     'name_en' => $this->form_validation->set_value('name_en'),
                     'phone' => $this->form_validation->set_value('phone'),
+                    'whatsapp' => $this->form_validation->set_value('whatsapp'),
                     'country_id' => $this->form_validation->set_value('country_id'),
                     'email' => $this->form_validation->set_value('email'),
                     'website' => $this->form_validation->set_value('website'),
@@ -839,6 +849,7 @@ class Transportations extends Application {
                     'bldg_en' => $this->input->post('bldg_en'),
                     'bldg_ar' => $this->input->post('bldg_ar'),
                     'phone' => $this->input->post('phone'),
+                    'whatsapp' => $this->input->post('whatsapp'),
                     'fax' => $this->input->post('fax'),
                     'pobox_ar' => $this->input->post('pobox_ar'),
                     'pobox_en' => $this->input->post('pobox_en'),
@@ -915,6 +926,7 @@ class Transportations extends Application {
         $this->data['bldg_en'] = '';
         $this->data['fax'] = '';
         $this->data['phone'] = '';
+        $this->data['whatsapp'] = '';
         $this->data['pobox_ar'] = '';
         $this->data['pobox_en'] = '';
         $this->data['email'] = '';
@@ -1012,6 +1024,7 @@ class Transportations extends Application {
                         'bldg_en' => $this->input->post('bldg_en'),
                         'bldg_ar' => $this->input->post('bldg_ar'),
                         'phone' => $this->input->post('phone'),
+                        'whatsapp' => $this->input->post('whatsapp'),
                         'fax' => $this->input->post('fax'),
                         'pobox_ar' => $this->input->post('pobox_ar'),
                         'pobox_en' => $this->input->post('pobox_en'),
@@ -1089,6 +1102,7 @@ class Transportations extends Application {
             $this->data['bldg_en'] = $row['bldg_en'];
             $this->data['fax'] = $row['fax'];
             $this->data['phone'] = $row['phone'];
+            $this->data['whatsapp'] = $row['whatsapp'];
             $this->data['pobox_ar'] = $row['pobox_ar'];
             $this->data['pobox_en'] = $row['pobox_en'];
             $this->data['email'] = $row['email'];

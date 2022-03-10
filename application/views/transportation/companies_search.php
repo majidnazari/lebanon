@@ -15,6 +15,7 @@ $array_name=array('id'=>'name','name'=>'name','value'=>$name);
 $array_id=array('id'=>'id','name'=>'id','value'=>$id);
 
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>$phone);
+$array_whatsapp=array('id'=>'whatsapp','name'=>'whatsapp','value'=>$whatsapp);
 
 $array_activity=array('id'=>'activity','name'=>'activity','value'=>$activity);
 
@@ -58,6 +59,7 @@ $array_activity=array('id'=>'activity','name'=>'activity','value'=>$activity);
 
                         <div class="span2">Activity<br /><?php echo form_input($array_activity); ?></div>
                         <div class="span2">Phone<br /><?php echo form_input($array_phone); ?></div>
+                        <div class="span2">WhatsApp<br /><?php echo form_input($array_whatsapp); ?></div>
                         <div class="span3"><br /><input type="submit" name="search" value="Search" class="btn">
                         <input type="submit" name="clear" value="Clear" class="btn">
                         </div>
@@ -96,6 +98,7 @@ $array_activity=array('id'=>'activity','name'=>'activity','value'=>$activity);
                                 <th style="text-align:center">اسم الشركة</th>
                                 <th style="text-align:center" width="21%">اسم المسؤول</th>
                                 <th style="text-align:center" width="21%">هاتف</th>
+                                <th style="text-align:center" width="21%">واتساپ</th>
                                 <th style="text-align:center" width="16%">معلن</th>                                
                                 <th>Actions</th>                                    
                             </tr>
@@ -123,6 +126,11 @@ $array_activity=array('id'=>'activity','name'=>'activity','value'=>$activity);
 										*/
 										echo $row->phone;
 										?>	
+                                </td>
+                                <td>
+                                	<?php 								
+										echo $row->whatsapp;
+									?>	
                                 </td>
                                 <td><?php 
 								/*

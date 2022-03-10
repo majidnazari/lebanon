@@ -417,6 +417,7 @@ class Reports extends Application
             <th style="width: 100px !important">المنطقة</th>
             <th>الشارع</th>
             <th>هاتف</th>
+            <th>واتساپ</th>
             <th>المندوب</th>
             <th>عدد انترنت</th>
             <th>معلن</th>
@@ -475,6 +476,7 @@ class Reports extends Application
                     <td>'.$row->area_ar.'</td>
                     <td>'.$row->street_ar.'</td>
                     <td>'.@$phone[0].'</td>
+                    <td>'.$row->whatsapp.'</td>
                     <td>'.$row->sales_man_ar.'</td>
                     <td align="center">'.(($row->CNbr*2)+4).'</td>
                     <td align="center">'.$is_adv.'</td>
@@ -551,6 +553,7 @@ class Reports extends Application
             <th style="width: 100px !important">المنطقة</th>
             <th>الشارع</th>
             <th>هاتف</th>
+            <th>واتساپ</th>
             <th>المندوب</th>
             <th>عدد انترنت</th>
             <th>معلن</th>
@@ -626,6 +629,7 @@ class Reports extends Application
                     <td>'.$row->area_ar.'</td>
                     <td>'.$row->street_ar.'</td>
                     <td>'.@$phone[0].'</td>
+                    <td>'.$row->whatsapp.'</td>
                     <td>'.$row->sales_man_ar.'</td>
                     <td align="center">'.(($row->CNbr*2)+4).'</td>
                     <td align="center">'.$is_adv.'</td>
@@ -1173,6 +1177,7 @@ function export_banks($lang = 'ar') {
                                 <th>البريد الكتروني</th>
                                 <th>فاكس</th>
                                <th>هاتف</th>
+                               <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -1187,6 +1192,7 @@ function export_banks($lang = 'ar') {
                                     <th>City</th>
                                     <th>Street</th>
                                     <th>Phone</th>
+                                    <th>WhatsApp</th>
                                     <th>Fax</th>
                                     <th>Email</th>
                                 </tr>';
@@ -1203,6 +1209,7 @@ function export_banks($lang = 'ar') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -1216,6 +1223,7 @@ function export_banks($lang = 'ar') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_en.'</td>
                                             <td style="text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                         </tr>'; 
@@ -1239,6 +1247,7 @@ function export_banks($lang = 'ar') {
                         'المدينة' => $row->area_ar,
                         'الشارع' => $row->street_ar,
                         'هاتف' => $row->phone,
+                        'واتساپ' => $row->whatsapp,
                         'فاكس' => $row->fax,
                         'ص.ب' => $row->pobox_ar,
                         'البريد اللكتروني' => $row->email,
@@ -1253,6 +1262,7 @@ function export_banks($lang = 'ar') {
                         'City' => $row->area_en,
                         'Street' => $row->street_en,
                         'Phone' => $row->phone,
+                        'WhatsApp' => $row->whatsapp,
                         'Fax' => $row->fax,
                         'P.O.BOX' => $row->pobox_en,
                         'Email' => $row->email,
@@ -1335,6 +1345,7 @@ function ExportGeoBanksAr($gov = '') {
                                                         <th>البريد الكتروني</th>
                                                         <th>فاكس</th>
                                                        <th>هاتف</th>
+                                                       <th>واتساپ</th>
                                                         <th>الشارع</th>
                                                         <th>مدير الفرع </th>
                                                         <th style="width: 250px !important;">اسم المصرف</th>
@@ -1345,6 +1356,7 @@ function ExportGeoBanksAr($gov = '') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->beside_ar.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->bank_ar.'</td>
@@ -1420,6 +1432,7 @@ function ExportGeoBanksAr($gov = '') {
                                                         <th>Branch Manager</th>
                                                         <th>Street</th>
                                                         <th>Phone</th>
+                                                        <th>WhatsApp</th>
                                                         <th>Fax</th>
                                                         <th>Email</th>
                                                     </tr>'; 
@@ -1429,7 +1442,7 @@ function ExportGeoBanksAr($gov = '') {
                                     <td style="text-align:center !important; '.$css_ex.'">'.$row->bank_en.'</td>
                                     <td style="text-align:center; '.$css_ex.'">'.$row->beside_en.'</td>
                                     <td style="text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
-                                     <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                     <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                      <td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                     <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                         </tr>';
@@ -1465,6 +1478,7 @@ function ExportGeoBanksAr($gov = '') {
                         'المدينة' => $row->area_ar,
                         'الشارع' => $row->street_ar,
                         'هاتف' => $row->phone,
+                        'واتساپ' => $row->whatsapp,
                         'فاكس' => $row->fax,
                         'ص.ب' => $row->pobox_ar,
                         'البريد اللكتروني' => $row->email,
@@ -1481,6 +1495,7 @@ function ExportGeoBanksAr($gov = '') {
                         'City' => $row->area_en,
                         'Street' => $row->street_en,
                         'Phone' => $row->phone,
+                        'WhatsApp' => $row->whatsapp,
                         'Fax' => $row->fax,
                         'P.O.BOX' => $row->pobox_en,
                         'Email' => $row->email,
@@ -1562,6 +1577,7 @@ function ExportGeoBanksAr($gov = '') {
                         								<th>البريد اللكتروني</th>
                                                         <th>فاكس</th>
                                                         <th>هاتف</th>
+                                                        <th>واتساپ</th>
                                                         <th>الشارع</th>
                                                         <th>المدينة</th>
                                                         <th>قضاء</th>
@@ -1594,6 +1610,7 @@ function ExportGeoBanksAr($gov = '') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -1612,6 +1629,7 @@ function ExportGeoBanksAr($gov = '') {
                                          <td style="text-align:center; '.$css_ex.'">'.$row->area_en.'</td>
                                          <td style="text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
                                          <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                         <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                          <td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                         <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                     </tr>';
@@ -1679,6 +1697,7 @@ function export_transportation($lang = 'ar') {
                                 <th>البريد الكتروني</th>
                                 <th>فاكس</th>
                                <th>هاتف</th>
+                               <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -1695,6 +1714,7 @@ function export_transportation($lang = 'ar') {
                                     <th>City</th>
                                     <th>Street</th>
                                     <th>Phone</th>
+                                    <th>WhatsApp</th>
                                     <th>Fax</th>
                                     <th>Email</th>
                                 </tr>';
@@ -1711,6 +1731,7 @@ function export_transportation($lang = 'ar') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -1726,6 +1747,7 @@ function export_transportation($lang = 'ar') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_en.'</td>
                                             <td style="text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                         </tr>'; 
@@ -1750,6 +1772,7 @@ function export_transportation($lang = 'ar') {
                         'المدينة' => $row->area_ar,
                         'الشارع' => $row->street_ar,
                         'هاتف' => $row->phone,
+                        'واتساپ' => $row->whatsapp,
                         'فاكس' => $row->fax,
                         'ص.ب' => $row->pobox_ar,
                         'البريد اللكتروني' => $row->email,
@@ -1765,6 +1788,7 @@ function export_transportation($lang = 'ar') {
                         'City' => $row->area_en,
                         'Street' => $row->street_en,
                         'Phone' => $row->phone,
+                        'WhatsApp' => $row->whatsapp,
                         'Fax' => $row->fax,
                         'P.O.BOX' => $row->pobox_en,
                         'Email' => $row->email,
@@ -1827,6 +1851,7 @@ function export_insurance($lang = 'ar') {
                                 <th>البريد الكتروني</th>
                                 <th>فاكس</th>
                                <th>هاتف</th>
+                               <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -1843,6 +1868,7 @@ function export_insurance($lang = 'ar') {
                                     <th>City</th>
                                     <th>Street</th>
                                     <th>Phone</th>
+                                    <th>WhatsApp</th>
                                     <th>Fax</th>
                                     <th>Email</th>
                                 </tr>';
@@ -1859,6 +1885,7 @@ function export_insurance($lang = 'ar') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -1874,6 +1901,7 @@ function export_insurance($lang = 'ar') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_en.'</td>
                                             <td style="text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                         </tr>'; 
@@ -1898,6 +1926,7 @@ function export_insurance($lang = 'ar') {
                         'المدينة' => $row->area_ar,
                         'الشارع' => $row->street_ar,
                         'هاتف' => $row->phone,
+                        'واتساپ' => $row->whatsapp,
                         'فاكس' => $row->fax,
                         'ص.ب' => $row->pobox_ar,
                         'البريد اللكتروني' => $row->email,
@@ -1912,7 +1941,7 @@ function export_insurance($lang = 'ar') {
                         'Kazaa' => $row->district_en,
                         'City' => $row->area_en,
                         'Street' => $row->street_en,
-                        'Phone' => $row->phone,
+                        'WhatsApp' => $row->whatsapp,
                         'Fax' => $row->fax,
                         'P.O.BOX' => $row->pobox_en,
                         'Email' => $row->email,
@@ -2010,6 +2039,7 @@ function ExportGeoCompanyAr($gov = '') {
                                                         <th>البريد الكتروني</th>
                                                         <th>فاكس</th>
                                                        <th>هاتف</th>
+                                                       <th>واتساپ</th>
                                                         <th>الشارع</th>
                                                         <th>النشاط</th>
                                                         <th style="width: 250px !important;">الشركة</th>
@@ -2020,6 +2050,7 @@ function ExportGeoCompanyAr($gov = '') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->activity_ar.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->name_ar.'</td>
@@ -2100,6 +2131,7 @@ function ExportGeoCompanyAr($gov = '') {
                         								<th>Activity</th>
                         								<th>Street</th>
                         								<th>Phone</th>
+                        								<th>WhatsApp</th>
                         								<th>Fax</th>
                                                         <th>Email</th>
                                                     </tr>'; 
@@ -2110,6 +2142,7 @@ function ExportGeoCompanyAr($gov = '') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->activity_en.'</td>
                                             <td style="text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                         </tr>';
@@ -2155,6 +2188,7 @@ function ExportGeoCompanyAr($gov = '') {
                                 <th>ص.ب</th>
                                  <th>فاكس</th>
                                	 <th>هاتف</th>
+                                 <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>النشاط</th>
                                 <th>الشركة</th>
@@ -2191,6 +2225,7 @@ function ExportGeoCompanyAr($gov = '') {
                                             <td class="'.$css.'" style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->pobox_ar.'</td>
                                           	<td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->fax.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td class="'.$css.'" style="direction:rtl !important; text-align:right !important '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->activity_ar.'</td>
                                             <td class="'.$css.'" style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->name_ar.'</td>
@@ -2230,6 +2265,7 @@ function ExportGeoCompanyAr($gov = '') {
                                             <td class="'.$css.'" style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->pobox_ar.'</td>
                                           	<td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->fax.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td class="'.$css.'" style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->activity_ar.'</td>
                                             <td class="'.$css.'" style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->name_ar.'</td>
@@ -2274,6 +2310,7 @@ function ExportGeoCompanyAr($gov = '') {
 								<th>Activity</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>P.O.BOX</th>
                                 <th>Email</th>
@@ -2311,6 +2348,7 @@ function ExportGeoCompanyAr($gov = '') {
 											<td class="'.$css.'" style=" style="'.$css_ex.'">'.$row->activity_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->street_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->phone.'</td>
+											<td class="'.$css.'" style="'.$css_ex.'">'.$row->whatsapp.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->fax.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->pobox_en.'</td>
                                             <td class="'.$css.'" style="'.$css_ex.'">'.$row->email.'</td>
@@ -2354,6 +2392,7 @@ function ExportGeoCompanyAr($gov = '') {
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->activity_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->street_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->phone.'</td>
+											<td class="'.$css.'" style="'.$css_ex.'">'.$row->whatsapp.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->fax.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->pobox_en.'</td>
                                             <td class="'.$css.'" style="'.$css_ex.'">'.$row->email.'</td>
@@ -2411,6 +2450,7 @@ tr, td, table, tr{
 								<th>Street AR</th>
 								<th>Street EN</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>POBOX AR</th>
 								<th>POBOX EN</th>
@@ -2448,6 +2488,7 @@ tr, td, table, tr{
 									<td>'.$row->street_ar.'</td>
 									<td>'.$row->street_en.'</td>
 									<td>'.$row->phone.'</td>
+									<td>'.$row->whatsapp.'</td>
 									<td>'.$row->fax.'</td>
 									<td>'.$row->pobox_ar.'</td>
 									<td>'.$row->pobox_en.'</td>
@@ -2597,6 +2638,7 @@ tr, td, table, tr{
 								<th>Street AR</th>
 								<th>Street EN</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>POBOX AR</th>
 								<th>POBOX EN</th>
@@ -2639,6 +2681,7 @@ tr, td, table, tr{
 									<td>'.$row->street_ar.'</td>
 									<td>'.$row->street_en.'</td>
 									<td>'.$row->phone.'</td>
+									<td>'.$row->whatsapp.'</td>
 									<td>'.$row->fax.'</td>
 									<td>'.$row->pobox_ar.'</td>
 									<td>'.$row->pobox_en.'</td>
@@ -2713,6 +2756,7 @@ tr, td, table, tr{
 								<th>البلدة أو المحلة</th>
 								<th>الشارع</th>
 								<th>هاتف</th>
+                                <th>واتساپ</th>
 								<th>فاكس</th>
 								<th>ص. بريد</th>
 								<th>البريد الالكتروني</th>
@@ -2901,6 +2945,7 @@ tr, td, table, tr{
 									<td>'.$row->area_ar.'</td>
 									<td>'.$row->street_ar.'</td>
 									<td>'.$row->phone.'</td>
+									<td>'.$row->whatsapp.'</td>
 									<td>'.$row->fax.'</td>
 									<td>'.$row->pobox_ar.'</td>
 									<td>'.$row->email.'</td>
@@ -2969,6 +3014,7 @@ tr, td, table, tr{
 								<th>City</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>P.O.Box</th>
 								<th>Email</th>
@@ -3146,6 +3192,7 @@ tr, td, table, tr{
 									<td>'.$row->area_en.'</td>
 									<td>'.$row->street_en.'</td>
 									<td>'.$row->phone.'</td>
+									<td>'.$row->whatsapp.'</td>
 									<td>'.$row->fax.'</td>
 									<td>'.$row->pobox_en.'</td>
 									<td>'.$row->email.'</td>
@@ -3211,6 +3258,7 @@ tr, td, table, tr{
 								<th>البلدة أو المحلة</th>
 								<th>الشارع</th>
 								<th>هاتف</th>
+                                <th>واتساپ</th>
 								<th>فاكس</th>
 								<th>ص. بريد</th>
 								<th>البريد الالكتروني</th>
@@ -3378,6 +3426,7 @@ tr, td, table, tr{
 									<td>'.$row->area_ar.'</td>
 									<td>'.$row->street_ar.'</td>
 									<td>'.$row->phone.'</td>
+									<td>'.$row->whatsapp.'</td>
 									<td>'.$row->fax.'</td>
 									<td>'.$row->pobox_ar.'</td>
 									<td>'.$row->email.'</td>
@@ -3442,6 +3491,7 @@ tr, td, table, tr{
 								<th>City</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>P.O.Box</th>
 								<th>Email</th>
@@ -3609,6 +3659,7 @@ tr, td, table, tr{
 									<td>'.$row->area_en.'</td>
 									<td>'.$row->street_en.'</td>
 									<td>'.$row->phone.'</td>
+									<td>'.$row->whatsapp.'</td>
 									<td>'.$row->fax.'</td>
 									<td>'.$row->pobox_en.'</td>
 									<td>'.$row->email.'</td>
@@ -3689,6 +3740,7 @@ tr, td, table, tr{
                                  <th>City</th>
                                  <th>Street</th>
 								 <th>Phone</th>
+								 <th>WhatsApp</th>
 								 <th>Fax</th>
                                  <th>P.O.BOX</th>
                                 <th>Email</th>
@@ -3699,6 +3751,7 @@ tr, td, table, tr{
                                 <th>ص.ب</th>
                                  <th>فاكس</th>
                                	 <th>هاتف</th>
+                                 <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -3730,6 +3783,7 @@ tr, td, table, tr{
                                             <td>'.$row->area_en.'</td>
                                             <td>'.$row->street_en.'</td>
 											<td>'.$row->phone.'</td>
+											<td>'.$row->whatsapp.'</td>
                                             <td>'.$row->fax.'</td>
                                             <td>'.$row->pobox_en.'</td>
                                             <td>'.$row->email.'</td>
@@ -3742,6 +3796,7 @@ tr, td, table, tr{
                                 <td style="direction:rtl !important; text-align:right !important">'.$row->pobox_ar.'</td>
                               	<td style="text-align:right">'.$row->fax.'</td>
                                 <td style="text-align:right">'.$row->phone.'</td>
+                                <td style="text-align:right">'.$row->whatsapp.'</td>
                                 <td style="direction:rtl !important; text-align:right !important">'.$row->street_ar.'</td>
                                 <td style="text-align:right">'.$row->area_ar.'</td>
                                 <td style="text-align:right">'.$row->district_ar.'</td>
@@ -3819,6 +3874,7 @@ tr, td, table, tr{
                                  <th>City</th>
                                  <th>Street</th>
 								 <th>Phone</th>
+								 <th>WhatsApp</th>
 								 <th>Fax</th>
                                  <th>P.O.BOX</th>
                                 <th>Email</th>
@@ -3829,6 +3885,7 @@ tr, td, table, tr{
                                 <th>ص.ب</th>
                                  <th>فاكس</th>
                                	 <th>هاتف</th>
+                                 <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -3860,6 +3917,7 @@ tr, td, table, tr{
                                             <td>'.$row->area_en.'</td>
                                             <td>'.$row->street_en.'</td>
 											<td>'.$row->phone.'</td>
+											<td>'.$row->whatsapp.'</td>
                                             <td>'.$row->fax.'</td>
                                             <td>'.$row->pobox_en.'</td>
                                             <td>'.$row->email.'</td>
@@ -3872,6 +3930,7 @@ tr, td, table, tr{
                                 <td style="direction:rtl !important; text-align:right !important">'.$row->pobox_ar.'</td>
                               	<td style="text-align:right">'.$row->fax.'</td>
                                 <td style="text-align:right">'.$row->phone.'</td>
+                                <td style="text-align:right">'.$row->whatsapp.'</td>
                                 <td style="direction:rtl !important; text-align:right !important">'.$row->street_ar.'</td>
                                 <td style="text-align:right">'.$row->area_ar.'</td>
                                 <td style="text-align:right">'.$row->district_ar.'</td>
@@ -3988,6 +4047,7 @@ tr, td, table, tr{
                                                         <th>البريد الكتروني</th>
                                                         <th>فاكس</th>
                                                        <th>هاتف</th>
+                                                       <th>واتساپ</th>
                                                         <th>الشارع</th>
                                                         <th>المدينة</th>
                                                         <th>قضاء</th>
@@ -4000,6 +4060,7 @@ tr, td, table, tr{
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -4048,6 +4109,7 @@ tr, td, table, tr{
                                             <td style="text-align:right; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:right; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:right; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:right; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -4140,6 +4202,7 @@ function ExportCompaniesEn($sectorID = '') {
                         								<th>City</th>
                         								<th>Street</th>
                         								<th>Phone</th>
+                        								<th>WhatsApp</th>
                         								<th>Fax</th>
                                                         <th>Email</th>
                                                     </tr>
@@ -4152,6 +4215,7 @@ function ExportCompaniesEn($sectorID = '') {
                                             <td style="text-align:center; '.$css_ex.'">'.$row->area_en.'</td>
                                             <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->street_en.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:center; '.$css_ex.'">'.$row->email.'</td>
                                         </tr>';
@@ -4198,6 +4262,7 @@ function ExportCompaniesEn($sectorID = '') {
                                             <td style="text-align:right; '.$css_ex.'">'.$row->email.'</td>
                                           	<td style="text-align:right; '.$css_ex.'">'.$row->fax.'</td>
                                             <td style="text-align:right; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:right; '.$css_ex.'">'.$row->whatsapp.'</td>
                                             <td style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->street_ar.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->area_ar.'</td>
                                             <td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -4254,6 +4319,7 @@ function ExportCompaniesEn($sectorID = '') {
 								<th>City</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>P.O.BOX</th>
                                 <th>Email</th>
@@ -4296,6 +4362,7 @@ function ExportCompaniesEn($sectorID = '') {
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->area_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->street_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->phone.'</td>
+											<td class="'.$css.'" style="'.$css_ex.'">'.$row->whatsapp.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->fax.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->pobox_en.'</td>
 	                                        <td class="'.$css.'" style="'.$css_ex.'">'.$row->email.'</td>
@@ -4345,6 +4412,7 @@ function ExportCompaniesEn($sectorID = '') {
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->area_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->street_en.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->phone.'</td>
+											<td class="'.$css.'" style="'.$css_ex.'">'.$row->whatsapp.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->fax.'</td>
 											<td class="'.$css.'" style="'.$css_ex.'">'.$row->pobox_en.'</td>
 	                                        <td class="'.$css.'" style="'.$css_ex.'">'.$row->email.'</td>
@@ -4684,6 +4752,7 @@ tr, td, table, tr{
 								<th>City</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>P.O.BOX</th>
                                 <th>Email</th>
@@ -4694,6 +4763,8 @@ tr, td, table, tr{
                                 <th>ص.ب</th>
                                 <th>فاكس</th>
                                <th>هاتف</th>
+                               <th>واتساپ</th>
+                               <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -4722,6 +4793,7 @@ tr, td, table, tr{
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->area_en.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->street_en.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->phone.'</td>
+								<td class="'.$css.'" style="'.$css_ex.'">'.$row->whatsapp.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->fax.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->pobox_en.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->email.'</td>
@@ -4741,6 +4813,7 @@ tr, td, table, tr{
 									<td style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->pobox_ar.'</td>
 									<td style="text-align:right; '.$css_ex.'">'.$row->fax.'</td>
 									<td style="text-align:right; '.$css_ex.'">'.$row->phone.'</td>
+									<td style="text-align:right; '.$css_ex.'">'.$row->whatsapp.'</td>
 									<td style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->street_ar.'</td>
 									<td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->area_ar.'</td>
 									<td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->district_ar.'</td>
@@ -4834,6 +4907,7 @@ tr, td, table, tr{
 								<th>City</th>
 								<th>Street</th>
 								<th>Phone</th>
+								<th>WhatsApp</th>
 								<th>Fax</th>
 								<th>P.O.BOX</th>
                                 <th>Email</th>
@@ -4844,6 +4918,7 @@ tr, td, table, tr{
                                 <th>ص.ب</th>
                                 <th>فاكس</th>
                                <th>هاتف</th>
+                               <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -4872,6 +4947,7 @@ tr, td, table, tr{
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->area_en.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->street_en.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->phone.'</td>
+								<td class="'.$css.'" style="'.$css_ex.'">'.$row->whatsapp.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->fax.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->pobox_en.'</td>
 								<td class="'.$css.'" style="'.$css_ex.'">'.$row->email.'</td>
@@ -4891,6 +4967,7 @@ tr, td, table, tr{
 									<td style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->pobox_ar.'</td>
 									<td style="text-align:right; '.$css_ex.'">'.$row->fax.'</td>
 									<td style="text-align:right; '.$css_ex.'">'.$row->phone.'</td>
+									<td style="text-align:right; '.$css_ex.'">'.$row->whatsapp.'</td>
 									<td style="direction:rtl !important; text-align:right !important; '.$css_ex.'">'.$row->street_ar.'</td>
 									<td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->area_ar.'</td>
 									<td class="'.$css.'" style="text-align:right; '.$css_ex.'">'.$row->district_ar.'</td>

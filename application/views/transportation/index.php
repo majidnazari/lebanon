@@ -102,9 +102,11 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                         <div class="span1">ID# </div>
                         <div class="span1"><?=form_input(array('name'=>'id','id'=>'ID','value'=>@$id));?></div>
                         <div class="span1">Name </div>
-                        <div class="span3"><?=form_input(array('name'=>'name','id'=>'name','value'=>@$name));?></div>
+                        <div class="span1"><?=form_input(array('name'=>'name','id'=>'name','value'=>@$name));?></div>
                         <div class="span1">Phone</div>
-                        <div class="span3"> <?=form_input(array('name'=>'phone','id'=>'phone','value'=>@$phone));?></div>
+                        <div class="span2"> <?=form_input(array('name'=>'phone','id'=>'phone','value'=>@$phone));?></div>
+                        <div class="span1">WhatsApp</div>
+                        <div class="span2"> <?=form_input(array('name'=>'whatsapp','id'=>'whatsapp','value'=>@$whatsapp));?></div>
                         <div class="span1">Status </div>
                         <div class="span1"><?php $array_status=array('all'=>'All','online'=>'Online','offline'=>'Offline');
                             echo form_dropdown('status',$array_status,$status);
@@ -185,9 +187,9 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                       <?php 
 
 					  if($search){
-                          echo anchor('transportations/listview?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print List</h3>');
+                          echo anchor('transportations/listview?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&whatsapp='.@$whatsapp.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print List</h3>');
                       }
-                      echo anchor('transportations/printed_search?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print Search Result</h3>',array('target'=>'_blank'));
+                      echo anchor('transportations/printed_search?id='.@$id.'&name='.@$name.'&phone='.@$phone.'&whatsapp='.@$whatsapp.'&gov='.@$govID.'&district_id='.@$districtID.'&area_id='.@$areaID.'&status='.@$status.'&search=Search','<h3 style="float:right !important">Print Search Result</h3>',array('target'=>'_blank'));
 					  ?>
 					  ?>
                                                        
@@ -200,6 +202,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                                 <th style="text-align:center">اسم الشركة</th>
                                 <th style="text-align:center">العنوان</th>
                                 <th style="text-align:center">هاتف</th>
+                                <th style="text-align:center">WhatsApp</th>
                                 <th style="text-align:center">معلن</th>                                
                                 <th style="text-align:center">حجز  نسخة</th>                                
                                 <th>Actions</th>                                                                       
@@ -218,6 +221,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 									$district=$this->Address->GetDistrictById($row->district_id);
 									echo @$governorate['label_ar'].' - '.@$district['label_ar']?></td>
                                 <td><?php echo $row->phone;?></td>
+                                <td><?php echo $row->whatsapp;?></td>
                                 <td><?php 
 										if($row->is_adv==1){
 										echo 'Yes';

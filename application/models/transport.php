@@ -78,7 +78,7 @@ function GetTransportations($status='',$row,$limit)
 		$query = $this->db->get();
 		return $query->row_array();
 	}
-function SearchTransportations($id,$name,$phone,$status='',$gov,$district,$area, $row,$limit)
+function SearchTransportations($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area, $row,$limit)
 	{
 		$this->db->select('tbl_transport.*');
         $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
@@ -104,6 +104,10 @@ function SearchTransportations($id,$name,$phone,$status='',$gov,$district,$area,
 		{
 		$this->db->like('tbl_transport.phone',$phone);
 		}
+		if($whatsapp!='')
+		{
+		$this->db->like('tbl_transport.whatsapp',$whatsapp);
+		}
 		if($gov!='' and $gov!='0')
 		$this->db->where('tbl_transport.governorate_id',$gov);
 		if($district!='' and $district!='0')
@@ -118,7 +122,7 @@ function SearchTransportations($id,$name,$phone,$status='',$gov,$district,$area,
 		$query = $this->db->get();
 		return $query->result();
 	}
-        function GetAllTransportations($id,$name,$phone,$status='',$gov,$district,$area,$row,$limit)
+        function GetAllTransportations($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_transport.*');
             $this->db->from('tbl_transport');
@@ -136,6 +140,10 @@ function SearchTransportations($id,$name,$phone,$status='',$gov,$district,$area,
             if($phone!='')
             {
                 $this->db->like('tbl_transport.phone',$phone);
+            }
+			if($whatsapp!='')
+            {
+                $this->db->like('tbl_transport.whatsapp',$whatsapp);
             }
             if($gov!='' and $gov!='0')
                 $this->db->where('tbl_transport.governorate_id',$gov);

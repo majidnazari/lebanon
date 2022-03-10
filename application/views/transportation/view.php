@@ -323,6 +323,13 @@ foreach($ports as $port) {
                 </tr>
                 <tr>
                     <td colspan="5">
+                        <div class="label english">WhatsApp : </div>
+                        <div class="label arabic">  واتساپ: </div>
+                        <div class="data-box arabic"><?=$query['whatsapp'];?></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">
                         <div class="label english">Fax : </div>
                         <div class="label arabic">  فاكس: </div>
                         <div class="data-box arabic"><?=$query['fax'];?></div>

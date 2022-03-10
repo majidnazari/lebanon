@@ -21,6 +21,7 @@
             <th>المنطقة</th>
             <th>الشارع</th>
             <th>هاتف</th>
+            <th>واتساپ</th>
             <th>فاكس</th>
             <th>التصدير</th>
             <th>معلن</th>
@@ -49,6 +50,7 @@
                 <td><?=$row->area_ar;?></td>
                 <td><?=$row->street_ar;?></td>
                 <td><?=$row->phone;?></td>
+                <td><?=$row->WhatsApp;?></td>
                 <td><?=$row->fax;?></td>
                 <td><?=$is_adv?></td>
                 <td><?=$row->personal_notes?></td>

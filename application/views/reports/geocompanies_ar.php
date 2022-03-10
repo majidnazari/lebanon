@@ -61,6 +61,7 @@
                             	<th>البريد اللكتروني</th>
                                 
                                	 <th>هاتف</th>
+                               	 <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>النشاط</th>
                                 <th>الشركة</th>
@@ -95,6 +96,7 @@
                                             <tr class="<?=$css?>">
                                             <td class="<?=$css?>" style="text-align:right"><?=$row->email?></td>
                                             <td class="<?=$css?>" style="text-align:right"><?=$row->phone?></td>
+                                            <td class="<?=$css?>" style="text-align:right"><?=$row->whatsapp?></td>
                                             <td class="<?=$css?>" style="direction:rtl !important; text-align:right !important"><?=$row->street_ar?></td>
                                             <td class="<?=$css?>" style="text-align:right"><?=$row->activity_ar?></td>
                                             <td class="<?=$css?>" style="direction:rtl !important; text-align:right !important"><?=$row->name_ar?></td>
@@ -111,10 +113,10 @@
 						foreach($governorates as $governorate)
 						{
 							$districts=$this->Address->GetDistrictByGov('',$governorate->id);
-							echo '<tr><td colspan="5" align="center"><center><h3 style="margin:0px; padding:0px">'.$governorate->label_ar.'</h3></center></td></tr>';
+							echo '<tr><td colspan="6" align="center"><center><h3 style="margin:0px; padding:0px">'.$governorate->label_ar.'</h3></center></td></tr>';
 							foreach($districts as $district)
 							{
-								  echo '<tr><td colspan="5" align="center" style="font-weight:bold"><center>قضاء  : '.$district->label_ar.'</center></td></tr>';
+								  echo '<tr><td colspan="6" align="center" style="font-weight:bold"><center>قضاء  : '.$district->label_ar.'</center></td></tr>';
 								 $areas=$this->Address->GetAreaByDistrict('',$district->id);
 								 foreach($areas as $area)
 								 {
@@ -133,6 +135,7 @@
                                             <td class="<?=$css?>" style="text-align:right"><?=$row->email?></td>
                                             
                                             <td class="<?=$css?>" style="text-align:right"><?=$row->phone?></td>
+                                            <td class="<?=$css?>" style="text-align:right"><?=$row->whatsapp?></td>
                                             <td class="<?=$css?>" style="direction:rtl !important; text-align:right !important"><?=$row->street_ar?></td>
                                             <td class="<?=$css?>" style="text-align:right"><?=$row->activity_ar?></td>
                                             <td class="<?=$css?>" style="direction:rtl !important; text-align:right !important"><?=$row->name_ar?></td>

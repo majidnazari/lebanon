@@ -23,6 +23,7 @@
                                 <th>ص.ب</th>
                                 <th>فاكس</th>
                                 <th>هاتف</th>
+                                <th>واتساپ</th>
                                 <th>الشارع</th>
                                 <th>المدينة</th>
                                 <th>قضاء</th>
@@ -41,6 +42,7 @@
                                 <td style="direction:rtl !important; text-align:right !important"><?=$row->pobox_ar?></td>
                                 <td style="text-align:right"><?=$row->fax?></td>
                                 <td style="text-align:right"><?=$row->phone?></td>
+                                <td style="text-align:right"><?=$row->whatsapp?></td>
                                 <td style="direction:rtl !important; text-align:right !important"><?=$row->street_ar?></td>
                                 <td style="text-align:right"><?=$row->area_ar?></td>
                                 <td style="text-align:right"><?=$row->district_ar?></td>

@@ -267,7 +267,10 @@ $jsdis='id="district_id" onchange="getarea(this.value)"';
   
                     <div class="row-form clearfix">  
                         <div class="span6"><strong>phone : </strong><?=$query['phone']?></div>                  
-                        <div class="span6" style="text-align:right"><strong class="label-ar">: هاتف</strong><?=$query['phone']?></div>                    </div>             
+                        <div class="span6" style="text-align:right"><strong class="label-ar">: هاتف</strong><?=$query['phone']?></div>
+                    <div class="row-form clearfix">  
+                        <div class="span6"><strong>whatsapp : </strong><?=$query['whatsapp']?></div>                  
+                        <div class="span6" style="text-align:right"><strong class="label-ar">: واتساپ</strong><?=$query['whatsapp']?></div>                   </div>             
 					<div class="row-form clearfix">  
                         <div class="span6"><strong>Fax : </strong><?=$query['fax']?></div>                  
                         <div class="span6" style="text-align:right"><strong class="label-ar">: فاكس </strong><?=$query['fax']?></div>                    </div>             

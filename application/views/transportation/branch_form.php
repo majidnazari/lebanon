@@ -6,6 +6,7 @@ $array_name_en=array('id'=>'name_en','name'=>'name_en','value'=>@$row['name_en']
 
 /*********************Address*************************/
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>@$row['phone']);
+$array_whatsapp=array('id'=>'whatsapp','name'=>'whatsapp','value'=>@$row['whatsapp']);
 
 $array_email=array('id'=>'email','name'=>'email','value'=>@$row['email']);
 $array_website=array('id'=>'website','name'=>'website','value'=>@$row['website']);
@@ -69,6 +70,10 @@ select{
                         <div class="span4"><?php echo form_input($array_phone); ?>
                         <font color="#FF0000"><?php echo form_error('phone'); ?></font></div>
                         <div class="span2 label-ar">: هاتف</div>
+
+                        <div class="span4"><?php echo form_input($array_whatsapp); ?>
+                        <font color="#FF0000"><?php echo form_error('whatsapp'); ?></font></div>
+                        <div class="span2 label-ar">: واتساپ</div>
                     </div>             
 					
                     
@@ -95,6 +100,7 @@ select{
                                         <th>Name</th>
                                         <th>Country</th>
                                         <th>Phone</th>
+                                        <th>WhatsApp</th>
                                         <th>Email</th>
                                         <th>Website</th>
                                         <th>Actions</th>
@@ -109,7 +115,8 @@ select{
                                         <td><input type="checkbox" name="checkbox"/></td>   
                                         <td><?=$branch->name_ar.' : '.$branch->name_en?></td>  
                                         <td><?=@$country['label_ar']?></td>
-                                        <td><?=$branch->phone?></td>  
+                                        <td><?=$branch->phone?></td> 
+                                        <td><?=$branch->whatsapp?></td>  
                                         <td><?=$branch->email?></td>  
                                         <td><?=$branch->website?></td>  
                                         <td nowrap="nowrap">
