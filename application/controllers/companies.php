@@ -721,19 +721,20 @@ class Companies extends Application
             $id = $this->input->get('id');
             $ministry_id = $this->input->get('ministry_id');
             $name = $this->input->get('name');
+            $CompanyOwner = $this->input->get('CompanyOwner');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
             $whatsapp = $this->input->get('whatsapp');
             $areaID = $this->input->get('area_id');
             //$query=$this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,$row,$limit);
             //$total_row=count($this->Company->AdvancedSearchCompanies($id,$name,$activity,$phone,0,0));
-            $config['base_url'] = base_url() . 'companies?id=' . $id . '&ministry_id=' . $ministry_id . '&name=' . $name . '&activity=' . $activity . '&phone=' . $phone .'&whatsapp=' . $whatsapp . '&gov=' . $govID . '&district_id=' . $districtID . '&area_id=' . $areaID . '&status=' . $status . '&search=Search';
+            $config['base_url'] = base_url() . 'companies?id=' . $id . '&ministry_id=' . $ministry_id . '&name=' . $name .'&CompanyOwner=' . $CompanyOwner . '&activity=' . $activity . '&phone=' . $phone .'&whatsapp=' . $whatsapp . '&gov=' . $govID . '&district_id=' . $districtID . '&area_id=' . $areaID . '&status=' . $status . '&search=Search';
             $config['enable_query_strings'] = TRUE;
             $config['page_query_string'] = TRUE;
 
 
-            $query = $this->Company->SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, $row, $limit, FALSE, FALSE, $ministry_id);
-            $total_row = count($this->Company->SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, 0, 0, FALSE, FALSE, $ministry_id));
+            $query = $this->Company->SearchCompanies($id, $name,$CompanyOwner, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, $row, $limit, FALSE, FALSE, $ministry_id);
+            $total_row = count($this->Company->SearchCompanies($id, $name,$CompanyOwner, $activity, $phone,$whatsapp, $status, $govID, $districtID, $areaID, 0, 0, FALSE, FALSE, $ministry_id));
 
             //$config['base_url']=base_url().'companies?gov='.$govID.'&district_id='.$districtID.'&status='.$status.'&search=Search';
             $config['enable_query_strings'] = TRUE;
@@ -760,6 +761,7 @@ class Companies extends Application
         $this->data['id'] = @$id;
         $this->data['ministry_id'] = @$ministry_id;
         $this->data['name'] = @$name;
+        $this->data['CompanyOwner'] = @$CompanyOwner;
         $this->data['activity'] = @$activity;
         $this->data['phone'] = @$phone;
         $this->data['whatsapp'] = @$whatsapp;
@@ -1117,18 +1119,19 @@ public function logs($row = 0)
 
     public function search($row = 0)
     {
-
+       
         if (isset($_GET['search'])) {
             $limit = 100;
             $row = $this->input->get('per_page');
             $id = $this->input->get('id');
             $name = $this->input->get('name');
+            $CompanyOwner = $this->input->get('CompanyOwner');
             $activity = $this->input->get('activity');
             $phone = $this->input->get('phone');
             $whatsapp = $this->input->get('whatsapp');
-            $query = $this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $whatsapp, $row, $limit);
-            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $activity, $phone, $whatsapp, 0, 0));
-            $config['base_url'] = base_url() . 'companies?id=' . $id . '&name=' . $name . '&activity=' . $activity . '&phone=' . $phone .'&whatsapp=' . $whatsapp . '&search=Search';
+            $query = $this->Company->AdvancedSearchCompanies($id, $name, $CompanyOwner, $activity, $phone, $whatsapp, $row, $limit);
+            $total_row = count($this->Company->AdvancedSearchCompanies($id, $name, $CompanyOwner, $activity, $phone, $whatsapp, 0, 0));
+            $config['base_url'] = base_url() . 'companies?id=' . $id . '&name=' . $name .'&CompanyOwner=' . $CompanyOwner . '&activity=' . $activity . '&phone=' . $phone .'&whatsapp=' . $whatsapp . '&search=Search';
             $config['enable_query_strings'] = TRUE;
             $config['page_query_string'] = TRUE;
         } elseif (isset($_GET['clear'])) {
@@ -1137,6 +1140,7 @@ public function logs($row = 0)
             $limit = 20;
             $id = '';
             $name = '';
+            $CompanyOwner = '';
             $activity = '';
             $phone = '';
             $whatsapp = '';

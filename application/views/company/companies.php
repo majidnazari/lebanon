@@ -86,6 +86,7 @@ for (var i = 2; i < 9; i++) {
 
 <?php 
 $array_name=array('id'=>'name','name'=>'name','value'=>@$name);
+$array_CompanyOwner=array('id'=>'CompanyOwner','name'=>'CompanyOwner','value'=>@$CompanyOwner);
 $array_id=array('id'=>'id','name'=>'id','value'=>@$id);
 
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>@$phone);
@@ -154,6 +155,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                         <div class="span2">Activity<br /><?php echo form_input($array_activity); ?></div>
                         <div class="span2">Phone<br /><?php echo form_input($array_phone); ?></div>
                         <div class="span2">WhatsApp<br /><?php echo form_input($array_whatsapp); ?></div>
+                        <div class="span2">Company Owner (صاحب المؤسسة)<br /><?php echo form_input($array_CompanyOwner); ?></div>
                         
                     </div>                            
                                
@@ -287,11 +289,12 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                             <tr>
                                 <th><input type="checkbox" name="checkall"/></th>
                                 <th style="text-align:center"  width="20%">اسم الشركة</th>
+                              
                                 <th style="text-align:center" width="10%">اسم المسؤول</th>
                                 <th style="text-align:center" width="15%">النشاط</th>
                                 <th style="text-align:center" width="10%">العنوان</th>
                                 <th style="text-align:center"  width="10%">هاتف</th>
-                                <th style="text-align:center"  width="10%">WhatsApp</th>
+                                <th style="text-align:center"  width="10%">واتساپ</th>
                                 <th style="text-align:center" width="6%">معلن</th>
                                 <th style="text-align:center" width="6%">حاجز  نسخة</th>
                                 <th style="text-align:center" width="6%">وزارة ID</th>
@@ -311,7 +314,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                             <tr>
                                 <td><input type="checkbox" id="check" name="checkbox1[]" value="<?=$row->id?>"/><?=$row->id?></td>
                                 <td><?=anchor('companies/details/'.$row->id,$row->name_ar.'<br>'.$row->name_en)?></td>
-                                <td><?=$row->owner_name.'<br>'.$row->owner_name_en?></td>
+                                <td><?=$row->owner_name.'<br>'.$row->owner_name_en?> </td>
                                 <td><?=$row->activity_ar.'<br>'.$row->activity_en?></td>
                                 <td><?php 
 									$governorate=$this->Address->GetGovernorateById($row->governorate_id);

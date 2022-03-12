@@ -6,7 +6,7 @@
 <title><?=$title?> </title>
 </head>
 
-<body>  <?php  /*var_dump($query); die(); */?>
+<body>  <?php /* var_dump($query); die();*/ ?>
 	<div class="container" style="width:1380px !important;">
     	<div class="header" style="width:1380px !important;"><img src="<?=base_url()?>img/company-header.jpg" style="width:920px !important;" />
         </div>
@@ -22,6 +22,7 @@
             <th style="width: 100px !important">المنطقة</th>
             <th>الشارع</th>
             <th>هاتف</th>
+            <th>واتساپ</th>
             <th>المندوب</th>
             <th>الموزع</th>
             <th>عدد انترنت</th>
@@ -80,6 +81,7 @@
                     <td><?=$row->area_ar?></td>
                     <td><?=$row->street_ar?></td>
                     <td><?=@$phone[0]?></td>
+                    <td><?=$row->whatsapp?></td>
                     <td><?=$row->sales_man_ar?></td>
                     <td><?=$row->csales_man_ar?></td>
                     <td align="center"><?=(($row->CNbr*2)+4)?></td>

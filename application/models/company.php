@@ -860,7 +860,7 @@ return $query->result();
         $query = $this->db->get();
         return $query->result();
     }
-    function SearchCompanies($id, $name, $activity, $phone,$whatsapp, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
+    function SearchCompanies($id, $name,$CompanyOwner, $activity, $phone,$whatsapp, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
         $this->db->select('tbl_company.*');
         //$this->db->select('tbl_company_type.label_en as type_en');
         //$this->db->select('tbl_company_type.label_ar as type_ar');
@@ -889,6 +889,11 @@ return $query->result();
             //$this->db->like('tbl_company.name_ar',$name);
             //$this->db->or_like('tbl_company.name_en',$name);
             $this->db->where($where1);
+        }
+        if($CompanyOwner != '') {
+            $where2 = "( tbl_company.owner_name LIKE '%$CompanyOwner%' OR tbl_company.owner_name_en LIKE '%$CompanyOwner%')";
+           
+            $this->db->where($where2);
         }
         if($activity != '') {
             $where2 = "( tbl_company.activity_ar LIKE '%$activity%' OR tbl_company.activity_ar LIKE '%$activity%')";
@@ -1060,7 +1065,7 @@ return $query->result();
         return $query->result();
     }
 
-    function AdvancedSearchCompanies($id, $name, $activity, $phone,$whatsapp, $row, $limit) {
+    function AdvancedSearchCompanies($id, $name,$CompanyOwner, $activity, $phone,$whatsapp, $row, $limit) {
         $this->db->select('tbl_company.*');
         //$this->db->select('tbl_company_type.label_en as type_en');
         //$this->db->select('tbl_company_type.label_ar as type_ar');
@@ -1074,12 +1079,16 @@ return $query->result();
             //$this->db->or_like('tbl_company.name_en',$name);
             $this->db->where($where1);
         }
+        if($CompanyOwner != '') {
+            $where2 = "( tbl_company.owner_name LIKE '%$CompanyOwner%' OR tbl_company.owner_name_en LIKE '%$CompanyOwner%')";
+            $this->db->where($where2);
+        }
         if($activity != '') {
-            $where2 = "( tbl_company.activity_ar LIKE '%$activity%' OR tbl_company.activity_ar LIKE '%$activity%')";
+            $where3 = "( tbl_company.activity_ar LIKE '%$activity%' OR tbl_company.activity_ar LIKE '%$activity%')";
 
             //$this->db->like('tbl_company.activity_ar',$activity);
             //$this->db->like('tbl_company.activity_en',$activity);
-            $this->db->where($where2);
+            $this->db->where($where3);
         }
         $this->db->like('tbl_company.phone', $phone);
         $this->db->like('tbl_company.whatsapp', $whatsapp);
