@@ -80,7 +80,7 @@ class Task extends CI_Model
          $this->db->where('tbl_company.is_closed', 0);
          $this->db->where('tbl_company.error_address', 0);
          $this->db->where('( adv_salesman_id='.$salesman.' or copy_res_salesman_id='.$salesman.' or adv_salesman_id=0 or copy_res_salesman_id=0)');
-        
+         $this->db->where('tbl_company.sales_man_id', $salesman);
         if($gov!='' and $gov!=0)
             $this->db->where('tbl_company.governorate_id',$gov);
             if($district!='' and $district!=0)
@@ -836,6 +836,20 @@ function GetOldTasks()
     }
     function GetCompaniesLists($ref, $company_id, $governorate_id, $district_id, $area_id, $list, $sales_man, $year, $from_start_date, $to_start_date, $from_due_date, $to_due_date, $status,$category, $row, $limit)
     {
+        $getMaxClients="SELECT MAX( `id`) as `maxed_id`  FROM `clients_status` where sales_man_id= $sales_man 
+        group by `client_id`"; 
+        $max_ids=$this->db->query($getMaxClients); 
+        $max_ids=$max_ids->result(); 
+        $tmparray=[];
+        foreach ($max_ids as $max_id)
+        {
+            $tmparray[]=$max_id->maxed_id;
+            //echo ( $max_id->maxed_id);
+           // echo "<br>";
+        }
+        $arr=implode(',',$tmparray);
+        //var_dump($arr); die();
+
         $this->db->select('SQL_CALC_FOUND_ROWS tbl_company.*', FALSE);
         $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
 
@@ -859,9 +873,11 @@ function GetOldTasks()
         $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
         $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
 
-        $this->db->join('clients_status', 'clients_status.sales_man_id = tbl_company.sales_man_id', 'left');       
-        $this->db->where('clients_status.client_type', "company");
-        $this->db->where('clients_status.status', "active");
+        $this->db->join('clients_status', 'clients_status.sales_man_id = tbl_company.sales_man_id', 'left');  
+          
+        $this->db->where_In('clients_status.id', $arr);
+        //$this->db->where('clients_status.client_type', "company");
+       // $this->db->where('clients_status.status', "active");
 
         if ($governorate_id != '' and $governorate_id != 0) {
             $this->db->where('tbl_tasks.governorate_id', $governorate_id);

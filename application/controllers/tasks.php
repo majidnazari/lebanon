@@ -1989,7 +1989,11 @@ public function GetCountCompanies()
                     
                     
                  //  $this->input->post('sales_man_id')
-                   
+                 $arr[]=$this->input->post('governorate_id');
+                 $arr[]=$this->input->post('district_id');
+                 $arr[]=$this->input->post('area_id');
+                 $arr[]=$this->input->post('sales_man_id');
+                // var_dump($arr);die();
                     $companies = $this->Task->GetCompaniesArea($this->input->post('governorate_id'),$this->input->post('district_id'),$this->input->post('area_id'),$this->input->post('sales_man_id'));
 
                     if(count($companies)>0)
