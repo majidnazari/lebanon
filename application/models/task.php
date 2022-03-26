@@ -81,6 +81,7 @@ class Task extends CI_Model
          $this->db->where('tbl_company.error_address', 0);
          $this->db->where('( adv_salesman_id='.$salesman.' or copy_res_salesman_id='.$salesman.' or adv_salesman_id=0 or copy_res_salesman_id=0)');
          $this->db->where('tbl_company.sales_man_id', $salesman);
+         
         if($gov!='' and $gov!=0)
             $this->db->where('tbl_company.governorate_id',$gov);
             if($district!='' and $district!=0)
@@ -522,7 +523,7 @@ function GetOldTasks()
 
 
     }
-    function GetAccCompaniesDetails($sales_man,$governorate_id,$district_id,$area_id,$status)
+    function GetAccCompaniesDetails($sales_man,$governorate_id,$district_id,$area_id,$status,$showPendingTask=false)
     {
         $this->db->select('tbl_tasks.*');
         $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
@@ -550,7 +551,7 @@ function GetOldTasks()
             $this->db->where('tbl_tasks.sales_man_id', $sales_man);
         }
 
-        if ($status != '') {
+        if ($status != '' && !$showPendingTask) {
             $this->db->where('tbl_company.acc', $status);
         }
         $query = $this->db->get();

@@ -515,7 +515,7 @@ class Reports extends Application
     }
 
     public function showitem()
-    {      
+    {     
         $query = $this->Report->GetShowItemCompanies();   
         // foreach($query as $row)
         // {

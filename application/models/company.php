@@ -37,6 +37,7 @@ class Company extends CI_Model {
     }
     function edit($table,$data,$where)
     {
+        
         $this->db->where($where);
         $this->db->update($table, $data);
     }

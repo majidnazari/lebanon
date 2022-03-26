@@ -321,7 +321,8 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                                     <td><?=$row->area_ar?></td>
                                     <td><?=$row->start_date?></td>
                                     <td><?=$row->due_date?></td>
-                                    <td><span class="btn btn-mini btn-warning"><?=$row->pending_count?></span></td>
+                                  <!--  <td><span class="btn btn-mini btn-warning"><?=$row->pending_count ?></span></td> -->
+                                    <td><?=anchor('tasks/showPendingTask?area_id='.$row->area_id.'&district_id='.$row->district_id.'&governorate_id='.$row->governorate_id.'&salesman='.$row->sales_man_id.'&status=pending',$row->pending_count,array('class'=>'btn btn-mini btn-warning'))?></td>
                                     <td><a href="#<?=$row->governorate_id.'-'.$row->district_id.'-'.$row->area_id?>PendingListModal" data-toggle="modal"><span class="isb-print"></span></a></td>
                                     <td><a onclick="GetTaskDetailsDetails(<?=$row->list_id?>,<?=$row->sales_man_id?>)">Change</a></td>
                                     <td><?=anchor('tasks/details?list='.$row->list_id.'&salesman='.$row->sales_man_id.'&status=done',$row->done_count,array('class'=>'btn btn-mini btn-success'))?></td>

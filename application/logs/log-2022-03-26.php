@@ -1,0 +1,92 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2022-03-26 15:11:39 --> 404 Page Not Found --> flags
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2022-03-26 15:11:39 --> 404 Page Not Found --> flags
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2022-03-26 15:11:39 --> 404 Page Not Found --> flags
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2022-03-26 15:11:39 --> 404 Page Not Found --> flags
+ERROR - 2022-03-26 15:11:44 --> 404 Page Not Found --> favicon.ico
+ERROR - 2022-03-26 15:11:55 --> Severity: Notice  --> Undefined index: Views C:\xampp\htdocs\lebanon\admin\application\views\dashboard.php 24
+ERROR - 2022-03-26 15:11:55 --> Severity: Notice  --> Undefined variable: from C:\xampp\htdocs\lebanon\admin\application\views\dashboard.php 198
+ERROR - 2022-03-26 15:11:55 --> Severity: Notice  --> Undefined variable: to C:\xampp\htdocs\lebanon\admin\application\views\dashboard.php 198
+ERROR - 2022-03-26 15:11:55 --> Severity: Notice  --> Undefined variable: from C:\xampp\htdocs\lebanon\admin\application\views\dashboard.php 204
+ERROR - 2022-03-26 15:11:55 --> Severity: Notice  --> Undefined variable: to C:\xampp\htdocs\lebanon\admin\application\views\dashboard.php 206
+ERROR - 2022-03-26 15:11:55 --> 404 Page Not Found --> flags
+ERROR - 2022-03-26 15:11:55 --> 404 Page Not Found --> flags
+ERROR - 2022-03-26 15:11:55 --> 404 Page Not Found --> flags
+ERROR - 2022-03-26 15:11:55 --> 404 Page Not Found --> flags
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 467
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 469
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 474
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 480
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 481
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 482
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 483
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 484
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 485
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 486
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 487
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 488
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 489
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 490
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 491
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 492
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 493
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 510
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 511
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_array C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 76
+ERROR - 2022-03-26 15:12:17 --> Severity: Warning  --> count(): Parameter must be an array or an object that implements Countable C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 76
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 113
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 114
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 116
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: activity C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 118
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: districtID C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 119
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 207
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 221
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 235
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 353
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 371
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 389
+ERROR - 2022-03-26 15:12:17 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 407
+ERROR - 2022-03-26 15:12:18 --> 404 Page Not Found --> tasks/favicon.ico
+ERROR - 2022-03-26 15:12:30 --> Severity: Notice  --> Undefined variable: company_array C:\xampp\htdocs\lebanon\admin\application\views\tasks\showPendingTask.php 34
+ERROR - 2022-03-26 15:12:30 --> Severity: Warning  --> count(): Parameter must be an array or an object that implements Countable C:\xampp\htdocs\lebanon\admin\application\views\tasks\showPendingTask.php 34

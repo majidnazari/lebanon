@@ -186,7 +186,7 @@ class Tasks extends Application {
         }
     }
     public function print_all()
-    {
+    { 
         $ref = $this->input->get('ref');
         $company_id = $this->input->get('company');
         $governorate_id = $this->input->get('governorate');
@@ -528,7 +528,7 @@ class Tasks extends Application {
         }
     }
     public function listview($list_id,$salesman,$status='')
-    {
+    { 
         $this->data['list_id']=$list_id;
         $this->data['salesman']=$salesman;
         $this->data['status']=$status;
@@ -1760,6 +1760,30 @@ die;
 
         $this->template->load('_template', 'tasks/acc', $this->data);
     }
+    public function showPendingTask() {
+        $showPendingTask=true;
+        $area_id=$this->input->get('area_id');
+        $salesman=$this->input->get('salesman');
+        $status=$this->input->get('status');
+        $limit=20;
+        $row = $this->input->get('per_page');
+            $district_id = $this->input->get('district_id');
+            $governorate_id = $this->input->get('governorate_id');
+
+
+        $this->data['query']=$query= $this->Task->GetAccCompaniesDetails($salesman,$governorate_id,$district_id,$area_id,$status,$showPendingTask);
+       
+        $this->data['msg'] = $this->session->userdata('admin_message');
+        $this->session->unset_userdata('admin_message');
+        $this->breadcrumb->clear();
+        $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
+        $this->breadcrumb->add_crumb('Tasks');
+        $this->data['title'] = $this->data['Ctitle']." - Tasks";
+        $this->data['subtitle'] = "Status : ".$status;
+        $this->data['sales'] = $this->Administrator->GetSalesMen();
+        $this->template->load('_template', 'tasks/showPendingTask', $this->data);
+        //$this->template->load('_template', 'tasks', $this->data);
+    }
     public function GetDistrictsBySalesman()
     {
         $salesman=$this->input->post('id');
@@ -1930,7 +1954,7 @@ public function GetCountCompanies()
 
 }
     public function create() {  
-          
+        
       //  if($this->p_add) {
             $this->breadcrumb->clear();
             $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
@@ -1993,7 +2017,7 @@ public function GetCountCompanies()
                  $arr[]=$this->input->post('district_id');
                  $arr[]=$this->input->post('area_id');
                  $arr[]=$this->input->post('sales_man_id');
-                // var_dump($arr);die();
+                 //var_dump($arr);die();
                     $companies = $this->Task->GetCompaniesArea($this->input->post('governorate_id'),$this->input->post('district_id'),$this->input->post('area_id'),$this->input->post('sales_man_id'));
 
                     if(count($companies)>0)
