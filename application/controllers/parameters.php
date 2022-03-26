@@ -576,7 +576,7 @@ public function salesman()
 
 			}
 	}
-	function export_salesman($lang = 'ar') {
+	function export_salesman($lang = 'ar') { 
         // filename for download
         $filename = "SalesMan-".$lang.".xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");

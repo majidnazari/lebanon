@@ -1,7 +1,7 @@
 <div class="content">
 	<?=$this->load->view("includes/_bread")?>
     <div class="workplace">
-        <div class="page-header">
+        <div class="page-header"> 
             <h1><?=$subtitle?></h1>
         </div> 
         <div class="row-fluid">

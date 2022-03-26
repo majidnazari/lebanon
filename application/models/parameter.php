@@ -99,7 +99,7 @@
             //$this->db->order_by('area_en', 'ASC');
             
         }
-        else {
+        else { 
             //$this->db->order_by('governorate_ar', 'ASC');
             $this->db->order_by('tbl_sales_man.fullname', 'ASC');
             //$this->db->order_by('district_ar', 'ASC');

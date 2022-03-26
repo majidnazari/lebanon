@@ -510,3 +510,14 @@ ERROR - 2022-03-26 15:28:03 --> Severity: Notice  --> Undefined property: stdCla
 ERROR - 2022-03-26 15:28:03 --> Severity: Notice  --> Undefined property: stdClass::$copy_res C:\xampp\htdocs\lebanon\admin\application\controllers\parameters.php 631
 ERROR - 2022-03-26 15:28:03 --> Severity: Notice  --> Undefined property: stdClass::$is_adv C:\xampp\htdocs\lebanon\admin\application\controllers\parameters.php 629
 ERROR - 2022-03-26 15:28:03 --> Severity: Notice  --> Undefined property: stdClass::$copy_res C:\xampp\htdocs\lebanon\admin\application\controllers\parameters.php 631
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: areaID C:\xampp\htdocs\lebanon\admin\application\controllers\importers.php 357
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\controllers\importers.php 359
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\controllers\importers.php 360
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\controllers\importers.php 361
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: whatsapp C:\xampp\htdocs\lebanon\admin\application\controllers\importers.php 362
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: whasapp C:\xampp\htdocs\lebanon\admin\application\views\importer\index.php 193
+ERROR - 2022-03-26 17:11:46 --> Severity: Notice  --> Undefined variable: whasapp C:\xampp\htdocs\lebanon\admin\application\views\importer\index.php 195
+ERROR - 2022-03-26 17:11:54 --> Severity: Notice  --> Undefined variable: whasapp C:\xampp\htdocs\lebanon\admin\application\views\importer\index.php 193
+ERROR - 2022-03-26 17:11:54 --> Severity: Notice  --> Undefined variable: whasapp C:\xampp\htdocs\lebanon\admin\application\views\importer\index.php 195
+ERROR - 2022-03-26 17:12:02 --> Severity: Notice  --> Undefined variable: whasapp C:\xampp\htdocs\lebanon\admin\application\views\importer\index.php 193
+ERROR - 2022-03-26 17:12:02 --> Severity: Notice  --> Undefined variable: whasapp C:\xampp\htdocs\lebanon\admin\application\views\importer\index.php 195
