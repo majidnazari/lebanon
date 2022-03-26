@@ -74,6 +74,7 @@ function save($table,$data)
         $query = $this->db->get();
         return $query->row_array();
     }
+   
 
     function GetSalesTasks($sales_id,$salesman,$company_id,$status,$row,$limit)
     {

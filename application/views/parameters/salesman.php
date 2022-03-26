@@ -13,6 +13,11 @@
                 <?php } ?>    
                 <?php // echo form_open('parameters/delete_checked/cat/position',array('id'=>'form_id','name'=>'form1'));
 					//	echo form_hidden('p','position');
+
+                   
+				echo anchor('parameters/export_salesman/en','<h6 style="float:right !important; color:#FFF !important"> - English </h6>');
+			   echo anchor('parameters/export_salesman/ar','<h6 style="float:right !important; color:#FFF !important">Export To Excel</h6>');
+                                        
 				?>                                
                 <div class="head clearfix">
                     <div class="isw-grid"></div>
@@ -85,7 +90,15 @@
                                             <div class="row-form clearfix">
                                                 <div class="span3">Address :</div>
                                                 <div class="span9"><input type="text" name="address" value="<?=$row->address?>" /></div>
-                                            </div>            
+                                            </div> 
+                                            
+                                            <div class="row-form clearfix">
+                                                <div class="span3">Status:</div>
+                                                <div class="span4"><?php $array_status=array('online'=>'Online','offline'=>'Offline');
+                                                                        echo form_dropdown('status',$array_status,$row->status);
+                                                    ?></div>
+                                            </div>   
+                                            
                                           </div>                
                                         <div class="dr"><span></span></div>
                                     </div>                    
@@ -134,7 +147,14 @@
             <div class="row-form clearfix">
                 <div class="span3">Address :</div>
                 <div class="span9"><input type="text" name="address"/></div>
-            </div>            
+            </div>
+              
+            <div class="row-form clearfix">
+                <div class="span3">Status:</div>
+                <div class="span4"><?php $array_status=array('online'=>'Online','offline'=>'Offline');
+                                        echo form_dropdown('status',$array_status/*,$status*/);
+                    ?></div>
+            </div>
     
         </div>                
         <div class="dr"><span></span></div>

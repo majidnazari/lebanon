@@ -27,6 +27,7 @@
             <th>الموزع</th>
             <th>عدد انترنت</th>
             <th>معلن</th>
+
             <th style="width: 100px !important">ads start date </th>
             <th style="width: 100px !important">ads end date </th> 
             
@@ -34,6 +35,7 @@
             
             <th style="width: 100px !important">  item start_date </th>
             <th style="width: 100px !important"> item end_date </th> 
+
            <!-- <th>حاجز نسخة</th> -->
            <!--  <th>عدد دليل</th> -->          
           
@@ -80,12 +82,15 @@
                     <td><?=$row->activity_ar?></td>
                     <td><?=$row->area_ar?></td>
                     <td><?=$row->street_ar?></td>
+
                     <td style="width: 150px !important"><?=@$phone[0]?></td>
                     <td style="width: 150px !important"><?=$row->whatsapp?></td>
+
                     <td><?=$row->sales_man_ar?></td>
                     <td><?=$row->csales_man_ar?></td>
                     <td align="center"><?=(($row->CNbr*2)+4)?></td>
                     <td align="center"><?=$is_adv?></td>
+
                     <td style="width: 150px !important"><?=$row->start_date_adv ?></td>
                     <td style="width: 150px !important"><?=$row->end_date_adv ?></td>
 
@@ -93,6 +98,7 @@
 
                     <td style="width: 150px !important"><?=$row->show_start_date ?></td>
                     <td style="width: 150px !important"><?=$row->show_end_date ?></td>
+
                    <!-- <td align="center"><?=$copy_res?></td> -->
                     <!-- <td align="center"><?=(($row->CNbr*2)+1)?></td>   -->
                  

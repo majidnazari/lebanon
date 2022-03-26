@@ -202,7 +202,7 @@ class Parameters extends Application
 					}
 				break;
 				
-				case 'salesman':
+				case 'salesman': 
 				if($this->p_delete_salesman){
 					$query=$this->Parameter->GetSalesmanById($get['id']);
 					$history=array('action'=>'delete','logs_id'=>0,'item_id'=>$get['id'],'item_title'=>$query['label_ar'],'type'=>'salesman','details'=>json_encode($query),'create_time'=>$this->datetime,'user_id' =>  $this->session->userdata('id'));
@@ -575,21 +575,104 @@ public function salesman()
 			redirect($this->page_denied);					
 
 			}
-	}	
+	}
+	function export_salesman($lang = 'ar') {
+        // filename for download
+        $filename = "SalesMan-".$lang.".xls";
+        header("Content-Disposition: attachment; filename=\"$filename\"");
+        header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+        header('Content-type: text/html; charset=UTF-8');
+        $flag = false;
+        echo '<style type="text/css">
+				.table tr td {
+					border:1px solid #000;
+				}
+				.yellow{
+				        font-weight: bold;
+					}
+				.table tr th{
+					border:1px solid #FFF;
+					background: #000;
+					color: #FFF;
+					font-weight: bold;
+				}
+				.htitle{
+				border:1px solid #FFF !important;
+				height:5px !important;
+					}
+				</style>   ';
+                $query = $this->Parameter->GetSalesManToReport($lang);
+                        $x=TRUE;
+                        echo '<body style="width:1080;font-family: Arial;"><table style="width:1080px !important; border:1px solid #000;" cellpadding="0" cellspacing="0" width="1080" class="table">';
+                       if($lang == 'ar') {
+                        echo'<tr>
+                               
+                                <th>حالة</th>
+                                <th>وقت الإنشاء </th>                                
+								<th>هاتف</th>
+								<th>عنوان</th>
+                                <th style="width: 250px !important;">اسم </th>
+                            </tr>
+                        ';
+                       }
+                       else{
+                            echo'<tr>
+                                    <th style="width: 250px !important;">FullName</th>
+                                    <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>Created Time</th>
+                                    <th>Status</th>
+                                    
+                                </tr>';
+                       }
+                        foreach($query as $row) {
+                             if(@$row->is_adv == 1)
+                                        $css_ex = 'font-weight:bold; font-size:14px !important';
+                                    elseif(@$row->copy_res == 1)
+                                        $css_ex = 'font-weight:bold; font-size:13px !important';
+                                    else
+                                        $css_ex = 'font-size:12px !important';
+                                        if($lang=='ar'){
+                                         echo '<tr>
+                                           
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->create_time.'</td>
+                                            <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->status.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->address.'</td>
+                                            <td style="direction:rtl !important; text-align:center !important; '.$css_ex.'">'.$row->fullname.'</td>
+                                        </tr>';
+                                        }
+                                        else{
+                                            echo '<tr>
+                                            <td style="text-align:center !important; '.$css_ex.'">'.$row->fullname_en.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->address.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->phone.'</td>
+                                            <td style="text-align:center !important; '.$css_ex.'">'.$row->status.'</td>
+                                            <td style="text-align:center; '.$css_ex.'">'.$row->create_time.'</td>
+                                           
+                                        </tr>'; 
+                                        }
+                            
+                        }
+        echo '</table></body>';
+        exit;
+    }	
 	public function create_salesman()
-	{
+	{ 
 		if($this->p_add_salesman)
 		{
 		$fullname=$this->input->post('fullname');
 		$fullname_en=$this->input->post('fullname_en');
 		$phone=$this->input->post('phone');
 		$address=$this->input->post('address');
+		$status=$this->input->post('status');
 
 		$data = array(
 				'fullname'=> $fullname,
 				'fullname_en'=> $fullname_en,
 				'phone'=> $phone,
 				'address'=> $address,
+				'status'=> $status,
 				'create_time' =>  date('Y-m-d H:i:s'),
 				'update_time' =>  date('Y-m-d H:i:s'),
 				'user_id' =>  $this->session->userdata('id'),
@@ -618,11 +701,14 @@ public function edit_salesman()
 		$phone=$this->input->post('phone');
 		$address=$this->input->post('address');
 		$id=$this->input->post('id');
+		$status=$this->input->post('status');
+
 		$data = array(
 				'fullname'=> $fullname,
 				'fullname_en'=> $fullname_en,
 				'phone'=> $phone,
 				'address'=> $address,
+				'status'=> $status,
 				'update_time' =>  date('Y-m-d H:i:s'),
 				'user_id' =>  $this->session->userdata('id'),
 			);
