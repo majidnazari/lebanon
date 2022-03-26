@@ -27,13 +27,13 @@
             <th>الموزع</th>
             <th>عدد انترنت</th>
             <th>معلن</th>
-            <th style="width: 150px !important">ads start date </th>
-            <th style="width: 150px !important">ads end date </th> 
+            <th style="width: 200px ">ads start date </th>
+            <th style="width: 200px ">ads end date </th> 
             
-            <th style="width: 150px !important">show item</th> 
+            <th style="width: 150px ">show item</th> 
             
-            <th style="width: 150px !important">  item start_date </th>
-            <th style="width: 150px !important"> item end_date </th> 
+            <th style="width: 150px ">  item start_date </th>
+            <th style="width: 150px "> item end_date </th> 
            <!-- <th>حاجز نسخة</th> -->
            <!--  <th>عدد دليل</th> -->          
           
@@ -72,7 +72,7 @@
 	$phone=explode('-',$row->phone);
 
 			?>
-        	<tr class="row">
+        	<tr class="row" align="center">
         	     <td><?=$i?></td>
                     <td><?=$row->id?></td>
                     <td><?=$row->name_ar?></td>
@@ -80,19 +80,19 @@
                     <td><?=$row->activity_ar?></td>
                     <td><?=$row->area_ar?></td>
                     <td><?=$row->street_ar?></td>
-                    <td><?=@$phone[0]?></td>
+                    <td style="width: 150px "><?=@$phone[0]?></td>
                     <td><?=$row->whatsapp?></td>
                     <td><?=$row->sales_man_ar?></td>
                     <td><?=$row->csales_man_ar?></td>
                     <td align="center"><?=(($row->CNbr*2)+4)?></td>
                     <td align="center"><?=$is_adv?></td>
-                    <th style="width: 150px !important"><?=$row->start_date_adv ?></td>
-                    <th style="width: 150px !important"><?=$row->end_date_adv ?></td>
+                    <td ><?= $row->start_date_adv ?></td>
+                    <td ><?= $row->end_date_adv ?></td>
 
-                    <th style="width: 150px !important"><?=$status ?></td>
+                    <td style="width: 150px "><?=$status ?></td>
 
-                    <th style="width: 150px !important"><?=$row->show_start_date ?></td>
-                    <th style="width: 150px !important"><?=$row->show_end_date ?></td>
+                    <td style="width: 150px "><?=$row->show_start_date ?></td>
+                    <td style="width: 150px "><?=$row->show_end_date ?></td>
                    <!-- <td align="center"><?=$copy_res?></td> -->
                     <!-- <td align="center"><?=(($row->CNbr*2)+1)?></td>   -->
                  

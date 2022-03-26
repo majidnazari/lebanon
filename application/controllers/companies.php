@@ -173,7 +173,7 @@ class Companies extends Application
     }
 
     public function SearchProduction()
-    { die("this is done");
+    { 
         $heading_ids = array();
         $code = $_POST['code'];
         $description = $_POST['description'];

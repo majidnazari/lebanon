@@ -716,7 +716,7 @@ function GetMinistryReports($row,$limit)
         return $query->result();
     }
 
-    function GetBanks($lang = 'ar') {
+    function GetBanks($lang = 'ar') { 
         $this->db->select('tbl_bank.*');
         $this->db->select('tbl_governorates.label_ar as governorate_ar');
         $this->db->select('tbl_governorates.label_en as governorate_en');

@@ -79,6 +79,37 @@
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function GetSalesManToReport($lang = 'ar') { 
+        $this->db->select('tbl_sales_man.*');
+        // $this->db->select('tbl_governorates.label_ar as governorate_ar');
+        // $this->db->select('tbl_governorates.label_en as governorate_en');
+        // $this->db->select('tbl_districts.label_ar as district_ar');
+        // $this->db->select('tbl_districts.label_en as district_en');
+        // $this->db->select('tbl_area.label_ar as area_ar');
+        // $this->db->select('tbl_area.label_en as area_en');
+        $this->db->from('tbl_sales_man');
+        // $this->db->join('tbl_area', 'tbl_area.id = tbl_bank.area_id', 'left');
+        // $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_bank.governorate_id', 'left');
+        // $this->db->join('tbl_districts', 'tbl_districts.id = tbl_bank.district_id', 'left');
+
+        if($lang == 'en') {
+            $this->db->order_by('tbl_sales_man.fullname_en', 'ASC');
+            //$this->db->order_by('governorate_en', 'ASC');
+            //$this->db->order_by('district_en', 'ASC');
+            //$this->db->order_by('area_en', 'ASC');
+            
+        }
+        else {
+            //$this->db->order_by('governorate_ar', 'ASC');
+            $this->db->order_by('tbl_sales_man.fullname', 'ASC');
+            //$this->db->order_by('district_ar', 'ASC');
+           // $this->db->order_by('area_ar', 'ASC');
+            
+        }
+        $query = $this->db->get();
+        return $query->result();
+    }
+
 	function GetSalesmen()
 	{
 		$this->db->select('tbl_sales_man.*');
