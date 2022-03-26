@@ -605,10 +605,9 @@ public function salesman()
                         $x=TRUE;
                         echo '<body style="width:1080;font-family: Arial;"><table style="width:1080px !important; border:1px solid #000;" cellpadding="0" cellspacing="0" width="1080" class="table">';
                        if($lang == 'ar') {
-                        echo'<tr>
-                               
-                                <th>حالة</th>
-                                <th>وقت الإنشاء </th>                                
+                        echo'<tr>   
+                                <th>وقت الإنشاء </th>  
+								<th>حالة</th>                              
 								<th>هاتف</th>
 								<th>عنوان</th>
                                 <th style="width: 250px !important;">اسم </th>
@@ -620,8 +619,9 @@ public function salesman()
                                     <th style="width: 250px !important;">FullName</th>
                                     <th>Address</th>
                                     <th>Phone</th>
+									<th>Status</th>
                                     <th>Created Time</th>
-                                    <th>Status</th>
+                                  
                                     
                                 </tr>';
                        }
