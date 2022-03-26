@@ -150,21 +150,67 @@ function delete_checked()
 					   ?> 
                 <div class="block-fluid">                        
 					<div class="row-form clearfix">
-                        <div class="span1">ID# </div>
-                        <div class="span1"><?=form_input(array('name'=>'id','id'=>'ID','value'=>@$id));?></div>
-                        <div class="span1">Name </div>
-                        <div class="span1"><?=form_input(array('name'=>'name','id'=>'name','value'=>@$name));?></div>
-                        <div class="span1">Phone</div>
-                        <div class="span2"> <?=form_input(array('name'=>'phone','id'=>'phone','value'=>@$phone));?></div>
-                        <div class="span1">WhatsApp</div>
-                        <div class="span2"> <?=form_input(array('name'=>'whatsapp','id'=>'whatsapp','value'=>@$whatsapp));?></div>
+                        <!-- <div class="span1">ID# </div> -->
+                        <div class="span1">ID#<?=form_input(array('name'=>'id','id'=>'ID','value'=>@$id));?></div>
+                        <!-- <div class="span1">Name </div> -->
+                        <div class="span2">Name<?=form_input(array('name'=>'name','id'=>'name','value'=>@$name));?></div>
+                        <!-- <div class="span1">Phone</div> -->
+                        <div class="span2"> Phone<?=form_input(array('name'=>'phone','id'=>'phone','value'=>@$phone));?></div>
+                        <!-- <div class="span1">WhatsApp</div> -->
+                        <div class="span2">WhatsApp <?=form_input(array('name'=>'whatsapp','id'=>'whatsapp','value'=>@$whatsapp));?></div>
                         
-                        <div class="span1">Status </div>
-                        <div class="span1"><?php $array_status=array('all'=>'All','online'=>'Online','offline'=>'Offline');
+                        <!-- <div class="span1">Status </div> -->
+                        <div class="span1">Status<?php $array_status=array('all'=>'All','online'=>'Online','offline'=>'Offline');
                             echo form_dropdown('status',$array_status,$status);
-                            ?></div>
+                            ?>
+                        </div>
+
+                        <div class="span1">Mohafaza<?php 
+								$array_governorates[0]='All ';
+								foreach($governorates as $governorate)
+								{
+									if($governorate->id!=0)
+									$array_governorates[$governorate->id]=$governorate->label_ar;	
+								}
+											
+								echo form_dropdown('gov',$array_governorates,$govID,$class_sect);
+							?>
+                        </div>
+
+                         
+                        <div class="span1">Kazaa
+						<div id="datadistrict">
+						<?php 
+								$array_district[0]='All ';
+								foreach($districts as $district)
+								{
+									if($district->id!=0)
+									$array_district[$district->id]=$district->label_ar;	
+								}
+											
+								echo form_dropdown('district_id',$array_district,$districtID,'  onchange="getarea(this.value)" id="district_id"');
+							?>
+                            </div>
+                        </div>
+                        
+                        <div class="span2">City (المنطقة)
+                            <div id="area">
+                                <?php
+                                $array_area[0]='All ';
+                                foreach($areas as $area)
+                                {
+                                    if($area->id!=0)
+                                        $array_area[$area->id]=$area->label_ar.' ('.$area->total.' )';
+                                }
+
+                                echo form_dropdown('area_id',$array_area,$areaID,' id="area_id"');
+                                ?>
+                            </div>
+                        </div>       
+
+
                     </div>
-                    <div class="row-form clearfix">
+                    <!-- <div class="row-form clearfix">
                     	<div class="span1">Mohafaza </div>
                         <div class="span3"><?php 
 								$array_governorates[0]='All ';
@@ -207,7 +253,7 @@ function delete_checked()
                                 ?>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                         <div class="row-form clearfix" style="text-align: center !important">
                         <div class="span12"><input type="submit" name="search" value="Search" class="btn">
