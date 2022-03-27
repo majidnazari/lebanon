@@ -1746,7 +1746,7 @@ die;
         $row = $this->input->get('per_page');
             $district_id = $this->input->get('district_id');
             $governorate_id = $this->input->get('governorate_id');
-
+        
 
         $this->data['query']=$query= $this->Task->GetAccCompaniesDetails($salesman,$governorate_id,$district_id,$area_id,$status);
         $this->data['msg'] = $this->session->userdata('admin_message');
@@ -1760,8 +1760,8 @@ die;
 
         $this->template->load('_template', 'tasks/acc', $this->data);
     }
-    public function showPendingTask() {
-        $showPendingTask=true;
+    public function showPendingTask() { 
+       
         $area_id=$this->input->get('area_id');
         $salesman=$this->input->get('salesman');
         $status=$this->input->get('status');
@@ -1770,8 +1770,8 @@ die;
             $district_id = $this->input->get('district_id');
             $governorate_id = $this->input->get('governorate_id');
 
-
-        $this->data['query']=$query= $this->Task->GetAccCompaniesDetails($salesman,$governorate_id,$district_id,$area_id,$status,$showPendingTask);
+        
+        $this->data['query']=$query= $this->Task->GetPendingCompaniesDetails($salesman,$governorate_id,$district_id,$area_id,$status);
        
         $this->data['msg'] = $this->session->userdata('admin_message');
         $this->session->unset_userdata('admin_message');

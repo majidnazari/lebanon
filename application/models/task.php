@@ -523,7 +523,7 @@ function GetOldTasks()
 
 
     }
-    function GetAccCompaniesDetails($sales_man,$governorate_id,$district_id,$area_id,$status,$showPendingTask=false)
+    function GetPendingCompaniesDetails($sales_man,$governorate_id,$district_id,$area_id,$status)
     {
         $this->db->select('tbl_tasks.*');
         $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
@@ -551,7 +551,41 @@ function GetOldTasks()
             $this->db->where('tbl_tasks.sales_man_id', $sales_man);
         }
 
-        if ($status != '' && !$showPendingTask) {
+        if ($status != '') {
+            $this->db->where('tbl_tasks.status', $status);
+        }
+        $query = $this->db->get();
+        return $query->result();
+    }
+    function GetAccCompaniesDetails($sales_man,$governorate_id,$district_id,$area_id,$status)
+    {
+        $this->db->select('tbl_tasks.*');
+        $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
+        $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
+        $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
+        $this->db->select('tbl_sales_man.fullname as sales_man_ar,tbl_sales_man.fullname_en as sales_man_en');
+        $this->db->select('tbl_company.name_ar as name_ar,tbl_company.name_en as name_en,tbl_company.street_ar as street_ar,tbl_company.owner_name,tbl_company.activity_ar,tbl_company.phone,tbl_company.fax,tbl_company.personal_notes,tbl_company.is_exporter,tbl_company.is_adv,tbl_company.copy_res');
+
+        $this->db->from('tbl_tasks');
+        $this->db->join('tbl_company', 'tbl_company.id = tbl_tasks.company_id', 'inner');
+        $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
+        $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
+        $this->db->join('tbl_area', 'tbl_area.id = tbl_tasks.area_id', 'left');
+        $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
+        if ($governorate_id != '' and $governorate_id != 0) {
+            $this->db->where('tbl_tasks.governorate_id', $governorate_id);
+        }
+        if ($district_id != '' and $district_id != 0) {
+            $this->db->where('tbl_tasks.district_id', $district_id);
+        }
+        if ($area_id != '' and $area_id != 0) {
+            $this->db->where('tbl_tasks.area_id', $area_id);
+        }
+        if ($sales_man != '') {
+            $this->db->where('tbl_tasks.sales_man_id', $sales_man);
+        }
+
+        if ($status != '') {
             $this->db->where('tbl_company.acc', $status);
         }
         $query = $this->db->get();
