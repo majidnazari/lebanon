@@ -323,7 +323,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                                     <td><?=$row->due_date?></td>
                                   <!--  <td><span class="btn btn-mini btn-warning"><?=$row->pending_count ?></span></td> -->
                                     <td><?=anchor('tasks/showPendingTask?area_id='.$row->area_id.'&district_id='.$row->district_id.'&governorate_id='.$row->governorate_id.'&salesman='.$row->sales_man_id.'&status=pending',$row->pending_count,array('class'=>'btn btn-mini btn-warning'))?></td>
-                                    <td><a href="#<?=$row->governorate_id.'-'.$row->district_id.'-'.$row->area_id?>PendingListModal" data-toggle="modal"><span class="isb-print"></span></a></td>
+                                    <td><a href="#<?=$row->governorate_id.'-'.$row->district_id.'-'.$row->area_id.'-'.$row->sales_man_id?>PendingListModal" data-toggle="modal"><span class="isb-print"></span></a></td>
                                     <td><a onclick="GetTaskDetailsDetails(<?=$row->list_id?>,<?=$row->sales_man_id?>)">Change</a></td>
                                     <td><?=anchor('tasks/details?list='.$row->list_id.'&salesman='.$row->sales_man_id.'&status=done',$row->done_count,array('class'=>'btn btn-mini btn-success'))?></td>
                                     <td><a href="#<?=$row->governorate_id.'-'.$row->district_id.'-'.$row->area_id?>DoneListModal" data-toggle="modal"><span class="isb-print"></span></a></td>
@@ -341,7 +341,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                                         ?>
                                     </td>
                                 </tr>
-                                <div id="<?=$row->governorate_id.'-'.$row->district_id.'-'.$row->area_id?>PendingListModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div id="<?=$row->governorate_id.'-'.$row->district_id.'-'.$row->area_id.'-'.$row->sales_man_id?>PendingListModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         <h3 id="myModalLabel">Pending Print</h3>

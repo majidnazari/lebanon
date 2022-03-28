@@ -1841,15 +1841,49 @@ die;
     }
     public function task_update()
     {
+       
         $salesman=$this->input->post('salesman');
-        $old_list=$this->input->post('old_list');
-        
-        $query=$this->Task->GetMaxList($salesman);
+        $old_list=$this->input->post('old_list');        
+        $query=$this->Task->GetMaxList($salesman);        
         $list_id= $query['list_id']+1;
         $all = $this->Task->GetTasks('',@$company_id,'', '', '', $old_list, $this->input->post('old_sales'), @$year, @$from_start,@$to_start, @$from_due, @$to_due,'pending',@$category, 0, 0);
+       // var_dump($all['results']);  die();
         $rows=$all['results'];
+        // foreach($rows as $row)
+        // {
+        //        // echo $row->company_id . "<br>";
+        //        //$company_ids[]=$row->company_id;
+        //        $data_company=array(
+        //         'sales_man_id' => $salesman,
+        //         'update_time' => $this->datetime,
+        //         'user_id' => $this->session->userdata('id'), 
+        //        );
+        //        $where_company = array(
+        //         'id' => $row->company_id,
+        //     );
+        //     $ids=$this->Administrator->update('tbl_company', $data_company, $where_company);
+
+        // }
+       // $company_string_ids=implode(',',$company_ids);
         foreach($rows as $row)
         {
+            $data_company=array(
+                'sales_man_id' => $salesman,
+                'update_time' => $this->datetime,
+                'user_id' => $this->session->userdata('id'), 
+               );
+               $where_company = array(
+                'id' => $row->company_id,
+            );
+            $ids=$this->Administrator->update('tbl_company', $data_company, $where_company);
+
+            $data_client_status=array(
+                'client_id' => $row->company_id,
+                'client_type' => 'company',
+                'sales_man_id' => $salesman
+
+            );
+
            $data_task = array(
             'list_id' => $list_id,
             'sales_man_id' => $salesman,
@@ -1859,7 +1893,12 @@ die;
         $where = array(
             'id' => $row->id,
         );
+       
+         // var_dump($where_company);
+       // die("kk");  
         $ids=$this->Administrator->update('tbl_tasks', $data_task, $where);
+        
+       
         }
         /*
         $data_task = array(
