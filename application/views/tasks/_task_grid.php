@@ -126,8 +126,9 @@
                         <?php
                         echo anchor('tasks/view/'.$row->company_id.'/'.$row->id,'<span class="isb-print"></span>',array('target'=>'_blank'));
 
-                        echo _show_delete('tasks/delete/'.$row->id.'/company/',$p_delete);
-                        echo _show_edit('tasks/edit/'.$row->id,$p_edit);
+                        //echo _show_delete('tasks/delete/'.$row->id.'/company/',$p_delete);
+                       // echo _show_edit('tasks/edit/'.$row->id,$p_edit);
+                        echo _show_edit('companies/edit/'.$row->company_id,$p_edit);
 
                         ?>
                     </td>

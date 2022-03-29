@@ -529,7 +529,7 @@ class Tasks extends Application {
     }
     public function listview($list_id,$salesman,$status='')
     { 
-        $this->data['list_id']=$list_id;
+        $this->data['list_id']=$list_id; 
         $this->data['salesman']=$salesman;
         $this->data['status']=$status;
        
@@ -772,8 +772,8 @@ tr, td, table, tr{
         $row = $this->input->get('per_page');
         if($this->input->get('search')) {
             $ref = $this->input->get('ref');
-            $company_id = $this->input->get('company');
-            $governorate_id = $this->input->get('governorate');
+            $company_name = $this->input->get('company_name');
+            $governorate_id = $this->input->get('governorate_id');
             $district_id = $this->input->get('district_id');
             $area_id = $this->input->get('area_id');
             $list = $this->input->get('list');
@@ -785,14 +785,14 @@ tr, td, table, tr{
             $to_due = $this->input->get('to_due');
             $status = $this->input->get('status');
             $category = $this->input->get('category');
-            $companyID = $this->input->get('company_id');
+            $company_id = $this->input->get('company_id');
 
         }
-
-        $all = $this->Task->GetTasks(@$ref,@$company_id, @$governorate_id, @$district_id, @$area_id, @$list, @$sales_man, @$year, @$from_start,@$to_start, @$from_due, @$to_due,@$status,@$category, $row, $limit,@$company_id);
+//die( $governorate_id);
+        $all = $this->Task->GetTasks(@$ref,@$company_id, @$governorate_id, @$district_id, @$area_id, @$list, @$sales_man, @$year, @$from_start,@$to_start, @$from_due, @$to_due,@$status,@$category, $row, $limit,@$company_name);
 
         $query=$all['results'];
-        $config['base_url'] = base_url().'tasks?ref='.@$ref.'&company='.@$company_id.'&governorate='.@$governorate_id.'&district='.@$district_id.'&area='.@$area_id.'&list='.@$list.'&sales_man='.@$sales_man.'&year='.@$year.'&from_start='.@$from_start.'&to_start='.@$to_start.'&from_due='.@$from_due.'&to_due='.@$to_due.'&status='.@$status.'&category='.@$category.'&company_id='.@$companyID.'&search=Search';
+        $config['base_url'] = base_url().'tasks?ref='.@$ref.'&company_name='.@$company_name.'&governorate_id='.@$governorate_id.'&district_id='.@$district_id.'&area_id='.@$area_id.'&list='.@$list.'&sales_man='.@$sales_man.'&year='.@$year.'&from_start='.@$from_start.'&to_start='.@$to_start.'&from_due='.@$from_due.'&to_due='.@$to_due.'&status='.@$status.'&category='.@$category.'&company_id='.@$company_id.'&search=Search';
         $config['enable_query_strings'] = TRUE;
         $config['page_query_string'] = TRUE;
         $total_row=$all['num_results'];
@@ -803,11 +803,12 @@ tr, td, table, tr{
         }
         $this->data['array_companies']=$array_companies;
 
-        $this->data['company'] = @$company_id;
+        $this->data['company_name'] = @$company_name;
+        $this->data['company_id'] = @$company_id;
         $this->data['ref'] = @$ref;
-        $this->data['governorate'] = @$governorate_id;
-        $this->data['district'] = @$district_id;
-        $this->data['area'] = @$area_id;
+        $this->data['governorate_id'] = @$governorate_id;
+        $this->data['district_id'] = @$district_id;
+        $this->data['area_id'] = @$area_id;
         $this->data['list'] = @$list;
         $this->data['sales_man'] = @$sales_man;
         $this->data['year'] = @$year;
@@ -837,6 +838,7 @@ tr, td, table, tr{
         $this->data['areas'] = $this->Address->GetAreaByDistrict('online', @$district_id);
         $this->data['districts'] = $this->Address->GetDistrictByGov('online', @$governorate_id);
         $this->data['governorates'] = $this->Address->GetGovernorate('online', 0, 0);
+       
         $this->data['sales'] = $this->Administrator->GetSalesMen();
 
         $this->template->load('_template', 'tasks/tasks', $this->data);
@@ -1879,10 +1881,18 @@ die;
 
             $data_client_status=array(
                 'client_id' => $row->company_id,
-                'client_type' => 'company',
-                'sales_man_id' => $salesman
-
+                'client_type' => 'company' ,
+                'start_date' => $this->datetime,
+                'end_date' => $this->datetime,
+                'sales_man_id' => $salesman ,
+                'status_type' => 'show_items',
+                'status' => 'active',
+                'create_time' => $this->datetime ,
+                'update_time' => $this->datetime ,
+                'user_id' => $this->session->userdata('id') 
             );
+            $ids=$this->Administrator->save('clients_status', $data_client_status);
+
 
            $data_task = array(
             'list_id' => $list_id,

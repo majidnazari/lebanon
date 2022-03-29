@@ -99,6 +99,7 @@ $(document).ready(function () {
 
 <?php 
 $array_name=array('id'=>'name','name'=>'name','value'=>@$name);
+$array_company_name=array('id'=>'name','name'=>'name','value'=>@$CompanyName);
 $array_id=array('id'=>'id','name'=>'id','value'=>@$id);
 
 $array_phone=array('id'=>'phone','name'=>'phone','value'=>@$phone);
@@ -160,7 +161,10 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
                     <div class="row-form clearfix">
                         <div class="span1">List : <br /><?php echo form_input(array('name'=>'list','value'=>@$list,'placeholder'=>'List number')); ?></div>
                         <div class="span1">ID : <br /><?php echo form_input(array('name'=>'company_id','value'=>@$company_id,'placeholder'=>'Company ID')); ?></div>
-                        <div class="span2">Company Name (اسم الشركة)<br /><?=form_dropdown('company',@$array_companies,@$company,'id="company" style="width:100% !important"'); ?></div>
+                        <div class="span2">Company Name (اسم الشركة)<br />
+                        <?php echo form_input(array('name'=>'company_name','value'=>@$company_name,'placeholder'=>'Company Name')); ?>
+                        <!-- <?=form_dropdown('company',@$array_companies,@$company,'id="company" style="width:100% !important"'); ?> -->
+                    </div>
                         <div class="span2">Sales Man<br /><?php
                         $array_sales_men=array(''=>'Select');
                         foreach($sales as $salesman){
@@ -194,7 +198,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 									$array_governorates[$governorate->id]=$governorate->label_ar;	
 								}
 											
-								echo form_dropdown('gov',$array_governorates,@$governorate_id,$class_sect);
+								echo form_dropdown('governorate_id',$array_governorates,@$governorate_id,$class_sect);
 							?>
                         </div>
 

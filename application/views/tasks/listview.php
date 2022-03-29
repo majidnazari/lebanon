@@ -6,7 +6,7 @@
 <title><?=$title?> </title>
 </head>
 
-<body>  <?php /* var_dump($query); die();*/ ?>
+<body>  <?php /* var_dump($query); die();*/  ?>
 	<div class="container" style="width:1380px !important;">
     	<div class="header" style="width:1380px !important;"><img src="<?=base_url()?>img/company-header.jpg" style="width:920px !important;" />
         </div>

@@ -791,7 +791,7 @@ function GetOldTasks()
         return $data_array;
 
     }
-    function GetTasks($ref, $company_id, $governorate_id, $district_id, $area_id, $list, $sales_man, $year, $from_start_date, $to_start_date, $from_due_date, $to_due_date, $status,$category, $row, $limit)
+    function GetTasks($ref, $company_id, $governorate_id, $district_id, $area_id, $list, $sales_man, $year, $from_start_date, $to_start_date, $from_due_date, $to_due_date, $status,$category, $row, $limit,$company_name)
     {
         $this->db->select('SQL_CALC_FOUND_ROWS tbl_tasks.*', FALSE);
         $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
@@ -827,8 +827,15 @@ function GetOldTasks()
             $this->db->where('tbl_tasks.ref', $ref);
         }
         if ($company_id != '') {
+
             $this->db->where('tbl_tasks.company_id', $company_id);
         }
+        if ($company_name != '') {
+            $where2 = "( tbl_company.name_ar LIKE '%$company_name%' OR tbl_company.name_en LIKE '%$company_name%')";
+          
+            $this->db->where($where2);
+           // $this->db->where('tbl_tasks.name_ar LIKE', $company_name); 
+        }        
         if ($year != '') {
             $this->db->where('tbl_tasks.year', $year);
         }

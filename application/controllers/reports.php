@@ -2627,6 +2627,8 @@ tr, td, table, tr{
 								<th>Name EN</th>
 								<th>OWNER NAME AR?</th>
 								<th>OWNER NAME EN</th>
+                                <th>Sector AR</th>
+								<th>Sector EN</th>
 								 <th>Activity AR</th>
                                  <th>Activity EN</th>
                                  <th>Mohafaza AR</th>
@@ -2649,8 +2651,7 @@ tr, td, table, tr{
 								<th>Advertised</th>
 								<th>Responsable AR</th>
 								<th>Responsable EN</th>
-								<th>Sector AR</th>
-								<th>Sector EN</th>
+								
 								<th>Exporter?</th>
 								<th>Is Closed?</th>
 								<th>Closed Date</th>
@@ -2670,6 +2671,10 @@ tr, td, table, tr{
 									<td>'.$row->name_en.'</td>
 									<td>'.$row->owner_name.'</td>
 									<td>'.$row->owner_name_en.'</td>
+
+                                    <td>'.$row->sector_ar.'</td>
+									<td>'.$row->sector_en.'</td>
+
 									<td>'.$row->activity_ar.'</td>
 									<td>'.$row->activity_en.'</td>
 									<td>'.$row->governorate_ar.'</td>
@@ -2692,8 +2697,7 @@ tr, td, table, tr{
 									<td>'.$row->is_adv.'</td>
 									<td>'.$row->rep_person_ar.'</td>
 									<td>'.$row->rep_person_en.'</td>
-									<td>'.$row->sector_ar.'</td>
-									<td>'.$row->sector_en.'</td>
+									
 									<td>'.$row->is_exporter.'</td>
 									<td>'.(($row->is_closed==1)? 'yes' : '').'</td>
 									<td>'.$row->closed_date.'</td>
@@ -2741,6 +2745,9 @@ tr, td, table, tr{
 								<th>صاحب / أصحاب الشركة</th>
 								<th>اسم المفوض بالتوقيع</th>
 								<th>رقم ومحل السجل التجاري</th>
+
+                                <th> القطاع </th>
+                                
 								 <th>نوع النشاط</th>
                                  <th>مصدر الترخيص</th>
                                  <th>رقم الترخيص</th>
@@ -2930,6 +2937,9 @@ tr, td, table, tr{
 									<td>'.$row->owner_name.'</td>
 									<td>'.$row->auth_person_ar.'</td>
 									<td>'.$row->auth_no.' / '.$license_ar.'</td>
+
+                                    <td>'.$row->sector_ar.'</td>
+
 									<td>'.$row->activity_ar.'</td>
 									<td>'.$source1.' '.$source2.' '.$source3.'</td>
 									<td>'.$row->nbr_source.'</td>
@@ -2978,6 +2988,8 @@ tr, td, table, tr{
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
         header('Content-type: text/html; charset=UTF-8');
+        // header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+        // header('Content-type: text/html; charset=UTF-8');
         $flag = false;
 
         echo '<style type="text/css">
@@ -2999,11 +3011,16 @@ tr, td, table, tr{
 								<th>Company Owner</th>
 								<th>Auth. to sign</th>
 								<th>No. & Place of C.R </th>
-								 <th>Activity</th>
-                                 <th>مصدر الترخيص</th>
-                                 <th>رقم الترخيص</th>
-                                 <th>التاريخ</th>
-								 <th>الفئة</th>
+                               
+								<th>Sector EN</th>
+
+								 <th>Activity</th>     
+                                 <th> مصدر الترخیص </th>
+                                 <th> رقم الترخیص </th>
+                                 <th> التاریخ </th>
+								 <th> الفئة</th>
+
+
 								 <th>Company Type</th>
                                 <th>Associations of Lebanese Industrialists</th>
 								<th>Chambre of Commerce & Industry of </th>
@@ -3029,7 +3046,7 @@ tr, td, table, tr{
 								<th>Banks</th>
 								<th>Electric Power/year - Fuel / Ton Or Litre</th>
 								<th>Electric Power/year - Diesel / Ton Or Litre</th>
-								<th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>
+								<th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>								
 								<th>صفته في المؤسسة</th>
 								<th>Related ID</th>
                               </tr>
@@ -3177,6 +3194,9 @@ tr, td, table, tr{
 									<td>'.$row->owner_name_en.'</td>
 									<td>'.$row->auth_person_en.'</td>
 									<td>'.$row->auth_no.' / '.$license_en.'</td>
+                                    
+									<td>'.$row->sector_en.'</td>
+
 									<td>'.$row->activity_en.'</td>
 									<td>'.$source1.' '.$source2.' '.$source3.'</td>
 									<td>'.$row->nbr_source.'</td>
@@ -3242,7 +3262,8 @@ tr, td, table, tr{
 								<th>اسم المؤسسة</th>
 								<th>صاحب / أصحاب الشركة</th>
 								<th>اسم المفوض بالتوقيع</th>
-								<th>رقم ومحل السجل التجاري</th>
+								<th>رقم ومحل السجل التجاري</th>							
+                                
 								 <th>نوع النشاط</th>
                                  <th>مصدر الترخيص</th>
                                  <th>رقم الترخيص</th>
@@ -3410,7 +3431,8 @@ tr, td, table, tr{
 									<td>'.$row->name_ar.'</td>
 									<td>'.$row->owner_name.'</td>
 									<td>'.$row->auth_person_ar.'</td>
-									<td>'.$row->auth_no.' / '.$license_ar.'</td>
+									<td>'.$row->auth_no.' / '.$license_ar.'</td>									
+
 									<td>'.$row->activity_ar.'</td>
 									<td>'.$source1.' '.$source2.' '.$source3.'</td>
 									<td>'.$row->nbr_source.'</td>
