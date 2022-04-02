@@ -52,7 +52,7 @@
                                 <td style="text-align:center"><?=anchor('tasks/lists?list=&sales_man='.$row->salesman_id.'&from_start=&to_start=&from_due=&to_due=&gov=0&district_id=0&area_id=0&status=&category=&search=Search',$all['num_results'])?></td>
                                 <td style="text-align:center"><?=$row->all_count?></td>
                                 <!--<td style="text-align:center" nowrap><?=$row->update_info_count?></td>-->
-                                <td style="text-align:center" nowrap class="btn-warning"><?=anchor('tasks?list=&sales_man='.$row->salesman_id.'&from_start=&to_start=&from_due=&to_due=&gov=0&district_id=0&area_id=0&status=pending&category=&search=Search','View ('.$row->pending_count.')')?>kkkk</td>
+                                <td style="text-align:center" nowrap class="btn-warning"><?=anchor('tasks?list=&sales_man='.$row->salesman_id.'&from_start=&to_start=&from_due=&to_due=&gov=0&district_id=0&area_id=0&status=pending&category=&search=Search','View ('.$row->pending_count.')')?></td>
                                 
                                 <td style="text-align:center" class="btn-warning"><?=anchor('tasks/print-list?list=&sales_man='.$row->salesman_id.'&from_start=&to_start=&from_due=&to_due=&gov=0&district_id=0&area_id=0&status=pending&category=&search=Search','<span class="isb-print"></span>',array('target'=>'_blank'))?></td>
                                 <td style="text-align:center" class="btn-warning"><?=anchor('tasks/print-details?list=&sales_man='.$row->salesman_id.'&from_start=&to_start=&from_due=&to_due=&gov=0&district_id=0&area_id=0&status=pending&category=&search=Search','<span class="isb-print"></span>',array('target'=>'_blank'))?></td>

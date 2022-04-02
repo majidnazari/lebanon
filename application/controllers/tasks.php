@@ -792,7 +792,7 @@ tr, td, table, tr{
 
         }
 //die( $governorate_id);
-        $all = $this->Task->GetTasks(@$ref,@$company_id, @$governorate_id, @$district_id, @$area_id, @$list, @$sales_man, @$year, @$from_start,@$to_start, @$from_due, @$to_due,@$status,@$category, $row, $limit,@$company_name);
+        $all = $this->Task->GetTasks(@$ref,@$company_id, @$governorate_id, @$district_id, @$area_id, @$list, @$sales_man, @$year, @$from_start,@$to_start, @$from_due, @$to_due,@$status,@$category, $row, $limit,@$company_name,'');
 
         $query=$all['results'];
         $config['base_url'] = base_url().'tasks?ref='.@$ref.'&company_name='.@$company_name.'&governorate_id='.@$governorate_id.'&district_id='.@$district_id.'&area_id='.@$area_id.'&list='.@$list.'&sales_man='.@$sales_man.'&year='.@$year.'&from_start='.@$from_start.'&to_start='.@$to_start.'&from_due='.@$from_due.'&to_due='.@$to_due.'&status='.@$status.'&category='.@$category.'&company_id='.@$company_id.'&search=Search';
