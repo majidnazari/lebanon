@@ -201,7 +201,7 @@ class Tasks extends Application {
         $to_due = $this->input->get('to_due');
         $status = $this->input->get('status');
         $category = $this->input->get('category');
-        $all = $this->Task->GetTasks(@$ref,@$company_id, @$governorate_id, @$district_id, @$area_id, @$list, @$sales_man, @$year, @$from_start,@$to_start, @$from_due, @$to_due,@$status,@$category, 0, 0);
+        $all = $this->Task->GetTasks(@$ref,@$company_id, @$governorate_id, @$district_id, @$area_id, @$list, @$sales_man, @$year, @$from_start,@$to_start, @$from_due, @$to_due,@$status,@$category, 0, 0,'');
         $query=$all['results'];
 //var_dump($query);
 
@@ -358,7 +358,10 @@ class Tasks extends Application {
     public function update_status($id)
     {
         $status=$this->input->post('status'.$id);
-        $delivery_date=$this->input->post('delivery_date'.$id);
+        $delivery_date=date("Y-m-d");
+        if($this->input->post('delivery_date')!="")
+            $delivery_date=$this->input->post('delivery_date'.$id);
+
         $note=$this->input->post('note'.$id);
         $array=array('status'=>$status,'delivery_date'=>$delivery_date);
         $this->Administrator->edit('tbl_tasks',$array,$id);
