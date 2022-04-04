@@ -885,7 +885,7 @@ function GetOldTasks()
         $tmparray=[];
         foreach ($max_ids as $max_id)
         {
-            $tmparray[]=$max_id->maxed_id;
+            $tmparray[]=$max_id->maxed_id; 
             //echo ( $max_id->maxed_id);
            // echo "<br>";
         }

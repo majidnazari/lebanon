@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/';
-//$config['base_url']	= 'http://localhost/lebanon/admin/';
+//$config['base_url']	= 'http://localhost/';
+$config['base_url']	= 'http://localhost/lebanon/admin/';
 
 /*
 |--------------------------------------------------------------------------

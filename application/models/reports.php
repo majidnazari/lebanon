@@ -1227,6 +1227,7 @@ tr, td, table, tr{
     }
     public function fulldata() {
         // filename for download
+        $query = $this->Report->GetFullCompanies();
         $filename = "full-data.xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
@@ -1241,7 +1242,7 @@ tr, td, table, tr{
 						background:#FF0 !important;
 					}
 </style>   ';
-        $query = $this->Report->GetFullCompanies();
+       
 
         echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
                         <thead>

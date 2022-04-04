@@ -867,8 +867,35 @@ function GetMinistryReports($row,$limit)
         $query = $this->db->get();
         return $query->result();
     }
-    function GetFullCompanies() {
-        $this->db->select('1tbl_company.*');
+    function GetFullCompanies() 
+    {
+
+        //         SELECT a.*        
+        //           ,b.*
+                
+        //       FROM tbl_company AS a
+        //  LEFT JOIN clients_status AS b 
+        //         ON b.client_id=a.id
+        //        AND b.id = (SELECT MAX(id) 
+        //                        FROM clients_status T 
+        //                       WHERE T.client_id = a.id 
+        //                     )
+        //                     where a.id=11522;
+
+                // $getMaxClients="SELECT MAX( `id`) as `maxed_id`  FROM `clients_status` where sales_man_id= $sales_man 
+                // group by `client_id`"; 
+                // $max_ids=$this->db->query($getMaxClients); 
+                // $max_ids=$max_ids->result(); 
+                // $tmparray=[];
+                // foreach ($max_ids as $max_id)
+                // {
+                //     $tmparray[]=$max_id->maxed_id; 
+                //     //echo ( $max_id->maxed_id);
+                //    // echo "<br>";
+                // }
+                // $arr=implode(',',$tmparray);
+
+        $this->db->select('tbl_company.*');
         $this->db->select('tbl_governorates.label_ar as governorate_ar');
         $this->db->select('tbl_governorates.label_en as governorate_en');
         $this->db->select('tbl_districts.label_ar as district_ar');
@@ -878,7 +905,8 @@ function GetMinistryReports($row,$limit)
         $this->db->select('tbl_sectors.label_ar as sector_ar');
         $this->db->select('tbl_sectors.label_en as sector_en');
         $this->db->select('tbl_company_type.label_ar as type_ar,tbl_company_type.label_en as type_en');
-        $this->db->from('tbl_company');
+        $this->db->from('tbl_company As comp');
+    
         $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
         $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_company.governorate_id', 'left');
         $this->db->join('tbl_districts', 'tbl_districts.id = tbl_company.district_id', 'left');
@@ -890,6 +918,29 @@ function GetMinistryReports($row,$limit)
         $this->db->order_by('tbl_company.name_ar', 'ASC');
 
         $query = $this->db->get();
+        return $query->result();
+    }
+
+    function GetfullCompaniesNew()
+    {
+        $sql=" SELECT `tbl_company`.*,
+                `tbl_governorates`.`label_ar` as governorate_ar, `tbl_governorates`.`label_en` as governorate_en, `tbl_districts`.`label_ar` as district_ar, `tbl_districts`.`label_en` as district_en, `tbl_area`.`label_ar` as area_ar, `tbl_area`.`label_en` as area_en, `tbl_sectors`.`label_ar` as sector_ar, `tbl_sectors`.`label_en` as sector_en, `tbl_company_type`.`label_ar` as type_ar, `tbl_company_type`.`label_en` as type_en ,
+                `clients_status`.`id` as  `clients_status_id` ,`clients_status`.`start_date` as `clients_status_start_date`,
+                `clients_status`.`end_date` as `clients_status_end_date`, `clients_status`.`status` as `clients_status_status`,
+                `clients_status`.`client_id` as `clients_status_client_id`,
+                `tbl_sales_man`.`fullname_en` AS `salesman_fullname_en`,
+                `tbl_sales_man`.`fullname` AS `salesman_fullname_ar`
+                FROM `tbl_company` 
+                left join `clients_status`   ON `clients_status`.client_id=`tbl_company`.`id` and `clients_status`.`id`=(SELECT MAX(`id`) FROM`clients_status`  T    WHERE T.client_id = `tbl_company`.`id` )
+                left join `tbl_sales_man` ON `tbl_sales_man`.`id`= `clients_status`.`sales_man_id`
+                LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id` 
+                LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_company`.`governorate_id`
+                LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_company`.`district_id` 
+                LEFT JOIN `tbl_sectors` ON `tbl_sectors`.`id` = `tbl_company`.`sector_id` 
+                LEFT JOIN `tbl_company_type` ON `tbl_company_type`.`id` = `tbl_company`.`company_type_id` 
+                
+                ORDER BY `governorate_ar` ASC, `district_ar` ASC, `area_ar` ASC, `tbl_company`.`name_ar` ASC";
+        $query = $this->db->query($sql);
         return $query->result();
     }
 

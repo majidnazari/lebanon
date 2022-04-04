@@ -2720,6 +2720,8 @@ tr, td, table, tr{
     }
     public function fulldataar() {
         // filename for download
+        //$query = $this->Report->GetFullCompanies();
+        $query = $this->Report->GetfullCompaniesNew();
         $filename = "full-data-ar.xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
@@ -2734,7 +2736,7 @@ tr, td, table, tr{
 						background:#FF0 !important;
 					}
 </style>   ';
-        $query = $this->Report->GetFullCompanies();
+        
 
         echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
                         <thead>
@@ -2783,6 +2785,16 @@ tr, td, table, tr{
 								<th>Related ID</th>
 								<th>حاجز نسخة</th>
 								<th>معلن</th>
+
+
+                                <th>Start Date Ads</th>
+                                <th>End Date Ads</th>
+                                <th>Status Ads</th>
+                                <th>Show Item Start Date</th>
+                                <th>Show Item End Date</th>
+                                <th>Show Item Status </th>
+                                <th>SalesMan FullName </th>
+
                               </tr>
                         </thead>
                         <tbody>';
@@ -2975,6 +2987,16 @@ tr, td, table, tr{
 									<td>'.$row->related_companies.'</td>
 									<td>'.$copy_res.'</td>
 									<td>'.$is_adv.'</td>
+
+                                    <td>'.$row->start_date_adv.'</td>
+                                    <td>'.$row->end_date_adv.'</td>
+                                    <td>'.($row->status_adv==1 ? "فعال" : "غیر فعال").'</td>
+                                    <td>'.$row->clients_status_start_date.'</td>
+                                    <td>'.$row->clients_status_end_date.'</td>
+                                    <td>'.$row->clients_status_status.'</td>
+                                    <td>'.$row->salesman_fullname_ar.'</td>
+
+
 								</tr>';
         }
         echo '</tbody>';
@@ -2984,7 +3006,8 @@ tr, td, table, tr{
 
     public function fulldataen() 
     {
-        $query = $this->Report->GetFullCompanies();
+        //$query = $this->Report->GetFullCompanies();
+        $query = $this->Report->GetfullCompaniesNew();
 
         // filename for download
         $filename = "full-data-en.xls";
@@ -3050,12 +3073,13 @@ tr, td, table, tr{
                             <th>صفته في المؤسسة</th>
                             <th>Related ID</th>
 
-                            <th>Start Date Adv</th>
-                            <th>End Date Adv</th>
-                            <th>Status Adv</th>
+                            <th>Start Date Ads</th>
+                            <th>End Date Ads</th>
+                            <th>Status Ads</th>
                             <th>Show Item Start Date</th>
                             <th>Show Item End Date</th>
                             <th>Show Item Status </th>
+                            <th>SalesMan FullName </th>
                         </tr>
                         </thead>
                         <tbody>';
@@ -3249,10 +3273,11 @@ tr, td, table, tr{
 
                             <td>'.$row->start_date_adv.'</td>
                             <td>'.$row->end_date_adv.'</td>
-                            <td>'.$row->status_adv.'</td>
-                            <td>'.$row->ShowItem_start_date.'</td>
-                            <td>'.$row->ShowItem_end_date.'</td>
-                            <td>'.$row->ShowItem_salesman_name.'</td>
+                            <td>'.($row->status_adv==1 ? "Active" : "Inactive").'</td>
+                            <td>'.$row->clients_status_start_date.'</td>
+                            <td>'.$row->clients_status_end_date.'</td>
+                            <td>'.$row->clients_status_status.'</td>
+                            <td>'.$row->salesman_fullname_en.'</td>
                 </tr>';
         }
         echo '</tbody>';
