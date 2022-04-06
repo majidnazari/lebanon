@@ -932,7 +932,7 @@ function GetMinistryReports($row,$limit)
                 `tbl_sales_man`.`fullname` AS `salesman_fullname_ar`
                 FROM `tbl_company` 
                 left join `clients_status`   ON `clients_status`.client_id=`tbl_company`.`id` and `clients_status`.`id`=(SELECT MAX(`id`) FROM`clients_status`  T    WHERE T.client_id = `tbl_company`.`id` )
-                left join `tbl_sales_man` ON `tbl_sales_man`.`id`= `clients_status`.`sales_man_id`
+                left join `tbl_sales_man` ON `tbl_sales_man`.`id`= `tbl_company`.`sales_man_id`
                 LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id` 
                 LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_company`.`governorate_id`
                 LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_company`.`district_id` 

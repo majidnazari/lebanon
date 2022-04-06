@@ -2790,9 +2790,11 @@ tr, td, table, tr{
                                 <th>Start Date Ads</th>
                                 <th>End Date Ads</th>
                                 <th>Status Ads</th>
+
+                                <th>Show Item Status </th>
                                 <th>Show Item Start Date</th>
                                 <th>Show Item End Date</th>
-                                <th>Show Item Status </th>
+
                                 <th>SalesMan FullName </th>
 
                               </tr>
@@ -2942,6 +2944,16 @@ tr, td, table, tr{
 					$copy_res='كلا';
 					}	
 
+            $status_adv="";
+            if($row->status_adv==1)        	
+            {
+                $status_adv="Active";
+            }
+            elseif($row->status_adv==0)
+            {
+                $status_adv="Inactive";
+
+            }
             echo ' <tr>
 									<td>'.$row->ministry_id.'</td>
 									<td>'.$row->id.'</td>
@@ -2990,10 +3002,12 @@ tr, td, table, tr{
 
                                     <td>'.$row->start_date_adv.'</td>
                                     <td>'.$row->end_date_adv.'</td>
-                                    <td>'.($row->status_adv==1 ? "فعال" : "غیر فعال").'</td>
+                                    <td>'.$status_adv.'</td>
+
+                                    <td>'.$row->clients_status_status.'</td>
                                     <td>'.$row->clients_status_start_date.'</td>
                                     <td>'.$row->clients_status_end_date.'</td>
-                                    <td>'.$row->clients_status_status.'</td>
+                                  
                                     <td>'.$row->salesman_fullname_ar.'</td>
 
 
@@ -3076,9 +3090,11 @@ tr, td, table, tr{
                             <th>Start Date Ads</th>
                             <th>End Date Ads</th>
                             <th>Status Ads</th>
+
+                            <th>Show Item Status </th>
                             <th>Show Item Start Date</th>
                             <th>Show Item End Date</th>
-                            <th>Show Item Status </th>
+                            
                             <th>SalesMan FullName </th>
                         </tr>
                         </thead>
@@ -3225,7 +3241,18 @@ tr, td, table, tr{
 				}
 				else{
 					$copy_res='كلا';
-					}	
+					}
+
+            $status_adv="";
+            if($row->status_adv==1)        	
+            {
+               $status_adv="Active";
+            }
+            elseif($row->status_adv==0)
+            {
+               $status_adv="Inactive";
+
+            }
 
                 echo ' <tr>
                             <td>'.$row->ministry_id.'</td>
@@ -3273,10 +3300,12 @@ tr, td, table, tr{
 
                             <td>'.$row->start_date_adv.'</td>
                             <td>'.$row->end_date_adv.'</td>
-                            <td>'.($row->status_adv==1 ? "Active" : "Inactive").'</td>
+                            <td>'. $status_adv .'</td>
+
+                            <td>'.$row->clients_status_status.'</td>
                             <td>'.$row->clients_status_start_date.'</td>
                             <td>'.$row->clients_status_end_date.'</td>
-                            <td>'.$row->clients_status_status.'</td>
+
                             <td>'.$row->salesman_fullname_en.'</td>
                 </tr>';
         }
