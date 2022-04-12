@@ -68,14 +68,14 @@
             }
         });
     }
-    function getarea(district_id) {
+    function getarea(district_id) { 
        // sale_man_id=$("#sales_man_id").val();
-               // alert("id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val());
+               // alert("district_id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val());
         $("#area").html("loading ... ");
         $.ajax({
             url: "<?php echo base_url();?>tasks/GetArea",
             type: "post",
-            data: "id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val(),
+            data: "district_id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val(),
 
             success: function (result) {
                // console.log("the result is:" + result);
@@ -148,7 +148,11 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                     <div class="isw-documents"></div>
                     <h1>Tasks - استمارات</h1>
                 </div>
-                <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation')); ?>
+                <?php 
+               // $areas = $this->Task->GetAreaByDistrictID('online', 14,29,"all");
+                // echo( $areas ); die();
+                
+                echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation')); ?>
                 <div class="block-fluid">
 
                     <div class="row-form clearfix">

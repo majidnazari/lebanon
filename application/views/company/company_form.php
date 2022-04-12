@@ -452,7 +452,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                 } else {
                                     $checkedis_adv = TRUE;
                                 }
-                                echo 'Advertisment<br>' . form_checkbox('is_adv', 1, $checkedis_adv); ?>
+                                //echo 'Advertisment<br>' . form_checkbox('is_adv', 1, $checkedis_adv); ?>
                             </div>
                             <div class="span4" style="text-align:right">صورة الاعلان</br>
                                 <?= form_input($array_adv_pic) ?>

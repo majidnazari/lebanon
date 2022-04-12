@@ -754,7 +754,7 @@ tr, td, table, tr{
             $area_id = 0;
         }
         $areas = $this->Task->GetAreaByDistrictID('online', $dist_id,$this->input->post('sales_man_id'),$this->input->post('data_type'));
-       
+      // echo( $areas ); die();
         $total=0;
         if (count($areas) > 0) {
             

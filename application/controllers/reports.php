@@ -2784,7 +2784,7 @@ tr, td, table, tr{
 								<th>صفته في المؤسسة</th>
 								<th>Related ID</th>
 								<th>حاجز نسخة</th>
-								<th>معلن</th>
+								//<th>معلن</th>
 
 
                                 <th>Start Date Ads</th>
@@ -2998,7 +2998,7 @@ tr, td, table, tr{
 									<td>'.$pos.'</td>
 									<td>'.$row->related_companies.'</td>
 									<td>'.$copy_res.'</td>
-									<td>'.$is_adv.'</td>
+									//<td>'.$is_adv.'</td>
 
                                     <td>'.$row->start_date_adv.'</td>
                                     <td>'.$row->end_date_adv.'</td>
