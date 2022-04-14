@@ -903,6 +903,8 @@ function GetOldTasks()
         $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
         $this->db->select('tbl_sales_man.fullname as csales_man_ar,tbl_sales_man.fullname_en as csales_man_en');
         $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
+        $this->db->select('tbl_tasks.start_date as task_start_date,tbl_tasks.due_date as task_due_date');      
+        $this->db->select('tbl_tasks.start_date as task_start_date,tbl_tasks.due_date as task_due_date');      
        
 
         $this->db->from('tbl_company');
