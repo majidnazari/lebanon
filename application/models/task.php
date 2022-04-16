@@ -878,6 +878,24 @@ function GetOldTasks()
     }
     function GetCompaniesLists($ref, $company_id, $governorate_id, $district_id, $area_id, $list, $sales_man, $year, $from_start_date, $to_start_date, $from_due_date, $to_due_date, $status,$category, $row, $limit)
     {
+        // SELECT SQL_CALC_FOUND_ROWS tbl_company.*, COUNT(tbl_company_heading.id) as CNbr, `clients_status`.`start_date` as show_start_date, `clients_status`.`end_date` as show_end_date, `clients_status`.`status` as show_status, `tbl_companies_guide_pages`.`guide_pages_ar`, `tbl_companies_guide_pages`.`guide_pages_en`, `tbl_governorates`.`label_ar` as governorate_ar, `tbl_governorates`.`label_en` as governorate_en, `tbl_districts`.`label_ar` as district_ar, `tbl_districts`.`label_en` as district_en, `tbl_area`.`label_ar` as area_ar, `tbl_area`.`label_en` as area_en, `tbl_sales_man`.`fullname` as csales_man_ar, `tbl_sales_man`.`fullname_en` as csales_man_en, `t`.`fullname` as sales_man_ar, `t`.`fullname_en` as sales_man_en, `tbl_tasks`.`start_date` as task_start_date, `tbl_tasks`.`due_date` as task_due_date, `tbl_tasks`.`start_date` as task_start_date, `tbl_tasks`.`due_date` as task_due_date 
+        // FROM (`tbl_company`) 
+        // LEFT JOIN `tbl_company_heading` ON `tbl_company_heading`.`company_id` = `tbl_company`.`id` 
+        // LEFT JOIN `tbl_companies_guide_pages` ON `tbl_companies_guide_pages`.`company_id` = `tbl_company`.`id`
+        // LEFT JOIN `tbl_tasks` ON `tbl_tasks`.`company_id` = `tbl_company`.`id`
+        // LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_tasks`.`governorate_id`
+        // LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_tasks`.`district_id`
+        // LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id`
+        // LEFT JOIN `tbl_sales_man` ON `tbl_sales_man`.`id` = `tbl_tasks`.`sales_man_id`
+        // LEFT JOIN `tbl_sales_man` t ON `t`.`id` = `tbl_company`.`sales_man_id`
+        
+        // left join `clients_status` ON `clients_status`.client_id=`tbl_company`.`id` and 
+        // `clients_status`.`id`=(SELECT MAX(`id`) FROM `clients_status` `T`  WHERE `T`.`client_id` = `tbl_company`.`id`  )
+        // WHERE  `tbl_tasks`.`list_id` = '2'and  `tbl_company`.`sales_man_id`=54  AND `tbl_tasks`.`status` = 'pending'
+        // GROUP BY `tbl_company`.`id` 
+        // ORDER BY `tbl_area`.`label_ar` ASC;
+
+
         $getMaxClients="SELECT MAX( `id`) as `maxed_id`  FROM `clients_status` where sales_man_id= $sales_man 
         group by `client_id`"; 
         $max_ids=$this->db->query($getMaxClients); 

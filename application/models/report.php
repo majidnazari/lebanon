@@ -922,7 +922,7 @@ function GetMinistryReports($row,$limit)
     }
 
     function GetfullCompaniesNew()
-    {
+    { 
         $sql=" SELECT `tbl_company`.*,
                 `tbl_governorates`.`label_ar` as governorate_ar, `tbl_governorates`.`label_en` as governorate_en, `tbl_districts`.`label_ar` as district_ar, `tbl_districts`.`label_en` as district_en, `tbl_area`.`label_ar` as area_ar, `tbl_area`.`label_en` as area_en, `tbl_sectors`.`label_ar` as sector_ar, `tbl_sectors`.`label_en` as sector_en, `tbl_company_type`.`label_ar` as type_ar, `tbl_company_type`.`label_en` as type_en ,
                 `clients_status`.`id` as  `clients_status_id` ,`clients_status`.`start_date` as `clients_status_start_date`,

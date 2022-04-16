@@ -2737,7 +2737,7 @@ tr, td, table, tr{
 					}
 </style>   ';
         
-
+                    //<th>معلن</th>
         echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
                         <thead>
                             <tr>
@@ -2784,7 +2784,7 @@ tr, td, table, tr{
 								<th>صفته في المؤسسة</th>
 								<th>Related ID</th>
 								<th>حاجز نسخة</th>
-								//<th>معلن</th>
+								
 
 
                                 <th>Start Date Ads</th>
@@ -2953,7 +2953,8 @@ tr, td, table, tr{
             {
                 $status_adv="Inactive";
 
-            }
+            } 
+            //<td>'.$is_adv.'</td>
             echo ' <tr>
 									<td>'.$row->ministry_id.'</td>
 									<td>'.$row->id.'</td>
@@ -2998,7 +2999,7 @@ tr, td, table, tr{
 									<td>'.$pos.'</td>
 									<td>'.$row->related_companies.'</td>
 									<td>'.$copy_res.'</td>
-									//<td>'.$is_adv.'</td>
+									
 
                                     <td>'.$row->start_date_adv.'</td>
                                     <td>'.$row->end_date_adv.'</td>

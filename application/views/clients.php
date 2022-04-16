@@ -68,7 +68,7 @@ $row_s=$this->Client->getShowItemsClientStatus($client_id,$client_type);
     </div>                    
     <div class="row-form clearfix">
         <div class="span3">Status:</div>
-        <div class="span7"><?php $array_status=array('active'=>'Active','inactive'=>'Inactive');
+        <div class="span7"><?php $array_status=array('inactive'=>'Inactive','active'=>'Active');
             echo form_dropdown('client_status',$array_status,@$row_s->status,' id="ClientStatus"');
             ?></div>
     </div>
