@@ -878,118 +878,144 @@ function GetOldTasks()
     }
     function GetCompaniesLists($ref, $company_id, $governorate_id, $district_id, $area_id, $list, $sales_man, $year, $from_start_date, $to_start_date, $from_due_date, $to_due_date, $status,$category, $row, $limit)
     {
-        // SELECT SQL_CALC_FOUND_ROWS tbl_company.*, COUNT(tbl_company_heading.id) as CNbr, `clients_status`.`start_date` as show_start_date, `clients_status`.`end_date` as show_end_date, `clients_status`.`status` as show_status, `tbl_companies_guide_pages`.`guide_pages_ar`, `tbl_companies_guide_pages`.`guide_pages_en`, `tbl_governorates`.`label_ar` as governorate_ar, `tbl_governorates`.`label_en` as governorate_en, `tbl_districts`.`label_ar` as district_ar, `tbl_districts`.`label_en` as district_en, `tbl_area`.`label_ar` as area_ar, `tbl_area`.`label_en` as area_en, `tbl_sales_man`.`fullname` as csales_man_ar, `tbl_sales_man`.`fullname_en` as csales_man_en, `t`.`fullname` as sales_man_ar, `t`.`fullname_en` as sales_man_en, `tbl_tasks`.`start_date` as task_start_date, `tbl_tasks`.`due_date` as task_due_date, `tbl_tasks`.`start_date` as task_start_date, `tbl_tasks`.`due_date` as task_due_date 
-        // FROM (`tbl_company`) 
-        // LEFT JOIN `tbl_company_heading` ON `tbl_company_heading`.`company_id` = `tbl_company`.`id` 
-        // LEFT JOIN `tbl_companies_guide_pages` ON `tbl_companies_guide_pages`.`company_id` = `tbl_company`.`id`
-        // LEFT JOIN `tbl_tasks` ON `tbl_tasks`.`company_id` = `tbl_company`.`id`
-        // LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_tasks`.`governorate_id`
-        // LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_tasks`.`district_id`
-        // LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id`
-        // LEFT JOIN `tbl_sales_man` ON `tbl_sales_man`.`id` = `tbl_tasks`.`sales_man_id`
-        // LEFT JOIN `tbl_sales_man` t ON `t`.`id` = `tbl_company`.`sales_man_id`
+        $sql=" SELECT SQL_CALC_FOUND_ROWS tbl_company.*, COUNT(tbl_company_heading.id) as CNbr, `clients_status`.`start_date` as show_start_date, `clients_status`.`end_date` as show_end_date, `clients_status`.`status` as show_status, `tbl_companies_guide_pages`.`guide_pages_ar`, `tbl_companies_guide_pages`.`guide_pages_en`, `tbl_governorates`.`label_ar` as governorate_ar, `tbl_governorates`.`label_en` as governorate_en, `tbl_districts`.`label_ar` as district_ar, `tbl_districts`.`label_en` as district_en, `tbl_area`.`label_ar` as area_ar, `tbl_area`.`label_en` as area_en, `tbl_sales_man`.`fullname` as csales_man_ar, `tbl_sales_man`.`fullname_en` as csales_man_en, `t`.`fullname` as sales_man_ar, `t`.`fullname_en` as sales_man_en, `tbl_tasks`.`start_date` as task_start_date, `tbl_tasks`.`due_date` as task_due_date, `tbl_tasks`.`start_date` as task_start_date, `tbl_tasks`.`due_date` as task_due_date 
+        FROM (`tbl_company`) 
+        LEFT JOIN `tbl_company_heading` ON `tbl_company_heading`.`company_id` = `tbl_company`.`id` 
+        LEFT JOIN `tbl_companies_guide_pages` ON `tbl_companies_guide_pages`.`company_id` = `tbl_company`.`id`
+        LEFT JOIN `tbl_tasks` ON `tbl_tasks`.`company_id` = `tbl_company`.`id`
+        LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_tasks`.`governorate_id`
+        LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_tasks`.`district_id`
+        LEFT JOIN `tbl_area` ON `tbl_area`.`id` = `tbl_company`.`area_id`
+        LEFT JOIN `tbl_sales_man` ON `tbl_sales_man`.`id` = `tbl_tasks`.`sales_man_id`
+        LEFT JOIN `tbl_sales_man` t ON `t`.`id` = `tbl_company`.`sales_man_id`
         
-        // left join `clients_status` ON `clients_status`.client_id=`tbl_company`.`id` and 
-        // `clients_status`.`id`=(SELECT MAX(`id`) FROM `clients_status` `T`  WHERE `T`.`client_id` = `tbl_company`.`id`  )
-        // WHERE  `tbl_tasks`.`list_id` = '2'and  `tbl_company`.`sales_man_id`=54  AND `tbl_tasks`.`status` = 'pending'
-        // GROUP BY `tbl_company`.`id` 
-        // ORDER BY `tbl_area`.`label_ar` ASC;
-
-
-        $getMaxClients="SELECT MAX( `id`) as `maxed_id`  FROM `clients_status` where sales_man_id= $sales_man 
-        group by `client_id`"; 
-        $max_ids=$this->db->query($getMaxClients); 
-        $max_ids=$max_ids->result(); 
-        $tmparray=[];
-        foreach ($max_ids as $max_id)
-        {
-            $tmparray[]=$max_id->maxed_id; 
-            //echo ( $max_id->maxed_id);
-           // echo "<br>";
-        }
-        $arr=implode(',',$tmparray);
-        //var_dump($arr); die();
-
-        $this->db->select('SQL_CALC_FOUND_ROWS tbl_company.*', FALSE);
-        $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
-
-        $this->db->select('clients_status.start_date as show_start_date , clients_status.end_date as show_end_date,clients_status.status as show_status ');
-
-        $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
-        $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
-        $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
-        $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
-        $this->db->select('tbl_sales_man.fullname as csales_man_ar,tbl_sales_man.fullname_en as csales_man_en');
-        $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
-        $this->db->select('tbl_tasks.start_date as task_start_date,tbl_tasks.due_date as task_due_date');      
-        $this->db->select('tbl_tasks.start_date as task_start_date,tbl_tasks.due_date as task_due_date');      
+        left join `clients_status` ON `clients_status`.client_id=`tbl_company`.`id` and 
+        `clients_status`.`id`=(SELECT MAX(`id`)
+                                FROM `clients_status` `T` 
+                                 WHERE `T`.`client_id` = `tbl_company`.`id`  ) ";
+       
+       
        
 
-        $this->db->from('tbl_company');
-        $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');
-        $this->db->join('tbl_companies_guide_pages', 'tbl_companies_guide_pages.company_id = tbl_company.id', 'left');
-        $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
-        $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
-        $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
-        $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
-        $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
-        $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
 
-        $this->db->join('clients_status', 'clients_status.sales_man_id = tbl_company.sales_man_id', 'left');  
+    //     $getMaxClients="SELECT MAX( `id`) as `maxed_id`  FROM `clients_status` where sales_man_id= $sales_man 
+    //     group by `client_id`"; 
+    //     $max_ids=$this->db->query($getMaxClients); 
+    //     $max_ids=$max_ids->result(); 
+    //     $tmparray=[];
+    //     foreach ($max_ids as $max_id)
+    //     {
+    //         $tmparray[]=$max_id->maxed_id; 
+    //         //echo ( $max_id->maxed_id);
+    //        // echo "<br>";
+    //     }
+    //     $arr=implode(',',$tmparray);
+    //     //var_dump($arr); die();
+
+    //     $this->db->select('SQL_CALC_FOUND_ROWS tbl_company.*', FALSE);
+    //     $this->db->select('COUNT(tbl_company_heading.id) as CNbr');
+
+    //     $this->db->select('clients_status.start_date as show_start_date , clients_status.end_date as show_end_date,clients_status.status as show_status ');
+
+    //     $this->db->select('tbl_companies_guide_pages.guide_pages_ar, tbl_companies_guide_pages.guide_pages_en');
+    //     $this->db->select('tbl_governorates.label_ar as governorate_ar,tbl_governorates.label_en as governorate_en');
+    //     $this->db->select('tbl_districts.label_ar as district_ar, tbl_districts.label_en as district_en');
+    //     $this->db->select('tbl_area.label_ar as area_ar, tbl_area.label_en as area_en');
+    //     $this->db->select('tbl_sales_man.fullname as csales_man_ar,tbl_sales_man.fullname_en as csales_man_en');
+    //     $this->db->select('t.fullname as sales_man_ar,t.fullname_en as sales_man_en');
+    //     $this->db->select('tbl_tasks.start_date as task_start_date,tbl_tasks.due_date as task_due_date');      
+    //     $this->db->select('tbl_tasks.start_date as task_start_date,tbl_tasks.due_date as task_due_date');      
+       
+
+    //     $this->db->from('tbl_company');
+    //     $this->db->join('tbl_company_heading', 'tbl_company_heading.company_id = tbl_company.id', 'left');
+    //     $this->db->join('tbl_companies_guide_pages', 'tbl_companies_guide_pages.company_id = tbl_company.id', 'left');
+    //     $this->db->join('tbl_tasks', 'tbl_tasks.company_id = tbl_company.id', 'left');
+    //     $this->db->join('tbl_governorates', 'tbl_governorates.id = tbl_tasks.governorate_id', 'left');
+    //     $this->db->join('tbl_districts', 'tbl_districts.id = tbl_tasks.district_id', 'left');
+    //     $this->db->join('tbl_area', 'tbl_area.id = tbl_company.area_id', 'left');
+    //     $this->db->join('tbl_sales_man', 'tbl_sales_man.id = tbl_tasks.sales_man_id', 'left');
+    //     $this->db->join('tbl_sales_man t', 't.id = tbl_company.sales_man_id', 'left');
+
+    //     $this->db->join('clients_status', 'clients_status.sales_man_id = tbl_company.sales_man_id', 'left');  
           
-        $this->db->where_In('clients_status.id', $arr);
-        //$this->db->where('clients_status.client_type', "company");
-       // $this->db->where('clients_status.status', "active");
-
+    //     $this->db->where_In('clients_status.id', $arr);
+    //     //$this->db->where('clients_status.client_type', "company");
+    //    // $this->db->where('clients_status.status', "active");
+    $sql .= " where 1=1  " ;
         if ($governorate_id != '' and $governorate_id != 0) {
-            $this->db->where('tbl_tasks.governorate_id', $governorate_id);
+            //$this->db->where('tbl_tasks.governorate_id', $governorate_id);
+            $sql .= " and  `tbl_tasks`.`governorate_id` = $governorate_id ";
         }
         if ($district_id != '' and $district_id != 0) {
-            $this->db->where('tbl_tasks.district_id', $district_id);
+            //$this->db->where('tbl_tasks.district_id', $district_id);
+            $sql .= " and  `tbl_tasks`.`district_id` = $district_id ";
         }
         if ($area_id != '' and $area_id != 0) {
-            $this->db->where('tbl_tasks.area_id', $area_id);
+           // $this->db->where('tbl_tasks.area_id', $area_id);
+            $sql .= " and  `tbl_tasks`.`area_id` = $area_id ";
         }
         if ($ref != '') {
-            $this->db->where('tbl_tasks.ref', $ref);
+            //$this->db->where('tbl_tasks.ref', $ref);
+            $sql .= " and  `tbl_tasks`.`ref` = $ref ";
         }
         if ($company_id != '') {           
-            $this->db->where('clients_status.client_id', $company_id);
-            $this->db->where('tbl_tasks.company_id', $company_id);
+           // $this->db->where('clients_status.client_id', $company_id);
+            //$this->db->where('tbl_tasks.company_id', $company_id);
+
+            $sql .= " and  `tbl_tasks`.`company_id` = $company_id ";
+            $sql .= " and  `clients_status`.`client_id` = $company_id ";
         }
         if ($year != '') {
-            $this->db->where('tbl_tasks.year', $year);
+           // $this->db->where('tbl_tasks.year', $year);
+           $sql .= " and  `tbl_tasks`.`year` = $year ";
         }
         if ($list != '') {
-            $this->db->where('tbl_tasks.list_id', $list);
+            //$this->db->where('tbl_tasks.list_id', $list);
+            $sql .= " and  `tbl_tasks`.`list_id` = $list ";
         }
         if ($sales_man != '') {
-            $this->db->where('clients_status.sales_man_id', $sales_man);
-            $this->db->where('tbl_tasks.sales_man_id', $sales_man);
+            //$this->db->where('clients_status.sales_man_id', $sales_man);
+           // $this->db->where('tbl_tasks.sales_man_id', $sales_man);
+
+            $sql .= " and  `tbl_tasks`.`sales_man_id` = $sales_man ";
+            //$sql .= " and  `clients_status`.`sales_man_id` = $sales_man ";
+            $sql .= " and  `tbl_company`.`sales_man_id` = $sales_man ";
         }
         if ($from_start_date != '') {
-            $this->db->where('tbl_tasks.start_date >=', $from_start_date);
+            //$this->db->where('tbl_tasks.start_date >=', $from_start_date);
+            $sql .= " and  `tbl_tasks`.`start_date` >= '$from_start_date' ";
         }
         if ($to_start_date != '') {
-            $this->db->where('tbl_tasks.start_date <=', $to_start_date);
+           // $this->db->where('tbl_tasks.start_date <=', $to_start_date);
+            $sql .= " and  `tbl_tasks`.`start_date` <= '$to_start_date' ";
         }
         if ($from_due_date != '') {
-            $this->db->where('tbl_tasks.start_date >=', $from_due_date);
+           // $this->db->where('tbl_tasks.start_date >=', $from_due_date);
+            $sql .= " and  `tbl_tasks`.`start_date` >= '$from_due_date' ";
         }
         if ($to_due_date != '') {
-            $this->db->where('tbl_tasks.start_date <=', $to_due_date);
+           // $this->db->where('tbl_tasks.start_date <=', $to_due_date);
+            $sql .= " and  `tbl_tasks`.`start_date` <= '$to_due_date' ";
         }
         if ($status != '') {
-            $this->db->where('tbl_tasks.status', $status);
+           // $this->db->where('tbl_tasks.status', $status);
+           $sql .= " and  `tbl_tasks`.`status` = '$status' ";
         }
         if ($category != '') {
-            $this->db->where('tbl_tasks.category', $category);
+            //$this->db->where('tbl_tasks.category', $category);
+            $sql .= " and  `tbl_tasks`.`category` = $category ";
         }
-        $this->db->order_by('tbl_area.label_ar', 'ASC');
-        $this->db->group_by('tbl_company.id');
-        if ($limit != 0)
-            $this->db->limit($limit, $row);
-        $query = $this->db->get();
+       
+       $sql .= " GROUP BY `tbl_company`.`id` ";
+       $sql .= " ORDER BY `tbl_area`.`label_ar` ASC" ;
+
+       // $this->db->order_by('tbl_area.label_ar', 'ASC');
+       // $this->db->group_by('tbl_company.id');
+       // if ($limit != 0)
+           // $this->db->limit($limit, $row);
+       // $query = $this->db->get();
+        $query = $this->db->query($sql);
         $query1 = $this->db->query('SELECT FOUND_ROWS() AS `total_rows`');
         $objCount = $query1->result_array();
         $totalres = $objCount[0]['total_rows'];

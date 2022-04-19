@@ -36,13 +36,15 @@
             <th style="width: 100px !important">المندوب</th>
             <th style="width: 100px !important">الموزع</th>
             <th>عدد انترنت</th>
-            <th>معلن</th>  
+           <!-- <th>معلن</th>  -->
 
+            <th >ads status </th>
             <th >ads start date </th>
             <th >ads end date </th> 
             
-            <th >show item</th> 
-            
+           <!-- <th >show item</th> -->
+
+            <th >show status</th>             
             <th >  item start_date </th>
             <th > item end_date </th> 
 
@@ -58,7 +60,32 @@
         <?php  
 		$i=1;
 		foreach($query as $row){
+
+            $activeShowItem="No";           
+            if($row->show_status=="active" && $row->show_start_date <= date("Y-m-d") && date("Y-m-d") <= $row->show_end_date)
+            {
+                $activeShowItem="Yes";
+            }
+            if(($row->show_status=="inactive" && $row->show_start_date > date("Y-m-d")) || ($row->show_status=="inactive" && $row->show_end_date < date("Y-m-d")))
+            {              
+                $activeShowItem="Yes";
+            }
+
+            $activeAdvertisement="No";
+            //echo ("the status is:" . $row->status_adv . "the id is :" . $row->id . "start date is:" . $row->start_date_adv . " now is :  " .date("Y-m-d") . "  end date is: " . $row->end_date_adv . "<br>") ;
+
+            if($row->status_adv==1 && $row->start_date_adv <= date("Y-m-d") && date("Y-m-d") <= $row->end_date_adv)
+            {
+                // echo "<br> 1 runs <br>";
+                // echo ("the status is:" . $row->status_adv . "the id is :" . $row->id . "start date is:" . $row->start_date_adv . " now is :  " .date("Y-m-d") . "  end date is: " . $row->end_date_adv . "<br>") ;
+                 $activeAdvertisement="Yes";
+            }
+            if(($row->status_adv==0 && $row->start_date_adv > date("Y-m-d")) || ($row->status_adv==0 && $row->end_date_adv < date("Y-m-d")))
+            {              
+                $activeAdvertisement="Yes";
+            }
             $status=$row->show_status=="active" ? "YES" : "NO";
+            $status_advertise=$row->status_adv==1 ? "active" : "inactive";
 			if($row->is_exporter==1){
 					$exporter='نعم';
 				}
@@ -99,12 +126,14 @@
                     <td><?=$row->sales_man_ar?></td>
                     <td><?=$row->csales_man_ar?></td>
                     <td align="center"><?=(($row->CNbr*2)+4)?></td>
-                  <td align="center"><?=$is_adv?></td>  
+                 <!-- <td align="center"><?=/*$is_adv*/ $activeAdvertisement  ?></td>  -->
+                  <td align="center"><?=$status_advertise  ?></td>  
 
                     <td style="width: 85px !important"><?=$row->start_date_adv ?></td>
                     <td style="width: 80px !important"><?=$row->end_date_adv ?></td>
 
-                    <td ><?=$status ?></td>
+                   <!-- <td ><?=/*$status*/ $activeShowItem ?></td> -->
+                    <td ><?= $row->show_status ?></td>
 
                     <td style="width: 85px !important"><?=$row->show_start_date ?></td>
                     <td style="width: 80px !important"><?=$row->show_end_date ?></td>
