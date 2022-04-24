@@ -1335,7 +1335,7 @@ tr, td, table, tr{
     }
     public function tst()
     {
-        echo 'test';
+        //echo 'test123';
     }
     public function fulldataar() {
         // filename for download

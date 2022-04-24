@@ -733,7 +733,7 @@ tr, td, table, tr{
         $this->template->load('_template', 'tasks/companies', $this->data);
     }
     public function GetArea()
-    {
+    { 
         echo '
             <style type="text/css">
     #area_id{
@@ -747,18 +747,40 @@ tr, td, table, tr{
             $("#area_id").select2();
         });
     </script>';
+        $gov_id = $this->input->post('governate_id');
+        $district_id = $this->input->post('district_id');
         $dist_id = $this->input->post('id');
         if ($this->input->post('area_id')) {
             $area_id = $this->input->post('area_id');
         } else {
             $area_id = 0;
         }
-        $areas = $this->Task->GetAreaByDistrictID('online', $dist_id,$this->input->post('sales_man_id'),$this->input->post('data_type'));
-      // echo( $areas ); die();
+        $areas = $this->Task->GetAreaByDistrictID('online', $district_id,$this->input->post('sales_man_id'),$this->input->post('data_type'),$gov_id);
+        $tasks_created=$this->Task->GetAreaCreatedBefore('online', $district_id,$this->input->post('sales_man_id'),$this->input->post('data_type'),'',$gov_id);
+        $task_ids=[];
+        $id=0;
+        foreach( $tasks_created as  $one_task_record)
+        {
+            $task_ids[$id] = $one_task_record['area_id'];
+            $id++;
+        }
+        $task_ids_string=implode(',', $task_ids);
+       // echo( $task_ids ); die();
+        //echo( $areas ); die();
         $total=0;
         if (count($areas) > 0) {
-            
+           
             foreach ($areas as $area) {
+                $desabled="";
+                if(count($task_ids)>0 )
+                {
+                    if (in_array($area->id,$task_ids))
+                    {
+                        $desabled="disabled";
+                    }
+                }
+                   
+
                 $array_area[$area->id] = $area->label_ar . ' -' . $area->label_en.' ('.$area->CompanyNbr.' )';
                 $total=$total+$area->CompanyNbr;
             }
@@ -767,7 +789,7 @@ tr, td, table, tr{
             $array_area[0] = 'No Data Found';
         }
 
-        echo form_dropdown('area_id', $array_area, $area_id, ' id="area_id" class="search-select"');
+        echo form_dropdown('area_id', $array_area, -1, ' id="area_id" class="search-select"', $task_ids_string,$total);
     }
     public function index($row = 0) {
         $limit=20;

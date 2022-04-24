@@ -2716,7 +2716,7 @@ tr, td, table, tr{
     }
     public function tst()
     {
-        echo 'test';
+       // echo 'test234';
     }
     public function fulldataar() {
         // filename for download

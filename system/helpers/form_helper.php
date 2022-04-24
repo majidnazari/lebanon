@@ -305,8 +305,14 @@ if ( ! function_exists('form_multiselect'))
  */
 if ( ! function_exists('form_dropdown'))
 {
-	function form_dropdown($name = '', $options = array(), $selected = array(), $extra = '')
+	function form_dropdown($name = '', $options = array(), $selected = array(), $extra = '',$task_ids_string='',$total=-1)
 	{
+		$task_ids_array=[];
+		$desabled="";
+		if( $task_ids_string!='')
+		{
+			$task_ids_array=explode(',',$task_ids_string);
+		}
 		//var_dump($_POST);
 		if ( ! is_array($selected))
 		{
@@ -328,6 +334,10 @@ if ( ! function_exists('form_dropdown'))
 		$multiple = (count($selected) > 1 && strpos($extra, 'multiple') === FALSE) ? ' multiple="multiple"' : '';
 
 		$form = '<select name="'.$name.'"'.$extra.$multiple.">";
+		if($name=="area_id" && count($task_ids_array)>0)
+		{
+			$form .= '<option value="-1" > Selection </option>';
+		}
 
 		foreach ($options as $key => $val)
 		{
@@ -339,18 +349,36 @@ if ( ! function_exists('form_dropdown'))
 
 				foreach ($val as $optgroup_key => $optgroup_val)
 				{
+					if(count($task_ids_array)>0)
+					{
+						$disabled=(in_array($optgroup_key, $task_ids_array)) ? 'disabled ' : '';
+					}
 					$sel = (in_array($optgroup_key, $selected)) ? ' selected="selected"' : '';
+					
 
-					$form .= '<option value="'.$optgroup_key.'"'.$sel.'>'.(string) $optgroup_val."</option>";
+					$form .= '<option value="'.$optgroup_key.'"'.$sel." ".$disabled.'>'.(string) $optgroup_val."</option>";
 				}
 
 				$form .= '</optgroup>'."\n";
 			}
 			else
 			{
-				$sel = (in_array($key, $selected)) ? ' selected="selected"' : '';
+				
+				$disabled=in_array(trim($key), $task_ids_array) ? 'disabled ' : ''; // for elements number 1 to n-1
+				if(count($task_ids_array)>0 && $key=='' ) // for elemet  ALL element (the last element)
+				{
+					$disabled='disabled'  ;
+				}
+				if(count($task_ids_array)>=$total && $total!=-1) // if the area_id is 0 it means  all of elements aded
+				{
+					$disabled='disabled'  ;
+				}
+				//$is_allarea=$task_ids_string=="0" ? 'disabled' : ''; // if the area_id is 0 it means  all of elements aded
+				$sel = (in_array($key, $selected)) ? ' selected="selected" ' : '';
+				
 
-				$form .= '<option value="'.$key.'"'.$sel.'>'.(string) $val."</option>";
+				$form .= '<option value="'.$key.'"'.$sel." ".$disabled." " .'>'.(string) $val."</option>";
+				
 			}
 		}
 

@@ -2755,7 +2755,7 @@ public function branches($id) {
                      'whatsapp'=>$this->input->post('whatsapp'),
                     'update_time' => $this->datetime,
                     'user_id' => $this->session->userdata('id'),
-                );
+                ); 
                
 
                 $delivery=($this->input->post('delivery_by') != '') ? 1 : 0;
@@ -24016,7 +24016,7 @@ public function imp()
         include APPPATH . 'libraries/PHPExcel/IOFactory.php';
         header('Content-type: text/html; charset=UTF-8; encoding=UTF-8');
         $objPHPExcel = PHPExcel_IOFactory::load($name);
-        echo 'test';
+        //echo 'test123';
         var_dump($objPHPExcel);
         $maxCell = $objPHPExcel->getActiveSheet()->getHighestRowAndColumn();
 

@@ -2,12 +2,12 @@
 
 class Task extends CI_Model
 {
-    function GetAreaByDistrictID($status='',$did,$salesman,$data_type,$lang='ar')
+    function GetAreaByDistrictID($status='',$did,$salesman,$data_type,$lang='ar',$gov_id=0)
     {
         $this->db->select('tbl_area.*');
         if($data_type!='all')
 		{
-		 /*   if($data_type=='is_adv')
+		    /*   if($data_type=='is_adv')
 		    {
 		      $this->db->select('COUNT(CASE WHEN ( tbl_company.sales_man_id= "'.$salesman.'" AND tbl_company.is_adv=1) THEN tbl_company.id END) as CompanyNbr',FALSE);
 		    }
@@ -23,7 +23,7 @@ class Task extends CI_Model
 		    {
 		         $this->db->select('COUNT(CASE WHEN (tbl_company.sales_man_id= "'.$salesman.'" AND (tbl_company.is_adv=1 OR tbl_company.copy_res=1)) THEN tbl_company.id END) as CompanyNbr',FALSE);
 		    } 
-*/
+            */
             ///////////////////////// above was comented //////////////////////////////////
 
 		    if($data_type=='is_adv')
@@ -72,7 +72,13 @@ class Task extends CI_Model
       
         return $query->result();
     }
-        function GetCompaniesArea($gov='',$district='',$area_id='',$salesman)
+    function GetAreaCreatedBefore($status='',$dis_id,$salesman,$data_type,$lang='ar',$gov_id=0)
+    {
+            $sql="SELECT `area_id` FROM `tbl_tasks` WHERE `governorate_id` = $gov_id AND `district_id` = $dis_id AND `sales_man_id` = $salesman";
+            $query= $this->db->query($sql);
+            return $query->result_array();
+    }
+    function GetCompaniesArea($gov='',$district='',$area_id='',$salesman)
     {
         $this->db->select('tbl_company.*');
         
@@ -180,7 +186,8 @@ class Task extends CI_Model
         return $data_array;
 
     }
-function GetDistrictsBySalesman($salesman,$status)
+
+    function GetDistrictsBySalesman($salesman,$status)
 {
     $this->db->select('tbl_districts.*');
     $this->db->select('COUNT(tbl_tasks.id) as total');

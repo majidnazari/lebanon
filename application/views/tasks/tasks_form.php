@@ -70,17 +70,24 @@
     }
     function getarea(district_id) { 
        // sale_man_id=$("#sales_man_id").val();
-               // alert("district_id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val());
+                //alert("governate is :" +$("#governorate_id").val() +"district_id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val());
         $("#area").html("loading ... ");
         $.ajax({
             url: "<?php echo base_url();?>tasks/GetArea",
             type: "post",
-            data: "district_id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val(),
+            data:"governate_id=" +$("#governorate_id").val()+ "&district_id=" + district_id+"&sales_man_id="+$("#sales_man_id").val()+"&data_type="+$("#data_types").val(),
 
-            success: function (result) {
-               // console.log("the result is:" + result);
+            success: function (result) {  
+                //console.log("the result is:" + result);            
                 $("#area").html(result);
             }
+            // ,
+            // results: function (data) {
+            //     console.log("the result is:" + result);
+            //         return {
+            //             results: data
+            //         };
+            // }
         });
     }
     function getLastList(sales_man) {

@@ -27,7 +27,7 @@
                                                        
                 </div>  
                 <div class="block-fluid table-sorting clearfix">
-                <table cellpadding="0" cellspacing="0" width="100%" class="table" id="tSortable">
+                <table cellpadding="0" cellspacing="0" width="100%" class="table" id="tSortable_salesman">
                                 <thead>
                                     <tr>
                                         
@@ -35,7 +35,9 @@
                                         <th width="20%">Contact</th>
                                         <th width="20%">Date</th>
                                         <th width="20%">Created By</th>
-                                        <th width="20%">Actions</th>                                    
+                                        <th width="10%">Actions</th>                                    
+                                        <th width="10%">status</th>                                    
+                                                                           
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,7 +62,9 @@
                                             echo _show_delete('parameters/delete/id/'.$row->id.'/p/salesman/',$p_delete_salesman);
                                             echo _show_edit_pop('#'.$row->id.'Modal',$p_edit_salesman);
                                     ?>                                        
-                                    </td>                                    
+                                    </td>  
+                                    <td align="right">
+                                    <?=$row->status?></td>                           
                             </tr>
                             <?php if($p_edit_salesman){ ?>
                             <div id="<?=$row->id?>Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -329,3 +329,613 @@ ERROR - 2022-04-19 21:00:09 --> Severity: Notice  --> Undefined variable: query 
 ERROR - 2022-04-19 21:00:09 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
 ERROR - 2022-04-19 21:00:09 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
 ERROR - 2022-04-19 21:00:09 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:21:59 --> Query error: Unknown table 'lebanoni_ndustry.1tbl_company'
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:24:37 --> Severity: Notice  --> Undefined variable: company_name C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company_name C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 803
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company_name C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 809
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 810
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 811
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 812
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 813
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 814
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 815
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 816
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 817
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 818
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 819
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 820
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 821
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 822
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 823
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 841
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 842
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company_array C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 64
+ERROR - 2022-04-19 21:25:09 --> Severity: Warning  --> count(): Parameter must be an array or an object that implements Countable C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 64
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 101
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: CompanyName C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 102
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 103
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 105
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: activity C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 107
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: districtID C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 108
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: district C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 110
+ERROR - 2022-04-19 21:25:09 --> Severity: Notice  --> Undefined variable: company C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 166
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 477
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 483
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 484
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 485
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 486
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 487
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 488
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 489
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 490
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 491
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 492
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 493
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 494
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 495
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 496
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 513
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 514
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_array C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 76
+ERROR - 2022-04-19 21:28:21 --> Severity: Warning  --> count(): Parameter must be an array or an object that implements Countable C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 76
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 113
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 114
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 116
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: activity C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 118
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: districtID C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 119
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 207
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 221
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 235
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:21 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:28:22 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: areaID C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 759
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 761
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: ministry_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 762
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 763
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: CompanyOwner C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 764
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: activity C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 765
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 766
+ERROR - 2022-04-19 21:29:04 --> Severity: Notice  --> Undefined variable: whatsapp C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 767
+ERROR - 2022-04-19 21:29:10 --> Severity: Notice  --> Trying to get property 'start_date' of non-object C:\xampp\htdocs\lebanon\admin\application\views\clients.php 45
+ERROR - 2022-04-19 21:29:10 --> Severity: Notice  --> Trying to get property 'end_date' of non-object C:\xampp\htdocs\lebanon\admin\application\views\clients.php 51
+ERROR - 2022-04-19 21:29:10 --> Severity: Notice  --> Trying to get property 'sales_man_id' of non-object C:\xampp\htdocs\lebanon\admin\application\views\clients.php 66
+ERROR - 2022-04-19 21:29:10 --> Severity: Notice  --> Trying to get property 'status' of non-object C:\xampp\htdocs\lebanon\admin\application\views\clients.php 72
+ERROR - 2022-04-19 21:29:11 --> 404 Page Not Found --> css
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: name_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2637
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: ref C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2798
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: name_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2799
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: name_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2800
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: owner_name C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2801
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: owner_name_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2802
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: auth_person_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2803
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: auth_person_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2804
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: auth_no C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2805
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: activity_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2806
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: activity_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2807
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: establish_date C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2808
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: sector_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2809
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: license_source_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2810
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: company_type_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2811
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: personal_notes C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2813
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: display_directory C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2814
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: directory_interested C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2815
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: display_exhibition C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2816
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: exhibition_interested C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2817
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2820
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2821
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2822
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: street_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2823
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: street_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2824
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: bldg_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2825
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: bldg_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2826
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: fax C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2827
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: phone C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2828
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: whatsapp C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2829
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: pobox_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2830
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: pobox_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2831
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: email C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2832
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: website C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2833
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: x_decimal C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2834
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: y_decimal C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2835
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: ind_association C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2837
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: iro_code C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2838
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: igr_code C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2839
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: eas_code C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2840
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: rep_person_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2843
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: rep_person_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2844
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: app_fill_date C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2845
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: position_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2846
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: sales_man_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2847
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: is_exporter C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2848
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: show_online C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2849
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: is_adv C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2850
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: copy_res C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2851
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: adv_pic C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2853
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: start_date_adv C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2854
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: end_date_adv C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2855
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: status_adv C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2856
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: address2_ar C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2858
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: address2_en C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2859
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: ref C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2860
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: wezara_source C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2862
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: other_source C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2863
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: nbr_source C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2864
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: date_source C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2865
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: type_source C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2866
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: chambe_commerce_category C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2867
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: chambe_commerce_no C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2868
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: sales_man_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2869
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2873
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\companies.php 2874
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: id C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 193
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: facebook C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 354
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: instagram C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 359
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: twitter C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 365
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: adv_salesman_id C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 471
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: copy_res_bold C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 502
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: copy_res_salesman_id C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 518
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: update_info C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 544
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: acc C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 545
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: delivery_date C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 598
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: delivery_by C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 601
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: copy_qty C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 604
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: receiver_name C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 607
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: sales_note C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 613
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: related_companies C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 625
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: employees_number C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 748
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: error_address C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 756
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: is_closed C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 766
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: closed_date C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 779
+ERROR - 2022-04-19 21:29:11 --> Severity: Notice  --> Undefined index: ministry_id C:\xampp\htdocs\lebanon\admin\application\views\company\company_form.php 876
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:29:40 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:20 --> Severity: Notice  --> Undefined variable: company_name C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 795
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company_name C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 798
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 803
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company_name C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 809
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 810
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 811
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 812
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 813
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 814
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 815
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 816
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 817
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 818
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 819
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 820
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 821
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 822
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 823
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 841
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 842
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company_array C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 64
+ERROR - 2022-04-19 21:30:49 --> Severity: Warning  --> count(): Parameter must be an array or an object that implements Countable C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 64
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 101
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: CompanyName C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 102
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 103
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 105
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: activity C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 107
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: districtID C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 108
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: district C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 110
+ERROR - 2022-04-19 21:30:49 --> Severity: Notice  --> Undefined variable: company C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks.php 166
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:06 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 470
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 472
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 477
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 483
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: ref C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 484
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 485
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 486
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 487
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: list C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 488
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: sales_man C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 489
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: year C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 490
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: from_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 491
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: to_start C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 492
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: from_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 493
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: to_due C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 494
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: status C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 495
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: category C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 496
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 513
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\controllers\tasks.php 514
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_array C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 76
+ERROR - 2022-04-19 21:31:07 --> Severity: Warning  --> count(): Parameter must be an array or an object that implements Countable C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 76
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: name C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 113
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 114
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: phone C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 116
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: activity C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 118
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: districtID C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 119
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 165
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 166
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: governorate_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 207
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: district_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 221
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: area_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 235
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 355
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 373
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 391
+ERROR - 2022-04-19 21:31:07 --> Severity: Notice  --> Undefined variable: company_id C:\xampp\htdocs\lebanon\admin\application\views\tasks\lists.php 409
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:32:19 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:35:00 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:35:35 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:35:43 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:40:08 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:43:39 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 167
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 172
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 177
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 198
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 212
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 227
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 243
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 253
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 258
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 265
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 272
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Undefined variable: query C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278
+ERROR - 2022-04-19 21:44:16 --> Severity: Notice  --> Trying to access array offset on value of type null C:\xampp\htdocs\lebanon\admin\application\views\tasks\tasks_form.php 278

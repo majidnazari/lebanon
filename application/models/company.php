@@ -1785,6 +1785,7 @@ function GetFMinistryCompanies($name,$phone,$id) {
     function GetSalesMen() {
         $this->db->select('tbl_sales_man.*');
         $this->db->from('tbl_sales_man');
+        $this->db->where('tbl_sales_man.status','online');
         $query = $this->db->get();
         return $query->result();
     }
