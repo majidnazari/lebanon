@@ -2649,7 +2649,17 @@ public function branches($id) {
                 } else {
                     $path = $this->input->post('adv_pic');
                 }
-                   
+                $start_date_adv= null ;
+                $end_date_adv= null ;
+                $status_adv= 0;
+                if($this->input->post('adv_pic') !=="" )
+                {
+                    $start_date_adv= valid_date($this->input->post('start_date_adv')) ;
+                    $end_date_adv= valid_date($this->input->post('end_date_adv'))  ;
+                    $status_adv= $this->input->post('status_adv');
+     
+                }
+              
                 $data = array(
                     'ref' => $this->input->post('ref'),
                     'name_ar' => $this->input->post('name_ar'),
@@ -2712,9 +2722,9 @@ public function branches($id) {
                     'personal_notes' => $this->input->post('personal_notes'),
                     'adv_pic' => $this->input->post('adv_pic'),
 
-                    'start_date_adv' =>valid_date( $this->input->post('start_date_adv')),
-                    'end_date_adv' => valid_date($this->input->post('end_date_adv')),
-                    'status_adv' => $this->input->post('status_adv'),
+                    'start_date_adv' =>  $start_date_adv,
+                    'end_date_adv' =>  $end_date_adv,
+                    'status_adv' =>  $status_adv,
 
 
                     'ind_association' => $this->input->post('ind_association'),
@@ -2757,7 +2767,7 @@ public function branches($id) {
                     'user_id' => $this->session->userdata('id'),
                 ); 
                
-
+               
                 $delivery=($this->input->post('delivery_by') != '') ? 1 : 0;
 
                 $query = $this->Company->GetCompanyById($id);

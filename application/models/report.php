@@ -937,9 +937,11 @@ function GetMinistryReports($row,$limit)
                 LEFT JOIN `tbl_governorates` ON `tbl_governorates`.`id` = `tbl_company`.`governorate_id`
                 LEFT JOIN `tbl_districts` ON `tbl_districts`.`id` = `tbl_company`.`district_id` 
                 LEFT JOIN `tbl_sectors` ON `tbl_sectors`.`id` = `tbl_company`.`sector_id` 
-                LEFT JOIN `tbl_company_type` ON `tbl_company_type`.`id` = `tbl_company`.`company_type_id` 
+                LEFT JOIN `tbl_company_type` ON `tbl_company_type`.`id` = `tbl_company`.`company_type_id`
                 
-                ORDER BY `governorate_ar` ASC, `district_ar` ASC, `area_ar` ASC, `tbl_company`.`name_ar` ASC";
+                ORDER BY  `status_adv` ASC"; 
+                
+                //ORDER BY `governorate_ar` ASC, `district_ar` ASC, `area_ar` ASC, `tbl_company`.`name_ar` ASC";
         $query = $this->db->query($sql);
         return $query->result();
     }

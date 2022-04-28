@@ -339,7 +339,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 										echo $row->whatsapp;
 									?>	
                                 </td>
-                                <td><?php 
+                                <td><?php  
 								/*
 									if(count($type)>0){
 										echo $type['label_en'].'<br>'.$type['label_ar'];
@@ -348,7 +348,7 @@ $class_sect2=' class="validate[required]"  required="required" id="sector2" onch
 										echo 'N/A';
 										}
 										*/
-										if($row->is_adv==1){
+										if(/*$row->is_adv==1*/ $row->status_adv==1){
 										echo 'Yes';
 										}
 										else{
