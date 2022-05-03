@@ -2729,14 +2729,14 @@ tr, td, table, tr{
         $flag = false;
 
         echo '<style type="text/css">
-tr, td, table, tr{
-	border:1px solid #D0D0D0;
-}
-.yellow{
-						background:#FF0 !important;
-					}
-</style>   ';
-        
+            tr, td, table, tr{
+                border:1px solid #D0D0D0;
+            }
+            .yellow{
+                                    background:#FF0 !important;
+                                }
+            </style>   ';
+                    
                     //<th>معلن</th>
         echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
                         <thead>
@@ -3034,7 +3034,316 @@ tr, td, table, tr{
         exit;
     }
 
-    public function fulldataen() 
+    public function fulldataen()
+    {
+        
+            // filename for download
+            //$query = $this->Report->GetFullCompanies();
+            $query = $this->Report->GetfullCompaniesNew();
+            $filename = "full-data-en.xls";
+            header("Content-Disposition: attachment; filename=\"$filename\"");
+            header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+            header('Content-type: text/html; charset=UTF-8');
+            $flag = false;
+    
+            echo '<style type="text/css">
+                tr, td, table, tr{
+                    border:1px solid #D0D0D0;
+                }
+                .yellow{
+                                        background:#FF0 !important;
+                                    }
+                </style>   ';
+                        
+                        //<th>معلن</th>
+                        echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
+                        <thead>
+                            <tr>
+                            <th>Wezara ID</th>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Company Owner</th>
+                            <th>Auth. to sign</th>
+                            <th>No. & Place of C.R </th>                        
+                            <th>Sector EN</th>
+
+                            <th>Activity</th>     
+                             <th> مصدر الترخیص </th>
+                             <th> رقم الترخیص </th> 
+                             <th> التاریخ </th>
+                             <th> الفئة</th> 
+
+                            <th>Company Type</th>
+                            <th>Associations of Lebanese Industrialists</th>
+                            <th>Chambre of Commerce & Industry of </th>
+                            <th>Industrial Assembly</th>
+                            <th>Assemblies of Economical, Technical</th>
+                            <th>Mohafaza</th>
+                            <th>Kazaa</th>
+                            <th>City</th>
+                            <th>Street</th>
+                            <th>Phone</th>
+                            <th>WhatsApp</th>
+                            <th>Fax</th>
+                            <th>P.O.Box</th>
+                            <th>Email</th>
+                            <th>Website</th>
+                            <th>E Location</th>
+                            <th>N Location</th>
+                            <th>Export & Trade Market  </th>
+                            <th>Number of Labour</th>
+                            <th>Means of Export</th>
+                            <th>Do You Have Insurance</th>
+                            <th>Insurance Co. Name</th>
+                            <th>Banks</th>
+                            <th>Electric Power/year - Fuel / Ton Or Litre</th>
+                            <th>Electric Power/year - Diesel / Ton Or Litre</th>
+                            <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>						
+                            <th>صفته في المؤسسة</th>                           
+
+                            <th>Related ID</th>                            
+                            <th>Status Ads</th>
+                            <th>Start Date Ads</th>
+                            <th>End Date Ads</th>                            
+
+                            <th>Show Item Status </th>
+                            <th>Show Item Start Date</th>
+                            <th>Show Item End Date</th>
+                            
+                            <th>SalesMan FullName </th>
+                        </tr>
+                        </thead>
+                        <tbody>';
+            foreach($query as $row) {
+               // $items = $this->Company->GetProductionInfo($row->id);
+                $position = $this->Item->GetPositionById($row->position_id);
+                if(count($position) > 0) {
+                    $pos = $position['label_en'];
+                }
+                else {
+                    $pos = '';
+                }
+                $banks = $this->Company->GetCompanyBanks($row->id);
+                $banks_com='';
+                if(count($banks)) {
+                    foreach($banks as $bank) {
+                        $banks_com.= $bank->bank_en.'<br>';
+                    }
+                }
+                $markets = $this->Company->GetCompanyMarkets($row->id);
+    
+                $array_market_ar = array();
+                $array_market_en = array();
+                if(count($markets)) {
+                    foreach($markets as $item) {
+                        if($item->item_type == 'country') {
+                            $row1 = $this->Parameter->GetCountryById($item->market_id);
+                            if(isset($row1['label_ar']) && isset($row1['label_en']))
+                            {
+                                array_push($array_market_ar,$row1['label_ar']);
+                                array_push($array_market_en,$row1['label_en']);
+                            }
+                        }
+                        elseif($item->item_type == 'region') {
+                            $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
+                            if(isset($row1['label_ar']) && isset($row1['label_en']))
+                            {
+                                array_push($array_market_ar,$row1['label_ar']);
+                                array_push($array_market_en,$row1['label_en']);
+                            }
+                        }
+    
+                    }
+                }
+                $insurances = $this->Company->GetCompanyInsurances($row->id);
+                $insurance_companies='';
+                if(count($insurances)>0)
+                {
+                    $is_insurance='Yes';
+                    foreach($insurances as $insurance) {
+                        $insurance_companies .= $insurance->insurance_en.'<br>';
+                    }
+                }
+                else{
+                    $is_insurance=' No ';
+                }
+                $powers = $this->Company->GetCompanyElectricPowers($row->id);
+                $fuel='';
+                $diesel='';
+                if(count($powers)) {
+                    foreach($powers as $power) {
+                        $fuel= $power->fuel;
+                        $diesel=$power->diesel;
+                    }
+                }
+    
+                $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
+                if(count($industrial_room) > 0) {
+                    $industrial_room_en = $industrial_room['label_en'];
+                    $industrial_room_ar = $industrial_room['label_ar'];
+                }
+                else {
+                    $industrial_room_en = '';
+                    $industrial_room_ar = '';
+                }
+    
+                $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
+                if(count($industrial_group) > 0) {
+                    $industrial_group_en = $industrial_group['label_en'];
+                    $industrial_group_ar = $industrial_group['label_ar'];
+                }
+                else {
+                    $industrial_group_en = '';
+                    $industrial_group_ar = '';
+                }
+    
+                $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
+                if(count($economical_assembly) > 0) {
+                    $economical_assembly_en = $economical_assembly['label_en'];
+                    $economical_assembly_ar = $economical_assembly['label_ar'];
+                }
+                else {
+                    $economical_assembly_en = '';
+                    $economical_assembly_ar = '';
+                }
+    
+                $license = $this->Company->GetLicenseSourceById($row->license_source_id);
+                if(count(@$license) > 0) {
+                    $license_en = $license['label_en'];
+                    $license_ar = $license['label_ar'];
+                }
+                else {
+                    $license_en = '';
+                    $license_ar = '';
+                }
+                $source1='';
+                $source2='';
+                $source3='';
+                if(@$row->wezara_source == 1)
+                {
+                    $source1='وزارة الصناعة';
+                }
+                elseif($row->investment==1)
+                {
+                    $source2='رخصة استثمار';
+                }
+                elseif($row->origin==1)
+                {
+                    $source3='رخصة انشاء';
+                }
+    
+                $export_m = '';
+    
+                if(@$row->is_exporter == 0) {
+                    $export_m = 'غير مصدر';
+                }
+                elseif(@$query['is_exporter'] == 1) {
+                    $export_m = 'مباشر';
+                }
+                elseif(@$query['is_exporter'] == 2) {
+                    $export_m = 'بالواسطة';
+                }
+                if($row->is_adv==1){
+                        $is_adv='No';
+                    }
+                    else{
+                        $is_adv='No';
+                        }	
+                        if($row->copy_res==1){
+                        $copy_res='Yes';
+                    }
+                    else{
+                        $copy_res='No';
+                        }	
+    
+                $showItem_status="";
+                $showItem_start_date="";
+                $showItem_end_date="";
+                if($row->clients_status_status=="active")        	
+                {
+                    // $status_adv="Active";
+                    $showItem_start_date=$row->clients_status_start_date;
+                    $showItem_end_date=$row->clients_status_end_date;
+                }        
+    
+                $status_adv="";
+                // $showItem_start_date="";
+                // $showItem_end_date="";
+                if($row->status_adv==1)        	
+                {
+                    $status_adv="Active";
+                    // $showItem_start_date=$row->start_date_adv;
+                    // $showItem_end_date=$row->end_date_adv;
+                }
+                elseif($row->status_adv==0)
+                {
+                    $status_adv="Inactive";
+    
+                } 
+    
+                //<td>'.$is_adv.'</td>
+                echo ' <tr>
+                <td>'.$row->ministry_id.'</td>
+                <td>'.$row->id.'</td>
+                <td>'.$row->name_en.'</td>
+                <td>'.$row->owner_name_en.'</td>
+                <td>'.$row->auth_person_en.'</td>
+                <td>'.$row->auth_no.' / '.$license_en.'</td>
+                
+                <td>'.$row->sector_en.'</td>
+
+                <td>'.$row->activity_en.'</td>
+                <td>'.$source1.' '.$source2.' '.$source3.'</td>
+                <td>'.$row->nbr_source.'</td>
+                <td>'.$row->date_source.'</td>
+                <td>'.$row->type_source.'</td>
+                <td>'.$row->type_en.'</td>
+                <td>'.(($row->ind_association==1)? 'Yes' : 'No').'</td>
+                <td>'.$industrial_room_en.'</td>
+                <td>'.$industrial_group_en.'</td>
+                <td>'.$economical_assembly_en.'</td>
+                <td>'.$row->governorate_en.'</td>
+                <td>'.$row->district_en.'</td>
+                <td>'.$row->area_en.'</td>
+                <td>'.$row->street_en.'</td>
+                <td>'.$row->phone.'</td>
+                <td>'.$row->whatsapp.'</td>
+                <td>'.$row->fax.'</td>
+                <td>'.$row->pobox_en.'</td>
+                <td>'.$row->email.'</td>
+                <td>'.$row->website.'</td>
+                <td>'.$row->x_decimal.'</td>
+                <td>'.$row->y_decimal.'</td>
+                <td>'.implode(' , ',$array_market_en).'</td>
+                <td>'.str_replace('-', '->', $row->employees_number).'</td>
+                <td>'.$export_m.'</td>
+                <td>'.$is_insurance.'</td>
+                <td>'.$insurance_companies.'</td>
+                <td>'.$banks_com.'</td>
+                <td>'.$fuel.'</td>
+                <td>'.$diesel.'</td>
+                <td>'.$row->rep_person_en.'</td>
+                <td>'.$pos.'</td>
+                <td>'.$row->related_companies.'</td>
+
+                <td>'. $status_adv .'</td>
+                <td>'.$row->start_date_adv.'</td>
+                <td>'.$row->end_date_adv.'</td>
+                
+
+                <td>'.$row->clients_status_status.'</td>
+                <td>'.$showItem_start_date.'</td>
+                <td>'.$showItem_end_date.'</td>
+
+                <td>'.$row->salesman_fullname_en.'</td>
+                </tr>';
+            }
+            echo '</tbody>';
+            echo '</table>';
+            exit;
+        
+    }
+    public function fulldataen_base() 
     {
         //$query = $this->Report->GetFullCompanies();
         $query = $this->Report->GetfullCompaniesNew();
@@ -3068,10 +3377,15 @@ tr, td, table, tr{
                             <th>Sector EN</th>
 
                             <th>Activity</th>     
-                            <th> مصدر الترخیص </th>
-                            <th> رقم الترخیص </th>
-                            <th> التاریخ </th>
-                            <th> الفئة</th>
+                            <!-- <th> مصدر الترخیص </th> -->
+                            <!-- <th> رقم الترخیص </th> -->
+                            <!-- <th> التاریخ </th> -->
+                            <!-- <th> الفئة</th> -->
+
+                            <th> license source </th>
+                            <th>  lisence# </th>
+                            <th> date </th>
+                            <th> lisence calss</th>
 
 
                             <th>Company Type</th>
@@ -3099,8 +3413,12 @@ tr, td, table, tr{
                             <th>Banks</th>
                             <th>Electric Power/year - Fuel / Ton Or Litre</th>
                             <th>Electric Power/year - Diesel / Ton Or Litre</th>
-                            <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>								
-                            <th>صفته في المؤسسة</th>
+                           <!-- <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>	-->							
+                           <!--  <th>صفته في المؤسسة</th>-->
+                           
+                            <th>  interviewed name  </th>							
+                             <th> position </th>
+
                             <th>Related ID</th>
                             
                             <th>Status Ads</th>
@@ -3225,39 +3543,46 @@ tr, td, table, tr{
             $source3='';
             if(@$row->wezara_source == 1)
             {
-                $source1='وزارة الصناعة';
+                //$source1='وزارة الصناعة';
+                $source1='Ministry of industry';
+                
             }
             elseif($row->investment==1)
             {
-                $source2='رخصة استثمار';
+                //$source2='رخصة استثمار';
+                $source2='Investment License';
             }
             elseif($row->origin==1)
             {
-                $source3='رخصة انشاء';
+               // $source3='رخصة انشاء';
+                $source3='construction license';
             }
 
             $export_m = '';
 
             if(@$row->is_exporter == 0) {
-                $export_m = 'غير مصدر';
+               // $export_m = 'غير مصدر';
+                $export_m = 'non export';
             }
             elseif(@$query['is_exporter'] == 1) {
-                $export_m = 'مباشر';
+                //$export_m = 'مباشر';
+                $export_m = 'direct export';
             }
             elseif(@$query['is_exporter'] == 2) {
-                $export_m = 'بالواسطة';
+               // $export_m = 'بالواسطة';
+                $export_m = '3rd party export';
             }
             if($row->is_adv==1){
-					$is_adv='نعم';
+					$is_adv='yes';
 				}
 				else{
-					$is_adv='كلا';
+					$is_adv='no';
 					}	
 					if($row->copy_res==1){
-					$copy_res='نعم';
+					$copy_res='yes';
 				}
 				else{
-					$copy_res='كلا';
+					$copy_res='no';
 					}
 
                 $showItem_status="";
@@ -3345,7 +3670,9 @@ tr, td, table, tr{
 
 
     public function fulldataen2() {
+        
         // filename for download
+       // $query = $this->Report->GetfullCompaniesNew();
         $filename = "full-data-en.xls";
         header("Content-Disposition: attachment; filename=\"$filename\"");
         header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
@@ -3355,762 +3682,763 @@ tr, td, table, tr{
         $flag = false;
 
         echo '<style type="text/css">
-tr, td, table, tr{
-	border:1px solid #D0D0D0;
-}
-.yellow{
-						background:#FF0 !important;
-					}
-</style>   ';
-        $query = $this->Report->GetFullCompanies();
+        tr, td, table, tr{
+            border:1px solid #D0D0D0;
+        }
+        .yellow{
+                                background:#FF0 !important;
+                            }
+        </style>   ';
+                
 
-        echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
-                        <thead>
-                            <tr>
-								<th>Wezara ID</th>
-								<th>ID</th>
-								<th>Company Name</th>
-								<th>Company Owner</th>
-								<th>Auth. to sign</th>
-								<th>No. & Place of C.R </th>
-                               
-								<th>Sector EN</th>
-
-								 <th>Activity</th>     
-                                 <th> مصدر الترخیص </th>
-                                 <th> رقم الترخیص </th>
-                                 <th> التاریخ </th>
-								 <th> الفئة</th>
-
-
-								 <th>Company Type</th>
-                                <th>Associations of Lebanese Industrialists</th>
-								<th>Chambre of Commerce & Industry of </th>
-								<th>Industrial Assembly</th>
-								<th>Assemblies of Economical, Technical</th>
-								<th>Mohafaza</th>
-								<th>Kazaa</th>
-								<th>City</th>
-								<th>Street</th>
-								<th>Phone</th>
-								<th>WhatsApp</th>
-								<th>Fax</th>
-								<th>P.O.Box</th>
-								<th>Email</th>
-								<th>Website</th>
-								<th>E Location</th>
-								<th>N Location</th>
-								<th>Export & Trade Market  </th>
-								<th>Number of Labour</th>
-								<th>Means of Export</th>
-                                <th>Do You Have Insurance</th>
-								<th>Insurance Co. Name</th>
-								<th>Banks</th>
-								<th>Electric Power/year - Fuel / Ton Or Litre</th>
-								<th>Electric Power/year - Diesel / Ton Or Litre</th>
-								<th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>								
-								<th>صفته في المؤسسة</th>
-								<th>Related ID</th>
-                              </tr>
-                        </thead>
-                        <tbody>';
-        foreach($query as $row) {
-            // $items = $this->Company->GetProductionInfo($row->id);
-            $position = $this->Item->GetPositionById($row->position_id);
-            if(count($position) > 0) {
-                $pos = $position['label_en'];
-            }
-            else {
-                $pos = '';
-            }
-            $banks = $this->Company->GetCompanyBanks($row->id);
-            $banks_com='';
-            if(count($banks)) {
-                foreach($banks as $bank) {
-                    $banks_com.= $bank->bank_en.'<br>';
-                }
-            }
-            $markets = $this->Company->GetCompanyMarkets($row->id);
-
-            $array_market_ar = array();
-            $array_market_en = array();
-            if(count($markets)) {
-                foreach($markets as $item) {
-                    if($item->item_type == 'country') {
-                        $row1 = $this->Parameter->GetCountryById($item->market_id);
-                        if(isset($row1['label_ar']) && isset($row1['label_en']))
-                        {
-                            array_push($array_market_ar,$row1['label_ar']);
-                            array_push($array_market_en,$row1['label_en']);
-                        }
-                        
-                    }
-                    elseif($item->item_type == 'region') {
-                        $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
-                        if(isset($row1['label_ar']) && isset($row1['label_en']))
-                        {
-                            array_push($array_market_ar,$row1['label_ar']);
-                            array_push($array_market_en,$row1['label_en']);
-                        }
-                        //array_push($array_market_ar,$row1['label_ar']);
-                        //array_push($array_market_en,$row1['label_en']);
-                    }
-
-
-
-                }
-            }
-            $insurances = $this->Company->GetCompanyInsurances($row->id);
-            $insurance_companies='';
-            if(count($insurances)>0)
-            {
-                $is_insurance='Yes';
-                foreach($insurances as $insurance) {
-                    $insurance_companies .= $insurance->insurance_en.'<br>';
-                }
-            }
-            else{
-                $is_insurance=' No';
-            }
-            $powers = $this->Company->GetCompanyElectricPowers($row->id);
-            $fuel='';
-            $diesel='';
-            if(count($powers)) {
-                foreach($powers as $power) {
-                    $fuel= $power->fuel;
-                    $diesel=$power->diesel;
-                }
-            }
-
-            $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
-            if(count($industrial_room) > 0) {
-                $industrial_room_en = $industrial_room['label_en'];
-                $industrial_room_ar = $industrial_room['label_ar'];
-            }
-            else {
-                $industrial_room_en = '';
-                $industrial_room_ar = '';
-            }
-
-            $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
-            if(count($industrial_group) > 0) {
-                $industrial_group_en = $industrial_group['label_en'];
-                $industrial_group_ar = $industrial_group['label_ar'];
-            }
-            else {
-                $industrial_group_en = '';
-                $industrial_group_ar = '';
-            }
-
-            $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
-            if(count($economical_assembly) > 0) {
-                $economical_assembly_en = $economical_assembly['label_en'];
-                $economical_assembly_ar = $economical_assembly['label_ar'];
-            }
-            else {
-                $economical_assembly_en = '';
-                $economical_assembly_ar = '';
-            }
-
-            $license = $this->Company->GetLicenseSourceById($row->license_source_id);
-            if(count(@$license) > 0) {
-                $license_en = $license['label_en'];
-                $license_ar = $license['label_ar'];
-            }
-            else {
-                $license_en = '';
-                $license_ar = '';
-            }
-            $source1='';
-            $source2='';
-            $source3='';
-            if(@$row->wezara_source == 1)
-            {
-                $source1='وزارة الصناعة';
-            }
-            elseif($row->investment==1)
-            {
-                $source2='رخصة استثمار';
-            }
-            elseif($row->origin==1)
-            {
-                $source3='رخصة انشاء';
-            }
-
-            $export_m = '';
-
-            if(@$row->is_exporter == 0) {
-                $export_m = 'Export Less ';
-            }
-            elseif(@$query['is_exporter'] == 1) {
-                $export_m = 'Direct';
-            }
-            elseif(@$query['is_exporter'] == 2) {
-                $export_m = 'Mediation';
-            }
-
-            echo ' <tr>
-									<td>'.$row->ministry_id.'</td>
-									<td>'.$row->id.'</td>
-									<td>'.$row->name_en.'</td>
-									<td>'.$row->owner_name_en.'</td>
-									<td>'.$row->auth_person_en.'</td>
-									<td>'.$row->auth_no.' / '.$license_en.'</td>
+                echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Wezara ID</th>
+                                        <th>ID</th>
+                                        <th>Company Name</th>
+                                        <th>Company Owner</th>
+                                        <th>Auth. to sign</th>
+                                        <th>No. & Place of C.R </th>
                                     
-									<td>'.$row->sector_en.'</td>
+                                        <th>Sector EN</th>
 
-									<td>'.$row->activity_en.'</td>
-									<td>'.$source1.' '.$source2.' '.$source3.'</td>
-									<td>'.$row->nbr_source.'</td>
-									<td>'.$row->date_source.'</td>
-									<td>'.$row->type_source.'</td>
-									<td>'.$row->type_en.'</td>
-									<td>'.(($row->ind_association==1)? 'Yes' : 'No').'</td>
-									<td>'.$industrial_room_en.'</td>
-									<td>'.$industrial_group_en.'</td>
-									<td>'.$economical_assembly_en.'</td>
-									<td>'.$row->governorate_en.'</td>
-									<td>'.$row->district_en.'</td>
-									<td>'.$row->area_en.'</td>
-									<td>'.$row->street_en.'</td>
-									<td>'.$row->phone.'</td>
-									<td>'.$row->whatsapp.'</td>
-									<td>'.$row->fax.'</td>
-									<td>'.$row->pobox_en.'</td>
-									<td>'.$row->email.'</td>
-									<td>'.$row->website.'</td>
-									<td>'.$row->x_decimal.'</td>
-									<td>'.$row->y_decimal.'</td>
-									<td>'.implode(' , ',$array_market_en).'</td>
-									<td>'.str_replace('-', '->', $row->employees_number).'</td>
-									<td>'.$export_m.'</td>
-									<td>'.$is_insurance.'</td>
-									<td>'.$insurance_companies.'</td>
-									<td>'.$banks_com.'</td>
-									<td>'.$fuel.'</td>
-									<td>'.$diesel.'</td>
-									<td>'.$row->rep_person_en.'</td>
-									<td>'.$pos.'</td>
-									<td>'.$row->related_companies.'</td>
-								</tr>';
-        }
-        echo '</tbody>';
-        echo '</table>';
-        exit;
-    }
-    public function updated_companies_ar() {
-        // filename for download
-        $filename = "updated-companies-ar.xls";
-        header("Content-Disposition: attachment; filename=\"$filename\"");
-        header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
-        header('Content-type: text/html; charset=UTF-8');
-        $flag = false;
+                                        <th>Activity</th>     
+                                        <th> مصدر الترخیص </th>
+                                        <th> رقم الترخیص </th>
+                                        <th> التاریخ </th>
+                                        <th> الفئة</th>
 
-        echo '<style type="text/css">
-tr, td, table, tr{
-	border:1px solid #D0D0D0;
-}
-.yellow{
-						background:#FF0 !important;
-					}
-</style>   ';
-        $query = $this->Report->GetUpdatedCompanies();
 
-        echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
-                        <thead>
-                            <tr>
-								<th>وزارة ID</th>
-								<th>شركة الدليل الصناعي ID</th>
-								<th>اسم المؤسسة</th>
-								<th>صاحب / أصحاب الشركة</th>
-								<th>اسم المفوض بالتوقيع</th>
-								<th>رقم ومحل السجل التجاري</th>							
+                                        <th>Company Type</th>
+                                        <th>Associations of Lebanese Industrialists</th>
+                                        <th>Chambre of Commerce & Industry of </th>
+                                        <th>Industrial Assembly</th>
+                                        <th>Assemblies of Economical, Technical</th>
+                                        <th>Mohafaza</th>
+                                        <th>Kazaa</th>
+                                        <th>City</th>
+                                        <th>Street</th>
+                                        <th>Phone</th>
+                                        <th>WhatsApp</th>
+                                        <th>Fax</th>
+                                        <th>P.O.Box</th>
+                                        <th>Email</th>
+                                        <th>Website</th>
+                                        <th>E Location</th>
+                                        <th>N Location</th>
+                                        <th>Export & Trade Market  </th>
+                                        <th>Number of Labour</th>
+                                        <th>Means of Export</th>
+                                        <th>Do You Have Insurance</th>
+                                        <th>Insurance Co. Name</th>
+                                        <th>Banks</th>
+                                        <th>Electric Power/year - Fuel / Ton Or Litre</th>
+                                        <th>Electric Power/year - Diesel / Ton Or Litre</th>
+                                        <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>								
+                                        <th>صفته في المؤسسة</th>
+                                        <th>Related ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                foreach($query as $row) {
+                    // $items = $this->Company->GetProductionInfo($row->id);
+                    $position = $this->Item->GetPositionById($row->position_id);
+                    if(count($position) > 0) {
+                        $pos = $position['label_en'];
+                    }
+                    else {
+                        $pos = '';
+                    }
+                    $banks = $this->Company->GetCompanyBanks($row->id);
+                    $banks_com='';
+                    if(count($banks)) {
+                        foreach($banks as $bank) {
+                            $banks_com.= $bank->bank_en.'<br>';
+                        }
+                    }
+                    $markets = $this->Company->GetCompanyMarkets($row->id);
+
+                    $array_market_ar = array();
+                    $array_market_en = array();
+                    if(count($markets)) {
+                        foreach($markets as $item) {
+                            if($item->item_type == 'country') {
+                                $row1 = $this->Parameter->GetCountryById($item->market_id);
+                                if(isset($row1['label_ar']) && isset($row1['label_en']))
+                                {
+                                    array_push($array_market_ar,$row1['label_ar']);
+                                    array_push($array_market_en,$row1['label_en']);
+                                }
                                 
-								 <th>نوع النشاط</th>
-                                 <th>مصدر الترخيص</th>
-                                 <th>رقم الترخيص</th>
-                                 <th>التاريخ</th>
-								 <th>الفئة</th>
-								 <th>نوع الشركة</th>
-                                <th>جمعية الصناعيين اللبنانيين</th>
-								<th>غرفة الصناعة والتجارة في </th>
-								<th>تجمع صناعي</th>
-								<th>نقابات أو اتحادات</th>
-								<th>المحافظة</th>
-								<th>القضاء</th>
-								<th>البلدة أو المحلة</th>
-								<th>الشارع</th>
-								<th>هاتف</th>
-                                <th>واتساپ</th>
-								<th>فاكس</th>
-								<th>ص. بريد</th>
-								<th>البريد الالكتروني</th>
-								<th>الموقع الالكتروني</th>
-								<th>E Location</th>
-								<th>N Location</th>
-								<th>اسواق البيع والتصدير  </th>
-								<th>عدد العمال</th>
-								<th>طريقة التصدير</th>
-                                <th>هل المؤسسة مؤمنة</th>
-								<th>اسم الشركة</th>
-								<th>المصارف المعتمدة</th>
-								<th>استعمال الطاقة - فيول / طن او ليتر</th>
-								<th>استعمال الطاقة - مازوت / طن أو ليتر</th>
-								<th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>
-								<th>صفته في المؤسسة</th>
-                              </tr>
-                        </thead>
-                        <tbody>';
-        foreach($query as $row) {
-            // $items = $this->Company->GetProductionInfo($row->id);
-            $position = $this->Item->GetPositionById($row->position_id);
-            if(count($position) > 0) {
-                $pos = $position['label_ar'];
-            }
-            else {
-                $pos = '';
-            }
-            $banks = $this->Company->GetCompanyBanks($row->id);
-            $banks_com='';
-            if(count($banks)) {
-                foreach($banks as $bank) {
-                    $banks_com.= $bank->bank_ar.'<br>';
-                }
-            }
-            $markets = $this->Company->GetCompanyMarkets($row->id);
+                            }
+                            elseif($item->item_type == 'region') {
+                                $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
+                                if(isset($row1['label_ar']) && isset($row1['label_en']))
+                                {
+                                    array_push($array_market_ar,$row1['label_ar']);
+                                    array_push($array_market_en,$row1['label_en']);
+                                }
+                                //array_push($array_market_ar,$row1['label_ar']);
+                                //array_push($array_market_en,$row1['label_en']);
+                            }
 
-            $array_market_ar = array();
-            $array_market_en = array();
-            if(count($markets)) {
-                foreach($markets as $item) {
-                    if($item->item_type == 'country') {
-                        $row1 = $this->Parameter->GetCountryById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+
+
+                        }
                     }
-                    elseif($item->item_type == 'region') {
-                        $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                    $insurances = $this->Company->GetCompanyInsurances($row->id);
+                    $insurance_companies='';
+                    if(count($insurances)>0)
+                    {
+                        $is_insurance='Yes';
+                        foreach($insurances as $insurance) {
+                            $insurance_companies .= $insurance->insurance_en.'<br>';
+                        }
+                    }
+                    else{
+                        $is_insurance=' No';
+                    }
+                    $powers = $this->Company->GetCompanyElectricPowers($row->id);
+                    $fuel='';
+                    $diesel='';
+                    if(count($powers)) {
+                        foreach($powers as $power) {
+                            $fuel= $power->fuel;
+                            $diesel=$power->diesel;
+                        }
                     }
 
-
-
-                }
-            }
-            $insurances = $this->Company->GetCompanyInsurances($row->id);
-            $insurance_companies='';
-            if(count($insurances)>0)
-            {
-                $is_insurance='نعم';
-                foreach($insurances as $insurance) {
-                    $insurance_companies .= $insurance->insurance_ar.'<br>';
-                }
-            }
-            else{
-                $is_insurance=' كلا';
-            }
-            $powers = $this->Company->GetCompanyElectricPowers($row->id);
-            $fuel='';
-            $diesel='';
-            if(count($powers)) {
-                foreach($powers as $power) {
-                    $fuel= $power->fuel;
-                    $diesel=$power->diesel;
-                }
-            }
-
-            $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
-            if(count($industrial_room) > 0) {
-                $industrial_room_en = $industrial_room['label_en'];
-                $industrial_room_ar = $industrial_room['label_ar'];
-            }
-            else {
-                $industrial_room_en = '';
-                $industrial_room_ar = '';
-            }
-
-            $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
-            if(count($industrial_group) > 0) {
-                $industrial_group_en = $industrial_group['label_en'];
-                $industrial_group_ar = $industrial_group['label_ar'];
-            }
-            else {
-                $industrial_group_en = '';
-                $industrial_group_ar = '';
-            }
-
-            $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
-            if(count($economical_assembly) > 0) {
-                $economical_assembly_en = $economical_assembly['label_en'];
-                $economical_assembly_ar = $economical_assembly['label_ar'];
-            }
-            else {
-                $economical_assembly_en = '';
-                $economical_assembly_ar = '';
-            }
-
-            $license = $this->Company->GetLicenseSourceById($row->license_source_id);
-            if(count(@$license) > 0) {
-                $license_en = $license['label_en'];
-                $license_ar = $license['label_ar'];
-            }
-            else {
-                $license_en = '';
-                $license_ar = '';
-            }
-            $source1='';
-            $source2='';
-            $source3='';
-            if(@$row->wezara_source == 1)
-            {
-                $source1='وزارة الصناعة';
-            }
-            elseif($row->investment==1)
-            {
-                $source2='رخصة استثمار';
-            }
-            elseif($row->origin==1)
-            {
-                $source3='رخصة انشاء';
-            }
-
-            $export_m = '';
-
-            if(@$row->is_exporter == 0) {
-                $export_m = 'غير مصدر';
-            }
-            elseif(@$query['is_exporter'] == 1) {
-                $export_m = 'مباشر';
-            }
-            elseif(@$query['is_exporter'] == 2) {
-                $export_m = 'بالواسطة';
-            }
-
-            echo ' <tr>
-									<td>'.$row->ministry_id.'</td>
-									<td>'.$row->id.'</td>
-									<td>'.$row->name_ar.'</td>
-									<td>'.$row->owner_name.'</td>
-									<td>'.$row->auth_person_ar.'</td>
-									<td>'.$row->auth_no.' / '.$license_ar.'</td>									
-
-									<td>'.$row->activity_ar.'</td>
-									<td>'.$source1.' '.$source2.' '.$source3.'</td>
-									<td>'.$row->nbr_source.'</td>
-									<td>'.$row->date_source.'</td>
-									<td>'.$row->type_source.'</td>
-									<td>'.$row->type_ar.'</td>
-									<td>'.(($row->ind_association==1)? 'نعم' : 'كلا').'</td>
-									<td>'.$industrial_room_ar.'</td>
-									<td>'.$industrial_group_ar.'</td>
-									<td>'.$economical_assembly_ar.'</td>
-									<td>'.$row->governorate_ar.'</td>
-									<td>'.$row->district_ar.'</td>
-									<td>'.$row->area_ar.'</td>
-									<td>'.$row->street_ar.'</td>
-									<td>'.$row->phone.'</td>
-									<td>'.$row->whatsapp.'</td>
-									<td>'.$row->fax.'</td>
-									<td>'.$row->pobox_ar.'</td>
-									<td>'.$row->email.'</td>
-									<td>'.$row->website.'</td>
-									<td>'.$row->x_decimal.'</td>
-									<td>'.$row->y_decimal.'</td>
-									<td>'.implode(' , ',$array_market_ar).'</td>
-									<td>'.str_replace('-', '->', $row->employees_number).'</td>
-									<td>'.$export_m.'</td>
-									<td>'.$is_insurance.'</td>
-									<td>'.$insurance_companies.'</td>
-									<td>'.$banks_com.'</td>
-									<td>'.$fuel.'</td>
-									<td>'.$diesel.'</td>
-									<td>'.$row->rep_person_ar.'</td>
-									<td>'.$pos.'</td>
-								</tr>';
-        }
-        echo '</tbody>';
-        echo '</table>';
-        exit;
-    }
-    public function updated_companies_en() {
-        // filename for download
-        $filename = "updated-companies-en.xls";
-        header("Content-Disposition: attachment; filename=\"$filename\"");
-        header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
-        header('Content-type: text/html; charset=UTF-8');
-        $flag = false;
-
-        echo '<style type="text/css">
-tr, td, table, tr{
-	border:1px solid #D0D0D0;
-}
-.yellow{
-						background:#FF0 !important;
-					}
-</style>   ';
-        $query = $this->Report->GetUpdatedCompanies();
-
-        echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
-                        <thead>
-                            <tr>
-								<th>Wezara ID</th>
-								<th>ID</th>
-								<th>Company Name</th>
-								<th>Company Owner</th>
-								<th>Auth. to sign</th>
-								<th>No. & Place of C.R </th>
-								 <th>Activity</th>
-                                 <th>مصدر الترخيص</th>
-                                 <th>رقم الترخيص</th>
-                                 <th>التاريخ</th>
-								 <th>الفئة</th>
-								 <th>Company Type</th>
-                                <th>Associations of Lebanese Industrialists</th>
-								<th>Chambre of Commerce & Industry of </th>
-								<th>Industrial Assembly</th>
-								<th>Assemblies of Economical, Technical</th>
-								<th>Mohafaza</th>
-								<th>Kazaa</th>
-								<th>City</th>
-								<th>Street</th>
-								<th>Phone</th>
-								<th>WhatsApp</th>
-								<th>Fax</th>
-								<th>P.O.Box</th>
-								<th>Email</th>
-								<th>Website</th>
-								<th>E Location</th>
-								<th>N Location</th>
-								<th>Export & Trade Market  </th>
-								<th>Number of Labour</th>
-								<th>Means of Export</th>
-                                <th>Do You Have Insurance</th>
-								<th>Insurance Co. Name</th>
-								<th>Banks</th>
-								<th>Electric Power/year - Fuel / Ton Or Litre</th>
-								<th>Electric Power/year - Diesel / Ton Or Litre</th>
-								<th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>
-								<th>صفته في المؤسسة</th>
-                              </tr>
-                        </thead>
-                        <tbody>';
-        foreach($query as $row) {
-            // $items = $this->Company->GetProductionInfo($row->id);
-            $position = $this->Item->GetPositionById($row->position_id);
-            if(count($position) > 0) {
-                $pos = $position['label_en'];
-            }
-            else {
-                $pos = '';
-            }
-            $banks = $this->Company->GetCompanyBanks($row->id);
-            $banks_com='';
-            if(count($banks)) {
-                foreach($banks as $bank) {
-                    $banks_com.= $bank->bank_en.'<br>';
-                }
-            }
-            $markets = $this->Company->GetCompanyMarkets($row->id);
-
-            $array_market_ar = array();
-            $array_market_en = array();
-            if(count($markets)) {
-                foreach($markets as $item) {
-                    if($item->item_type == 'country') {
-                        $row1 = $this->Parameter->GetCountryById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                    $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
+                    if(count($industrial_room) > 0) {
+                        $industrial_room_en = $industrial_room['label_en'];
+                        $industrial_room_ar = $industrial_room['label_ar'];
                     }
-                    elseif($item->item_type == 'region') {
-                        $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
-                        array_push($array_market_ar,$row1['label_ar']);
-                        array_push($array_market_en,$row1['label_en']);
+                    else {
+                        $industrial_room_en = '';
+                        $industrial_room_ar = '';
                     }
 
+                    $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
+                    if(count($industrial_group) > 0) {
+                        $industrial_group_en = $industrial_group['label_en'];
+                        $industrial_group_ar = $industrial_group['label_ar'];
+                    }
+                    else {
+                        $industrial_group_en = '';
+                        $industrial_group_ar = '';
+                    }
 
+                    $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
+                    if(count($economical_assembly) > 0) {
+                        $economical_assembly_en = $economical_assembly['label_en'];
+                        $economical_assembly_ar = $economical_assembly['label_ar'];
+                    }
+                    else {
+                        $economical_assembly_en = '';
+                        $economical_assembly_ar = '';
+                    }
 
+                    $license = $this->Company->GetLicenseSourceById($row->license_source_id);
+                    if(count(@$license) > 0) {
+                        $license_en = $license['label_en'];
+                        $license_ar = $license['label_ar'];
+                    }
+                    else {
+                        $license_en = '';
+                        $license_ar = '';
+                    }
+                    $source1='';
+                    $source2='';
+                    $source3='';
+                    if(@$row->wezara_source == 1)
+                    {
+                        $source1='وزارة الصناعة';
+                    }
+                    elseif($row->investment==1)
+                    {
+                        $source2='رخصة استثمار';
+                    }
+                    elseif($row->origin==1)
+                    {
+                        $source3='رخصة انشاء';
+                    }
+
+                    $export_m = '';
+
+                    if(@$row->is_exporter == 0) {
+                        $export_m = 'Export Less ';
+                    }
+                    elseif(@$query['is_exporter'] == 1) {
+                        $export_m = 'Direct';
+                    }
+                    elseif(@$query['is_exporter'] == 2) {
+                        $export_m = 'Mediation';
+                    }
+
+                    echo ' <tr>
+                                            <td>'.$row->ministry_id.'</td>
+                                            <td>'.$row->id.'</td>
+                                            <td>'.$row->name_en.'</td>
+                                            <td>'.$row->owner_name_en.'</td>
+                                            <td>'.$row->auth_person_en.'</td>
+                                            <td>'.$row->auth_no.' / '.$license_en.'</td>
+                                            
+                                            <td>'.$row->sector_en.'</td>
+
+                                            <td>'.$row->activity_en.'</td>
+                                            <td>'.$source1.' '.$source2.' '.$source3.'</td>
+                                            <td>'.$row->nbr_source.'</td>
+                                            <td>'.$row->date_source.'</td>
+                                            <td>'.$row->type_source.'</td>
+                                            <td>'.$row->type_en.'</td>
+                                            <td>'.(($row->ind_association==1)? 'Yes' : 'No').'</td>
+                                            <td>'.$industrial_room_en.'</td>
+                                            <td>'.$industrial_group_en.'</td>
+                                            <td>'.$economical_assembly_en.'</td>
+                                            <td>'.$row->governorate_en.'</td>
+                                            <td>'.$row->district_en.'</td>
+                                            <td>'.$row->area_en.'</td>
+                                            <td>'.$row->street_en.'</td>
+                                            <td>'.$row->phone.'</td>
+                                            <td>'.$row->whatsapp.'</td>
+                                            <td>'.$row->fax.'</td>
+                                            <td>'.$row->pobox_en.'</td>
+                                            <td>'.$row->email.'</td>
+                                            <td>'.$row->website.'</td>
+                                            <td>'.$row->x_decimal.'</td>
+                                            <td>'.$row->y_decimal.'</td>
+                                            <td>'.implode(' , ',$array_market_en).'</td>
+                                            <td>'.str_replace('-', '->', $row->employees_number).'</td>
+                                            <td>'.$export_m.'</td>
+                                            <td>'.$is_insurance.'</td>
+                                            <td>'.$insurance_companies.'</td>
+                                            <td>'.$banks_com.'</td>
+                                            <td>'.$fuel.'</td>
+                                            <td>'.$diesel.'</td>
+                                            <td>'.$row->rep_person_en.'</td>
+                                            <td>'.$pos.'</td>
+                                            <td>'.$row->related_companies.'</td>
+                                        </tr>';
                 }
+                echo '</tbody>';
+                echo '</table>';
+                exit;
             }
-            $insurances = $this->Company->GetCompanyInsurances($row->id);
-            $insurance_companies='';
-            if(count($insurances)>0)
-            {
-                $is_insurance='Yes';
-                foreach($insurances as $insurance) {
-                    $insurance_companies .= $insurance->insurance_en.'<br>';
+            public function updated_companies_ar() {
+                // filename for download
+                $filename = "updated-companies-ar.xls";
+                header("Content-Disposition: attachment; filename=\"$filename\"");
+                header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+                header('Content-type: text/html; charset=UTF-8');
+                $flag = false;
+
+                echo '<style type="text/css">
+        tr, td, table, tr{
+            border:1px solid #D0D0D0;
+        }
+        .yellow{
+                                background:#FF0 !important;
+                            }
+        </style>   ';
+
+                $query = $this->Report->GetUpdatedCompanies();
+
+                echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>وزارة ID</th>
+                                        <th>شركة الدليل الصناعي ID</th>
+                                        <th>اسم المؤسسة</th>
+                                        <th>صاحب / أصحاب الشركة</th>
+                                        <th>اسم المفوض بالتوقيع</th>
+                                        <th>رقم ومحل السجل التجاري</th>							
+                                        
+                                        <th>نوع النشاط</th>
+                                        <th>مصدر الترخيص</th>
+                                        <th>رقم الترخيص</th>
+                                        <th>التاريخ</th>
+                                        <th>الفئة</th>
+                                        <th>نوع الشركة</th>
+                                        <th>جمعية الصناعيين اللبنانيين</th>
+                                        <th>غرفة الصناعة والتجارة في </th>
+                                        <th>تجمع صناعي</th>
+                                        <th>نقابات أو اتحادات</th>
+                                        <th>المحافظة</th>
+                                        <th>القضاء</th>
+                                        <th>البلدة أو المحلة</th>
+                                        <th>الشارع</th>
+                                        <th>هاتف</th>
+                                        <th>واتساپ</th>
+                                        <th>فاكس</th>
+                                        <th>ص. بريد</th>
+                                        <th>البريد الالكتروني</th>
+                                        <th>الموقع الالكتروني</th>
+                                        <th>E Location</th>
+                                        <th>N Location</th>
+                                        <th>اسواق البيع والتصدير  </th>
+                                        <th>عدد العمال</th>
+                                        <th>طريقة التصدير</th>
+                                        <th>هل المؤسسة مؤمنة</th>
+                                        <th>اسم الشركة</th>
+                                        <th>المصارف المعتمدة</th>
+                                        <th>استعمال الطاقة - فيول / طن او ليتر</th>
+                                        <th>استعمال الطاقة - مازوت / طن أو ليتر</th>
+                                        <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>
+                                        <th>صفته في المؤسسة</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                foreach($query as $row) {
+                    // $items = $this->Company->GetProductionInfo($row->id);
+                    $position = $this->Item->GetPositionById($row->position_id);
+                    if(count($position) > 0) {
+                        $pos = $position['label_ar'];
+                    }
+                    else {
+                        $pos = '';
+                    }
+                    $banks = $this->Company->GetCompanyBanks($row->id);
+                    $banks_com='';
+                    if(count($banks)) {
+                        foreach($banks as $bank) {
+                            $banks_com.= $bank->bank_ar.'<br>';
+                        }
+                    }
+                    $markets = $this->Company->GetCompanyMarkets($row->id);
+
+                    $array_market_ar = array();
+                    $array_market_en = array();
+                    if(count($markets)) {
+                        foreach($markets as $item) {
+                            if($item->item_type == 'country') {
+                                $row1 = $this->Parameter->GetCountryById($item->market_id);
+                                array_push($array_market_ar,$row1['label_ar']);
+                                array_push($array_market_en,$row1['label_en']);
+                            }
+                            elseif($item->item_type == 'region') {
+                                $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
+                                array_push($array_market_ar,$row1['label_ar']);
+                                array_push($array_market_en,$row1['label_en']);
+                            }
+
+
+
+                        }
+                    }
+                    $insurances = $this->Company->GetCompanyInsurances($row->id);
+                    $insurance_companies='';
+                    if(count($insurances)>0)
+                    {
+                        $is_insurance='نعم';
+                        foreach($insurances as $insurance) {
+                            $insurance_companies .= $insurance->insurance_ar.'<br>';
+                        }
+                    }
+                    else{
+                        $is_insurance=' كلا';
+                    }
+                    $powers = $this->Company->GetCompanyElectricPowers($row->id);
+                    $fuel='';
+                    $diesel='';
+                    if(count($powers)) {
+                        foreach($powers as $power) {
+                            $fuel= $power->fuel;
+                            $diesel=$power->diesel;
+                        }
+                    }
+
+                    $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
+                    if(count($industrial_room) > 0) {
+                        $industrial_room_en = $industrial_room['label_en'];
+                        $industrial_room_ar = $industrial_room['label_ar'];
+                    }
+                    else {
+                        $industrial_room_en = '';
+                        $industrial_room_ar = '';
+                    }
+
+                    $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
+                    if(count($industrial_group) > 0) {
+                        $industrial_group_en = $industrial_group['label_en'];
+                        $industrial_group_ar = $industrial_group['label_ar'];
+                    }
+                    else {
+                        $industrial_group_en = '';
+                        $industrial_group_ar = '';
+                    }
+
+                    $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
+                    if(count($economical_assembly) > 0) {
+                        $economical_assembly_en = $economical_assembly['label_en'];
+                        $economical_assembly_ar = $economical_assembly['label_ar'];
+                    }
+                    else {
+                        $economical_assembly_en = '';
+                        $economical_assembly_ar = '';
+                    }
+
+                    $license = $this->Company->GetLicenseSourceById($row->license_source_id);
+                    if(count(@$license) > 0) {
+                        $license_en = $license['label_en'];
+                        $license_ar = $license['label_ar'];
+                    }
+                    else {
+                        $license_en = '';
+                        $license_ar = '';
+                    }
+                    $source1='';
+                    $source2='';
+                    $source3='';
+                    if(@$row->wezara_source == 1)
+                    {
+                        $source1='وزارة الصناعة';
+                    }
+                    elseif($row->investment==1)
+                    {
+                        $source2='رخصة استثمار';
+                    }
+                    elseif($row->origin==1)
+                    {
+                        $source3='رخصة انشاء';
+                    }
+
+                    $export_m = '';
+
+                    if(@$row->is_exporter == 0) {
+                        $export_m = 'غير مصدر';
+                    }
+                    elseif(@$query['is_exporter'] == 1) {
+                        $export_m = 'مباشر';
+                    }
+                    elseif(@$query['is_exporter'] == 2) {
+                        $export_m = 'بالواسطة';
+                    }
+
+                    echo ' <tr>
+                                            <td>'.$row->ministry_id.'</td>
+                                            <td>'.$row->id.'</td>
+                                            <td>'.$row->name_ar.'</td>
+                                            <td>'.$row->owner_name.'</td>
+                                            <td>'.$row->auth_person_ar.'</td>
+                                            <td>'.$row->auth_no.' / '.$license_ar.'</td>									
+
+                                            <td>'.$row->activity_ar.'</td>
+                                            <td>'.$source1.' '.$source2.' '.$source3.'</td>
+                                            <td>'.$row->nbr_source.'</td>
+                                            <td>'.$row->date_source.'</td>
+                                            <td>'.$row->type_source.'</td>
+                                            <td>'.$row->type_ar.'</td>
+                                            <td>'.(($row->ind_association==1)? 'نعم' : 'كلا').'</td>
+                                            <td>'.$industrial_room_ar.'</td>
+                                            <td>'.$industrial_group_ar.'</td>
+                                            <td>'.$economical_assembly_ar.'</td>
+                                            <td>'.$row->governorate_ar.'</td>
+                                            <td>'.$row->district_ar.'</td>
+                                            <td>'.$row->area_ar.'</td>
+                                            <td>'.$row->street_ar.'</td>
+                                            <td>'.$row->phone.'</td>
+                                            <td>'.$row->whatsapp.'</td>
+                                            <td>'.$row->fax.'</td>
+                                            <td>'.$row->pobox_ar.'</td>
+                                            <td>'.$row->email.'</td>
+                                            <td>'.$row->website.'</td>
+                                            <td>'.$row->x_decimal.'</td>
+                                            <td>'.$row->y_decimal.'</td>
+                                            <td>'.implode(' , ',$array_market_ar).'</td>
+                                            <td>'.str_replace('-', '->', $row->employees_number).'</td>
+                                            <td>'.$export_m.'</td>
+                                            <td>'.$is_insurance.'</td>
+                                            <td>'.$insurance_companies.'</td>
+                                            <td>'.$banks_com.'</td>
+                                            <td>'.$fuel.'</td>
+                                            <td>'.$diesel.'</td>
+                                            <td>'.$row->rep_person_ar.'</td>
+                                            <td>'.$pos.'</td>
+                                        </tr>';
                 }
+                echo '</tbody>';
+                echo '</table>';
+                exit;
             }
-            else{
-                $is_insurance=' No';
-            }
-            $powers = $this->Company->GetCompanyElectricPowers($row->id);
-            $fuel='';
-            $diesel='';
-            if(count($powers)) {
-                foreach($powers as $power) {
-                    $fuel= $power->fuel;
-                    $diesel=$power->diesel;
+            public function updated_companies_en() {
+                // filename for download
+                $filename = "updated-companies-en.xls";
+                header("Content-Disposition: attachment; filename=\"$filename\"");
+                header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+                header('Content-type: text/html; charset=UTF-8');
+                $flag = false;
+
+                echo '<style type="text/css">
+        tr, td, table, tr{
+            border:1px solid #D0D0D0;
+        }
+        .yellow{
+                                background:#FF0 !important;
+                            }
+        </style>   ';
+                $query = $this->Report->GetUpdatedCompanies();
+
+                echo '<table cellpadding="0" cellspacing="0" style="border:1px solid; background:none !important" width="100%" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Wezara ID</th>
+                                        <th>ID</th>
+                                        <th>Company Name</th>
+                                        <th>Company Owner</th>
+                                        <th>Auth. to sign</th>
+                                        <th>No. & Place of C.R </th>
+                                        <th>Activity</th>
+                                        <th>مصدر الترخيص</th>
+                                        <th>رقم الترخيص</th>
+                                        <th>التاريخ</th>
+                                        <th>الفئة</th>
+                                        <th>Company Type</th>
+                                        <th>Associations of Lebanese Industrialists</th>
+                                        <th>Chambre of Commerce & Industry of </th>
+                                        <th>Industrial Assembly</th>
+                                        <th>Assemblies of Economical, Technical</th>
+                                        <th>Mohafaza</th>
+                                        <th>Kazaa</th>
+                                        <th>City</th>
+                                        <th>Street</th>
+                                        <th>Phone</th>
+                                        <th>WhatsApp</th>
+                                        <th>Fax</th>
+                                        <th>P.O.Box</th>
+                                        <th>Email</th>
+                                        <th>Website</th>
+                                        <th>E Location</th>
+                                        <th>N Location</th>
+                                        <th>Export & Trade Market  </th>
+                                        <th>Number of Labour</th>
+                                        <th>Means of Export</th>
+                                        <th>Do You Have Insurance</th>
+                                        <th>Insurance Co. Name</th>
+                                        <th>Banks</th>
+                                        <th>Electric Power/year - Fuel / Ton Or Litre</th>
+                                        <th>Electric Power/year - Diesel / Ton Or Litre</th>
+                                        <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>
+                                        <th>صفته في المؤسسة</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                foreach($query as $row) {
+                    // $items = $this->Company->GetProductionInfo($row->id);
+                    $position = $this->Item->GetPositionById($row->position_id);
+                    if(count($position) > 0) {
+                        $pos = $position['label_en'];
+                    }
+                    else {
+                        $pos = '';
+                    }
+                    $banks = $this->Company->GetCompanyBanks($row->id);
+                    $banks_com='';
+                    if(count($banks)) {
+                        foreach($banks as $bank) {
+                            $banks_com.= $bank->bank_en.'<br>';
+                        }
+                    }
+                    $markets = $this->Company->GetCompanyMarkets($row->id);
+
+                    $array_market_ar = array();
+                    $array_market_en = array();
+                    if(count($markets)) {
+                        foreach($markets as $item) {
+                            if($item->item_type == 'country') {
+                                $row1 = $this->Parameter->GetCountryById($item->market_id);
+                                array_push($array_market_ar,$row1['label_ar']);
+                                array_push($array_market_en,$row1['label_en']);
+                            }
+                            elseif($item->item_type == 'region') {
+                                $row1 = $this->Parameter->GetCompanyMarketById($item->market_id);
+                                array_push($array_market_ar,$row1['label_ar']);
+                                array_push($array_market_en,$row1['label_en']);
+                            }
+
+
+
+                        }
+                    }
+                    $insurances = $this->Company->GetCompanyInsurances($row->id);
+                    $insurance_companies='';
+                    if(count($insurances)>0)
+                    {
+                        $is_insurance='Yes';
+                        foreach($insurances as $insurance) {
+                            $insurance_companies .= $insurance->insurance_en.'<br>';
+                        }
+                    }
+                    else{
+                        $is_insurance=' No';
+                    }
+                    $powers = $this->Company->GetCompanyElectricPowers($row->id);
+                    $fuel='';
+                    $diesel='';
+                    if(count($powers)) {
+                        foreach($powers as $power) {
+                            $fuel= $power->fuel;
+                            $diesel=$power->diesel;
+                        }
+                    }
+
+                    $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
+                    if(count($industrial_room) > 0) {
+                        $industrial_room_en = $industrial_room['label_en'];
+                        $industrial_room_ar = $industrial_room['label_ar'];
+                    }
+                    else {
+                        $industrial_room_en = '';
+                        $industrial_room_ar = '';
+                    }
+
+                    $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
+                    if(count($industrial_group) > 0) {
+                        $industrial_group_en = $industrial_group['label_en'];
+                        $industrial_group_ar = $industrial_group['label_ar'];
+                    }
+                    else {
+                        $industrial_group_en = '';
+                        $industrial_group_ar = '';
+                    }
+
+                    $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
+                    if(count($economical_assembly) > 0) {
+                        $economical_assembly_en = $economical_assembly['label_en'];
+                        $economical_assembly_ar = $economical_assembly['label_ar'];
+                    }
+                    else {
+                        $economical_assembly_en = '';
+                        $economical_assembly_ar = '';
+                    }
+
+                    $license = $this->Company->GetLicenseSourceById($row->license_source_id);
+                    if(count(@$license) > 0) {
+                        $license_en = $license['label_en'];
+                        $license_ar = $license['label_ar'];
+                    }
+                    else {
+                        $license_en = '';
+                        $license_ar = '';
+                    }
+                    $source1='';
+                    $source2='';
+                    $source3='';
+                    if(@$row->wezara_source == 1)
+                    {
+                        $source1='وزارة الصناعة';
+                    }
+                    elseif($row->investment==1)
+                    {
+                        $source2='رخصة استثمار';
+                    }
+                    elseif($row->origin==1)
+                    {
+                        $source3='رخصة انشاء';
+                    }
+
+                    $export_m = '';
+
+                    if(@$row->is_exporter == 0) {
+                        $export_m = 'Export Less ';
+                    }
+                    elseif(@$query['is_exporter'] == 1) {
+                        $export_m = 'Direct';
+                    }
+                    elseif(@$query['is_exporter'] == 2) {
+                        $export_m = 'Mediation';
+                    }
+
+                    echo ' <tr>
+                                            <td>'.$row->ministry_id.'</td>
+                                            <td>'.$row->id.'</td>
+                                            <td>'.$row->name_en.'</td>
+                                            <td>'.$row->owner_name_en.'</td>
+                                            <td>'.$row->auth_person_en.'</td>
+                                            <td>'.$row->auth_no.' / '.$license_en.'</td>
+                                            <td>'.$row->activity_en.'</td>
+                                            <td>'.$source1.' '.$source2.' '.$source3.'</td>
+                                            <td>'.$row->nbr_source.'</td>
+                                            <td>'.$row->date_source.'</td>
+                                            <td>'.$row->type_source.'</td>
+                                            <td>'.$row->type_en.'</td>
+                                            <td>'.(($row->ind_association==1)? 'Yes' : 'No').'</td>
+                                            <td>'.$industrial_room_en.'</td>
+                                            <td>'.$industrial_group_en.'</td>
+                                            <td>'.$economical_assembly_en.'</td>
+                                            <td>'.$row->governorate_en.'</td>
+                                            <td>'.$row->district_en.'</td>
+                                            <td>'.$row->area_en.'</td>
+                                            <td>'.$row->street_en.'</td>
+                                            <td>'.$row->phone.'</td>
+                                            <td>'.$row->whatsapp.'</td>
+                                            <td>'.$row->fax.'</td>
+                                            <td>'.$row->pobox_en.'</td>
+                                            <td>'.$row->email.'</td>
+                                            <td>'.$row->website.'</td>
+                                            <td>'.$row->x_decimal.'</td>
+                                            <td>'.$row->y_decimal.'</td>
+                                            <td>'.implode(' , ',$array_market_en).'</td>
+                                            <td>'.str_replace('-', '->', $row->employees_number).'</td>
+                                            <td>'.$export_m.'</td>
+                                            <td>'.$is_insurance.'</td>
+                                            <td>'.$insurance_companies.'</td>
+                                            <td>'.$banks_com.'</td>
+                                            <td>'.$fuel.'</td>
+                                            <td>'.$diesel.'</td>
+                                            <td>'.$row->rep_person_en.'</td>
+                                            <td>'.$pos.'</td>
+                                        </tr>';
                 }
+                echo '</tbody>';
+                echo '</table>';
+                exit;
+            }
+            public function company_insurance($lang = 'ar') {
+
+                $this->breadcrumb->clear();
+                $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
+                $this->breadcrumb->add_crumb('Reports');
+                $this->breadcrumb->add_crumb('Company - Insurance');
+                if(isset($_GET['search'])) {
+                    $lang = $this->input->get('lang');
+                    $insurance = $this->input->get('insurance');
+                    $this->data['insurances'] = $this->Report->SearchInsurancesByName($insurance, $lang);
+                }
+                else {
+                    $this->data['insurances'] = array();
+                }
+
+                if($lang == 'en') {
+                    $this->data['title'] = $this->data['Ctitle']." -  The Company";
+                    $this->data['subtitle'] = "Company - Banks";
+                }
+                else {
+                    $this->data['title'] = $this->data['Ctitle']."الشركات الصناعية - ";
+                    $this->data['subtitle'] = "الشركات الصناعية ";
+                }
+                $this->data['insurance'] = @$insurance;
+                $this->template->load('_template', 'reports/companies_insurance_'.$lang, $this->data);
             }
 
-            $industrial_room = $this->Company->GetIndustrialRoomById($row->iro_code);
-            if(count($industrial_room) > 0) {
-                $industrial_room_en = $industrial_room['label_en'];
-                $industrial_room_ar = $industrial_room['label_ar'];
-            }
-            else {
-                $industrial_room_en = '';
-                $industrial_room_ar = '';
-            }
+            function export_cinsurance() {
+                $insurance = $this->input->get('insurance');
+                $lang = $this->input->get('lang');
+                // filename for download
+                $filename = "cinsurance-".$lang.".xls";
+                header("Content-Disposition: attachment; filename=\"$filename\"");
+                header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
+                header('Content-type: text/html; charset=UTF-8');
+                $flag = false;
 
-            $industrial_group = $this->Company->GetIndustrialGroupById($row->igr_code);
-            if(count($industrial_group) > 0) {
-                $industrial_group_en = $industrial_group['label_en'];
-                $industrial_group_ar = $industrial_group['label_ar'];
-            }
-            else {
-                $industrial_group_en = '';
-                $industrial_group_ar = '';
-            }
-
-            $economical_assembly = $this->Company->GetEconomicalAssemblyById($row->eas_code);
-            if(count($economical_assembly) > 0) {
-                $economical_assembly_en = $economical_assembly['label_en'];
-                $economical_assembly_ar = $economical_assembly['label_ar'];
-            }
-            else {
-                $economical_assembly_en = '';
-                $economical_assembly_ar = '';
-            }
-
-            $license = $this->Company->GetLicenseSourceById($row->license_source_id);
-            if(count(@$license) > 0) {
-                $license_en = $license['label_en'];
-                $license_ar = $license['label_ar'];
-            }
-            else {
-                $license_en = '';
-                $license_ar = '';
-            }
-            $source1='';
-            $source2='';
-            $source3='';
-            if(@$row->wezara_source == 1)
-            {
-                $source1='وزارة الصناعة';
-            }
-            elseif($row->investment==1)
-            {
-                $source2='رخصة استثمار';
-            }
-            elseif($row->origin==1)
-            {
-                $source3='رخصة انشاء';
-            }
-
-            $export_m = '';
-
-            if(@$row->is_exporter == 0) {
-                $export_m = 'Export Less ';
-            }
-            elseif(@$query['is_exporter'] == 1) {
-                $export_m = 'Direct';
-            }
-            elseif(@$query['is_exporter'] == 2) {
-                $export_m = 'Mediation';
-            }
-
-            echo ' <tr>
-									<td>'.$row->ministry_id.'</td>
-									<td>'.$row->id.'</td>
-									<td>'.$row->name_en.'</td>
-									<td>'.$row->owner_name_en.'</td>
-									<td>'.$row->auth_person_en.'</td>
-									<td>'.$row->auth_no.' / '.$license_en.'</td>
-									<td>'.$row->activity_en.'</td>
-									<td>'.$source1.' '.$source2.' '.$source3.'</td>
-									<td>'.$row->nbr_source.'</td>
-									<td>'.$row->date_source.'</td>
-									<td>'.$row->type_source.'</td>
-									<td>'.$row->type_en.'</td>
-									<td>'.(($row->ind_association==1)? 'Yes' : 'No').'</td>
-									<td>'.$industrial_room_en.'</td>
-									<td>'.$industrial_group_en.'</td>
-									<td>'.$economical_assembly_en.'</td>
-									<td>'.$row->governorate_en.'</td>
-									<td>'.$row->district_en.'</td>
-									<td>'.$row->area_en.'</td>
-									<td>'.$row->street_en.'</td>
-									<td>'.$row->phone.'</td>
-									<td>'.$row->whatsapp.'</td>
-									<td>'.$row->fax.'</td>
-									<td>'.$row->pobox_en.'</td>
-									<td>'.$row->email.'</td>
-									<td>'.$row->website.'</td>
-									<td>'.$row->x_decimal.'</td>
-									<td>'.$row->y_decimal.'</td>
-									<td>'.implode(' , ',$array_market_en).'</td>
-									<td>'.str_replace('-', '->', $row->employees_number).'</td>
-									<td>'.$export_m.'</td>
-									<td>'.$is_insurance.'</td>
-									<td>'.$insurance_companies.'</td>
-									<td>'.$banks_com.'</td>
-									<td>'.$fuel.'</td>
-									<td>'.$diesel.'</td>
-									<td>'.$row->rep_person_en.'</td>
-									<td>'.$pos.'</td>
-								</tr>';
+                echo '<style type="text/css">
+        tr, td, table, tr{
+            border:1px solid #D0D0D0;
         }
-        echo '</tbody>';
-        echo '</table>';
-        exit;
-    }
-    public function company_insurance($lang = 'ar') {
-
-        $this->breadcrumb->clear();
-        $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
-        $this->breadcrumb->add_crumb('Reports');
-        $this->breadcrumb->add_crumb('Company - Insurance');
-        if(isset($_GET['search'])) {
-            $lang = $this->input->get('lang');
-            $insurance = $this->input->get('insurance');
-            $this->data['insurances'] = $this->Report->SearchInsurancesByName($insurance, $lang);
-        }
-        else {
-            $this->data['insurances'] = array();
-        }
-
-        if($lang == 'en') {
-            $this->data['title'] = $this->data['Ctitle']." -  The Company";
-            $this->data['subtitle'] = "Company - Banks";
-        }
-        else {
-            $this->data['title'] = $this->data['Ctitle']."الشركات الصناعية - ";
-            $this->data['subtitle'] = "الشركات الصناعية ";
-        }
-        $this->data['insurance'] = @$insurance;
-        $this->template->load('_template', 'reports/companies_insurance_'.$lang, $this->data);
-    }
-
-    function export_cinsurance() {
-        $insurance = $this->input->get('insurance');
-        $lang = $this->input->get('lang');
-        // filename for download
-        $filename = "cinsurance-".$lang.".xls";
-        header("Content-Disposition: attachment; filename=\"$filename\"");
-        header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
-        header('Content-type: text/html; charset=UTF-8');
-        $flag = false;
-
-        echo '<style type="text/css">
-tr, td, table, tr{
-	border:1px solid #D0D0D0;
-}
-.yellow{
-						background:#FF0 !important;
-					}
-</style>   ';
+        .yellow{
+                                background:#FF0 !important;
+                            }
+        </style>   ';
         $insurances = $this->Report->SearchInsurancesByName($insurance, $lang);
         //var_dump($banks);
         //die;

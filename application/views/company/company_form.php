@@ -157,7 +157,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
     echo form_hidden('c_id', $c_id);
     // echo form_hidden('adv_pic',$adv_pic);
     ?>
-    <div class="workplace">
+    <div class="workplace"> 
 
         <div class="page-header">
             <h1><?= $subtitle ?>
