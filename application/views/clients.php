@@ -57,6 +57,10 @@ $row_s=$this->Client->getShowItemsClientStatus($client_id,$client_type);
     <div class="span6">
         <?php 
         $salesc_array = array(0 => 'اختر');
+        if(!isset($sales))
+        {
+           $sales= $this->data['sales'] = $this->Company->GetSalesMen();
+        }
         if (count($sales) > 0) {
             foreach ($sales as $item) {
 

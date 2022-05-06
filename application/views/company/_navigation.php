@@ -20,7 +20,9 @@ function upload()
 			if($p_edit){ 
             echo '<li>'.anchor('companies/edit/'.$id,'<span class="isb-edit"></span>Edit').'</li>';
 			}
-			
+			if($p_edit){
+				echo '<li>'.anchor('companies/marketing/'.$id,'<span class="isb-grid"></span>marketing').'</li>';
+				}
             echo '<li>'.anchor('companies/view/'.$id,'<span class="isb-print"></span> Print', array('target'=>'_blank')).'</li>';
 			if($p_production){
             echo '<li>'.anchor('companies/productions/'.$id,'<span class="isb-grid"></span>Production Info').'</li>';
@@ -49,6 +51,7 @@ function upload()
 			if($p_delete){
             echo '<li>'.anchor('companies/delete/id/'.$id.'/p/company','<span class="isb-delete"></span> Delete','onclick="return confirmation(\'Are You sure you want to delete this Istimara\');"').'</li>';
 			}
+			
 			//echo '<li>'.anchor('companies/remove/'.$id,'<span class="isb-delete"></span> Remove Advertisment Image','onclick="return confirmation(\'Are You sure you want to delete this Image\');"').'</li>';
 			/*
 			?>

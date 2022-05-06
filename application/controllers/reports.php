@@ -3041,12 +3041,18 @@ tr, td, table, tr{
             //$query = $this->Report->GetFullCompanies();
             $query = $this->Report->GetfullCompaniesNew();
             $filename = "full-data-en.xls";
+
             header("Content-Disposition: attachment; filename=\"$filename\"");
             header("Content-Type: application/vnd.ms-excel,  charset=UTF-8; encoding=UTF-8");
             header('Content-type: text/html; charset=UTF-8');
+
+            header('Content-Encoding: UTF-8');
+            header('Content-type: text/csv; charset=UTF-8');
+            header("Content-Type: application/csv");           
+
             $flag = false;
     
-            echo '<style type="text/css">
+            echo '<meta charset="UTF-8"> <style type="text/css">
                 tr, td, table, tr{
                     border:1px solid #D0D0D0;
                 }
@@ -3068,10 +3074,10 @@ tr, td, table, tr{
                             <th>Sector EN</th>
 
                             <th>Activity</th>     
-                             <th> مصدر الترخیص </th>
-                             <th> رقم الترخیص </th> 
-                             <th> التاریخ </th>
-                             <th> الفئة</th> 
+                            <th> license source </th>
+                            <th>  lisence# </th>
+                            <th> date </th>
+                            <th> lisence calss</th>
 
                             <th>Company Type</th>
                             <th>Associations of Lebanese Industrialists</th>
@@ -3098,8 +3104,8 @@ tr, td, table, tr{
                             <th>Banks</th>
                             <th>Electric Power/year - Fuel / Ton Or Litre</th>
                             <th>Electric Power/year - Diesel / Ton Or Litre</th>
-                            <th>اسم الشخص الذي تمت معه المقابلة في المؤسسة</th>						
-                            <th>صفته في المؤسسة</th>                           
+                            <th>  interviewed name  </th>							
+                            <th> position </th>                       
 
                             <th>Related ID</th>                            
                             <th>Status Ads</th>
@@ -3219,30 +3225,32 @@ tr, td, table, tr{
                 $source1='';
                 $source2='';
                 $source3='';
+
                 if(@$row->wezara_source == 1)
-                {
-                    $source1='وزارة الصناعة';
+                {                    
+                    $source1='Ministry of industry';                    
                 }
                 elseif($row->investment==1)
-                {
-                    $source2='رخصة استثمار';
+                {                  
+                    $source2='Investment License';
                 }
                 elseif($row->origin==1)
                 {
-                    $source3='رخصة انشاء';
+                    $source3='construction license';
                 }
     
                 $export_m = '';
     
-                if(@$row->is_exporter == 0) {
-                    $export_m = 'غير مصدر';
+                if(@$row->is_exporter == 0) {                  
+                    $export_m = 'non export';
                 }
-                elseif(@$query['is_exporter'] == 1) {
-                    $export_m = 'مباشر';
+                elseif(@$query['is_exporter'] == 1) {                   
+                    $export_m = 'direct export';
                 }
-                elseif(@$query['is_exporter'] == 2) {
-                    $export_m = 'بالواسطة';
+                elseif(@$query['is_exporter'] == 2) {                  
+                    $export_m = '3rd party export';
                 }
+
                 if($row->is_adv==1){
                         $is_adv='No';
                     }

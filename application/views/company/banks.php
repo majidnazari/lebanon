@@ -43,10 +43,10 @@ $jsdis='id="district_id" onchange="getarea(this.value)"';
 		                   
         <div class="row-fluid">
             <div class="span9">
-            <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation'));
-          echo form_hidden('c_id',$c_id);
-		   echo form_hidden('action',$action);
-		   ?>   
+                    <?php echo form_open_multipart($this->uri->uri_string(),array('id'=>'validation'));
+                echo form_hidden('c_id',$c_id);
+                echo form_hidden('action',$action);
+                ?>   
                 <div class="head clearfix">
                     <div class="isw-documents"></div>
                     <h1><?=$subtitle?></h1>
@@ -55,20 +55,20 @@ $jsdis='id="district_id" onchange="getarea(this.value)"';
 					<div class="row-form clearfix">
                         <div class="span4">Banks (المصارف):</div>
                         <div class="span8">
-                        <?php 
-						$array_bnk=array();
-						if(count($banks)){
-							foreach($banks as $bank){
-								array_push($array_bnk,$bank->bank_id);
-								}
-						}
-							$item_array=array(''=>'Select Bank');
-							foreach($items as $item){
-								if(!in_array($item->id,$array_bnk))
-								$item_array[$item->id]=$item->name_ar.' ( '.$item->name_en.' )';
-								}
-							echo form_dropdown('bank_id',$item_array,$bank_id,$heading_option);	
-						?>
+                            <?php 
+                            $array_bnk=array();
+                            if(count($banks)){
+                                foreach($banks as $bank){
+                                    array_push($array_bnk,$bank->bank_id);
+                                    }
+                            }
+                                $item_array=array(''=>'Select Bank');
+                                foreach($items as $item){
+                                    if(!in_array($item->id,$array_bnk))
+                                    $item_array[$item->id]=$item->name_ar.' ( '.$item->name_en.' )';
+                                    }
+                                echo form_dropdown('bank_id',$item_array,$bank_id,$heading_option);	
+                            ?>
                         </div>
                     </div>                 
 					<div class="row-form clearfix">
@@ -80,14 +80,13 @@ $jsdis='id="district_id" onchange="getarea(this.value)"';
                         		<?=anchor('companies/banks/'.$id,'Cancel',array('class'=>'btn'))?>
                         </center>
                     </div>                                                                        
-                 </div>
-                 <?=form_close()?>
-                <?php echo form_open('companies/delete_checked',array('id'=>'form_id','name'=>'form1'));
-						echo form_hidden('company',$id);
-						echo form_hidden('p','banks');
-				?>
-                 <div class="row-fluid">
-
+                </div> <!-- end div for  <div class="block-fluid"> -->
+                            <?=form_close()?>
+                            <?php echo form_open('companies/delete_checked',array('id'=>'form_id','name'=>'form1'));
+                                    echo form_hidden('company',$id);
+                                    echo form_hidden('p','banks');
+                            ?>
+                <div class="row-fluid">
                     <div class="span12">                    
                         <div class="head clearfix">
                             <div class="isw-grid"></div>
@@ -134,7 +133,7 @@ $jsdis='id="district_id" onchange="getarea(this.value)"';
                     </div>                                
                 </div>
                 <?=form_close()?>
-             </div>
+            </div>
              <?=$this->load->view('company/_navigation')?> 
         </div>
    <div class="dr"><span></span></div>           

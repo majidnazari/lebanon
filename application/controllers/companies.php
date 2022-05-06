@@ -1908,6 +1908,154 @@ public function branches($id) {
         }
     }
 
+    public function marketing($id, $item_id = '')
+    {
+        //var_dump($_REQUEST);
+        $query = $this->Company->GetCompanyById($id);
+        $this->breadcrumb->clear();
+        $this->breadcrumb->add_crumb('Dashboard', 'dashboard');
+        $this->breadcrumb->add_crumb('Companies', 'companies');
+        $this->breadcrumb->add_crumb($query['name_en'], 'companies/details/' . $id);
+        $this->breadcrumb->add_crumb('marketing', 'companies/marketing/' . $id);
+      
+        //die($this->p_marketing);
+        if(isset($_REQUEST['adv_salesman_id']))
+        { 
+            $c_id=$id;
+           // $this->data['sales'] = $this->Company->GetSalesMen();
+           // $this->load->view('clients',['client_id'=>$c_id,'client_type'=>'company','status_type'=>'show_items','title'=>'Show Items']);
+
+           // $query = $this->Company->GetCompanyById($id);
+           
+
+            $start_date_adv= null ;
+            $end_date_adv= null ;
+            $status_adv= 0;
+            if($this->input->post('adv_pic') !=="" )
+            {
+                $start_date_adv= valid_date($this->input->post('start_date_adv')) ;
+                $end_date_adv= valid_date($this->input->post('end_date_adv'))  ;
+                $status_adv= $this->input->post('status_adv');
+ 
+            }
+           $copy_res_salesman_id= $this->input->post('copy_res_salesman_id') ;
+           $copy_res= $this->input->post('copy_res') ;
+           $copy_res_bold= $this->input->post('copy_res_bold') ;
+           $show_online= $this->input->post('show_online') ;
+           $acc= $this->input->post('acc') ;
+           $task_status= $this->input->post('task_status') ;
+           $delivery_date= $this->input->post('delivery_date') ;
+           $delivery_by= $this->input->post('delivery_by') ;
+           $copy_qty= $this->input->post('copy_qty') ;
+           $receiver_name= $this->input->post('receiver_name') ;
+           $sales_note= $this->input->post('sales_note') ;
+          
+                
+            $data=array(
+                    'adv_salesman_id'=>$this->input->post('adv_salesman_id'),
+                    'adv_pic' => $this->input->post('adv_pic'),
+                    'start_date_adv' =>  $start_date_adv,
+                    'end_date_adv' =>  $end_date_adv,
+                    'status_adv' =>  $status_adv,
+            );
+
+            //$newdata = $this->Administrator->affected_fields($query, $data);
+            $this->Administrator->update('tbl_company',
+            array('adv_salesman_id'=>$this->input->post('adv_salesman_id'),
+            'adv_pic'=>$this->input->post('adv_pic'),'start_date_adv'=>$start_date_adv,
+            'end_date_adv'=>$end_date_adv,'status_adv' => $status_adv,
+            'copy_res_salesman_id' =>$copy_res_salesman_id,
+            'copy_res' => (int) $copy_res,'copy_res_bold' => (int)$copy_res_bold,
+            'show_online' =>$show_online,'acc' =>(int) $acc,
+            'delivery_date' =>  $delivery_date,
+            'delivery_by' =>$delivery_by, 'copy_qty' =>$copy_qty,
+            'receiver_name' =>$receiver_name,'sales_note' =>$sales_note ),array('id'=>$id/*,'category'=>'delivery'*/));  
+        //     $this->data['c_id'] = $id;
+        //     $this->data['id'] = $id;
+
+        //     $this->data['market_id'] = $item_id;
+        //     $this->data['query'] = $query;
+
+        //     $this->data['adv_salesman_id'] = $this->input->post('adv_salesman_id');
+        //     $this->data['adv_pic'] = $query['adv_pic'];
+        //     $this->data['start_date_adv'] = $query['start_date_adv'];
+        //     $this->data['end_date_adv'] = $query['end_date_adv'];
+        //     $this->data['status_adv'] = $query['status_adv'];
+        //     $this->data['copy_res_salesman_id'] = $this->input->post('copy_res_salesman_id');
+        //     $this->data['copy_res'] = $query['copy_res'];
+        //     $this->data['copy_res_bold'] = $query['copy_res_bold'];
+        //     $this->data['show_online'] = $query['show_online'];
+        //     $this->data['acc'] = $query['acc'];
+        //     $this->data['delivery_date'] = $this->input->post('delivery_date');
+        //     $this->data['copy_qty'] = $query['copy_qty'];
+        //    // $this->data['task_status'] = $query['task_status'];
+        //     $this->data['delivery_by'] = $query['delivery_by'];
+        //     $this->data['receiver_name'] = $query['receiver_name'];
+        //     $this->data['sales_note'] = $query['sales_note'];
+            $this->data= $this->getAllCompanyInfo($id);
+            $this->data['msg'] = $this->session->userdata('admin_message');
+            $this->session->unset_userdata('admin_message');
+           // $this->data['banks'] = $this->Company->GetCompanyBanks($id);
+            $this->data['title'] = $this->data['Ctitle'] . " - Companies - الشركات";
+           // $this->data['items'] = $this->Bank->GetBanks('1', 0, 0);
+             $this->template->load('_template', 'company/marketing', $this->data);
+        } 
+        else 
+        {
+        //     $this->data['c_id'] = $id;
+        //     $this->data['id'] = $id;
+        //     $this->data['query'] = $query;
+
+        //     $this->data['adv_salesman_id'] = $this->input->post('adv_salesman_id');
+        //     $this->data['adv_pic'] = $query['adv_pic'];
+        //     $this->data['start_date_adv'] = $query['start_date_adv'];
+        //     $this->data['end_date_adv'] = $query['end_date_adv'];
+        //     $this->data['status_adv'] = $query['status_adv'];
+        //     $this->data['copy_res_salesman_id'] = $this->input->post('copy_res_salesman_id');
+        //     $this->data['copy_res'] = $query['copy_res'];
+        //     $this->data['copy_res_bold'] = $query['copy_res_bold'];
+        //     $this->data['show_online'] = $query['show_online'];
+        //     $this->data['acc'] = $query['acc'];
+        //     $this->data['delivery_date'] = $this->input->post('delivery_date');
+        //     $this->data['copy_qty'] = $query['copy_qty'];
+        //    // $this->data['task_status'] = $query['task_status'];
+        //     $this->data['delivery_by'] = $query['delivery_by'];
+        //     $this->data['receiver_name'] = $query['receiver_name'];
+        //     $this->data['sales_note'] = $query['sales_note'];
+            $this->data= $this->getAllCompanyInfo($id);
+            $this->data['msg'] = $this->session->userdata('admin_message');
+            $this->session->unset_userdata('admin_message');
+           // $this->data['banks'] = $this->Company->GetCompanyBanks($id);
+            $this->data['title'] = $this->data['Ctitle'] . " - Companies - الشركات";
+           // $this->data['items'] = $this->Bank->GetBanks('1', 0, 0);
+             $this->template->load('_template', 'company/marketing', $this->data);
+        }
+    }
+    public function getAllCompanyInfo($id)
+    {
+        $query = $this->Company->GetCompanyById($id);
+        $this->data['id'] = $id;
+        $this->data['c_id'] = $id;
+        //$this->data['market_id'] = $item_id;
+        $this->data['query'] = $query;
+        $this->data['adv_salesman_id'] = $this->input->post('adv_salesman_id');
+        $this->data['adv_pic'] = $query['adv_pic'];
+        $this->data['start_date_adv'] = $query['start_date_adv'];
+        $this->data['end_date_adv'] = $query['end_date_adv'];
+        $this->data['status_adv'] = $query['status_adv'];
+        $this->data['copy_res_salesman_id'] = $this->input->post('copy_res_salesman_id');
+        $this->data['copy_res'] = $query['copy_res'];
+        $this->data['copy_res_bold'] = $query['copy_res_bold'];
+        $this->data['show_online'] = $query['show_online'];
+        $this->data['acc'] = $query['acc'];
+        $this->data['delivery_date'] = $this->input->post('delivery_date');
+        $this->data['copy_qty'] = $query['copy_qty'];
+       // $this->data['task_status'] = $query['task_status'];
+        $this->data['delivery_by'] = $query['delivery_by'];
+        $this->data['receiver_name'] = $query['receiver_name'];
+        $this->data['sales_note'] = $query['sales_note'];
+        return $this->data;
+    }
     public function app_details($id)
     {
         if ($this->p_app) {
@@ -2404,9 +2552,10 @@ public function branches($id) {
                     'app_fill_date' => valid_date($this->input->post('app_fill_date')),
                     'exp_dest_ar' => $this->input->post('exp_dest_ar'),
                     'exp_dest_en' => $this->input->post('exp_dest_en'),
-                    'personal_notes' => $this->input->post('personal_notes'),
-                    'adv_pic' => $this->input->post('adv_pic'),
+                    'personal_notes' => $this->input->post('personal_notes'),                    
 
+                    'adv_salesman_id'=>$this->input->post('adv_salesman_id'),
+                    'adv_pic' => $this->input->post('adv_pic'),
                     'start_date_adv' =>valid_date( $this->input->post('start_date_adv')),
                     'end_date_adv' => valid_date($this->input->post('end_date_adv')),
                     'status_adv' => $this->input->post('status_adv'),
@@ -2439,7 +2588,7 @@ public function branches($id) {
                     'delivery_by'=>$this->input->post('delivery_by'),
                     'delivery_date'=>valid_date($this->input->post('delivery_date')),
                     'copy_qty'=>is_numeric($this->input->post('copy_qty'))?$this->input->post('copy_qty'):0,
-                    'adv_salesman_id'=>$this->input->post('adv_salesman_id'),
+                    
                     'copy_res_salesman_id'=>$this->input->post('copy_res_salesman_id'),
                     'sales_note'=>$this->input->post('sales_note'),
                     'create_time' => $this->datetime,
@@ -2720,8 +2869,9 @@ public function branches($id) {
                     'exp_dest_ar' => $this->input->post('exp_dest_ar'),
                     'exp_dest_en' => $this->input->post('exp_dest_en'),
                     'personal_notes' => $this->input->post('personal_notes'),
-                    'adv_pic' => $this->input->post('adv_pic'),
 
+                    'adv_salesman_id'=>$this->input->post('adv_salesman_id'),
+                    'adv_pic' => $this->input->post('adv_pic'),
                     'start_date_adv' =>  $start_date_adv,
                     'end_date_adv' =>  $end_date_adv,
                     'status_adv' =>  $status_adv,
@@ -2756,7 +2906,7 @@ public function branches($id) {
                     'delivery_date'=>$this->checkIsAValidDate($this->input->post('delivery_date')) ? $this->input->post('delivery_date'):NULL,
                      'copy_qty'=>$this->input->post('copy_qty'),
                      'receiver_name'=>$this->input->post('receiver_name'),
-                     'adv_salesman_id'=>$this->input->post('adv_salesman_id'),
+                    
                      'copy_res_salesman_id'=>$this->input->post('copy_res_salesman_id'),
                      'sales_note'=>$this->input->post('sales_note'),
                      'facebook'=>$this->input->post('facebook'),
@@ -2888,7 +3038,7 @@ public function branches($id) {
             $this->data['igr_data'] = $this->Company->GetIndustrialGroups();
             $this->data['eas_data'] = $this->Company->GetEconomicalAssemblies();
             $this->data['positions'] = $this->Company->GetPositions();
-            $this->data['sales'] = $this->Company->GetSalesMen();
+            $this->data['sales'] = $this->Company->GetSalesMen(); 
             $this->data['license_sources'] = $this->Company->GetLicenseSources();
 
             $this->data['subtitle'] = 'Edit Company';
