@@ -55,9 +55,12 @@ $jsdis='id="district_id" onchange="getarea(this.value)"';
                                 </div>
                             </div>
                         </div>
-            </div>            
+             </div> 
+                     
                 <?=$this->load->view('company/_navigation')?> 
-        </div>
+                
+         </div>
+        
             <div class="dr"><span></span></div>
     </div>                   
  

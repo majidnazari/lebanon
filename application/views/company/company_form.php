@@ -553,7 +553,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
 
                                 echo 'المسح &nbsp;' .data('Y').'&nbsp;' .form_checkbox('scanning', 1,@$scanning); ?>
                             </div>
- */?>
+             */?>
                             <?php
 
                             if(count($task)>0){
