@@ -131,7 +131,7 @@ $array_adv_pic = array('id' => 'adv_pic', 'name' => 'adv_pic', 'value' => $adv_p
             
     <div class="head clearfix">
                     <div class="isw-documents"></div>
-                    <h1>Reservation copy</h1>
+                    <h1>Copy Reservation </h1>
                     <!-- <h1 style="float:right; margin-right:10px;">ملاحظات شخصية</h1> -->
     </div>
 
@@ -140,8 +140,8 @@ $array_adv_pic = array('id' => 'adv_pic', 'name' => 'adv_pic', 'value' => $adv_p
         <div class="row-form clearfix">
 
             <div class="row-form clearfix">
-                <div class="span4" style="text-align:left"> مندوب حجز النسخة </div>
-                <div class="span8">
+                <div class="span5" style="text-align:left"> Copy Res Salesman </div>
+                <div class="span7">
                         <?php
                         $sales_array = array(0 => 'اختر');
                         if (count($sales) > 0) {

@@ -1942,9 +1942,9 @@ public function branches($id) {
            $copy_res= $this->input->post('copy_res') ;
            $copy_res_bold= $this->input->post('copy_res_bold') ;
            $show_online= $this->input->post('show_online') ;
-           $acc= $this->input->post('acc') ;
+           $acc= ($this->input->post('acc')==1 ? "yes" : "no") ;
            $task_status= $this->input->post('task_status') ;
-           $delivery_date= $this->input->post('delivery_date') ;
+           $delivery_date= $this->input->post('delivery_date') !=="" ? $this->input->post('delivery_date') : NULL ;
            $delivery_by= $this->input->post('delivery_by') ;
            $copy_qty= $this->input->post('copy_qty') ;
            $receiver_name= $this->input->post('receiver_name') ;
@@ -1966,7 +1966,7 @@ public function branches($id) {
             'end_date_adv'=>$end_date_adv,'status_adv' => $status_adv,
             'copy_res_salesman_id' =>$copy_res_salesman_id,
             'copy_res' => (int) $copy_res,'copy_res_bold' => (int)$copy_res_bold,
-            'show_online' =>$show_online,'acc' =>(int) $acc,
+            'show_online' =>$show_online,'acc' => $acc,
             'delivery_date' =>  $delivery_date,
             'delivery_by' =>$delivery_by, 'copy_qty' =>$copy_qty,
             'receiver_name' =>$receiver_name,'sales_note' =>$sales_note ),array('id'=>$id/*,'category'=>'delivery'*/));  

@@ -173,10 +173,10 @@ $add_js='onchange="getdistrictsadd(this.value)"';
 						foreach($query as $row){
 							$user=$this->Administrator->GetUserById($row->user_id);
                             $companies=$this->Company->SearchCompanies('', '', '', '', '', $row->governorate_id, $row->district_id, $row->id, 0, 0,FALSE,FALSE,'');
-                            $banks=$this->Bank->GetAllBanks('', '', '', '', '', $row->governorate_id, $row->district_id, $row->id, 0, 0);
-                            $importers=$this->Importer->GetAllImporters('','','','',$row->governorate_id, $row->district_id, $row->id,0,0);
-                            $transportations=$this->Transport->GetAllTransportations('','','','',$row->governorate_id, $row->district_id, $row->id,0,0);
-                            $insurances=$this->Insurance->GetAllInsurances('','','','',$row->governorate_id, $row->district_id, $row->id,0,0);
+                            $banks=$this->Bank->GetAllBanks('', '', '', '', '', $row->governorate_id, $row->district_id, $row->id, 0, 0,0);
+                            $importers=$this->Importer->GetAllImporters('','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
+                            $transportations=$this->Transport->GetAllTransportations('','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
+                            $insurances=$this->Insurance->GetAllInsurances('','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
 
 
 							 if(count($user)>0)
