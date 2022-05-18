@@ -1,4 +1,20 @@
+
 <style type="text/css">
+    select {
+        FONT-WEIGHT: 200;FONT-WEIGHT: 200;direction: rtl !important;
+        font-size: 14px !important;
+    }
+
+    input {
+        font-size: 14px !important;
+
+    }
+
+    textarea {
+        font-size: 14px !important;
+
+    }
+
 .title{
 	width:200px !important;
 }

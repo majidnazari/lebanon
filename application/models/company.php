@@ -861,6 +861,7 @@ return $query->result();
         $query = $this->db->get();
         return $query->result();
     }
+             
     function SearchCompanies($id, $name,$CompanyOwner, $activity, $phone,$whatsapp, $status = '', $gov, $district, $area, $row, $limit,$reservation=FALSE,$ad=FALSE,$ministry_id=FALSE) {
         $this->db->select('tbl_company.*');
         //$this->db->select('tbl_company_type.label_en as type_en');

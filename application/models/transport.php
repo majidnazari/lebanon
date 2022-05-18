@@ -122,6 +122,7 @@ function SearchTransportations($id,$name,$phone,$whatsapp,$status='',$gov,$distr
 		$query = $this->db->get();
 		return $query->result();
 	}
+				 
         function GetAllTransportations($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_transport.*');

@@ -1,3 +1,4 @@
+
 <?php 
 $row_s=$this->Client->getShowItemsClientStatus($client_id,$client_type);
 $query = $this->Company->GetCompanyById($id);

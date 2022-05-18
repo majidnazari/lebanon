@@ -173,6 +173,7 @@ function GetInsuranceDirectors($id)
 		$query = $this->db->get();
 		return $query->result();
 	}
+				
         function GetAllImporters($id,$name,$phone,$whatsapp,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_importers.*');

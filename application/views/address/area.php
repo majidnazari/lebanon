@@ -172,11 +172,14 @@ $add_js='onchange="getdistrictsadd(this.value)"';
 						if(count($query)>0){
 						foreach($query as $row){
 							$user=$this->Administrator->GetUserById($row->user_id);
-                            $companies=$this->Company->SearchCompanies('', '', '', '', '', $row->governorate_id, $row->district_id, $row->id, 0, 0,FALSE,FALSE,'');
-                            $banks=$this->Bank->GetAllBanks('', '', '', '', '', $row->governorate_id, $row->district_id, $row->id, 0, 0,0);
-                            $importers=$this->Importer->GetAllImporters('','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
-                            $transportations=$this->Transport->GetAllTransportations('','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
-                            $insurances=$this->Insurance->GetAllInsurances('','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
+                            //$companies=$this->Company->SearchCompanies('', '', '', '', '', $row->governorate_id, $row->district_id, $row->id, 0, 0,FALSE,FALSE,'');
+                            $companies=$this->Company->SearchCompanies('', '', '', '', '','','', $row->governorate_id, $row->district_id, $row->id, 0, 0,FALSE,FALSE,'');
+                            //$banks=$this->Bank->GetAllBanks('', '', '', '', '','','', $row->governorate_id, $row->district_id, $row->id, 0, 0,0);
+                            $banks=$this->Bank->GetAllBanks('', '', '', '', '',1, $row->governorate_id, $row->district_id, $row->id, 0, 0);
+                            //$importers=$this->Importer->GetAllImporters('','','','','','',$row->governorate_id, $row->district_id, $row->id,0,0,0);
+                            $importers=$this->Importer->GetAllImporters('','','','',1,$row->governorate_id, $row->district_id, $row->id,0,0);
+                            $transportations=$this->Transport->GetAllTransportations('','','','',1,$row->governorate_id, $row->district_id, $row->id,0,0);
+                            $insurances=$this->Insurance->GetAllInsurances('','','','',"online",$row->governorate_id, $row->district_id, $row->id,0,0);
 
 
 							 if(count($user)>0)

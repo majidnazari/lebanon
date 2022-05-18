@@ -148,6 +148,7 @@ function GetDirectorById($id)
 		$query = $this->db->get();
 		return $query->result();
 	}
+	             
         function GetAllBanks($id,$name,$phone,$whatsapp,$fax,$status='',$gov,$district,$area,$row,$limit)
         {
             $this->db->select('tbl_bank.*');
