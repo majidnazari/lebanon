@@ -382,7 +382,8 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                     </div>
 					*/ ?>
                     </div>
-                    <div class="head clearfix">
+      
+                     <div class="head clearfix">
                         <div class="isw-documents"></div>
                         <h1></h1>
                         <h1 style="float:right; margin-right:10px"> ملحق الشركة</h1>
@@ -442,7 +443,8 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                 <font color="#FF0000"><?php echo form_error('app_fill_date'); ?></font></div>
                             <div class="span4" style="text-align:right">تاريخ ملء الاستمارة</div>
                         </div>
-                        <div class="row-form clearfix">
+                     
+                     <!--   <div class="row-form clearfix">
                             <div class="span3"><?php
                                 if ($is_adv != 1) {
 
@@ -456,10 +458,11 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                             </div>
                             <div class="span4" style="text-align:right">صورة الاعلان</br>
                                 <?= form_input($array_adv_pic) ?>
-                                <!--<input type="file" name="userfile" />-->
+                                <!--<input type="file" name="userfile" / -->
                             </div>
-                            
-                            <div class="span5" style="text-align:right">مندوب الإعلان 
+                                                         
+                         
+                          <!-- <div class="span5" style="text-align:right">مندوب الإعلان 
                                 <?php
                                 $sales_array = array(0 => 'اختر');
                                 if (count($sales) > 0) {
@@ -486,9 +489,9 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                                             <?php  $array_status=array('1'=>'Active','0'=>'Inactive');
                                             echo form_dropdown('status_adv',$array_status,@$status_adv,' id="status_adv"');
                                             ?>                                        
-                            </div>   
+                            </div> -->  
                            
-                        </div>                        
+                     <!--   </div>                        
                         <div class="row-form clearfix">
                             <div class="span3"><?php
                                 if ($copy_res == 1) {
@@ -521,14 +524,14 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                         </div>
                         </div>
                         <div class="row-form clearfix">
-                            <!--<div class="span3"><?php
+                          
                             if ($is_exporter == 1) {
                                 $checkedis_exporter = TRUE;
                             } else {
                                 $checkedis_exporter = FALSE;
                             }
                             echo 'Is Exporter&nbsp;' . form_checkbox('is_exporter', 1, $checkedis_exporter); ?>
-                        </div> -->
+                       
                             <div class="span2"><?php
                                 if ($show_online == 1) {
                                     $checkedonline = TRUE;
@@ -613,7 +616,10 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                             <?php echo form_textarea(array('name'=>'sales_note','value'=>@$query['sales_note'])); ?></div>
                     </div>
                     
-                </div>
+                </div> -->
+
+
+
                 <div class="head clearfix">
                     <div class="isw-documents"></div>
                     <h1>Related Companies ID :</h1>
@@ -981,7 +987,7 @@ $jsdis = 'id="district_id" onchange="getarea(this.value)" class="select2" requir
                     </div>
                 </div> 
 
-                <?php $this->load->view('clients',['client_id'=>$c_id,'client_type'=>'company','status_type'=>'show_items','title'=>'Show Items']);?>
+                <!-- <?php $this->load->view('clients',['client_id'=>$c_id,'client_type'=>'company','status_type'=>'show_items','title'=>'Show Items']);?> -->
             </div>
 
         </div>
